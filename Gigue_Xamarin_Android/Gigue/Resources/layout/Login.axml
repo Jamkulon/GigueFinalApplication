@@ -3,28 +3,28 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+<!--Page Header-->
     <TextView
         android:text="Please Log In"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView1" />
-  
-  <!--Log In With Facebook-->
-    <Button
-        android:text="Login With Facebook"
-        android:layout_width="match_parent"
+<!--Log In With Facebook-->
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/facebookLoginButton" />
-  
-  <!--Log In With Google-->
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp" />
+<!--Log In With Google-->
     <Button
         android:text="Login With Google"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="90.0dp"
         android:id="@+id/googleLoginButton" />
-  
-  <!--Direct User to Registration Page if They do Not have a Login-->
+<!--Direct User to Registration Page if They do Not have a Login-->
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
