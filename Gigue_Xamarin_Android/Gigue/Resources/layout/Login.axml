@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:text="Please Log In"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1" />
+  
+  <!--Log In With Facebook-->
+    <Button
+        android:text="Login With Facebook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/facebookLoginButton" />
+  
+  <!--Log In With Google-->
+    <Button
+        android:text="Login With Google"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/googleLoginButton" />
+  
+  <!--Direct User to Registration Page if They do Not have a Login-->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText1"
+        android:text="Don't Have an Account?  Register Here" />
+</LinearLayout>
