@@ -6,7 +6,7 @@ using System.Web.Http;
 using Microsoft.Azure.Mobile.Server;
 using Microsoft.Azure.Mobile.Server.Authentication;
 using Microsoft.Azure.Mobile.Server.Config;
-using GigueService.DataObjects;
+//using GigueService.DataObjects;
 using GigueService.Models;
 using Owin;
 
@@ -53,18 +53,18 @@ namespace GigueService
     {
         protected override void Seed(GigueContext context)
         {
-            List<TodoItem> todoItems = new List<TodoItem>
-            {
-                new TodoItem { Id = Guid.NewGuid().ToString(), Text = "First item", Complete = false },
-                new TodoItem { Id = Guid.NewGuid().ToString(), Text = "Second item", Complete = false },
-            };
+        //    List<TodoItem> todoItems = new List<TodoItem>
+        //    {
+        //        new TodoItem { Id = Guid.NewGuid().ToString(), Text = "First item", Complete = false },
+        //        new TodoItem { Id = Guid.NewGuid().ToString(), Text = "Second item", Complete = false },
+        //    };
 
-            foreach (TodoItem todoItem in todoItems)
-            {
-                context.Set<TodoItem>().Add(todoItem);
-            }
+        //    foreach (TodoItem todoItem in todoItems)
+        //    {
+        //        context.Set<TodoItem>().Add(todoItem);
+        //    }
 
-            base.Seed(context);
+        //    base.Seed(context);
         }
     }
 }
