@@ -1,6 +1,8 @@
-﻿namespace GigueService.Models
+﻿using Microsoft.Azure.Mobile.Server;
+
+namespace GigueService.Models
 {
-    public class UserMusician
+    public class UserMusician : EntityData
     {
         public int AppUserId { get; set; }
         public AppUser AppUser { get; set; }

@@ -54,7 +54,7 @@ namespace Gigue
             base.OnCreate(bundle);
 
             // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.Activity_To_Do);
+            SetContentView(Resource.Layout.Login);
 
             CurrentPlatform.Init();
 

@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Microsoft.Azure.Mobile.Server;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
 namespace GigueService.Models
 {
-    public class UserMusicianRating
+    public class UserMusicianRating : EntityData
     {
         public int AppUserId { get; set; }
         public AppUser AppUser { get; set; }
