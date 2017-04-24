@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Microsoft.Azure.Mobile.Server;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
 namespace GigueService.Models
 {
-    public class Photograph
+    public class Photograph : EntityData
     {
         public int PhotographId { get; set; }
         public string PhotographURL { get; set; }
