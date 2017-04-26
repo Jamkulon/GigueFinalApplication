@@ -1,5 +1,6 @@
 namespace GigueService.Migrations
 {
+    using Microsoft.Azure.Mobile.Server.Tables;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -10,6 +11,7 @@ namespace GigueService.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            SetSqlGenerator("System.Data.SqlClient", new EntityTableSqlGenerator());
         }
 
         protected override void Seed(GigueService.Models.GigueContext context)

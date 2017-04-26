@@ -8,7 +8,7 @@ namespace GigueService.Models
 {
     public class Musician : EntityData
     {
-        public int MusicianId { get; set; }
+       
         public string StageName { get; set; }
         public string CellPhone { get; set; }
         public string Biography { get; set; }
@@ -19,7 +19,7 @@ namespace GigueService.Models
         public ICollection<UserMusicianRating> MusicianRatings { get; set; }
         public ICollection<MusicianInstrument> Instruments { get; set; }
         public ICollection<MusicianGenre> Genres { get; set; }
-        public ICollection<MusicianLanguage> MusicianLanguages { get; set; }
+        public ICollection<LanguageSpoken> LanguageSpokens { get; set; }
         public ICollection<MusicianPhotograph> MusicianPhotographs { get; set; }
     }
 }
