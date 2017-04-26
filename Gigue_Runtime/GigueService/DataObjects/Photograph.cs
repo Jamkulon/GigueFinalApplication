@@ -8,7 +8,6 @@ namespace GigueService.Models
 {
     public class Photograph : EntityData
     {
-        public int PhotographId { get; set; }
         public string PhotographURL { get; set; }
         public ICollection<MusicianPhotograph> MusicianPhotographs { get; set; }
     }

@@ -45,7 +45,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50006</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
@@ -161,9 +161,9 @@
     <Compile Include="DataObjects\UserFavoriteMusician.cs" />
     <Compile Include="DataObjects\UserMusician.cs" />
     <Compile Include="DataObjects\UserMusicianRating.cs" />
-    <Compile Include="Migrations\201704202113164_init.cs" />
-    <Compile Include="Migrations\201704202113164_init.Designer.cs">
-      <DependentUpon>201704202113164_init.cs</DependentUpon>
+    <Compile Include="Migrations\201704252100101_allTablesnew.cs" />
+    <Compile Include="Migrations\201704252100101_allTablesnew.Designer.cs">
+      <DependentUpon>201704252100101_allTablesnew.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\GigueContext.cs" />
@@ -171,7 +171,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -183,15 +185,17 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\PublishProfiles\Gigue - Web Deploy.pubxml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201704202113164_init.resx">
-      <DependentUpon>201704202113164_init.cs</DependentUpon>
-    </EmbeddedResource>
+    <None Include="Properties\PublishProfiles\Gigue - Web Deploy.pubxml">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201704252100101_allTablesnew.resx">
+      <DependentUpon>201704252100101_allTablesnew.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />

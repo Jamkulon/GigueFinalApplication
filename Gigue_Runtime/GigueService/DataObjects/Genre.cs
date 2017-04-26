@@ -8,7 +8,7 @@ namespace GigueService.Models
 {
     public class Genre : EntityData
     {
-        public int GenreId { get; set; }
+      
         public string GenreName { get; set; }
         public ICollection<MusicianGenre> MusicianGenres { get; set; }
     }
