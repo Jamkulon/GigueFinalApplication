@@ -58,5 +58,10 @@
             android:gravity="center"
             android:textColor="#4A6EA9"
             android:button="@drawable/checkbox_style" />
+        <Button
+            android:text="Register"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnRegister" />
     </LinearLayout>
 </RelativeLayout>
