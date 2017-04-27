@@ -72,8 +72,8 @@ namespace SharedPreferences
 			// aapt resource value: 0x7f050006
 			public const int btnLogin = 2131034118;
 			
-			// aapt resource value: 0x7f05000c
-			public const int btnMusician = 2131034124;
+			// aapt resource value: 0x7f05000d
+			public const int btnMusician = 2131034125;
 			
 			// aapt resource value: 0x7f050002
 			public const int btnProfile = 2131034114;
@@ -81,14 +81,17 @@ namespace SharedPreferences
 			// aapt resource value: 0x7f050009
 			public const int btnRegister = 2131034121;
 			
-			// aapt resource value: 0x7f05000d
-			public const int btnUser = 2131034125;
+			// aapt resource value: 0x7f05000e
+			public const int btnUser = 2131034126;
 			
 			// aapt resource value: 0x7f05000a
 			public const int button1 = 2131034122;
 			
 			// aapt resource value: 0x7f050007
 			public const int checkBox1 = 2131034119;
+			
+			// aapt resource value: 0x7f05000c
+			public const int listView = 2131034124;
 			
 			// aapt resource value: 0x7f050003
 			public const int mainView = 2131034115;
