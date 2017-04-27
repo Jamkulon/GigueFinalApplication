@@ -7,6 +7,7 @@ using Android.Widget;
 using Android.OS;
 using Android.Views.InputMethods;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace SharedPreferences
 {
@@ -21,8 +22,12 @@ namespace SharedPreferences
 
         Button mRegister;
 
+        
+
         protected override void OnCreate(Bundle bundle)
         {
+        
+        
             base.OnCreate(bundle);
 
             // Set our view from the "main" layout resource
@@ -49,9 +54,10 @@ namespace SharedPreferences
             //intent.PutExtra("UserId", 1);
             //intent.PutExtra("Username", "Joseph");
 
-            User user = new User()
+            //James Code
+            User user = new User(mUsername.Text, "password")
             {
-                UserID = 1,
+                //UserID = 1,
                 UserName = mUsername.Text,
                 Password = "password"
             };
