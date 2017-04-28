@@ -6,8 +6,9 @@ using System.Web;
 
 namespace GigueService.Models
 {
-    public class Rating : EntityData
+    public class Rating 
     {
-        public string MusicianRating { get; set; }
+        public int RatingId { get; set; }
+        public int MusicianRating { get; set; }
     }
 }
