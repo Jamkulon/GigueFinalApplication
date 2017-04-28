@@ -28,7 +28,7 @@ namespace GigueService.Models
         public DbSet<Musician> Musicians { get; set; }
         public DbSet<Instrument> Instruments { get; set; }
         public DbSet<Genre> Genres { get; set; }
-        public DbSet<LanguageSpoken> LanguagesSpoken { get; set; }
+        public DbSet<SpokenLanguage> SpokenLanguages { get; set; }
         public DbSet<Photograph> Photographs { get; set; }
         public DbSet<Rating> Ratings { get; set; }
         public DbSet<UserMusician> UserMusicians { get; set; }
@@ -55,7 +55,7 @@ namespace GigueService.Models
             modelBuilder.Entity<UserMusicianRating>().HasKey(x => new { x.AppUserId, x.MusicianId });
             modelBuilder.Entity<MusicianInstrument>().HasKey(x => new { x.MusicianId, x.InstrumentId });
             modelBuilder.Entity<MusicianGenre>().HasKey(x => new { x.MusicianId, x.GenreId });
-            modelBuilder.Entity<MusicianLanguage>().HasKey(x => new { x.MusicianId, x.LanguageSpokenId });
+            modelBuilder.Entity<MusicianLanguage>().HasKey(x => new { x.MusicianId, x.SpokenLanguageId });
             modelBuilder.Entity<MusicianPhotograph>().HasKey(x => new { x.MusicianId, x.PhotographId });
 
 

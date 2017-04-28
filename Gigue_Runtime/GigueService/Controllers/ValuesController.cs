@@ -3,6 +3,8 @@ using System.Web.Http.Tracing;
 using Microsoft.Azure.Mobile.Server;
 using Microsoft.Azure.Mobile.Server.Config;
 using GigueService.Models;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace GigueService.Controllers
 {
@@ -14,13 +16,15 @@ namespace GigueService.Controllers
     {
         // GET api/values
         //
-        public GigueContext _db;
-        public ValuesController(GigueContext db)
+        public Repo _repo;
+
+        public ValuesController()
         {
-            _db = db;
+            
         }
-        [HttpGet, Route("api/test/hello")]
-        public string Get()
+        [Route("api/values/1")]
+        [HttpGet]
+        public UserMusicianRating Get()
         {
             MobileAppSettingsDictionary settings = this.Configuration.GetMobileAppSettingsProvider().GetMobileAppSettings();
             ITraceWriter traceWriter = this.Configuration.Services.GetTraceWriter();
@@ -29,11 +33,26 @@ namespace GigueService.Controllers
             string greeting = "Hello from " + host;
             
             traceWriter.Info(greeting);
-            return greeting;
+            //get data test
+            GigueContext db = new GigueContext();
+            Repo repos = new Repo(db);
+            var users = repos.Query<AppUser>().Where(a => a.AppUserId == 21).FirstOrDefault();
+            var usermusic = repos.Query<UserMusicianRating>().Where(um => um.AppUserId == 21 && um.MusicianId == 5).FirstOrDefault();
+
+            var umr = new UserMusicianRating
+            {
+                AppUserId = usermusic.AppUserId,
+                MusicianId = usermusic.MusicianId,
+                MusicianRating = usermusic.MusicianRating,
+                DateTimeOfRating = usermusic.DateTimeOfRating
+            };
+             
+            
+            return umr;
         }
 
         // POST api/values
-        [HttpPost, Route("api/Test/completeAll")]
+        [HttpPost]
         public string Post(string message)
         {
             string retVal = "Hello World! " + message;

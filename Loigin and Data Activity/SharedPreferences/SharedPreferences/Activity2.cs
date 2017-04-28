@@ -15,7 +15,7 @@ namespace SharedPreferences
     [Activity(Label = "Activity2")]
     public class Activity2 : Activity
 
-        
+
 
     {
         TextView mUserID;
@@ -43,9 +43,9 @@ namespace SharedPreferences
             mLoggedOnUser = JsonConvert.DeserializeObject<User>(Intent.GetStringExtra("User"));
 
 
-            mUserID.Text = mLoggedOnUser.UserID.ToString();
+            //mUserID.Text = mLoggedOnUser.UserID.ToString();
             mUsername.Text = mLoggedOnUser.UserName;
-          
+
 
 
         }

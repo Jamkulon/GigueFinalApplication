@@ -2,7 +2,7 @@
 
 namespace GigueService.Models
 {
-    public class UserMusician : EntityData
+    public class UserMusician 
     {
         public int AppUserId { get; set; }
         public AppUser AppUser { get; set; }
