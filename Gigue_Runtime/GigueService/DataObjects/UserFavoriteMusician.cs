@@ -6,7 +6,7 @@ using System.Web;
 
 namespace GigueService.Models
 {
-    public class UserFavoriteMusician : EntityData
+    public class UserFavoriteMusician 
     {
         public int AppUserId { get; set; }
         public AppUser AppUser { get; set; }

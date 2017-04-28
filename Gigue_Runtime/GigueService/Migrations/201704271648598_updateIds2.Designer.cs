@@ -7,13 +7,13 @@ namespace GigueService.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class allTablesnew : IMigrationMetadata
+    public sealed partial class updateIds2 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(allTablesnew));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(updateIds2));
         
         string IMigrationMetadata.Id
         {
-            get { return "201704252100101_allTablesnew"; }
+            get { return "201704271648598_updateIds2"; }
         }
         
         string IMigrationMetadata.Source
