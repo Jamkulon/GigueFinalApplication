@@ -1,17 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center">
-    <Button
-        android:text="Sign Up as a Musician"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#C0C0C0"
+    android:focusable="true"
+    android:id="@+id/mainView"
+    android:clickable="true">
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="100.0dp"
-        android:id="@+id/btnMusician" />
-    <Button
-        android:text="Sign Up as a User"
+        android:layout_height="125dp"
+        android:text="Registration"
+        android:gravity="center"
+        android:textColor="#4A6EA9"
+        android:textSize="48sp" />
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="100.0dp"
-        android:id="@+id/btnUser" />
-</LinearLayout>
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+        <EditText
+            android:id="@+id/txtFirstName"
+            android:inputType="textPersonName"
+            android:background="@drawable/edit_text_style"
+            android:textColor="#000"
+            android:hint="firstname"
+            android:textColorHint="#d3d3d3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp" />
+        <EditText
+            android:id="@+id/txtLastName"
+            android:inputType="textPersonName"
+            android:background="@drawable/edit_text_style"
+            android:textColor="#000"
+            android:hint="lastname"
+            android:textColorHint="#d3d3d3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp" />
+        <EditText
+            android:id="@+id/txtUserName"
+            android:inputType="textPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_style"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:textColor="#000"
+            android:hint="username"
+            android:textColorHint="#d3d3d3" />
+        <EditText
+            android:id="@+id/txtPassword"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_style"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="0.0dp"
+            android:textColor="#000"
+            android:hint="password"
+            android:textColorHint="#d3d3d3"
+            android:layout_marginBottom="0.0dp" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="101.5dp"
+            android:id="@+id/linearLayout1"
+            android:gravity="center">
+            <Button
+                android:text="looking for work"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:id="@+id/btnMusician" />
+          <Button
+                android:text="looking for a musician"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:id="@+id/btnUser" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
