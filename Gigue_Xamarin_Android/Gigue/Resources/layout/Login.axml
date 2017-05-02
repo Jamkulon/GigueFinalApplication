@@ -28,7 +28,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="20dp"
-            android:textColor="#000"
+            android:textColor="#FF4500"
             android:hint="username"
             android:textColorHint="#d3d3d3" />
         <EditText
@@ -40,7 +40,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="20dp"
-            android:textColor="#000"
+            android:textColor="#FF4500"
             android:hint="password"
             android:textColorHint="#d3d3d3" />
         <Button
