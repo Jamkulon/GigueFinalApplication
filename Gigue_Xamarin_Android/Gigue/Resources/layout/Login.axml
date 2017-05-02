@@ -1,33 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<!--Page Header-->
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FF4500"
+    android:focusable="true"
+    android:id="@+id/mainView"
+    android:clickable="true">
     <TextView
-        android:text="Please Log In"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:text="Login"
+        android:gravity="center"
+        android:textColor="#000"
+        android:textSize="48sp" />
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView1" />
-<!--Log In With Facebook-->
-<!--Log In With Google-->
-    <Button
-        android:text="Login With Google"
-        android:layout_width="match_parent"
-        android:layout_height="90.0dp"
-        android:id="@+id/googleLoginButton" />
-<!--Direct User to Registration Page if They do Not have a Login-->
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText1"
-        android:text="Don't Have an Account?  Register Here" />
-    <ListView
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:hint="Show Users"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/showUsers" />
-</LinearLayout>
+        android:layout_centerInParent="true">
+        <EditText
+            android:id="@+id/txtUserName"
+            android:inputType="textPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_style"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:textColor="#000"
+            android:hint="username"
+            android:textColorHint="#d3d3d3" />
+        <EditText
+            android:id="@+id/txtPassword"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_style"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:textColor="#000"
+            android:hint="password"
+            android:textColorHint="#d3d3d3" />
+        <Button
+            android:id="@+id/btnLogin"
+            android:text="Login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/button_email_style" />
+        <CheckBox
+            android:text="Remember Me"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox1"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:gravity="center"
+            android:textColor="#000"
+            android:button="@drawable/checkbox_style" />
+        <TextView
+            android:text="Or"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textOr"
+            android:textColor="#000"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:typeface="serif" />
+        <Button
+            android:text="Register As a New User"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnRegister"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:backgroundTint="#000" />
+    </LinearLayout>
+</RelativeLayout>
