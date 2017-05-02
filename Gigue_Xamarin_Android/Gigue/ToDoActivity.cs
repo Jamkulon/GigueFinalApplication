@@ -24,7 +24,7 @@ using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
 
 namespace Gigue
 {
-    [Activity(MainLauncher = true,
+    [Activity(MainLauncher = false,
                Icon = "@drawable/ic_launcher", Label = "@string/app_name",
                Theme = "@style/AppTheme")]
     public class ToDoActivity : Activity
@@ -47,7 +47,7 @@ namespace Gigue
         private EditText textNewToDo;
 
 		// URL of the mobile app backend.
-        const string applicationURL = @"https://gigue.azurewebsites.net";
+        const string applicationURL = @"https://gigue.azurewebsites.net/api/user";
 
         protected override async void OnCreate(Bundle bundle)
         {

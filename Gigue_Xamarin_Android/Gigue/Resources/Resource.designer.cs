@@ -1958,8 +1958,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0b0073
 			public const int editLastName = 2131427443;
 			
-			// aapt resource value: 0x7f0b0085
-			public const int editText1 = 2131427461;
+			// aapt resource value: 0x7f0b0084
+			public const int editText1 = 2131427460;
 			
 			// aapt resource value: 0x7f0b007e
 			public const int editUserEmailAddress = 2131427454;
@@ -1985,8 +1985,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0b0049
 			public const int expanded_menu = 2131427401;
 			
-			// aapt resource value: 0x7f0b0084
-			public const int googleLoginButton = 2131427460;
+			// aapt resource value: 0x7f0b0083
+			public const int googleLoginButton = 2131427459;
 			
 			// aapt resource value: 0x7f0b0004
 			public const int home = 2131427332;
@@ -2029,9 +2029,6 @@ namespace Gigue
 			
 			// aapt resource value: 0x7f0b0039
 			public const int list_item = 2131427385;
-			
-			// aapt resource value: 0x7f0b0083
-			public const int login_button = 2131427459;
 			
 			// aapt resource value: 0x7f0b008a
 			public const int media_actions = 2131427466;
@@ -2140,6 +2137,9 @@ namespace Gigue
 			
 			// aapt resource value: 0x7f0b0011
 			public const int showTitle = 2131427345;
+			
+			// aapt resource value: 0x7f0b0085
+			public const int showUsers = 2131427461;
 			
 			// aapt resource value: 0x7f0b0031
 			public const int small = 2131427377;
