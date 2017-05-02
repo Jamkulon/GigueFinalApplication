@@ -22,10 +22,17 @@ namespace GigueService
 
             //For more information on Web API tracing, see http://go.microsoft.com/fwlink/?LinkId=620686 
             config.EnableSystemDiagnosticsTracing();
+            
+            //Route configuration.  Allows custom routes. 
+            config.MapHttpAttributeRoutes();
+
+
 
             new MobileAppConfiguration()
                 .UseDefaultConfiguration()
                 .ApplyTo(config);
+
+
 
             // Use Entity Framework Code First to create database tables based on your DbContext
             Database.SetInitializer(new GigueInitializer());
