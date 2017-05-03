@@ -1886,8 +1886,14 @@ namespace Gigue
 			// aapt resource value: 0x7f0b0086
 			public const int btnLogin = 2131427462;
 			
+			// aapt resource value: 0x7f0b009b
+			public const int btnMusician = 2131427483;
+			
 			// aapt resource value: 0x7f0b0089
 			public const int btnRegister = 2131427465;
+			
+			// aapt resource value: 0x7f0b009c
+			public const int btnUser = 2131427484;
 			
 			// aapt resource value: 0x7f0b0025
 			public const int button = 2131427365;
@@ -1913,8 +1919,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0b0087
 			public const int checkBox1 = 2131427463;
 			
-			// aapt resource value: 0x7f0b0098
-			public const int checkToDoItem = 2131427480;
+			// aapt resource value: 0x7f0b009d
+			public const int checkToDoItem = 2131427485;
 			
 			// aapt resource value: 0x7f0b004a
 			public const int checkbox = 2131427402;
@@ -2039,6 +2045,9 @@ namespace Gigue
 			// aapt resource value: 0x7f0b0094
 			public const int line3 = 2131427476;
 			
+			// aapt resource value: 0x7f0b009a
+			public const int linearLayout1 = 2131427482;
+			
 			// aapt resource value: 0x7f0b0009
 			public const int listMode = 2131427337;
 			
@@ -2054,8 +2063,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0b008e
 			public const int media_actions = 2131427470;
 			
-			// aapt resource value: 0x7f0b0099
-			public const int menu_refresh = 2131427481;
+			// aapt resource value: 0x7f0b009e
+			public const int menu_refresh = 2131427486;
 			
 			// aapt resource value: 0x7f0b008a
 			public const int messenger_send_button = 2131427466;
@@ -2248,6 +2257,12 @@ namespace Gigue
 			
 			// aapt resource value: 0x7f0b003f
 			public const int topPanel = 2131427391;
+			
+			// aapt resource value: 0x7f0b0098
+			public const int txtFirstName = 2131427480;
+			
+			// aapt resource value: 0x7f0b0099
+			public const int txtLastName = 2131427481;
 			
 			// aapt resource value: 0x7f0b0085
 			public const int txtPassword = 2131427461;
@@ -2456,19 +2471,22 @@ namespace Gigue
 			public const int notification_template_part_time = 2130903087;
 			
 			// aapt resource value: 0x7f030030
-			public const int Row_List_To_Do = 2130903088;
+			public const int Registration = 2130903088;
 			
 			// aapt resource value: 0x7f030031
-			public const int select_dialog_item_material = 2130903089;
+			public const int Row_List_To_Do = 2130903089;
 			
 			// aapt resource value: 0x7f030032
-			public const int select_dialog_multichoice_material = 2130903090;
+			public const int select_dialog_item_material = 2130903090;
 			
 			// aapt resource value: 0x7f030033
-			public const int select_dialog_singlechoice_material = 2130903091;
+			public const int select_dialog_multichoice_material = 2130903091;
 			
 			// aapt resource value: 0x7f030034
-			public const int support_simple_spinner_dropdown_item = 2130903092;
+			public const int select_dialog_singlechoice_material = 2130903092;
+			
+			// aapt resource value: 0x7f030035
+			public const int support_simple_spinner_dropdown_item = 2130903093;
 			
 			static Layout()
 			{

@@ -49,7 +49,7 @@ namespace Gigue.Activities
         }
         void mRegister_Click(object sender, EventArgs r)
         {
-            Intent intent = new Intent(this, typeof(createUserProfile));
+            Intent intent = new Intent(this, typeof(RegistrationActivity));
             this.StartActivity(intent);
         }
 

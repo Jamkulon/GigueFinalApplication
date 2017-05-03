@@ -152,6 +152,8 @@
     <Compile Include="Activities\musicianProfile.cs" />
     <Compile Include="Activities\TestData.cs" />
     <Compile Include="Activities\Home.cs" />
+    <Compile Include="Musician.cs" />
+    <Compile Include="Activities\RegistrationActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ToDoActivity.cs" />
@@ -175,6 +177,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\musicianProfile.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Registration.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
