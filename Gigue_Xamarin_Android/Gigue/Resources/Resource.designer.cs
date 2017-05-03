@@ -1895,6 +1895,9 @@ namespace Gigue
 			// aapt resource value: 0x7f0b0089
 			public const int btnRegister = 2131427465;
 			
+			// aapt resource value: 0x7f0b009f
+			public const int btnResults = 2131427487;
+			
 			// aapt resource value: 0x7f0b009d
 			public const int btnUser = 2131427485;
 			
@@ -2057,6 +2060,9 @@ namespace Gigue
 			// aapt resource value: 0x7f0b0009
 			public const int listMode = 2131427337;
 			
+			// aapt resource value: 0x7f0b00a0
+			public const int listView1 = 2131427488;
+			
 			// aapt resource value: 0x7f0b0065
 			public const int listViewToDo = 2131427429;
 			
@@ -2069,8 +2075,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0b008f
 			public const int media_actions = 2131427471;
 			
-			// aapt resource value: 0x7f0b009f
-			public const int menu_refresh = 2131427487;
+			// aapt resource value: 0x7f0b00a1
+			public const int menu_refresh = 2131427489;
 			
 			// aapt resource value: 0x7f0b008b
 			public const int messenger_send_button = 2131427467;
@@ -2486,16 +2492,22 @@ namespace Gigue
 			public const int Row_List_To_Do = 2130903090;
 			
 			// aapt resource value: 0x7f030033
-			public const int select_dialog_item_material = 2130903091;
+			public const int searchPage = 2130903091;
 			
 			// aapt resource value: 0x7f030034
-			public const int select_dialog_multichoice_material = 2130903092;
+			public const int SearchResults = 2130903092;
 			
 			// aapt resource value: 0x7f030035
-			public const int select_dialog_singlechoice_material = 2130903093;
+			public const int select_dialog_item_material = 2130903093;
 			
 			// aapt resource value: 0x7f030036
-			public const int support_simple_spinner_dropdown_item = 2130903094;
+			public const int select_dialog_multichoice_material = 2130903094;
+			
+			// aapt resource value: 0x7f030037
+			public const int select_dialog_singlechoice_material = 2130903095;
+			
+			// aapt resource value: 0x7f030038
+			public const int support_simple_spinner_dropdown_item = 2130903096;
 			
 			static Layout()
 			{

@@ -53,29 +53,24 @@ namespace Gigue.Activities
 
         }
 
+        //Browse Button Click
         void mBrowse_Click(object sender, EventArgs r)
         {
             Intent intent = new Intent(this, typeof(Browse));
             this.StartActivity(intent);
         }
+        //Register Button Click
         void mRegister_Click(object sender, EventArgs r)
         {
             Intent intent = new Intent(this, typeof(RegistrationActivity));
             this.StartActivity(intent);
         }
 
+        //Login Button Click
         void mButton_Click(object sender, EventArgs e)
         {
-            Intent intent = new Intent(this, typeof(musicianProfile));
-            //intent.PutExtra("UserId", 1);
-            //intent.PutExtra("Username", "Joseph");
-
-            //James Code
-            
-
-            //intent.PutExtra("User", JsonConvert.SerializeObject(user))/*;*/
-
-
+            Intent intent = new Intent(this, typeof(Search));
+           
             this.StartActivity(intent);
             this.OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);
         }
