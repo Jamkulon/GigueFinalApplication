@@ -12,20 +12,15 @@ using Android.Widget;
 
 namespace Gigue.Activities
 {
-    [Activity(Label = "Profile for James Kulon")]
-    public class musicianProfile : Activity
+    [Activity(Label = "Browse")]
+    public class Browse : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
-
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.musicianProfile);
+            SetContentView(Resource.Layout.browseMusicians);
 
-
-            //var lv = FindViewById<ListView>(Resource.Id.listView);
-
-            //lv.Adapter = new ArrayAdapter<User>(this, Android.Resource.Layout.SimpleListItem1, Android.Resource.Id.Text1, MainActivity.Users);
-
+            // Create your application here
         }
     }
 }
