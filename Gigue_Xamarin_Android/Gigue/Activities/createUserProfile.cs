@@ -19,6 +19,8 @@ namespace Gigue.Activities
         {
             base.OnCreate(savedInstanceState);
 
+            SetContentView(Resource.Layout.CreateUserProfile);
+
             // Create your application here
         }
     }

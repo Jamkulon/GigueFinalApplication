@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 using Android;
 using Gigue.Activities;
+using Android.Views.InputMethods;
 
 namespace Gigue
 {
@@ -55,6 +56,11 @@ namespace Gigue
             Intent intent = new Intent(this, typeof(createUserProfile));
 
             this.StartActivity(intent);
+        }
+        void mRelativeLayout_Click(object sender, EventArgs e)
+        {
+            InputMethodManager inputManager = (InputMethodManager)this.GetSystemService(Activity.InputMethodService);
+            inputManager.HideSoftInputFromWindow(this.CurrentFocus.WindowToken, HideSoftInputFlags.None);
         }
     }
 }
