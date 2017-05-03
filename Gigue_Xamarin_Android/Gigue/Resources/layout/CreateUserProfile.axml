@@ -32,10 +32,16 @@
         android:layout_height="wrap_content"
         android:id="@+id/editUserEmailAddress" />
 <!--Select User City-->
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/UserSelectCtiy" />
+  <TextView
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="10dip"
+       android:text="@string/cities_prompt" />
+  <Spinner
+      android:id="@+id/spinner"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:prompt="@string/cities_prompt" />
 <!--Select User State-->
     <TextView
         android:layout_width="fill_parent"
