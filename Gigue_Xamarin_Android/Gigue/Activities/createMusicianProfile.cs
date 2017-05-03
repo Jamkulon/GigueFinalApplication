@@ -19,6 +19,8 @@ namespace Gigue.Activities
         {
             base.OnCreate(savedInstanceState);
 
+
+            SetContentView(Resource.Layout.CreateMusicianProfile);
             // Create your application here
         }
     }
