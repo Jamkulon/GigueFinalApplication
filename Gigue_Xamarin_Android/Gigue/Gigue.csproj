@@ -151,6 +151,8 @@
     <Compile Include="Activities\createUserProfile.cs" />
     <Compile Include="Activities\Login.cs" />
     <Compile Include="Activities\musicianProfile.cs" />
+    <Compile Include="Activities\Search.cs" />
+    <Compile Include="Activities\searchResults.cs" />
     <Compile Include="Activities\TestData.cs" />
     <Compile Include="Activities\Home.cs" />
     <Compile Include="Musician.cs" />
@@ -184,6 +186,12 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\browseMusicians.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\SearchResults.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\searchPage.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
