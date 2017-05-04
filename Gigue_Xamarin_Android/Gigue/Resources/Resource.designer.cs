@@ -1757,8 +1757,8 @@ namespace Gigue
 			public const int com_facebook_tooltip_blue_xout = 2130837606;
 			
 			// aapt resource value: 0x7f020067
-			public const int ConcertGig = 2130837607;
-			
+			public const int Dierdre5 = 2130837607;
+	
 			// aapt resource value: 0x7f020068
 			public const int edit_text_style = 2130837608;
 			
