@@ -28,7 +28,7 @@
     </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
+    <DebugSymbols>True</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug</OutputPath>
@@ -37,6 +37,15 @@
     <WarningLevel>4</WarningLevel>
     <AndroidLinkMode>None</AndroidLinkMode>
     <ConsolePause>false</ConsolePause>
+    <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
+    <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
+    <BundleAssemblies>False</BundleAssemblies>
+    <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
+    <Debugger>.Net (Xamarin)</Debugger>
+    <AotAssemblies>False</AotAssemblies>
+    <EnableLLVM>False</EnableLLVM>
+    <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
+    <EnableProguard>False</EnableProguard>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -155,7 +164,21 @@
     <Compile Include="Activities\searchResults.cs" />
     <Compile Include="Activities\TestData.cs" />
     <Compile Include="Activities\Home.cs" />
-    <Compile Include="Musician.cs" />
+    <Compile Include="Adapters\UserData.cs" />
+    <Compile Include="DataObjects\AppUser.cs" />
+    <Compile Include="DataObjects\Genre.cs" />
+    <Compile Include="DataObjects\Instrument.cs" />
+    <Compile Include="DataObjects\Musician.cs" />
+    <Compile Include="DataObjects\MusicianGenre.cs" />
+    <Compile Include="DataObjects\MusicianInstrument.cs" />
+    <Compile Include="DataObjects\MusicianLanguage.cs" />
+    <Compile Include="DataObjects\MusicianPhotograph.cs" />
+    <Compile Include="DataObjects\Photograph.cs" />
+    <Compile Include="DataObjects\Rating.cs" />
+    <Compile Include="DataObjects\SpokenLanguage.cs" />
+    <Compile Include="DataObjects\UserFavoriteMusician.cs" />
+    <Compile Include="DataObjects\UserMusician.cs" />
+    <Compile Include="DataObjects\UserMusicianRating.cs" />
     <Compile Include="Activities\RegistrationActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -192,6 +215,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\searchPage.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\HomePage.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

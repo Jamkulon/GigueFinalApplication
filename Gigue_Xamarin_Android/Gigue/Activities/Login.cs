@@ -17,7 +17,7 @@ using Android.Views.InputMethods;
 
 namespace Gigue.Activities
 {
-    [Activity(MainLauncher = true, Label = "Gigue")]
+    [Activity(MainLauncher = false, Label = "Login")]
     public class Login : Activity
     {
 
