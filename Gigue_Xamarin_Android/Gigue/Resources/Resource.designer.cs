@@ -1757,52 +1757,55 @@ namespace Gigue
 			public const int com_facebook_tooltip_blue_xout = 2130837606;
 			
 			// aapt resource value: 0x7f020067
-			public const int Dierdre5 = 2130837607;
-	
+			public const int ConcertGig = 2130837607;
+			
 			// aapt resource value: 0x7f020068
-			public const int edit_text_style = 2130837608;
+			public const int Dierdre5 = 2130837608;
 			
 			// aapt resource value: 0x7f020069
-			public const int ic_launcher = 2130837609;
+			public const int edit_text_style = 2130837609;
 			
 			// aapt resource value: 0x7f02006a
-			public const int icon = 2130837610;
+			public const int ic_launcher = 2130837610;
 			
 			// aapt resource value: 0x7f02006b
-			public const int imageedit_9_7239508233 = 2130837611;
+			public const int icon = 2130837611;
 			
 			// aapt resource value: 0x7f02006c
-			public const int James = 2130837612;
+			public const int imageedit_9_7239508233 = 2130837612;
 			
 			// aapt resource value: 0x7f02006d
-			public const int messenger_bubble_large_blue = 2130837613;
+			public const int James = 2130837613;
 			
 			// aapt resource value: 0x7f02006e
-			public const int messenger_bubble_large_white = 2130837614;
+			public const int messenger_bubble_large_blue = 2130837614;
 			
 			// aapt resource value: 0x7f02006f
-			public const int messenger_bubble_small_blue = 2130837615;
+			public const int messenger_bubble_large_white = 2130837615;
 			
 			// aapt resource value: 0x7f020070
-			public const int messenger_bubble_small_white = 2130837616;
+			public const int messenger_bubble_small_blue = 2130837616;
 			
 			// aapt resource value: 0x7f020071
-			public const int messenger_button_blue_bg_round = 2130837617;
+			public const int messenger_bubble_small_white = 2130837617;
 			
 			// aapt resource value: 0x7f020072
-			public const int messenger_button_blue_bg_selector = 2130837618;
+			public const int messenger_button_blue_bg_round = 2130837618;
 			
 			// aapt resource value: 0x7f020073
-			public const int messenger_button_send_round_shadow = 2130837619;
+			public const int messenger_button_blue_bg_selector = 2130837619;
 			
 			// aapt resource value: 0x7f020074
-			public const int messenger_button_white_bg_round = 2130837620;
+			public const int messenger_button_send_round_shadow = 2130837620;
 			
 			// aapt resource value: 0x7f020075
-			public const int messenger_button_white_bg_selector = 2130837621;
+			public const int messenger_button_white_bg_round = 2130837621;
 			
 			// aapt resource value: 0x7f020076
-			public const int notification_template_icon_bg = 2130837622;
+			public const int messenger_button_white_bg_selector = 2130837622;
+			
+			// aapt resource value: 0x7f020077
+			public const int notification_template_icon_bg = 2130837623;
 			
 			static Drawable()
 			{
@@ -1820,8 +1823,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0b0061
 			public const int LinearLayout1 = 2131427425;
 			
-			// aapt resource value: 0x7f0b00a0
-			public const int SearchResultListView = 2131427488;
+			// aapt resource value: 0x7f0b00a4
+			public const int SearchResultListView = 2131427492;
 			
 			// aapt resource value: 0x7f0b0081
 			public const int UserZipCode = 2131427457;
@@ -1898,17 +1901,17 @@ namespace Gigue
 			// aapt resource value: 0x7f0b008a
 			public const int btnLogin = 2131427466;
 			
-			// aapt resource value: 0x7f0b009f
-			public const int btnMusician = 2131427487;
+			// aapt resource value: 0x7f0b00a0
+			public const int btnMusician = 2131427488;
 			
 			// aapt resource value: 0x7f0b008d
 			public const int btnRegister = 2131427469;
 			
-			// aapt resource value: 0x7f0b00a2
-			public const int btnResults = 2131427490;
+			// aapt resource value: 0x7f0b00a3
+			public const int btnResults = 2131427491;
 			
-			// aapt resource value: 0x7f0b00a0
-			public const int btnUser = 2131427488;
+			// aapt resource value: 0x7f0b00a1
+			public const int btnUser = 2131427489;
 			
 			// aapt resource value: 0x7f0b0025
 			public const int button = 2131427365;
@@ -1940,8 +1943,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0b008b
 			public const int checkBox1 = 2131427467;
 			
-			// aapt resource value: 0x7f0b00a1
-			public const int checkToDoItem = 2131427489;
+			// aapt resource value: 0x7f0b00a2
+			public const int checkToDoItem = 2131427490;
 			
 			// aapt resource value: 0x7f0b004a
 			public const int checkbox = 2131427402;
@@ -2069,8 +2072,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0b0099
 			public const int line3 = 2131427481;
 			
-			// aapt resource value: 0x7f0b0083
-			public const int linearLayout1 = 2131427459;
+			// aapt resource value: 0x7f0b009f
+			public const int linearLayout1 = 2131427487;
 			
 			// aapt resource value: 0x7f0b0084
 			public const int linearLayout2 = 2131427460;
@@ -2090,8 +2093,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0b0093
 			public const int media_actions = 2131427475;
 			
-			// aapt resource value: 0x7f0b00a4
-			public const int menu_refresh = 2131427492;
+			// aapt resource value: 0x7f0b00a5
+			public const int menu_refresh = 2131427493;
 			
 			// aapt resource value: 0x7f0b008f
 			public const int messenger_send_button = 2131427471;
@@ -2134,6 +2137,9 @@ namespace Gigue
 			
 			// aapt resource value: 0x7f0b004c
 			public const int radio = 2131427404;
+			
+			// aapt resource value: 0x7f0b0083
+			public const int relativeLayout1 = 2131427459;
 			
 			// aapt resource value: 0x7f0b002c
 			public const int right = 2131427372;
