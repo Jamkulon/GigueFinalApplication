@@ -14,6 +14,8 @@ namespace GigueService.ViewModels
         public string Biography { get; set; }
         public decimal? Rate { get; set; }
         public int? Rating { get; set; }
+        public bool? IsMusicianForHire { get; set; }
+
 
     }
 }

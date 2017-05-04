@@ -22,7 +22,7 @@ namespace GigueService.Models
         {
         } 
 
-        //public DbSet<TodoItem> TodoItems { get; set; }
+        
 
         public DbSet<AppUser> AppUsers { get; set; }
         public DbSet<Musician> Musicians { get; set; }

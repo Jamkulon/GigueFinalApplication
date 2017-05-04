@@ -143,11 +143,12 @@ namespace GigueService.Controllers
                     PostalCode = user.PostalCode,
                     Email = user.Email,
                     ReceiveAdvertisements = user.ReceiveAdvertisements,
-                    IsMusicianForHire = user.IsMusicianForHire,
+                    IsMusician = user.IsMusician,
                     MusicianId = mus.MusicianId,
                     StageName = mus.StageName,
                     CellPhone = mus.CellPhone,
                     Biography = mus.Biography,
+                    IsMusicianForHire = mus.IsMusicianForHire,
                     Rate = mus.Rate,
                     Rating = mus.Rating,
                     Instruments = tempIs,
@@ -184,7 +185,7 @@ namespace GigueService.Controllers
                 PostalCode = vmM.PostalCode,
                 Email = vmM.PostalCode,
                 ReceiveAdvertisements = vmM.ReceiveAdvertisements,
-                IsMusicianForHire = vmM.IsMusicianForHire
+                IsMusician = vmM.IsMusician
             };
             Musician MusicianToAdd = new Musician
             {
