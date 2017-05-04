@@ -1820,6 +1820,9 @@ namespace Gigue
 			// aapt resource value: 0x7f0b0061
 			public const int LinearLayout1 = 2131427425;
 			
+			// aapt resource value: 0x7f0b00a0
+			public const int SearchResultListView = 2131427488;
+			
 			// aapt resource value: 0x7f0b0081
 			public const int UserZipCode = 2131427457;
 			
@@ -2074,9 +2077,6 @@ namespace Gigue
 			
 			// aapt resource value: 0x7f0b0009
 			public const int listMode = 2131427337;
-			
-			// aapt resource value: 0x7f0b00a3
-			public const int listView1 = 2131427491;
 			
 			// aapt resource value: 0x7f0b0065
 			public const int listViewToDo = 2131427429;
