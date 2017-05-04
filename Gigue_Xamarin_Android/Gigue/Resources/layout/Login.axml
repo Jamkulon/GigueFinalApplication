@@ -3,17 +3,17 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#FF4500"
     android:focusable="true"
     android:id="@+id/mainView"
-    android:clickable="true">
+    android:clickable="true"
+    android:background="@drawable/dierdre5">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="125dp"
-        android:text="Login"
+        android:text="Please Log In"
         android:gravity="center"
-        android:textColor="#000"
-        android:textSize="48sp" />
+        android:textColor="#FFA500"
+        android:textSize="40sp" />
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -61,15 +61,15 @@
             android:layout_marginLeft="100dp"
             android:layout_marginRight="100dp"
             android:gravity="center"
-            android:textColor="#000"
+            android:textColor="#FFA500"
             android:button="@drawable/checkbox_style" />
         <TextView
-            android:text="Or"
+            android:text="Don' Have an Account?"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textOr"
-            android:textColor="#000"
+            android:textColor="#FFA500"
             android:gravity="center"
             android:textStyle="bold"
             android:typeface="serif" />
@@ -80,14 +80,17 @@
             android:id="@+id/btnRegister"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            android:backgroundTint="#000" />
+            android:backgroundTint="#000"
+            android:textColor="#FFA500" />
         <Button
             android:text="Browse Musicians"
-            android:layout_width="fill_parent"
+            android:layout_width="303.0dp"
             android:layout_height="wrap_content"
             android:id="@+id/btnBrowse"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            android:backgroundTint="#000" />
+            android:backgroundTint="#000"
+            android:textColor="#FFA500"
+            android:layout_marginBottom="10.5dp" />
     </LinearLayout>
 </RelativeLayout>
