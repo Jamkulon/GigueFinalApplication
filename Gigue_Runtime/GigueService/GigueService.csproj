@@ -213,6 +213,8 @@
     <Compile Include="App_Start\Startup.MobileApp.cs" />
     <Compile Include="Controllers\AppUserController.cs" />
     <Compile Include="Controllers\MusicianProfileController.cs" />
+    <Compile Include="Controllers\MusiciansGenresByInstrumentController.cs" />
+    <Compile Include="Controllers\MusiciansInstrumentsByGenreController.cs" />
     <Compile Include="Repository\Repo.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -257,6 +259,8 @@
     <Compile Include="ViewModels\vmInstrument.cs" />
     <Compile Include="ViewModels\vmMusician.cs" />
     <Compile Include="ViewModels\vmMusicianProfile.cs" />
+    <Compile Include="ViewModels\vmMusiciansGenresByInstrument.cs" />
+    <Compile Include="ViewModels\vmMusiciansInstrumentsByGenre.cs" />
     <Compile Include="ViewModels\vmPhotograph.cs" />
     <Compile Include="ViewModels\vmRating.cs" />
     <Compile Include="ViewModels\vmSpokenLanguage.cs" />
