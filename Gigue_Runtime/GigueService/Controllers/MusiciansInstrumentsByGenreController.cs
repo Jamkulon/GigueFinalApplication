@@ -79,9 +79,10 @@ namespace GigueService.Controllers
                             AppUserId = AU.AppUserId,
                             LastName = AU.LastName,
                             FirstName = AU.FirstName,
-                            IsMusicianForHire = AU.IsMusicianForHire,
+                            IsMusician = AU.IsMusician,
                             MusicianId = MM.MusicianId,
                             StageName = MM.StageName,
+                            IsMusicianForHire =MM.IsMusicianForHire,
                             vmInstruments = vmInsts
                         };
                         vmMIGs.Add(vmMIG);

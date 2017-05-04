@@ -7,9 +7,8 @@ using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Tracing;
 using Microsoft.Azure.Mobile.Server.Config;
+using GigueService.Services;
 //===========================================================
-
-
 
 namespace GigueService.Controllers
 {
@@ -19,64 +18,90 @@ namespace GigueService.Controllers
     [MobileAppController]
     public class AppUserController : ApiController
     {
-        //===========================================================================================
+        //=================================================================================
         //Fields.
-        //===========================================================================================
-
-        // GET api/values
-        //
-        //===========================================================================================
+        //=================================================================================
+        public AppUserService service;
+        public Repo repo;
+        public GigueContext db;
+        //=================================================================================
         //Properties.
-        public Repo _repo;
-        //===========================================================================================
+        //=================================================================================
+        //=================================================================================
         //Constructor().
+        //=================================================================================
         public AppUserController()
         {
+            db = new GigueContext();
+            repo = new Repo(db);
+            service = new AppUserService(repo, db);
 
         }
-        //===========================================================================================
-        [Route("api/AppUser/{id}")]
+        //=================================================================================
+        //Methods()
+        //=================================================================================
+        [HttpGet]
+        public List<AppUser> Get()
+        {
+            try
+            {
+                var users = service.GetUsers();
+                return users;
+            }
+            catch
+            {
+                BadRequest("No data found to match request");
+            }
+            return null;
+        }
+        //=================================================================================
+        [Route("api/appuser/{id}")]
         [HttpGet]
         public vmAppUser Get(int id)
         {
-            //===========================================================================================
-            //get data test
-            GigueContext db = new GigueContext();
-            Repo repos = new Repo(db);
-            var user = repos.Query<AppUser>().Where(a => a.AppUserId == id).FirstOrDefault();
-
-
-            var au = new vmAppUser
+            try
             {
-                AppUserId = user.AppUserId,
-                UserName = user.UserName,
-                LastName = user.LastName,
-                FirstName = user.FirstName,
-                City = user.City,
-                State = user.State,
-                PostalCode = user.PostalCode,
-                Email = user.Email,
-                ReceiveAdvertisements = user.ReceiveAdvertisements,
-                IsMusicianForHire = user.IsMusicianForHire
+                var user = service.GetUserById(id);
+                return user;
+            }
+            catch
+            {
+                BadRequest("No data found to match request");
+            }
+            return null;
 
-            };
-            return au;
         }
-
-
+        //=================================================================================
         // POST: api/AppUser
-        public void Post([FromBody]string value)
+        public void Post([FromBody]AppUser user)
         {
+            if (ModelState.IsValid)
+            {
+                service.AddUser(user);
+            }
+            else
+            {
+                BadRequest();
+            }
         }
-
         // PUT: api/AppUser/5
         public void Put(int id, [FromBody]string value)
         {
         }
-
+        //=================================================================================
         // DELETE: api/AppUser/5
         public void Delete(int id)
         {
+            try
+            {
+                service.RemoveUSer(id);
+            }
+            catch
+            {
+                BadRequest("No data found to match request");
+            }
         }
+        //=================================================================================
+
     }
 }

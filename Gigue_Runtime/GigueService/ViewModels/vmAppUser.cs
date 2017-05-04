@@ -16,6 +16,6 @@ namespace GigueService.ViewModels
         public string PostalCode { get; set; }
         public string Email { get; set; }
         public bool? ReceiveAdvertisements { get; set; }
-        public bool? IsMusicianForHire { get; set; }
+        public bool? IsMusician { get; set; }
     }
 }

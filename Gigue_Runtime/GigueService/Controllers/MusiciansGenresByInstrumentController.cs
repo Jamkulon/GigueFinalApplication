@@ -82,7 +82,7 @@ namespace GigueService.Controllers
                         AppUserId = AU.AppUserId,
                         LastName = AU.LastName,
                         FirstName = AU.FirstName,
-                        IsMusicianForHire = AU.IsMusicianForHire,
+                        IsMusician = AU.IsMusician,
                         MusicianId = Mus.MusicianId,
                         StageName = Mus.StageName,
                         vmGenres = vmGGs

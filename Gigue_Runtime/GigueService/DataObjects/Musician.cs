@@ -14,6 +14,7 @@ namespace GigueService.Models
         public string Biography { get; set; }
         public decimal? Rate { get; set; }
         public int? Rating { get; set; }
+        public bool?  IsMusicianForHire { get; set; }
         public ICollection<UserMusician> Users { get; set; }
         public ICollection<UserFavoriteMusician> FavoriteMusicians { get; set; }
         public ICollection<UserMusicianRating> MusicianRatings { get; set; }
