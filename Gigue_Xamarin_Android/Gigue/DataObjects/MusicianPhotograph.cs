@@ -1,10 +1,13 @@
 ﻿namespace Gigue.DataObjects
 {
-    class MusicianPhotograph
+
+    public class MusicianPhotograph
     {
         public int MusicianId { get; set; }
         public ThisMusician Musician { get; set; }
         public int PhotographId { get; set; }
         public Photograph Photograph { get; set; }
+        public bool? IsPrimary { get; set; }
+
     }
 }

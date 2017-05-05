@@ -10,8 +10,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android;
-using Gigue.Activities;
 using Android.Views.InputMethods;
+using Gigue.Adapters;
+using Gigue.Activities;
 
 namespace Gigue
 {
@@ -20,12 +21,14 @@ namespace Gigue
     {
         EditText mFirstName;
         EditText mLastName;
-        EditText mUserName;
+        EditText mEmailName;
         EditText mPassword;
         Button mMusician;
         Button mUser;
 
-          RelativeLayout mRelativeLayout;
+        public UserData userdata = new UserData();
+
+        RelativeLayout mRelativeLayout;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -34,25 +37,41 @@ namespace Gigue
 
             mFirstName = FindViewById<EditText>(Resource.Id.txtFirstName);
             mLastName = FindViewById<EditText>(Resource.Id.txtLastName);
-            mUserName = FindViewById<EditText>(Resource.Id.txtUserName);
+            mEmailName = FindViewById<EditText>(Resource.Id.txtEmailName);
             mPassword = FindViewById<EditText>(Resource.Id.txtPassword);
             mMusician = FindViewById<Button>(Resource.Id.btnMusician);
             mUser = FindViewById<Button>(Resource.Id.btnUser);
             mMusician.Click += mMusician_Click;
             mUser.Click += mUser_Click;
             // Create your application here
+
         }
 
        
 
-        void mMusician_Click(object sender, EventArgs e)
+        async void mMusician_Click(object sender, EventArgs e)
         {
+            // Build appuser object
+            DataObjects.AppUser itemToAdd = new DataObjects.AppUser
+            {
+                FirstName = mFirstName.Text.Trim(),
+                LastName = mLastName.Text.Trim(),
+                Email = mEmailName.Text.Trim()
+            };
+
+            //send post request
+            await userdata.AddAppUser(itemToAdd);
+
+            //Switch to Musician Profile
             Intent intent = new Intent(this, typeof(createMusicianProfile));
 
             this.StartActivity(intent);
         }
         void mUser_Click(object sender, EventArgs e)
         {
+
+
+            //Switch to  User Profile
             Intent intent = new Intent(this, typeof(createUserProfile));
 
             this.StartActivity(intent);

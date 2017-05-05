@@ -29,7 +29,7 @@ namespace Gigue.Activities
         private async void GetUsers()
         {
             var listText = FindViewById<ListView>(Resource.Id.SearchResultListView);
-            var userinfo = await userdata.GetUsers();
+            var userinfo = await userdata.GetAppUsers();
             var users = new List<string>();
             foreach (var u in userinfo)
             {

@@ -2086,7 +2086,7 @@ namespace Gigue
 			
 			// aapt resource value: 0x7f0b008e
 			public const int linearLayout1 = 2131427470;
-			
+
 			// aapt resource value: 0x7f0b0082
 			public const int linearLayout2 = 2131427458;
 			
