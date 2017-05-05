@@ -12,5 +12,7 @@ namespace GigueService.Models
         public Musician Musician { get; set; }
         public int PhotographId { get; set; }
         public Photograph Photograph { get; set; }
+        public bool? IsPrimary { get; set; }
+
     }
 }

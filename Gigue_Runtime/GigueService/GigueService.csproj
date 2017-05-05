@@ -219,6 +219,10 @@
     <Compile Include="Migrations\201705042101440_start9.Designer.cs">
       <DependentUpon>201705042101440_start9.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705051846367_AddIsPrimary.cs" />
+    <Compile Include="Migrations\201705051846367_AddIsPrimary.Designer.cs">
+      <DependentUpon>201705051846367_AddIsPrimary.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repository\Repo.cs" />
     <Compile Include="Controllers\TestController.cs" />
@@ -295,6 +299,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201705042101440_start9.resx">
       <DependentUpon>201705042101440_start9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705051846367_AddIsPrimary.resx">
+      <DependentUpon>201705051846367_AddIsPrimary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

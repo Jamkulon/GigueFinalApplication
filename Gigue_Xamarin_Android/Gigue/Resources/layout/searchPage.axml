@@ -10,4 +10,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btnResults" />
+    <Button
+        android:text="View My Profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnViewProfile" />
 </LinearLayout>
