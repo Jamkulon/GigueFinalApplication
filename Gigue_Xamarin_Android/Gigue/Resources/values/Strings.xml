@@ -43,34 +43,20 @@
   <!--Cities Array-->
   <string name="cities_prompt">Choose Your City</string>
   <string-array name="cities_array">
-    <item>Alabama</item>
-    <item>Arizona</item>
-    <item>Arkansas</item>
-    <item>California</item>
-    <item>Colorado</item>
-    <item>Connecticut</item>
-    <item>Deleware</item>
-    <item>Alaska</item>
-    <item>Arizona</item>
-    <item>California</item>
-    <item>Nevada</item>
-    <item>New York</item>
-    <item>Oregon</item>
-    <item>South Dakota</item>
-    <item>Alaska</item>
-    <item>Arizona</item>
-    <item>California</item>
-    <item>Nevada</item>
-    <item>New York</item>
-    <item>Oregon</item>
-    <item>South Dakota</item>
-    <item>Alaska</item>
-    <item>Arizona</item>
-    <item>California</item>
-    <item>Nevada</item>
-    <item>New York</item>
-    <item>Oregon</item>
-    <item>South Dakota</item>
+    <item>Phoenix</item>
+    <item>Chandler</item>
+    <item>Mesa</item>
+    <item>Flagstaff</item>
+    
+  </string-array>
+
+  <string name="zip_prompt">Choose Your Zip Code</string>
+  <string-array name="zip_array">
+    <item>85055</item>
+    <item>99653</item>
+    <item>85021</item>
+    <item>85054</item>
+
   </string-array>
   
 </resources>
