@@ -15,7 +15,7 @@ using Android.Views.InputMethods;
 
 namespace Gigue
 {
-    [Activity(Label = "RegistrationActivity")]
+    [Activity(Label = "Register")]
     public class RegistrationActivity : Activity
     {
         EditText mFirstName;

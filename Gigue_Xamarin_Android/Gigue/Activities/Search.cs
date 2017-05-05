@@ -17,6 +17,7 @@ namespace Gigue.Activities
     {
 
         Button mSearchResults;
+        Button mViewProfile;
         
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -27,11 +28,19 @@ namespace Gigue.Activities
             mSearchResults = FindViewById<Button>(Resource.Id.btnResults);
             mSearchResults.Click += mSearchResults_Click;
 
+            mViewProfile = FindViewById<Button>(Resource.Id.btnViewProfile);
+            mViewProfile.Click += mViewProfile_Click;
+
             // Create your application here
         }
         void mSearchResults_Click(object sender, EventArgs r)
         {
             Intent intent = new Intent(this, typeof(searchResults));
+            this.StartActivity(intent);
+        }
+        void mViewProfile_Click(object sender, EventArgs r)
+        {
+            Intent intent = new Intent(this, typeof(MusicianProfile));
             this.StartActivity(intent);
         }
     }

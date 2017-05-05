@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Gigue.Activities
 {
-    [Activity(Label = "createMusicianProfile")]
+    [Activity(Label = "Create Your Musician Profile")]
     public class createMusicianProfile : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

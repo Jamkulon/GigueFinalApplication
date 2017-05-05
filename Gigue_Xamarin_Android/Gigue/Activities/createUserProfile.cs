@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Gigue.Activities
 {
-    [Activity(Label = "createUserProfile")]
+    [Activity(Label = "Create Your User Profile")]
     public class createUserProfile : Activity
     {
         protected override void OnCreate(Bundle Bundle)
