@@ -12,5 +12,7 @@ namespace GigueService.Models
         public Musician Musician { get; set; }
         public int SpokenLanguageId { get; set; }
         public SpokenLanguage SpokenLanguage { get; set; }
+        public bool? IsPrimary { get; set; }
+
     }
 }
