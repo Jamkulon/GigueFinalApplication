@@ -7,5 +7,6 @@ namespace Gigue.DataObjects
         public int SpokenLanguageId { get; set; }
         public string Language { get; set; }
         public ICollection<MusicianLanguage> MusicianLanguages { get; set; }
+
     }
 }

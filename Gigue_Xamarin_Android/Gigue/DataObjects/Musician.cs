@@ -2,7 +2,7 @@
 
 namespace Gigue.DataObjects
 {
-    public class Musician
+    public class Musician 
     {
         public int MusicianId { get; set; }
         public string StageName { get; set; }
@@ -10,6 +10,7 @@ namespace Gigue.DataObjects
         public string Biography { get; set; }
         public decimal? Rate { get; set; }
         public int? Rating { get; set; }
+        public bool?  IsMusicianForHire { get; set; }
         public ICollection<UserMusician> Users { get; set; }
         public ICollection<UserFavoriteMusician> FavoriteMusicians { get; set; }
         public ICollection<UserMusicianRating> MusicianRatings { get; set; }

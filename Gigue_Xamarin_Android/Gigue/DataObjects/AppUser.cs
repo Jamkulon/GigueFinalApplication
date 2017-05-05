@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 
 namespace Gigue.DataObjects
-
 {
-    public class AppUser
+    public class AppUser 
     {
         public int AppUserId { get; set; }
         public string UserName { get; set; }
@@ -14,8 +13,8 @@ namespace Gigue.DataObjects
         public string PostalCode { get; set; }
         public string Email { get; set; }
         public bool? ReceiveAdvertisements { get; set; }
-        public bool? IsMusicianForHire { get; set; }
-        public ICollection<UserMusician> UserMusicians { get; set; }
+        public bool? IsMusician { get; set; }
+        public ICollection<UserMusician> Musicians { get; set; }
         public ICollection<UserFavoriteMusician> UserFavoriteMusicians { get; set; }
         public ICollection<UserMusicianRating> UserMusicianRatings { get; set; }
     }

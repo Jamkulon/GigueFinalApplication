@@ -1,6 +1,6 @@
 ﻿namespace Gigue.DataObjects
 {
-    public class UserFavoriteMusician
+    public class UserFavoriteMusician 
     {
         public int AppUserId { get; set; }
         public AppUser AppUser { get; set; }

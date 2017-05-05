@@ -4,6 +4,7 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using Gigue.DataObjects;
 using System.Text;
+using System.Net.Http.Headers;
 using System;
 
 namespace Gigue.Adapters
@@ -16,8 +17,11 @@ namespace Gigue.Adapters
         private async Task<HttpClient> GetClient()
         {
             HttpClient client = new HttpClient();
-            client.DefaultRequestHeaders.Add("Accept", "application/json");
+            //client.DefaultRequestHeaders.Add("Accept", "application/json");
+            client.BaseAddress = new Uri(applicationURL);
             client.DefaultRequestHeaders.Add("ZUMO-API-VERSION", "2.0.0");
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
             return client;
         }
@@ -49,6 +53,7 @@ namespace Gigue.Adapters
         // Post new appuser
         public async Task<string> AddAppUser(AppUser itemToAdd)
         {
+
             HttpClient client = await GetClient();
             var data = JsonConvert.SerializeObject(itemToAdd);
             var content = new StringContent(data, Encoding.UTF8, "application/json");
@@ -56,6 +61,7 @@ namespace Gigue.Adapters
             //var result = JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
             var result = response.Content.ReadAsStringAsync().Result;
             return result;
+
         }
 
         // Update by Id
