@@ -22,9 +22,9 @@ namespace Gigue.Activities
             SetContentView(Resource.Layout.CreateUserProfile);
 
             //spinner class
-            Spinner stateSpinner = FindViewById<Spinner>(Resource.Id.spinner);
-            Spinner citySpinner = FindViewById<Spinner>(Resource.Id.spinner2);
-            Spinner zipCodeSpinner = FindViewById<Spinner>(Resource.Id.spinner3);
+            Spinner stateSpinner = FindViewById<Spinner>(Resource.Id.spinnerState);
+            Spinner citySpinner = FindViewById<Spinner>(Resource.Id.spinnerCity);
+            Spinner zipCodeSpinner = FindViewById<Spinner>(Resource.Id.spinnerZip);
 
 
             //state spinner
@@ -57,7 +57,7 @@ namespace Gigue.Activities
         {
             Spinner spinner = (Spinner)sender;
 
-            string toast = string.Format("The {0}", spinner.GetItemAtPosition(e.Position));
+            string toast = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
             Toast.MakeText(this, toast, ToastLength.Long).Show();
         }
     }
