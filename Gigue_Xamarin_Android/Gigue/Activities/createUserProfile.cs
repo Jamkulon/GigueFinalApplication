@@ -15,30 +15,41 @@ namespace Gigue.Activities
     [Activity(Label = "createUserProfile")]
     public class createUserProfile : Activity
     {
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected override void OnCreate(Bundle Bundle)
         {
-            base.OnCreate(savedInstanceState);
+            base.OnCreate(Bundle);
 
             SetContentView(Resource.Layout.CreateUserProfile);
 
             //spinner class
-            Spinner spinner = FindViewById<Spinner>(Resource.Id.spinner);
+            Spinner stateSpinner = FindViewById<Spinner>(Resource.Id.spinnerState);
+            Spinner citySpinner = FindViewById<Spinner>(Resource.Id.spinnerCity);
+            Spinner zipCodeSpinner = FindViewById<Spinner>(Resource.Id.spinnerZip);
+
 
             //state spinner
-            spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs> (spinner_ItemSelected);
+            stateSpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs> (spinner_ItemSelected);
             var StateAdapter = ArrayAdapter.CreateFromResource(
                     this, Resource.Array.states_array, Android.Resource.Layout.SimpleSpinnerItem);
 
             StateAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            spinner.Adapter = StateAdapter;
+            stateSpinner.Adapter = StateAdapter;
 
             //city spinner
-            spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+            citySpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
             var CityAdapter = ArrayAdapter.CreateFromResource(
                     this, Resource.Array.cities_array, Android.Resource.Layout.SimpleSpinnerItem);
 
             CityAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            spinner.Adapter = CityAdapter;
+            citySpinner.Adapter = CityAdapter;
+
+            //Zip Code Spinner Adapter
+            zipCodeSpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+            var zipCodeAdapter = ArrayAdapter.CreateFromResource(
+                    this, Resource.Array.zip_array, Android.Resource.Layout.SimpleSpinnerItem);
+
+            zipCodeAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            zipCodeSpinner.Adapter = zipCodeAdapter;
             // Create your application here
         }
 
@@ -46,7 +57,7 @@ namespace Gigue.Activities
         {
             Spinner spinner = (Spinner)sender;
 
-            string toast = string.Format("The {0}", spinner.GetItemAtPosition(e.Position));
+            string toast = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
             Toast.MakeText(this, toast, ToastLength.Long).Show();
         }
     }

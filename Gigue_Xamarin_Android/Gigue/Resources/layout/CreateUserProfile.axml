@@ -32,16 +32,16 @@
         android:layout_height="wrap_content"
         android:id="@+id/editUserEmailAddress" />
 <!--Select User City-->
-  <TextView
-       android:layout_width="fill_parent"
-       android:layout_height="wrap_content"
-       android:layout_marginTop="10dip"
-       android:text="@string/cities_prompt" />
-  <Spinner
-      android:id="@+id/spinner"
-      android:layout_width="fill_parent"
-      android:layout_height="wrap_content"
-      android:prompt="@string/cities_prompt" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:text="@string/cities_prompt" />
+    <Spinner
+        android:id="@+id/spinnerCity"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/cities_prompt" />
 <!--Select User State-->
     <TextView
         android:layout_width="fill_parent"
@@ -49,15 +49,21 @@
         android:layout_marginTop="10dip"
         android:text="@string/state_prompt" />
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinnerState"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:prompt="@string/state_prompt" />
 <!--Select User Zip Code-->
-    <Spinner
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/UserZipCode" />
+        android:layout_marginTop="10dip"
+        android:text="@string/zip_prompt" />
+    <Spinner
+        android:id="@+id/spinnerZip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/zip_prompt" />
 <!--Submit User Profile Button-->
     <Button
         android:text="Submit Profile"

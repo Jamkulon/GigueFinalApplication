@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">Gigue</string>
-    <string name="add_textbox_hint">Add a todo item</string>
-    <string name="add_button_text">Add</string>
-    <string name="mobile_services">Azure App Service</string>
-    <string name="menu_refresh">Refresh</string>
-    <string name="checkbox_text">Item Text</string>
+  <string name="app_name">Gigue</string>
+  <string name="add_textbox_hint">Add a todo item</string>
+  <string name="add_button_text">Add</string>
+  <string name="mobile_services">Azure App Service</string>
+  <string name="menu_refresh">Refresh</string>
+  <string name="checkbox_text">Item Text</string>
 
-  <!--//Choose a state Spinner List-->
+  <!--//Choose a state Array-->
   <string name="state_prompt">Choose Your State</string>
   <string-array name="states_array">
     <item>Alabama</item>
@@ -38,39 +38,52 @@
     <item>New York</item>
     <item>Oregon</item>
     <item>South Dakota</item>
-     </string-array>
-  
-  <!--Cities Array-->
+  </string-array>
+
+  <!--Select Cities Array-->
   <string name="cities_prompt">Choose Your City</string>
   <string-array name="cities_array">
-    <item>Alabama</item>
-    <item>Arizona</item>
-    <item>Arkansas</item>
-    <item>California</item>
-    <item>Colorado</item>
-    <item>Connecticut</item>
-    <item>Deleware</item>
-    <item>Alaska</item>
-    <item>Arizona</item>
-    <item>California</item>
-    <item>Nevada</item>
-    <item>New York</item>
-    <item>Oregon</item>
-    <item>South Dakota</item>
-    <item>Alaska</item>
-    <item>Arizona</item>
-    <item>California</item>
-    <item>Nevada</item>
-    <item>New York</item>
-    <item>Oregon</item>
-    <item>South Dakota</item>
-    <item>Alaska</item>
-    <item>Arizona</item>
-    <item>California</item>
-    <item>Nevada</item>
-    <item>New York</item>
-    <item>Oregon</item>
-    <item>South Dakota</item>
+    <item>Phoenix</item>
+    <item>Chandler</item>
+    <item>Mesa</item>
+    <item>Flagstaff</item>
   </string-array>
-  
+
+  <!--Select Zip Code Array-->
+  <string name="zip_prompt">Choose Your Zip Code</string>
+  <string-array name="zip_array">
+    <item>85055</item>
+    <item>99653</item>
+    <item>85021</item>
+    <item>85054</item>
+  </string-array>
+
+  <!--Select Instrument Array-->
+  <string name="instrument_prompt">Choose Your Primary Instrument</string>
+  <string-array name="instrument_array">
+    <item>Bass Guitar</item>
+    <item>Electric Guitar</item>
+    <item>Drums</item>
+    <item>Lead Vocals</item>
+  </string-array>
+
+  <!--Select Music Genre Array-->
+  <string name="genre_prompt">Choose Your Primary Genre</string>
+  <string-array name="genre_array">
+    <item>Rock</item>
+    <item>Jazz</item>
+    <item>Zydeco</item>
+    <item>Country</item>
+  </string-array>
+
+
+  <!--Select Music Genre Array-->
+  <string name="language_prompt">Choose Your Primary Language</string>
+  <string-array name="language_array">
+    <item>English</item>
+    <item>Spanish</item>
+    <item>Italian</item>
+    <item>Edu</item>
+  </string-array>
+
 </resources>
