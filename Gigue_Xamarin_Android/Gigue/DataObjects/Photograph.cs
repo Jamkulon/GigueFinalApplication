@@ -2,7 +2,7 @@
 
 namespace Gigue.DataObjects
 {
-    class Photograph
+    public class Photograph
     {
         public int PhotographId { get; set; }
         public string PhotographURL { get; set; }

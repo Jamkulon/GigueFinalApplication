@@ -2,7 +2,7 @@
 
 namespace Gigue.DataObjects
 {
-    class SpokenLanguage
+    public class SpokenLanguage
     {
         public int SpokenLanguageId { get; set; }
         public string Language { get; set; }

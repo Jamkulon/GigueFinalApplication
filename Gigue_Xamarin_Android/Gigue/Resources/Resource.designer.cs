@@ -1823,8 +1823,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0b0061
 			public const int LinearLayout1 = 2131427425;
 			
-			// aapt resource value: 0x7f0b00a4
-			public const int SearchResultListView = 2131427492;
+			// aapt resource value: 0x7f0b00a5
+			public const int SearchResultListView = 2131427493;
 			
 			// aapt resource value: 0x7f0b0081
 			public const int UserZipCode = 2131427457;
@@ -1901,17 +1901,17 @@ namespace Gigue
 			// aapt resource value: 0x7f0b008a
 			public const int btnLogin = 2131427466;
 			
-			// aapt resource value: 0x7f0b00a0
-			public const int btnMusician = 2131427488;
+			// aapt resource value: 0x7f0b00a1
+			public const int btnMusician = 2131427489;
 			
 			// aapt resource value: 0x7f0b008d
 			public const int btnRegister = 2131427469;
 			
-			// aapt resource value: 0x7f0b00a3
-			public const int btnResults = 2131427491;
+			// aapt resource value: 0x7f0b00a4
+			public const int btnResults = 2131427492;
 			
-			// aapt resource value: 0x7f0b00a1
-			public const int btnUser = 2131427489;
+			// aapt resource value: 0x7f0b00a2
+			public const int btnUser = 2131427490;
 			
 			// aapt resource value: 0x7f0b0025
 			public const int button = 2131427365;
@@ -1943,8 +1943,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0b008b
 			public const int checkBox1 = 2131427467;
 			
-			// aapt resource value: 0x7f0b00a2
-			public const int checkToDoItem = 2131427490;
+			// aapt resource value: 0x7f0b00a3
+			public const int checkToDoItem = 2131427491;
 			
 			// aapt resource value: 0x7f0b004a
 			public const int checkbox = 2131427402;
@@ -2072,8 +2072,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0b0099
 			public const int line3 = 2131427481;
 			
-			// aapt resource value: 0x7f0b009f
-			public const int linearLayout1 = 2131427487;
+			// aapt resource value: 0x7f0b00a0
+			public const int linearLayout1 = 2131427488;
 			
 			// aapt resource value: 0x7f0b0084
 			public const int linearLayout2 = 2131427460;
@@ -2093,8 +2093,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0b0093
 			public const int media_actions = 2131427475;
 			
-			// aapt resource value: 0x7f0b00a5
-			public const int menu_refresh = 2131427493;
+			// aapt resource value: 0x7f0b00a6
+			public const int menu_refresh = 2131427494;
 			
 			// aapt resource value: 0x7f0b008f
 			public const int messenger_send_button = 2131427471;
@@ -2290,6 +2290,9 @@ namespace Gigue
 			
 			// aapt resource value: 0x7f0b003f
 			public const int topPanel = 2131427391;
+			
+			// aapt resource value: 0x7f0b009f
+			public const int txtEmailName = 2131427487;
 			
 			// aapt resource value: 0x7f0b009d
 			public const int txtFirstName = 2131427485;
