@@ -12,5 +12,7 @@ namespace GigueService.Models
         public Musician Musician { get; set; }
         public int GenreId { get; set; }
         public Genre Genre { get; set; }
+        public bool? IsPrimary { get; set; }
+
     }
 }
