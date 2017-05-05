@@ -10,8 +10,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android;
-using Gigue.Activities;
 using Android.Views.InputMethods;
+using Gigue.Adapters;
+using Gigue.Activities;
 
 namespace Gigue
 {
@@ -25,7 +26,9 @@ namespace Gigue
         Button mMusician;
         Button mUser;
 
-          RelativeLayout mRelativeLayout;
+        public UserData userdata = new UserData();
+
+        RelativeLayout mRelativeLayout;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -46,25 +49,29 @@ namespace Gigue
 
        
 
-        void mMusician_Click(object sender, EventArgs e)
+        async void mMusician_Click(object sender, EventArgs e)
         {
-            //// Build appuser object
-            //AppUser itemToAdd = new AppUser
-            //{
-            //    FirstName = mFirstName.Text.Trim(),
-            //    LastName = mLastName.Text.Trim(),
-            //    Email = mEmailName.Text.Trim()
-            //}; 
+            // Build appuser object
+            DataObjects.AppUser itemToAdd = new DataObjects.AppUser
+            {
+                FirstName = mFirstName.Text.Trim(),
+                LastName = mLastName.Text.Trim(),
+                Email = mEmailName.Text.Trim()
+            };
 
-            ////send post request
-            //await 
+            //send post request
+            await userdata.AddAppUser(itemToAdd);
 
+            //Switch to Musician Profile
             Intent intent = new Intent(this, typeof(createMusicianProfile));
 
             this.StartActivity(intent);
         }
         void mUser_Click(object sender, EventArgs e)
         {
+
+
+            //Switch to  User Profile
             Intent intent = new Intent(this, typeof(createUserProfile));
 
             this.StartActivity(intent);

@@ -19,17 +19,16 @@ namespace Gigue.Adapters
             client.DefaultRequestHeaders.Add("Accept", "application/json");
             client.DefaultRequestHeaders.Add("ZUMO-API-VERSION", "2.0.0");
 
-
             return client;
         }
 
         // Get data parse into list
-        public async Task<List<AppUser>> GetUsers()
+        public async Task<List<AppUser>> GetAppUsers()
         {
             // Create http client
             HttpClient client = await GetClient();
             // Use GET to retrieve users
-            var result = await client.GetStringAsync(string.Concat(applicationURL, "appuser"));
+            var result = await client.GetStringAsync(string.Concat(applicationURL, "appuser/"));
             // Deserialize JSON Object
             var userdata = JsonConvert.DeserializeObject<List<AppUser>>(result);
             // Parse data into newUsers and return it
@@ -40,25 +39,22 @@ namespace Gigue.Adapters
                 {
                     AppUserId = user.AppUserId,
                     UserName = user.UserName
-
                 };
                 newUsers.Add(user);
             }
-
             return newUsers;
         }
 
 
         // Post new appuser
-        public async Task<int> AddAppUserItemAsync(AppUser itemToAdd)
+        public async Task<string> AddAppUser(AppUser itemToAdd)
         {
             HttpClient client = await GetClient();
             var data = JsonConvert.SerializeObject(itemToAdd);
             var content = new StringContent(data, Encoding.UTF8, "application/json");
-            var response = await client.PostAsync(applicationURL, content);
-            var result = JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
-            Console.WriteLine(result);
-            Console.ReadKey();
+            var response = await client.PostAsync(string.Concat(applicationURL, "appuser/"), content);
+            //var result = JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
+            var result = response.Content.ReadAsStringAsync().Result;
             return result;
         }
 
