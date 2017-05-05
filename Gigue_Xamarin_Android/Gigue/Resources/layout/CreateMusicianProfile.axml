@@ -31,37 +31,74 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editEmailAddress" />
-<!--Select State-->
-    <Spinner
-        android:hint="select your state"
-        android:layout_width="match_parent"
+<!--Select User City-->
+    <TextView
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/spinnerState" />
-<!--Select City-->
+        android:layout_marginTop="10dip"
+        android:text="@string/cities_prompt" />
     <Spinner
-        android:layout_width="match_parent"
+        android:id="@+id/spinnerCity"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/spinnerCity" />
-<!--Select ZipCode-->
+        android:prompt="@string/cities_prompt" />
+<!--Select User State-->
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:text="@string/state_prompt" />
     <Spinner
-        android:layout_width="match_parent"
+        android:id="@+id/spinnerState"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/spinnerZipCode" />
+        android:prompt="@string/state_prompt" />
+<!--Select User Zip Code-->
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:text="@string/zip_prompt" />
+    <Spinner
+        android:id="@+id/spinnerZip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/zip_prompt" />
 <!--Select Instruments You Play-->
-    <Spinner
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/spinnerInstrumentsPlayed" />
-<!--Select Styles of Music You Play-->
+        android:layout_marginTop="10dip"
+        android:text="What is your PRIMARY Instrument?" />
     <Spinner
-        android:layout_width="match_parent"
+        android:id="@+id/spinnerInstrumentPlayed"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/spinnerMusicGenres" />
+        android:prompt="@string/instrument_prompt" />
+<!--Select Your Primary Music Style-->
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:text="What is your PRIMARY Music Genre?" />
+    <Spinner
+        android:id="@+id/spinnerMusicGenres"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/genre_prompt" />
 <!--Select Languages You Speak-->
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/spinnerLanguagesSpoken" />
+  <TextView
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dip"
+      android:text="What is your PRIMARY Language Spoken?" />
+  <Spinner
+      android:id="@+id/spinnerLanguagesSpoken"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:prompt="@string/language_prompt" />
+  
+  <!--Submit Profile Button-->
     <Button
         android:text="Submit Your Profile and Join Our Community"
         android:layout_width="match_parent"
