@@ -32,7 +32,7 @@ namespace Gigue.Activities
 
         private MobileServiceClient client;
 
-        const string applicationURL = @"https://gigue.azurewebsites.net/api/user/2";
+        const string applicationURL = @"https://gigue.azurewebsites.net/api/";
 
         protected override void OnCreate(Bundle bundle)
         {
