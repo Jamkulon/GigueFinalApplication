@@ -12,8 +12,8 @@ using Android.Widget;
 
 namespace Gigue.Activities
 {
-    [Activity(Label = "Profile for James Kulon")]
-    public class musicianProfile : Activity
+    [Activity(Label = "Profile for:")]
+    public class MusicianProfile : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
