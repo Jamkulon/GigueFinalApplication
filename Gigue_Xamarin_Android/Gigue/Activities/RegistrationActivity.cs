@@ -37,7 +37,7 @@ namespace Gigue
 
             mFirstName = FindViewById<EditText>(Resource.Id.txtFirstName);
             mLastName = FindViewById<EditText>(Resource.Id.txtLastName);
-            mEmailName = FindViewById<EditText>(Resource.Id.txtEmailName);
+            //mEmailName = FindViewById<EditText>(Resource.Id.txtEmailName);
             mPassword = FindViewById<EditText>(Resource.Id.txtPassword);
             mMusician = FindViewById<Button>(Resource.Id.btnMusician);
             mUser = FindViewById<Button>(Resource.Id.btnUser);
