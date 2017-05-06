@@ -2060,8 +2060,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0a0065
 			public const int LinearLayout1 = 2131361893;
 			
-			// aapt resource value: 0x7f0a00b3
-			public const int SearchResultListView = 2131361971;
+			// aapt resource value: 0x7f0a00b4
+			public const int SearchResultListView = 2131361972;
 			
 			// aapt resource value: 0x7f0a0098
 			public const int action0 = 2131361944;
@@ -2150,20 +2150,20 @@ namespace Gigue
 			// aapt resource value: 0x7f0a008e
 			public const int btnLogin = 2131361934;
 			
-			// aapt resource value: 0x7f0a00ae
-			public const int btnMusician = 2131361966;
+			// aapt resource value: 0x7f0a00af
+			public const int btnMusician = 2131361967;
 			
 			// aapt resource value: 0x7f0a0091
 			public const int btnRegister = 2131361937;
 			
-			// aapt resource value: 0x7f0a00b1
-			public const int btnResults = 2131361969;
-			
-			// aapt resource value: 0x7f0a00af
-			public const int btnUser = 2131361967;
-			
 			// aapt resource value: 0x7f0a00b2
-			public const int btnViewProfile = 2131361970;
+			public const int btnResults = 2131361970;
+			
+			// aapt resource value: 0x7f0a00b0
+			public const int btnUser = 2131361968;
+			
+			// aapt resource value: 0x7f0a00b3
+			public const int btnViewProfile = 2131361971;
 			
 			// aapt resource value: 0x7f0a000d
 			public const int button = 2131361805;
@@ -2195,8 +2195,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0a008f
 			public const int checkBox1 = 2131361935;
 			
-			// aapt resource value: 0x7f0a00b0
-			public const int checkToDoItem = 2131361968;
+			// aapt resource value: 0x7f0a00b1
+			public const int checkToDoItem = 2131361969;
 			
 			// aapt resource value: 0x7f0a004d
 			public const int checkbox = 2131361869;
@@ -2354,8 +2354,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0a009b
 			public const int media_actions = 2131361947;
 			
-			// aapt resource value: 0x7f0a00b4
-			public const int menu_refresh = 2131361972;
+			// aapt resource value: 0x7f0a00b5
+			public const int menu_refresh = 2131361973;
 			
 			// aapt resource value: 0x7f0a0093
 			public const int messenger_send_button = 2131361939;
@@ -2572,6 +2572,9 @@ namespace Gigue
 			
 			// aapt resource value: 0x7f0a0048
 			public const int topPanel = 2131361864;
+			
+			// aapt resource value: 0x7f0a00ae
+			public const int txtEmail = 2131361966;
 			
 			// aapt resource value: 0x7f0a00ac
 			public const int txtFirstName = 2131361964;
