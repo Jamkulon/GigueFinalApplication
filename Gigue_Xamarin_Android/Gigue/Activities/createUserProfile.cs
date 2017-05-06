@@ -57,8 +57,8 @@ namespace Gigue.Activities
         {
             Spinner spinner = (Spinner)sender;
 
-            string toast = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
-            Toast.MakeText(this, toast, ToastLength.Long).Show();
+            //string toast = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
+            //Toast.MakeText(this, toast, ToastLength.Long).Show();
         }
     }
 }
