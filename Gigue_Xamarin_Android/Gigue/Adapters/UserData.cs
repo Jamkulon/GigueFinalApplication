@@ -11,8 +11,8 @@ namespace Gigue.Adapters
 {
     public class UserData
     {
-        const string applicationURL = "http://gigue.azurewebsites.net/api/";
-
+        const string applicationURL = "https://gigue.azurewebsites.net/api/";
+        
         // Add configuration information to http client
         private async Task<HttpClient> GetClient()
         {
@@ -51,34 +51,37 @@ namespace Gigue.Adapters
 
 
         // Post new appuser
-        public async Task<string> AddAppUser(AppUser itemToAdd)
+        public async Task<bool> AddAppUser(AppUser itemToAdd)
         {
-
+            // Create http client
             HttpClient client = await GetClient();
+            //Serialize object to JSON
             var data = JsonConvert.SerializeObject(itemToAdd);
+            //Convert it to a formated stringcontent byte array
             var content = new StringContent(data, Encoding.UTF8, "application/json");
+            //Send the data
             var response = await client.PostAsync(string.Concat(applicationURL, "appuser/"), content);
-            //var result = JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
-            var result = response.Content.ReadAsStringAsync().Result;
-            return result;
+            //Return the response status as bool
+            return response.IsSuccessStatusCode;
 
         }
 
         // Update by Id
-        public async Task<int> UpdateTodoItemAsync(int itemIndex, AppUser itemToUpdate)
+        public async Task<bool> UpdateTodoItemAsync(int itemIndex, AppUser itemToUpdate)
         {
             HttpClient client = await GetClient();
             var data = JsonConvert.SerializeObject(itemToUpdate);
             var content = new StringContent(data, Encoding.UTF8, "application/json");
             var response = await client.PutAsync(string.Concat(applicationURL, itemIndex), content);
-            return JsonConvert.DeserializeObject<int>(response.Content.ReadAsStringAsync().Result);
+            return response.IsSuccessStatusCode;
         }
 
         // Delete by Id
-        public async Task DeleteTodoItemAsync(int itemIndex)
+        public async Task<bool> DeleteTodoItemAsync(int itemIndex)
         {
             HttpClient client = await GetClient();
-            await client.DeleteAsync(string.Concat(applicationURL, itemIndex));
+            var response = await client.DeleteAsync(string.Concat(applicationURL, itemIndex));
+            return response.IsSuccessStatusCode;
         }
 
     }

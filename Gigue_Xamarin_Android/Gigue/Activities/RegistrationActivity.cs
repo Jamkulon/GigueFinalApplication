@@ -54,14 +54,25 @@ namespace Gigue
             // Build appuser object
             DataObjects.AppUser itemToAdd = new DataObjects.AppUser
             {
+                //AppUserId = 0,
+                //UserName = "",
+                //LastName = mLastName.Text.Trim(),
+                //FirstName = mFirstName.Text.Trim(),
+                //City = "",
+                //State = "",
+                //PostalCode = "",
+                //Email = mEmailName.Text.Trim(),
+                //ReceiveAdvertisements = false,
+                //IsMusician = false
+
                 AppUserId = 0,
                 UserName = "",
-                LastName = mLastName.Text.Trim(),
-                FirstName = mFirstName.Text.Trim(),
+                LastName = "Jones",
+                FirstName = "Tom",
                 City = "",
                 State = "",
                 PostalCode = "",
-                Email = mEmailName.Text.Trim(),
+                Email = "itsnotunusual@gmail.com",
                 ReceiveAdvertisements = false,
                 IsMusician = false
             };
