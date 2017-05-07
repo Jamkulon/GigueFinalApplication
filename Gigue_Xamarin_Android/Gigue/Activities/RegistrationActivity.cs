@@ -43,20 +43,27 @@ namespace Gigue
             mUser = FindViewById<Button>(Resource.Id.btnUser);
             mMusician.Click += mMusician_Click;
             mUser.Click += mUser_Click;
-            // Create your application here
 
+            // Create your application here
         }
 
-       
+
 
         async void mMusician_Click(object sender, EventArgs e)
         {
             // Build appuser object
             DataObjects.AppUser itemToAdd = new DataObjects.AppUser
             {
-                FirstName = mFirstName.Text.Trim(),
+                AppUserId = 0,
+                UserName = "",
                 LastName = mLastName.Text.Trim(),
-                Email = mEmailName.Text.Trim()
+                FirstName = mFirstName.Text.Trim(),
+                City = "",
+                State = "",
+                PostalCode = "",
+                Email = mEmailName.Text.Trim(),
+                ReceiveAdvertisements = false,
+                IsMusician = false
             };
 
             //send post request
