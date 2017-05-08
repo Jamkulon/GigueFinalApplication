@@ -20,6 +20,9 @@ namespace Gigue
     [Activity(Label = "Registration")]
     public class RegistrationActivity : Activity
     {
+
+        RelativeLayout rRelativeLayout;
+
         EditText mFirstName;
         EditText mLastName;
         EditText mEmailName;
@@ -44,6 +47,9 @@ namespace Gigue
             mUser = FindViewById<Button>(Resource.Id.btnUser);
             mMusician.Click += mMusician_Click;
             mUser.Click += mUser_Click;
+
+            rRelativeLayout = FindViewById<RelativeLayout>(Resource.Id.mainView);
+            rRelativeLayout.Click += rRelativeLayout_Click;
 
             // Create your application here
         }
@@ -77,14 +83,13 @@ namespace Gigue
         }
         void mUser_Click(object sender, EventArgs e)
         {
-
-
             //Switch to  User Profile
             Intent intent = new Intent(this, typeof(createUserProfile));
 
             this.StartActivity(intent);
+            this.OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);
         }
-        void mRelativeLayout_Click(object sender, EventArgs e)
+        void rRelativeLayout_Click(object sender, EventArgs e)
         {
             InputMethodManager inputManager = (InputMethodManager)this.GetSystemService(Activity.InputMethodService);
             inputManager.HideSoftInputFromWindow(this.CurrentFocus.WindowToken, HideSoftInputFlags.None);
