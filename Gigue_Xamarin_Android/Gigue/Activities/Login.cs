@@ -44,21 +44,16 @@ namespace Gigue.Activities
             mUsername = FindViewById<EditText>(Resource.Id.txtUserName);
             mButton = FindViewById<Button>(Resource.Id.btnLogin);
             mRegister = FindViewById<Button>(Resource.Id.btnRegister);
-            mBrowse = FindViewById<Button>(Resource.Id.btnBrowse);
+           
             mButton.Click += mButton_Click;
             mRelativeLayout.Click += mRelativeLayout_Click;
             mRegister.Click += mRegister_Click;
-            mBrowse.Click += mBrowse_Click;
+            
             
 
         }
 
-        //Browse Button Click
-        void mBrowse_Click(object sender, EventArgs r)
-        {
-            Intent intent = new Intent(this, typeof(Browse));
-            this.StartActivity(intent);
-        }
+    
         //Register Button Click
         void mRegister_Click(object sender, EventArgs r)
         {

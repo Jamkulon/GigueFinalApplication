@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF4500">
+    android:background="#A9A9A9">
 <!--Enter First Name-->
     <TextView
         android:text="Create Your Musician Profile"
@@ -87,18 +87,17 @@
         android:layout_height="wrap_content"
         android:prompt="@string/genre_prompt" />
 <!--Select Languages You Speak-->
-  <TextView
-      android:layout_width="fill_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="10dip"
-      android:text="What is your PRIMARY Language Spoken?" />
-  <Spinner
-      android:id="@+id/spinnerLanguagesSpoken"
-      android:layout_width="fill_parent"
-      android:layout_height="wrap_content"
-      android:prompt="@string/language_prompt" />
-  
-  <!--Submit Profile Button-->
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:text="What is your PRIMARY Language Spoken?" />
+    <Spinner
+        android:id="@+id/spinnerLanguagesSpoken"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/language_prompt" />
+<!--Submit Profile Button-->
     <Button
         android:text="Submit Your Profile and Join Our Community"
         android:layout_width="match_parent"
