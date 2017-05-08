@@ -224,6 +224,10 @@
     <Compile Include="Migrations\201705051846367_AddIsPrimary.Designer.cs">
       <DependentUpon>201705051846367_AddIsPrimary.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705082158574_addpassword2.cs" />
+    <Compile Include="Migrations\201705082158574_addpassword2.Designer.cs">
+      <DependentUpon>201705082158574_addpassword2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repository\Repo.cs" />
     <Compile Include="Controllers\TestController.cs" />
@@ -303,6 +307,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705051846367_AddIsPrimary.resx">
       <DependentUpon>201705051846367_AddIsPrimary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705082158574_addpassword2.resx">
+      <DependentUpon>201705082158574_addpassword2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
