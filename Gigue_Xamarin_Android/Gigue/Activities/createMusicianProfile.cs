@@ -19,6 +19,10 @@ namespace Gigue.Activities
         {
             base.OnCreate(savedInstanceState);
 
+            String mFirstName = Intent.GetStringExtra("FirstName");
+            String mLastName = Intent.GetStringExtra("LastName");
+            String mEmail = Intent.GetStringExtra("Email");
+
             SetContentView(Resource.Layout.CreateMusicianProfile);
             // Spinners for 
 
