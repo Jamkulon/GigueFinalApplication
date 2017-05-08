@@ -72,7 +72,9 @@ namespace Gigue
 
             //Switch to Musician Profile
             Intent intent = new Intent(this, typeof(createMusicianProfile));
-
+            intent.PutExtra("LastName", mLastName.Text.Trim());
+            intent.PutExtra("FirstName", mFirstName.Text.Trim());
+            intent.PutExtra("Email", mEmailName.Text.Trim());
             this.StartActivity(intent);
         }
         void mUser_Click(object sender, EventArgs e)
