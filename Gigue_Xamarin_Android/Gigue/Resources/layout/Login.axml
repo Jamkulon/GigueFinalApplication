@@ -82,15 +82,5 @@
             android:layout_marginRight="40dp"
             android:backgroundTint="#000"
             android:textColor="#FFA500" />
-        <Button
-            android:text="Browse Musicians"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnBrowse"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:backgroundTint="#000"
-            android:textColor="#FFA500"
-            android:layout_marginBottom="10.5dp" />
     </LinearLayout>
 </RelativeLayout>

@@ -2144,9 +2144,6 @@ namespace Gigue
 			// aapt resource value: 0x7f0a000c
 			public const int box_count = 2131361804;
 			
-			// aapt resource value: 0x7f0a0092
-			public const int btnBrowse = 2131361938;
-			
 			// aapt resource value: 0x7f0a008e
 			public const int btnLogin = 2131361934;
 			
@@ -2333,8 +2330,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0a00a9
 			public const int line3 = 2131361961;
 			
-			// aapt resource value: 0x7f0a0094
-			public const int linearLayout1 = 2131361940;
+			// aapt resource value: 0x7f0a0093
+			public const int linearLayout1 = 2131361939;
 			
 			// aapt resource value: 0x7f0a0088
 			public const int linearLayout2 = 2131361928;
@@ -2357,8 +2354,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0a00b5
 			public const int menu_refresh = 2131361973;
 			
-			// aapt resource value: 0x7f0a0093
-			public const int messenger_send_button = 2131361939;
+			// aapt resource value: 0x7f0a0092
+			public const int messenger_send_button = 2131361938;
 			
 			// aapt resource value: 0x7f0a002d
 			public const int middle = 2131361837;
@@ -2527,6 +2524,9 @@ namespace Gigue
 			
 			// aapt resource value: 0x7f0a0061
 			public const int submit_area = 2131361889;
+			
+			// aapt resource value: 0x7f0a0094
+			public const int switch1 = 2131361940;
 			
 			// aapt resource value: 0x7f0a001c
 			public const int tabMode = 2131361820;
