@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF4500">
+    android:background="#7f7fff">
 <!--Enter User First Name-->
     <TextView
         android:text="Create Your User Profile"

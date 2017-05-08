@@ -2171,20 +2171,20 @@ namespace Gigue
 			// aapt resource value: 0x7f0a000d
 			public const int button = 2131361805;
 			
-			// aapt resource value: 0x7f0a0082
-			public const int button1 = 2131361922;
+			// aapt resource value: 0x7f0a0083
+			public const int button1 = 2131361923;
 			
 			// aapt resource value: 0x7f0a0068
 			public const int buttonAddToDo = 2131361896;
 			
-			// aapt resource value: 0x7f0a0089
-			public const int buttonLoginPage = 2131361929;
+			// aapt resource value: 0x7f0a008a
+			public const int buttonLoginPage = 2131361930;
 			
 			// aapt resource value: 0x7f0a003d
 			public const int buttonPanel = 2131361853;
 			
-			// aapt resource value: 0x7f0a008a
-			public const int buttonRegisterPage = 2131361930;
+			// aapt resource value: 0x7f0a008b
+			public const int buttonRegisterPage = 2131361931;
 			
 			// aapt resource value: 0x7f0a0097
 			public const int cancel_action = 2131361943;
@@ -2264,23 +2264,23 @@ namespace Gigue
 			// aapt resource value: 0x7f0a0016
 			public const int display_always = 2131361814;
 			
-			// aapt resource value: 0x7f0a007b
-			public const int editEmailAddress = 2131361915;
-			
-			// aapt resource value: 0x7f0a0079
-			public const int editFirstName = 2131361913;
+			// aapt resource value: 0x7f0a007c
+			public const int editEmailAddress = 2131361916;
 			
 			// aapt resource value: 0x7f0a007a
-			public const int editLastName = 2131361914;
+			public const int editFirstName = 2131361914;
 			
-			// aapt resource value: 0x7f0a0085
-			public const int editUserEmailAddress = 2131361925;
+			// aapt resource value: 0x7f0a007b
+			public const int editLastName = 2131361915;
 			
-			// aapt resource value: 0x7f0a0083
-			public const int editUserFirstName = 2131361923;
+			// aapt resource value: 0x7f0a0086
+			public const int editUserEmailAddress = 2131361926;
 			
 			// aapt resource value: 0x7f0a0084
-			public const int editUserLastName = 2131361924;
+			public const int editUserFirstName = 2131361924;
+			
+			// aapt resource value: 0x7f0a0085
+			public const int editUserLastName = 2131361925;
 			
 			// aapt resource value: 0x7f0a0058
 			public const int edit_query = 2131361880;
@@ -2339,8 +2339,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0a0091
 			public const int linearLayout1 = 2131361937;
 			
-			// aapt resource value: 0x7f0a0088
-			public const int linearLayout2 = 2131361928;
+			// aapt resource value: 0x7f0a0089
+			public const int linearLayout2 = 2131361929;
 			
 			// aapt resource value: 0x7f0a001b
 			public const int listMode = 2131361819;
@@ -2351,8 +2351,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0a003a
 			public const int list_item = 2131361850;
 			
-			// aapt resource value: 0x7f0a008b
-			public const int mainView = 2131361931;
+			// aapt resource value: 0x7f0a0078
+			public const int mainView = 2131361912;
 			
 			// aapt resource value: 0x7f0a0099
 			public const int media_actions = 2131361945;
@@ -2411,8 +2411,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0a004f
 			public const int radio = 2131361871;
 			
-			// aapt resource value: 0x7f0a0087
-			public const int relativeLayout1 = 2131361927;
+			// aapt resource value: 0x7f0a0088
+			public const int relativeLayout1 = 2131361928;
 			
 			// aapt resource value: 0x7f0a0014
 			public const int right = 2131361812;
@@ -2486,23 +2486,23 @@ namespace Gigue
 			// aapt resource value: 0x7f0a003e
 			public const int spacer = 2131361854;
 			
-			// aapt resource value: 0x7f0a007c
-			public const int spinnerCity = 2131361916;
-			
-			// aapt resource value: 0x7f0a007f
-			public const int spinnerInstrumentPlayed = 2131361919;
-			
-			// aapt resource value: 0x7f0a0081
-			public const int spinnerLanguagesSpoken = 2131361921;
+			// aapt resource value: 0x7f0a007d
+			public const int spinnerCity = 2131361917;
 			
 			// aapt resource value: 0x7f0a0080
-			public const int spinnerMusicGenres = 2131361920;
+			public const int spinnerInstrumentPlayed = 2131361920;
 			
-			// aapt resource value: 0x7f0a007d
-			public const int spinnerState = 2131361917;
+			// aapt resource value: 0x7f0a0082
+			public const int spinnerLanguagesSpoken = 2131361922;
+			
+			// aapt resource value: 0x7f0a0081
+			public const int spinnerMusicGenres = 2131361921;
 			
 			// aapt resource value: 0x7f0a007e
-			public const int spinnerZip = 2131361918;
+			public const int spinnerState = 2131361918;
+			
+			// aapt resource value: 0x7f0a007f
+			public const int spinnerZip = 2131361919;
 			
 			// aapt resource value: 0x7f0a0007
 			public const int split_action_bar = 2131361799;
@@ -2525,8 +2525,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0a0050
 			public const int submenuarrow = 2131361872;
 			
-			// aapt resource value: 0x7f0a0086
-			public const int submitUserProfile = 2131361926;
+			// aapt resource value: 0x7f0a0087
+			public const int submitUserProfile = 2131361927;
 			
 			// aapt resource value: 0x7f0a0061
 			public const int submit_area = 2131361889;
@@ -2552,8 +2552,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0a0043
 			public const int textSpacerNoTitle = 2131361859;
 			
-			// aapt resource value: 0x7f0a0078
-			public const int textView1 = 2131361912;
+			// aapt resource value: 0x7f0a0079
+			public const int textView1 = 2131361913;
 			
 			// aapt resource value: 0x7f0a0066
 			public const int textViewTitle = 2131361894;
