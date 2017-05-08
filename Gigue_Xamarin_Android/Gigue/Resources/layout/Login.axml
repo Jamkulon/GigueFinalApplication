@@ -66,6 +66,7 @@
             android:layout_marginLeft="100dp"
             android:layout_marginRight="100dp"
             android:gravity="center"
+
             android:button="@drawable/checkbox_style"
             android:textStyle="bold"
             android:typeface="serif"

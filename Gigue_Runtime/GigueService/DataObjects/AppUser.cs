@@ -18,7 +18,7 @@ namespace GigueService.Models
         public string Email { get; set; }
         public bool? ReceiveAdvertisements { get; set; }
         public bool? IsMusician { get; set; }
-        public ICollection<UserMusician> Musicians { get; set; }
+        public ICollection<UserMusician> UserMusicians { get; set; }
         public ICollection<UserFavoriteMusician> UserFavoriteMusicians { get; set; }
         public ICollection<UserMusicianRating> UserMusicianRatings { get; set; }
     }

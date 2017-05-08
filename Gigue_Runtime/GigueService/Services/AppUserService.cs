@@ -3,6 +3,8 @@ using GigueService.Models;
 using GigueService.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
@@ -57,11 +59,18 @@ namespace GigueService.Services
             return au;
         }
         //=================================================================
-        public void AddUser(AppUser user)
+        public void AddUser(vmAppUser user)
         {
-            if (user.AppUserId == 0)
+            var newUser = new AppUser
             {
-                _repo.Add(user);
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                AppUserId = user.AppUserId,
+                UserName = user.UserName
+            };
+            if (newUser.AppUserId == 0)
+            {
+                _repo.Add(newUser);
             }
             else
             {
@@ -75,5 +84,30 @@ namespace GigueService.Services
             _repo.Delete(user);
         }
         //=================================================================
+        //public void TestLog(vmAppUser user)
+        //{
+        //    try
+        //    {
+        //        var struser = Newtonsoft.Json.JsonConvert.SerializeObject(user);
+        //        using (var sqlConnection = new SqlConnection("Data Source=tcp:gigue.database.windows.net,1433;Initial Catalog=gigueDb;User ID=gigueadmin@gigue;Password=#DotNetCoders"))
+        //        {
+        //            //using (var sqlCommand = new SqlCommand("INSERT INTO [dbo].[xxxx] ( [Id] ,[Stuff] ) VALUES ( @Id, convert(nvarchar(500), @stuff))", sqlConnection))
+        //            using (var sqlCommand = new SqlCommand("  INSERT INTO [dbo].[TestLog] ([Description],[Log]) VALUES ('payload',@struser)", sqlConnection))
+        //            {
+        //                sqlCommand.CommandType = CommandType.Text;
+
+        //                //sqlCommand.Parameters.AddWithValue_Nullable("@Id", id);
+        //                sqlCommand.Parameters.AddWithValue("@struser", struser);
+
+        //                sqlConnection.Open();
+        //                sqlCommand.ExecuteNonQuery();
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw;
+        //    }
+        //}
     }
 }

@@ -22,7 +22,6 @@ namespace Gigue.Activities
     {
 
         RelativeLayout mRelativeLayout;
-
         Button mButton;
         EditText mUsername;
 
@@ -39,20 +38,16 @@ namespace Gigue.Activities
             mRelativeLayout = FindViewById<RelativeLayout>(Resource.Id.mainView);
             mUsername = FindViewById<EditText>(Resource.Id.txtUserName);
             mButton = FindViewById<Button>(Resource.Id.btnLogin);
-           
+
             mButton.Click += mButton_Click;
             mRelativeLayout.Click += mRelativeLayout_Click;
-            
-            
-
         }
-
 
         //Login Button Click
         void mButton_Click(object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(Search));
-           
+
             this.StartActivity(intent);
             this.OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);
         }

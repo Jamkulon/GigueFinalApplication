@@ -73,8 +73,10 @@ namespace GigueService.Controllers
         }
         //=================================================================================
         // POST: api/AppUser
-        public void Post([FromBody]AppUser user)
+        public void Post([FromBody]vmAppUser user)
         {
+            //service.TestLog(user);
+
             if (ModelState.IsValid)
             {
                 service.AddUser(user);
