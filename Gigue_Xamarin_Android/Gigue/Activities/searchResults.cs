@@ -22,9 +22,9 @@ namespace Gigue.Activities
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.SearchResults);
 
-            //GetUsers();
+            GetUsers();
           
-            AddUser();
+            //AddUser();
         }
 
         //get usersnames from list diplsy on activity
@@ -41,17 +41,17 @@ namespace Gigue.Activities
             listText.Adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, Android.Resource.Id.Text1, users);
         }
 
-        public async void AddUser()
-        {
+        //public async void AddUser()
+        //{
 
-            var user = new Gigue.DataObjects.AppUser
-            {
-                FirstName = "Kris",
-                LastName = "inniss",
-                UserName = "k@mail.com"
+        //    var user = new Gigue.DataObjects.AppUser
+        //    {
+        //        FirstName = "Kris",
+        //        LastName = "inniss",
+        //        UserName = "k@mail.com"
                 
-            };
-            await userdata.AddAppUser(user);
-        }
+        //    };
+        //    await userdata.AddAppUser(user);
+        //}
     }
 }

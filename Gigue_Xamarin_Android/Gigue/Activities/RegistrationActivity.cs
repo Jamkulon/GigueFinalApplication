@@ -13,6 +13,7 @@ using Android;
 using Android.Views.InputMethods;
 using Gigue.Adapters;
 using Gigue.Activities;
+using Gigue.ViewModels;
 
 namespace Gigue
 {
@@ -52,27 +53,16 @@ namespace Gigue
         async void mMusician_Click(object sender, EventArgs e)
         {
             // Build appuser object
-            DataObjects.AppUser itemToAdd = new DataObjects.AppUser
+            vmAppUser itemToAdd = new vmAppUser
             {
-                //AppUserId = 0,
-                //UserName = "",
-                //LastName = mLastName.Text.Trim(),
-                //FirstName = mFirstName.Text.Trim(),
-                //City = "",
-                //State = "",
-                //PostalCode = "",
-                //Email = mEmailName.Text.Trim(),
-                //ReceiveAdvertisements = false,
-                //IsMusician = false
-
                 AppUserId = 0,
                 UserName = "",
-                LastName = "Bonamassa",
-                FirstName = "Joe",
+                LastName = mLastName.Text.Trim(),
+                FirstName = mFirstName.Text.Trim(),
                 City = "",
                 State = "",
                 PostalCode = "",
-                Email = "jb@gmail.com",
+                Email = mEmailName.Text.Trim(),
                 ReceiveAdvertisements = false,
                 IsMusician = false
             };
