@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using System.Net.Http;
 using Newtonsoft.Json;
-using Gigue.DataObjects;
+using Gigue.ViewModels;
 using System.Text;
 using System.Net.Http.Headers;
 using System;
@@ -27,19 +27,19 @@ namespace Gigue.Adapters
         }
 
         // Get data parse into list
-        public async Task<List<AppUser>> GetAppUsers()
+        public async Task<List<vmAppUser>> GetAppUsers()
         {
             // Create http client
             HttpClient client = await GetClient();
             // Use GET to retrieve users
             var result = await client.GetStringAsync(string.Concat(applicationURL, "appuser/"));
             // Deserialize JSON Object
-            var userdata = JsonConvert.DeserializeObject<List<AppUser>>(result);
+            var userdata = JsonConvert.DeserializeObject<List<vmAppUser>>(result);
             // Parse data into newUsers and return it
-            var newUsers = new List<AppUser>();
+            var newUsers = new List<vmAppUser>();
             foreach (var user in userdata)
             {
-                var newuser = new AppUser()
+                var newuser = new vmAppUser()
                 {
                     AppUserId = user.AppUserId,
                     UserName = user.UserName
@@ -51,7 +51,7 @@ namespace Gigue.Adapters
 
 
         // Post new appuser
-        public async Task<bool> AddAppUser(AppUser itemToAdd)
+        public async Task<bool> AddAppUser(vmAppUser itemToAdd)
         {
             // Create http client
             HttpClient client = await GetClient();
@@ -67,7 +67,7 @@ namespace Gigue.Adapters
         }
 
         // Update by Id
-        public async Task<bool> UpdateTodoItemAsync(int itemIndex, AppUser itemToUpdate)
+        public async Task<bool> UpdateTodoItemAsync(int itemIndex, vmAppUser itemToUpdate)
         {
             HttpClient client = await GetClient();
             var data = JsonConvert.SerializeObject(itemToUpdate);

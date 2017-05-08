@@ -219,6 +219,7 @@
     <Compile Include="ToDoItem.cs" />
     <Compile Include="ToDoItemAdapter.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="ViewModels\vmAppUser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
