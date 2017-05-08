@@ -67,12 +67,12 @@ namespace Gigue
 
                 AppUserId = 0,
                 UserName = "",
-                LastName = "Jones",
-                FirstName = "Tom",
+                LastName = "Bonamassa",
+                FirstName = "Joe",
                 City = "",
                 State = "",
                 PostalCode = "",
-                Email = "itsnotunusual@gmail.com",
+                Email = "jb@gmail.com",
                 ReceiveAdvertisements = false,
                 IsMusician = false
             };
