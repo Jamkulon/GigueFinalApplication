@@ -16,7 +16,7 @@ using Gigue.Activities;
 
 namespace Gigue
 {
-    [Activity(Label = "Register")]
+    [Activity(Label = "Registration")]
     public class RegistrationActivity : Activity
     {
         EditText mFirstName;

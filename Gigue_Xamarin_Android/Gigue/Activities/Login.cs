@@ -24,7 +24,6 @@ namespace Gigue.Activities
         RelativeLayout mRelativeLayout;
         Button mButton;
         EditText mUsername;
-        Button mRegister;
 
         //private MobileServiceClient client;
 
@@ -39,6 +38,7 @@ namespace Gigue.Activities
             mRelativeLayout = FindViewById<RelativeLayout>(Resource.Id.mainView);
             mUsername = FindViewById<EditText>(Resource.Id.txtUserName);
             mButton = FindViewById<Button>(Resource.Id.btnLogin);
+
             mButton.Click += mButton_Click;
             mRelativeLayout.Click += mRelativeLayout_Click;
         }
