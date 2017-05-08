@@ -26,10 +26,6 @@ namespace Gigue.Activities
         Button mButton;
         EditText mUsername;
 
-        Button mRegister;
-
-        Button mBrowse;
-
         //private MobileServiceClient client;
 
         const string applicationURL = @"https://gigue.azurewebsites.net/api/";
@@ -43,23 +39,14 @@ namespace Gigue.Activities
             mRelativeLayout = FindViewById<RelativeLayout>(Resource.Id.mainView);
             mUsername = FindViewById<EditText>(Resource.Id.txtUserName);
             mButton = FindViewById<Button>(Resource.Id.btnLogin);
-            mRegister = FindViewById<Button>(Resource.Id.btnRegister);
            
             mButton.Click += mButton_Click;
             mRelativeLayout.Click += mRelativeLayout_Click;
-            mRegister.Click += mRegister_Click;
             
             
 
         }
 
-    
-        //Register Button Click
-        void mRegister_Click(object sender, EventArgs r)
-        {
-            Intent intent = new Intent(this, typeof(RegistrationActivity));
-            this.StartActivity(intent);
-        }
 
         //Login Button Click
         void mButton_Click(object sender, EventArgs e)

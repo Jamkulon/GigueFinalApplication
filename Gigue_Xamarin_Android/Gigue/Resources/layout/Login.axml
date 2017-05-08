@@ -6,14 +6,16 @@
     android:focusable="true"
     android:id="@+id/mainView"
     android:clickable="true"
-    android:background="@drawable/dierdre5">
+    android:background="#171717">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="125dp"
-        android:text="Please Log In"
+        android:text="PLEASE LOGIN"
         android:gravity="center"
-        android:textColor="#FFA500"
-        android:textSize="40sp" />
+        android:textColor="#f2854b"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:typeface="serif" />
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -51,7 +53,10 @@
             android:layout_marginTop="20dp"
             android:layout_marginRight="40dp"
             android:layout_marginLeft="40dp"
-            android:background="@drawable/button_email_style" />
+            android:background="@android:color/transparent"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:typeface="serif" />
         <CheckBox
             android:text="Remember Me"
             android:layout_width="match_parent"
@@ -61,26 +66,9 @@
             android:layout_marginLeft="100dp"
             android:layout_marginRight="100dp"
             android:gravity="center"
-            android:textColor="#FFA500"
-            android:button="@drawable/checkbox_style" />
-        <TextView
-            android:text="Don' Have an Account?"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textOr"
-            android:textColor="#FFA500"
-            android:gravity="center"
+            android:button="@drawable/checkbox_style"
             android:textStyle="bold"
-            android:typeface="serif" />
-        <Button
-            android:text="Register As a New User"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnRegister"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:backgroundTint="#000"
-            android:textColor="#FFA500" />
+            android:typeface="serif"
+            android:textSize="16sp" />
     </LinearLayout>
 </RelativeLayout>

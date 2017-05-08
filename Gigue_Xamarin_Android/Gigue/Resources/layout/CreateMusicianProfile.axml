@@ -3,14 +3,18 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#A9A9A9">
+    android:background="#171717">
 <!--Enter First Name-->
     <TextView
-        android:text="Create Your Musician Profile"
+        android:text="CREATE A PROFILE"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView1" />
+        android:id="@+id/textView1"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:gravity="center"
+        android:textColor="#f2854b" />
     <EditText
         android:hint="Enter First Name"
         android:inputType="textPersonName"
@@ -99,8 +103,12 @@
         android:prompt="@string/language_prompt" />
 <!--Submit Profile Button-->
     <Button
-        android:text="Submit Your Profile and Join Our Community"
+        android:text="Submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button1" />
+        android:id="@+id/button1"
+        android:background="@android:color/transparent"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:textSize="16sp" />
 </LinearLayout>
