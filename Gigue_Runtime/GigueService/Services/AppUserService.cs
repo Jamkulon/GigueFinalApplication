@@ -47,6 +47,7 @@ namespace GigueService.Services
             {
                 AppUserId = user.AppUserId,
                 UserName = user.UserName,
+                PassWord = user.PassWord,
                 LastName = user.LastName,
                 FirstName = user.FirstName,
                 City = user.City,
@@ -78,7 +79,7 @@ namespace GigueService.Services
             }
         }
         //=================================================================
-        public void RemoveUSer(int id)
+        public void RemoveUser(int id)
         {
             var user = _repo.Query<AppUser>().Where(u => u.AppUserId == id);
             _repo.Delete(user);

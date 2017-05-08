@@ -96,7 +96,7 @@ namespace GigueService.Controllers
         {
             try
             {
-                service.RemoveUSer(id);
+                service.RemoveUser(id);
             }
             catch
             {
