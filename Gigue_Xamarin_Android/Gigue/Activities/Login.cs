@@ -30,7 +30,7 @@ namespace Gigue.Activities
 
         Button mBrowse;
 
-        private MobileServiceClient client;
+        //private MobileServiceClient client;
 
         const string applicationURL = @"https://gigue.azurewebsites.net/api/";
 

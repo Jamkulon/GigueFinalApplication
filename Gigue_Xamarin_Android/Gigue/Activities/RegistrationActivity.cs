@@ -28,7 +28,7 @@ namespace Gigue
 
         public UserData userdata = new UserData();
 
-        RelativeLayout mRelativeLayout;
+        //RelativeLayout mRelativeLayout;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
