@@ -79,24 +79,29 @@ namespace Gigue
 
             //Switch to Musician Profile
             Intent intent = new Intent(this, typeof(createMusicianProfile));
-            intent.PutExtra("LastName", mLastName.Text.Trim());
-            intent.PutExtra("FirstName", mFirstName.Text.Trim());
-            intent.PutExtra("Email", mEmailName.Text.Trim());
+
+            User user = new Gigue.User()
+            {
+                FirstName = mFirstName.Text.Trim(),
+                LastName = mLastName.Text.Trim(),
+                Email = mEmailName.Text.Trim()
+            };
+            intent.PutExtra("User", JsonConvert.SerializeObject(user));
+
             this.StartActivity(intent);
+            this.OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);
         }
+
         void mUser_Click(object sender, EventArgs e)
         {
             //Switch to  User Profile
             Intent intent = new Intent(this, typeof(createUserProfile));
 
-
-            //intent.PutExtra("FirstName", "James");
-            //intent.PutExtra("LastName", "Kulon");
             User user = new User()
             {
-                FirstName = mFirstName.Text,
-                LastName = mLastName.Text,
-                Email = mEmailName.Text
+                FirstName = mFirstName.Text.Trim(),
+                LastName = mLastName.Text.Trim(),
+                Email = mEmailName.Text.Trim()
             };
 
             intent.PutExtra("User", JsonConvert.SerializeObject(user));

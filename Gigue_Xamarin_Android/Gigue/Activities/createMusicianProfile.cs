@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Newtonsoft.Json;
 
 namespace Gigue.Activities
 {
@@ -17,13 +18,25 @@ namespace Gigue.Activities
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            EditText mRegisterFirst;
+            EditText mRegisterLast;
+            EditText mRegisteredEmail;
+            User mRegisteredUser;
+
             base.OnCreate(savedInstanceState);
 
-            String mFirstName = Intent.GetStringExtra("FirstName");
-            String mLastName = Intent.GetStringExtra("LastName");
-            String mEmail = Intent.GetStringExtra("Email");
-
             SetContentView(Resource.Layout.CreateMusicianProfile);
+
+            mRegisterFirst = FindViewById<EditText>(Resource.Id.editFirstName);
+            mRegisterLast = FindViewById<EditText>(Resource.Id.editLastName);
+            mRegisteredEmail = FindViewById<EditText>(Resource.Id.editEmailAddress);
+
+            mRegisteredUser = JsonConvert.DeserializeObject<User>(Intent.GetStringExtra("User"));
+
+            mRegisterFirst.Text = mRegisteredUser.FirstName.ToString();
+            mRegisterLast.Text = mRegisteredUser.LastName.ToString();
+            mRegisteredEmail.Text = mRegisteredUser.Email.ToString();
+
             // Spinners for 
 
             Spinner stateSpinner = FindViewById<Spinner>(Resource.Id.spinnerState);
