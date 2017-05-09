@@ -1985,73 +1985,79 @@ namespace Gigue
 			public const int James = 2130837624;
 			
 			// aapt resource value: 0x7f020079
-			public const int mericaband = 2130837625;
+			public const int Login_Style_Button = 2130837625;
 			
 			// aapt resource value: 0x7f02007a
-			public const int messenger_bubble_large_blue = 2130837626;
+			public const int mericaband = 2130837626;
 			
 			// aapt resource value: 0x7f02007b
-			public const int messenger_bubble_large_white = 2130837627;
+			public const int messenger_bubble_large_blue = 2130837627;
 			
 			// aapt resource value: 0x7f02007c
-			public const int messenger_bubble_small_blue = 2130837628;
+			public const int messenger_bubble_large_white = 2130837628;
 			
 			// aapt resource value: 0x7f02007d
-			public const int messenger_bubble_small_white = 2130837629;
+			public const int messenger_bubble_small_blue = 2130837629;
 			
 			// aapt resource value: 0x7f02007e
-			public const int messenger_button_blue_bg_round = 2130837630;
+			public const int messenger_bubble_small_white = 2130837630;
 			
 			// aapt resource value: 0x7f02007f
-			public const int messenger_button_blue_bg_selector = 2130837631;
+			public const int messenger_button_blue_bg_round = 2130837631;
 			
 			// aapt resource value: 0x7f020080
-			public const int messenger_button_send_round_shadow = 2130837632;
+			public const int messenger_button_blue_bg_selector = 2130837632;
 			
 			// aapt resource value: 0x7f020081
-			public const int messenger_button_white_bg_round = 2130837633;
+			public const int messenger_button_send_round_shadow = 2130837633;
 			
 			// aapt resource value: 0x7f020082
-			public const int messenger_button_white_bg_selector = 2130837634;
+			public const int messenger_button_white_bg_round = 2130837634;
 			
 			// aapt resource value: 0x7f020083
-			public const int notification_action_background = 2130837635;
+			public const int messenger_button_white_bg_selector = 2130837635;
 			
 			// aapt resource value: 0x7f020084
-			public const int notification_bg = 2130837636;
+			public const int notification_action_background = 2130837636;
 			
 			// aapt resource value: 0x7f020085
-			public const int notification_bg_low = 2130837637;
+			public const int notification_bg = 2130837637;
 			
 			// aapt resource value: 0x7f020086
-			public const int notification_bg_low_normal = 2130837638;
+			public const int notification_bg_low = 2130837638;
 			
 			// aapt resource value: 0x7f020087
-			public const int notification_bg_low_pressed = 2130837639;
+			public const int notification_bg_low_normal = 2130837639;
 			
 			// aapt resource value: 0x7f020088
-			public const int notification_bg_normal = 2130837640;
+			public const int notification_bg_low_pressed = 2130837640;
 			
 			// aapt resource value: 0x7f020089
-			public const int notification_bg_normal_pressed = 2130837641;
+			public const int notification_bg_normal = 2130837641;
 			
 			// aapt resource value: 0x7f02008a
-			public const int notification_icon_background = 2130837642;
-			
-			// aapt resource value: 0x7f02008e
-			public const int notification_template_icon_bg = 2130837646;
-			
-			// aapt resource value: 0x7f02008f
-			public const int notification_template_icon_low_bg = 2130837647;
+			public const int notification_bg_normal_pressed = 2130837642;
 			
 			// aapt resource value: 0x7f02008b
-			public const int notification_tile_bg = 2130837643;
+			public const int notification_icon_background = 2130837643;
+			
+			// aapt resource value: 0x7f020090
+			public const int notification_template_icon_bg = 2130837648;
+			
+			// aapt resource value: 0x7f020091
+			public const int notification_template_icon_low_bg = 2130837649;
 			
 			// aapt resource value: 0x7f02008c
-			public const int notify_panel_notification_icon_bg = 2130837644;
+			public const int notification_tile_bg = 2130837644;
 			
 			// aapt resource value: 0x7f02008d
-			public const int playingguitar = 2130837645;
+			public const int notify_panel_notification_icon_bg = 2130837645;
+			
+			// aapt resource value: 0x7f02008e
+			public const int playingguitar = 2130837646;
+			
+			// aapt resource value: 0x7f02008f
+			public const int rounded_search = 2130837647;
 			
 			static Drawable()
 			{
@@ -2069,8 +2075,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0a0065
 			public const int LinearLayout1 = 2131361893;
 			
-			// aapt resource value: 0x7f0a00b3
-			public const int SearchResultListView = 2131361971;
+			// aapt resource value: 0x7f0a00b5
+			public const int SearchResultListView = 2131361973;
 			
 			// aapt resource value: 0x7f0a0097
 			public const int action0 = 2131361943;
@@ -2159,14 +2165,14 @@ namespace Gigue
 			// aapt resource value: 0x7f0a00ae
 			public const int btnMusician = 2131361966;
 			
-			// aapt resource value: 0x7f0a00b1
-			public const int btnResults = 2131361969;
+			// aapt resource value: 0x7f0a00b3
+			public const int btnResults = 2131361971;
 			
 			// aapt resource value: 0x7f0a00af
 			public const int btnUser = 2131361967;
 			
-			// aapt resource value: 0x7f0a00b2
-			public const int btnViewProfile = 2131361970;
+			// aapt resource value: 0x7f0a00b4
+			public const int btnViewProfile = 2131361972;
 			
 			// aapt resource value: 0x7f0a000d
 			public const int button = 2131361805;
@@ -2357,8 +2363,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0a009a
 			public const int media_actions = 2131361946;
 			
-			// aapt resource value: 0x7f0a00b4
-			public const int menu_refresh = 2131361972;
+			// aapt resource value: 0x7f0a00b6
+			public const int menu_refresh = 2131361974;
 			
 			// aapt resource value: 0x7f0a0091
 			public const int messenger_send_button = 2131361937;
@@ -2437,6 +2443,12 @@ namespace Gigue
 			
 			// aapt resource value: 0x7f0a0079
 			public const int scrollView1 = 2131361913;
+			
+			// aapt resource value: 0x7f0a00b1
+			public const int searchView1 = 2131361969;
+			
+			// aapt resource value: 0x7f0a00b2
+			public const int searchView2 = 2131361970;
 			
 			// aapt resource value: 0x7f0a005a
 			public const int search_badge = 2131361882;

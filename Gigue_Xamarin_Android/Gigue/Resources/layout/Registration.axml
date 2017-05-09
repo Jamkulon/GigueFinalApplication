@@ -5,7 +5,8 @@
     android:focusable="true"
     android:id="@+id/mainView"
     android:clickable="true"
-    android:background="#7f7fff">
+    android:background="#424242">
+
     <ScrollView
         android:minWidth="25px"
         android:minHeight="25px"
@@ -18,9 +19,13 @@
             android:stretchColumns="1">
             <LinearLayout
                 android:orientation="vertical"
-                android:layout_width="357.0dp"
+
+                android:layout_width="361.0dp"
                 android:layout_height="533.5dp"
-                android:layout_centerInParent="true">
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:background="#424242">
+             
                 <TextView
                     android:text="REGISTRATION"
                     android:gravity="center"
@@ -33,22 +38,30 @@
                     android:layout_height="84.5dp" />
                 <EditText
                     android:id="@+id/txtFirstName"
+
                     android:inputType="textCapSentences"
+
                     android:background="@drawable/edit_text_style"
                     android:textColor="#FF4500"
                     android:hint="First Name"
                     android:textColorHint="#d3d3d3"
-                    android:layout_width="match_parent"
+
+                    android:layout_width="365.0dp"
+
                     android:layout_height="wrap_content"
                     android:layout_marginTop="50dp" />
                 <EditText
                     android:id="@+id/txtLastName"
+
                     android:inputType="textCapSentences"
+
                     android:background="@drawable/edit_text_style"
                     android:textColor="#FF4500"
                     android:hint="Last Name"
                     android:textColorHint="#d3d3d3"
-                    android:layout_width="match_parent"
+
+                    android:layout_width="365.0dp"
+
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp" />
                 <EditText
@@ -58,7 +71,9 @@
                     android:textColor="#FF4500"
                     android:hint="Email Address"
                     android:textColorHint="#d3d3d3"
-                    android:layout_width="match_parent"
+
+                    android:layout_width="365.0dp"
+
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp" />
                 <EditText
@@ -68,7 +83,9 @@
                     android:textColor="#FF4500"
                     android:hint="Password"
                     android:textColorHint="#d3d3d3"
-                    android:layout_width="match_parent"
+
+                    android:layout_width="365.0dp"
+
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp" />
                 <LinearLayout
@@ -83,20 +100,25 @@
                         android:layout_width="120dp"
                         android:layout_height="60dp"
                         android:id="@+id/btnMusician"
-                        android:background="@android:color/transparent"
+
+                        android:background="@drawable/Login_Style_Button"
                         android:textStyle="bold"
                         android:typeface="serif"
-                        android:textSize="16sp" />
+                        android:textSize="14sp" />
+
                     <Button
                         android:text="looking for a musician"
                         android:layout_width="120dp"
                         android:layout_height="60dp"
                         android:id="@+id/btnUser"
-                        android:background="@android:color/transparent"
-                        android:textSize="16sp"
+
+                        android:background="@drawable/Login_Style_Button"
+                        android:textSize="14sp"
                         android:textStyle="bold"
                         android:typeface="serif"
-                        android:layout_marginLeft="20dp" />
+                        android:layout_marginLeft="20dp"
+                        android:textColor="#ffffff" />
+
                 </LinearLayout>
             </LinearLayout>
         </TableLayout>

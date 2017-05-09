@@ -3,35 +3,58 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@android:color/background_light"
+    android:background="#424242"
     android:weightSum="100"
     android:minWidth="25px"
     android:minHeight="25px">
-
-  <ScrollView
-    android:minWidth="25px"
-    android:minHeight="25px"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/scrollView1">
-
-    <TableLayout
-      android:layout_width="fill_parent"
-      android:layout_height="fill_parent"
-      android:stretchColumns="1">
-      <Button
-          android:text="Search"
-          android:layout_width="match_parent"
-          android:layout_height="0dp"
-          android:layout_weight="15"
-          android:id="@+id/btnResults" />
-      <Button
-          android:text="View My Profile"
-          android:layout_width="match_parent"
-          android:layout_height="0dp"
-          android:layout_weight="15"
-          android:id="@+id/btnViewProfile" />
-
-    </TableLayout>
-  </ScrollView>
+    <ScrollView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView1">
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:stretchColumns="1">
+            <android.support.v7.widget.SearchView
+                android:id="@+id/searchView1" />
+            <TextView
+                android:text="SEARCH PAGE"
+                android:id="@+id/textView1"
+                android:gravity="center"
+                android:textColor="#f2854b"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:typeface="serif" />
+            <SearchView
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:id="@+id/searchView2"
+                android:background="@drawable/rounded_search"
+                android:gravity="center" />
+            <Button
+                android:text="Search"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="15"
+                android:id="@+id/btnResults"
+                android:background="@drawable/Login_Style_Button"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="100dp"
+                android:layout_marginTop="20dp"
+                android:textColor="#ffffff" />
+            <Button
+                android:text="View My Profile"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="15"
+                android:id="@+id/btnViewProfile"
+                android:background="@drawable/Login_Style_Button"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="100dp"
+                android:textColor="#ffffff" />
+        </TableLayout>
+    </ScrollView>
 </LinearLayout>

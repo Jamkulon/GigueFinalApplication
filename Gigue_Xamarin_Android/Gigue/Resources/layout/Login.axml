@@ -6,13 +6,13 @@
     android:focusable="true"
     android:id="@+id/mainView"
     android:clickable="true"
-    android:background="#7f7fff">
+    android:background="#424242">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="125dp"
         android:text="PLEASE LOGIN"
         android:gravity="center"
-        android:textColor="#000000"
+        android:textColor="#f2854b"
         android:textSize="40sp"
         android:textStyle="bold"
         android:typeface="serif" />
@@ -25,11 +25,11 @@
             android:id="@+id/txtUserName"
             android:inputType="textPersonName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="42.0dp"
             android:background="@drawable/edit_text_style"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="10dp"
             android:textColor="#FF4500"
             android:hint="username"
             android:textColorHint="#d3d3d3" />
@@ -37,26 +37,28 @@
             android:id="@+id/txtPassword"
             android:inputType="textPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="42.0dp"
             android:background="@drawable/edit_text_style"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:textColor="#FF4500"
             android:hint="password"
             android:textColorHint="#d3d3d3" />
         <Button
             android:id="@+id/btnLogin"
             android:text="Login"
-            android:layout_width="match_parent"
+            android:layout_width="145.5dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginRight="40dp"
             android:layout_marginLeft="40dp"
-            android:background="@android:color/transparent"
+            android:background="@drawable/Login_Style_Button"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:typeface="serif" />
+            android:typeface="serif"
+            android:layout_gravity="center"
+            android:textColor="#ffffff" />
         <CheckBox
             android:text="Remember Me"
             android:layout_width="match_parent"
@@ -69,6 +71,7 @@
             android:button="@drawable/checkbox_style"
             android:textStyle="bold"
             android:typeface="serif"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textColor="#ffffff" />
     </LinearLayout>
 </RelativeLayout>
