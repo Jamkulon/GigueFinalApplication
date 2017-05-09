@@ -92,8 +92,26 @@ namespace Gigue
             this.OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);
         }
 
-        void mUser_Click(object sender, EventArgs e)
+        async void mUser_Click(object sender, EventArgs e)
         {
+            // Build appuser object
+            vmAppUser itemToAdd = new vmAppUser
+            {
+                AppUserId = 0,
+                UserName = "",
+                LastName = mLastName.Text.Trim(),
+                FirstName = mFirstName.Text.Trim(),
+                City = "",
+                State = "",
+                PostalCode = "",
+                Email = mEmailName.Text.Trim(),
+                ReceiveAdvertisements = false,
+                IsMusician = false
+            };
+
+            //send post request
+            await userdata.AddAppUser(itemToAdd);
+
             //Switch to  User Profile
             Intent intent = new Intent(this, typeof(createUserProfile));
 

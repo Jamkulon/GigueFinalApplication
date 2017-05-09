@@ -64,10 +64,17 @@ namespace GigueService.Services
         {
             var newUser = new AppUser
             {
-                FirstName = user.FirstName,
-                LastName = user.LastName,
                 AppUserId = user.AppUserId,
-                UserName = user.UserName
+                UserName = user.UserName,
+                PassWord = user.PassWord,
+                LastName = user.LastName,
+                FirstName = user.FirstName,
+                City = user.City,
+                State = user.State,
+                PostalCode = user.PostalCode,
+                Email = user.Email,
+                ReceiveAdvertisements = user.ReceiveAdvertisements,
+                IsMusician = user.IsMusician
             };
             if (newUser.AppUserId == 0)
             {
