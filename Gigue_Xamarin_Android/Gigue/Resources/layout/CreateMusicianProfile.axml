@@ -6,7 +6,21 @@
     android:focusable="true"
     android:id="@+id/mainView"
     android:background="#7f7fff">
-<!--Enter First Name-->
+
+  <ScrollView
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/scrollView1">
+    
+    <TableLayout
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:stretchColumns="1">
+      
+      
+  <!--Enter First Name-->
     <TextView
         android:text="CREATE A PROFILE"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -113,4 +127,6 @@
         android:textStyle="bold"
         android:typeface="serif"
         android:textSize="16sp" />
+    </TableLayout>
+  </ScrollView>
 </LinearLayout>
