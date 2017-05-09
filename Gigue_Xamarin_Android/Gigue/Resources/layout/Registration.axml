@@ -6,100 +6,99 @@
     android:id="@+id/mainView"
     android:clickable="true"
     android:background="#7f7fff">
-  <ScrollView
-    android:minWidth="25px"
-    android:minHeight="25px"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/scrollView1">
-
-    <TableLayout
-      android:layout_width="fill_parent"
-      android:layout_height="fill_parent"
-      android:stretchColumns="1">
-      <LinearLayout
-          android:orientation="vertical"
-          android:layout_width="357.0dp"
-          android:layout_height="533.5dp"
-          android:layout_centerInParent="true">
-        <TextView
-            android:text="REGISTRATION"
-            android:gravity="center"
-            android:textColor="#f2854b"
-            android:textSize="40sp"
-            android:textStyle="bold"
-            android:typeface="serif"
-            android:layout_width="match_parent"
-            android:id="@+id/textView1"
-            android:layout_height="84.5dp" />
-        <EditText
-            android:id="@+id/txtFirstName"
-            android:inputType="textPersonName"
-            android:background="@drawable/edit_text_style"
-            android:textColor="#FF4500"
-            android:hint="First Name"
-            android:textColorHint="#d3d3d3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp" />
-        <EditText
-            android:id="@+id/txtLastName"
-            android:inputType="textPersonName"
-            android:background="@drawable/edit_text_style"
-            android:textColor="#FF4500"
-            android:hint="Last Name"
-            android:textColorHint="#d3d3d3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp" />
-        <EditText
-            android:id="@+id/txtEmail"
-            android:inputType="textEmailAddress"
-            android:background="@drawable/edit_text_style"
-            android:textColor="#FF4500"
-            android:hint="Email Address"
-            android:textColorHint="#d3d3d3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp" />
-        <EditText
-            android:id="@+id/txtPassword"
-            android:inputType="textPassword"
-            android:background="@drawable/edit_text_style"
-            android:textColor="#FF4500"
-            android:hint="Password"
-            android:textColorHint="#d3d3d3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp" />
-        <LinearLayout
-            android:orientation="horizontal"
-            android:id="@+id/linearLayout1"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="100dp">
-          <Button
-              android:text="looking for work"
-              android:layout_width="120dp"
-              android:layout_height="60dp"
-              android:id="@+id/btnMusician"
-              android:background="@android:color/transparent"
-              android:textStyle="bold"
-              android:typeface="serif"
-              android:textSize="16sp" />
-          <Button
-              android:text="looking for a musician"
-              android:layout_width="120dp"
-              android:layout_height="60dp"
-              android:id="@+id/btnUser"
-              android:background="@android:color/transparent"
-              android:textSize="16sp"
-              android:textStyle="bold"
-              android:typeface="serif"
-              android:layout_marginLeft="20dp" />
-        </LinearLayout>
-      </LinearLayout>
-    </TableLayout>
-  </ScrollView>
+    <ScrollView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView1">
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:stretchColumns="1">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="357.0dp"
+                android:layout_height="533.5dp"
+                android:layout_centerInParent="true">
+                <TextView
+                    android:text="REGISTRATION"
+                    android:gravity="center"
+                    android:textColor="#f2854b"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:layout_width="match_parent"
+                    android:id="@+id/textView1"
+                    android:layout_height="84.5dp" />
+                <EditText
+                    android:id="@+id/txtFirstName"
+                    android:inputType="textCapSentences"
+                    android:background="@drawable/edit_text_style"
+                    android:textColor="#FF4500"
+                    android:hint="First Name"
+                    android:textColorHint="#d3d3d3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp" />
+                <EditText
+                    android:id="@+id/txtLastName"
+                    android:inputType="textCapSentences"
+                    android:background="@drawable/edit_text_style"
+                    android:textColor="#FF4500"
+                    android:hint="Last Name"
+                    android:textColorHint="#d3d3d3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" />
+                <EditText
+                    android:id="@+id/txtEmail"
+                    android:inputType="textEmailAddress"
+                    android:background="@drawable/edit_text_style"
+                    android:textColor="#FF4500"
+                    android:hint="Email Address"
+                    android:textColorHint="#d3d3d3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" />
+                <EditText
+                    android:id="@+id/txtPassword"
+                    android:inputType="textPassword"
+                    android:background="@drawable/edit_text_style"
+                    android:textColor="#FF4500"
+                    android:hint="Password"
+                    android:textColorHint="#d3d3d3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:id="@+id/linearLayout1"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp">
+                    <Button
+                        android:text="looking for work"
+                        android:layout_width="120dp"
+                        android:layout_height="60dp"
+                        android:id="@+id/btnMusician"
+                        android:background="@android:color/transparent"
+                        android:textStyle="bold"
+                        android:typeface="serif"
+                        android:textSize="16sp" />
+                    <Button
+                        android:text="looking for a musician"
+                        android:layout_width="120dp"
+                        android:layout_height="60dp"
+                        android:id="@+id/btnUser"
+                        android:background="@android:color/transparent"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:typeface="serif"
+                        android:layout_marginLeft="20dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </TableLayout>
+    </ScrollView>
 </RelativeLayout>
