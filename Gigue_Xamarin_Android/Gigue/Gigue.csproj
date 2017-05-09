@@ -195,6 +195,7 @@
     <Compile Include="Activities\MusicianProfile.cs" />
     <Compile Include="Activities\Search.cs" />
     <Compile Include="Activities\searchResults.cs" />
+    <Compile Include="Activities\SplashScreen.cs" />
     <Compile Include="Activities\TestData.cs" />
     <Compile Include="Activities\Home.cs" />
     <Compile Include="Adapters\UserData.cs" />
@@ -252,6 +253,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\HomePage.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\splashScreen.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
