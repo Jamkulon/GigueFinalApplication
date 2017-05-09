@@ -9,17 +9,35 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Newtonsoft.Json;
 
 namespace Gigue.Activities
 {
     [Activity(Label = "Create Your User Profile")]
     public class createUserProfile : Activity
     {
+        EditText mRegisterFirst;
+        EditText mRegisterLast;
+        EditText mRegisteredEmail;
+        User mRegisteredUser;
+
         protected override void OnCreate(Bundle Bundle)
         {
             base.OnCreate(Bundle);
-
             SetContentView(Resource.Layout.CreateUserProfile);
+
+            mRegisterFirst = FindViewById<EditText>(Resource.Id.editUserFirstName);
+            mRegisterLast = FindViewById<EditText>(Resource.Id.editUserLastName);
+            mRegisteredEmail = FindViewById<EditText>(Resource.Id.editUserEmailAddress);
+
+            mRegisteredUser = JsonConvert.DeserializeObject<User>(Intent.GetStringExtra("User"));
+
+            mRegisterFirst.Text = mRegisteredUser.FirstName.ToString();
+            mRegisterLast.Text = mRegisteredUser.LastName.ToString();
+            mRegisteredEmail.Text = mRegisteredUser.Email.ToString();
+            
+
+                 
 
             //spinner class
             Spinner stateSpinner = FindViewById<Spinner>(Resource.Id.spinnerState);

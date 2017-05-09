@@ -14,6 +14,7 @@ using Android.Views.InputMethods;
 using Gigue.Adapters;
 using Gigue.Activities;
 using Gigue.ViewModels;
+using Newtonsoft.Json;
 
 namespace Gigue
 {
@@ -87,6 +88,18 @@ namespace Gigue
         {
             //Switch to  User Profile
             Intent intent = new Intent(this, typeof(createUserProfile));
+
+
+            //intent.PutExtra("FirstName", "James");
+            //intent.PutExtra("LastName", "Kulon");
+            User user = new User()
+            {
+                FirstName = mFirstName.Text,
+                LastName = mLastName.Text,
+                Email = mEmailName.Text
+            };
+
+            intent.PutExtra("User", JsonConvert.SerializeObject(user));
 
             this.StartActivity(intent);
             this.OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);
