@@ -75,16 +75,17 @@ namespace Gigue
             };
 
             //send post request
-            await userdata.AddAppUser(itemToAdd);
+            vmAppUser currentUser = await userdata.AddAppUser(itemToAdd);
 
             //Switch to Musician Profile
             Intent intent = new Intent(this, typeof(createMusicianProfile));
 
             User user = new Gigue.User()
             {
-                FirstName = mFirstName.Text.Trim(),
-                LastName = mLastName.Text.Trim(),
-                Email = mEmailName.Text.Trim()
+                FirstName = currentUser.FirstName,
+                LastName = currentUser.LastName,
+                Email = currentUser.Email,
+                AppUserId = currentUser.AppUserId
             };
             intent.PutExtra("User", JsonConvert.SerializeObject(user));
 

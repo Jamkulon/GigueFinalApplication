@@ -51,7 +51,7 @@ namespace Gigue.Adapters
 
 
         // Post new appuser
-        public async Task<bool> AddAppUser(vmAppUser itemToAdd)
+        public async Task<vmAppUser> AddAppUser(vmAppUser itemToAdd)
         {
             // Create http client
             HttpClient client = await GetClient();
@@ -62,7 +62,9 @@ namespace Gigue.Adapters
             //Send the data
             var response = await client.PostAsync(string.Concat(applicationURL, "appuser/"), content);
             //Return the response status as bool
-            return response.IsSuccessStatusCode;
+            //return response.IsSuccessStatusCode;
+            return JsonConvert.DeserializeObject<vmAppUser>(
+                await response.Content.ReadAsStringAsync());
 
         }
 
