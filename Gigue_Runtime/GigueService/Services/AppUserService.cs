@@ -60,7 +60,7 @@ namespace GigueService.Services
             return au;
         }
         //=================================================================
-        public void AddUser(vmAppUser user)
+        public AppUser AddUser(vmAppUser user)
         {
             var newUser = new AppUser
             {
@@ -79,10 +79,12 @@ namespace GigueService.Services
             if (newUser.AppUserId == 0)
             {
                 _repo.Add(newUser);
+                return newUser;
             }
             else
             {
                 _db.Entry(user).State = System.Data.Entity.EntityState.Modified;
+                return newUser;
             }
         }
         //=================================================================
