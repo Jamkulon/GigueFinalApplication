@@ -61,23 +61,27 @@ namespace Gigue.Adapters
             var content = new StringContent(data, Encoding.UTF8, "application/json");
             //Send the data
             var response = await client.PostAsync(string.Concat(applicationURL, "appuser/"), content);
-            //Return the response status as bool
-            //return response.IsSuccessStatusCode;
+            //return the response as a vmAppUser object
             return JsonConvert.DeserializeObject<vmAppUser>(
                 await response.Content.ReadAsStringAsync());
 
         }
 
         // Update by Id
-        public async Task<bool> UpdateTodoItemAsync(int itemIndex, vmAppUser itemToUpdate)
+        public async Task<vmAppUser> UpdateAppUser(int appUserId, vmAppUser itemToUpdate)
         {
+            // Create http client
             HttpClient client = await GetClient();
+            //Serialize object to JSON
             var data = JsonConvert.SerializeObject(itemToUpdate);
+            //Convert it to a formated stringcontent byte array
             var content = new StringContent(data, Encoding.UTF8, "application/json");
-            var response = await client.PutAsync(string.Concat(applicationURL, itemIndex), content);
-            return response.IsSuccessStatusCode;
-        }
-
+            //Send the data
+            var response = await client.PutAsync(string.Concat(applicationURL, appUserId), content);
+            //return the response as a vmAppUser object
+            return JsonConvert.DeserializeObject<vmAppUser>(
+                await response.Content.ReadAsStringAsync());
+        } 
         // Delete by Id
         public async Task<bool> DeleteTodoItemAsync(int itemIndex)
         {
