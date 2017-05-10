@@ -42,40 +42,75 @@ namespace GigueService.Services
         public vmAppUser GetUserById(int id)
         {
             var user = _repo.Query<AppUser>().Where(a => a.AppUserId == id).FirstOrDefault();
-
-            var au = new vmAppUser
+            if (user == null)
             {
-                AppUserId = user.AppUserId,
-                UserName = user.UserName,
-                PassWord = user.PassWord,
-                LastName = user.LastName,
-                FirstName = user.FirstName,
-                City = user.City,
-                State = user.State,
-                PostalCode = user.PostalCode,
-                Email = user.Email,
-                ReceiveAdvertisements = user.ReceiveAdvertisements,
-                IsMusician = user.IsMusician
-            };
-            return au;
-        }
-        //=================================================================
-        public void AddUser(vmAppUser user)
-        {
-            var newUser = new AppUser
-            {
-                FirstName = user.FirstName,
-                LastName = user.LastName,
-                AppUserId = user.AppUserId,
-                UserName = user.UserName
-            };
-            if (newUser.AppUserId == 0)
-            {
-                _repo.Add(newUser);
+                BadRequest("The index, AppUserID, does not exist in the AppUsers table.");
+                return null;
             }
             else
             {
-                _db.Entry(user).State = System.Data.Entity.EntityState.Modified;
+                var au = new vmAppUser
+                {
+                    AppUserId = user.AppUserId,
+                    UserName = user.UserName,
+                    PassWord = user.PassWord,
+                    LastName = user.LastName,
+                    FirstName = user.FirstName,
+                    City = user.City,
+                    State = user.State,
+                    PostalCode = user.PostalCode,
+                    Email = user.Email,
+                    ReceiveAdvertisements = user.ReceiveAdvertisements,
+                    IsMusician = user.IsMusician
+                };
+                return au;
+            }
+        }
+
+        private void BadRequest(string v)
+        {
+            throw new NotImplementedException();
+        }
+
+        //=================================================================
+        //1.  Add a new user.  The AppUserId is zero by default.  
+        //2.  Update an existing user.  The AppUserId is derived from the database 
+        //    and is not changed either by the application user or anywhere within the code.
+        //    However, if an invalid AppUserId is submitted the condition  is tested.  
+        //
+        public vmAppUser PostUser(vmAppUser vmAU)
+        {
+            AppUser testuser = _repo.Query<AppUser>().Where(a => a.AppUserId == vmAU.AppUserId).FirstOrDefault();
+            if (testuser == null)
+            {
+                BadRequest("The index, AppUserId, does not exist in the AppUser database.");
+                return null;
+            }
+            else
+            {
+                AppUser newUser = new AppUser
+                {
+                    AppUserId = vmAU.AppUserId,
+                    UserName = vmAU.UserName,
+                    PassWord = vmAU.PassWord,
+                    LastName = vmAU.LastName,
+                    FirstName = vmAU.FirstName,
+                    City = vmAU.City,
+                    State = vmAU.State,
+                    PostalCode = vmAU.PostalCode,
+                    Email = vmAU.Email,
+                    IsMusician = vmAU.IsMusician,
+                    ReceiveAdvertisements = vmAU.ReceiveAdvertisements
+                };
+                if (newUser.AppUserId == 0)
+                {
+                    _repo.Add(newUser);
+                }
+                else
+                {
+                    _repo.Update(newUser);
+                }
+                return vmAU;
             }
         }
         //=================================================================
@@ -84,6 +119,29 @@ namespace GigueService.Services
             var user = _repo.Query<AppUser>().Where(u => u.AppUserId == id);
             _repo.Delete(user);
         }
+        //=================================================================
+        public vmAppUser UpdateAppUser(vmAppUser vmAU)
+        {
+            AppUser AU = new AppUser
+            {
+                AppUserId = vmAU.AppUserId,
+                PassWord = vmAU.PassWord,
+                UserName = vmAU.UserName,
+                LastName = vmAU.LastName,
+                FirstName = vmAU.FirstName,
+                City = vmAU.City,
+                IsMusician = vmAU.IsMusician,
+                State = vmAU.State,
+                PostalCode = vmAU.PostalCode,
+                Email = vmAU.Email,
+                ReceiveAdvertisements = vmAU.ReceiveAdvertisements
+            };
+            _repo.Update(AU);
+            return vmAU;
+        }
+        //=================================================================
+        //This methods tests the AppUserId to ensure that it is either zero or 
+        //exists in the AppUser table in the AppUserId column.    
         //=================================================================
         //public void TestLog(vmAppUser user)
         //{

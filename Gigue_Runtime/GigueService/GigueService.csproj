@@ -214,6 +214,7 @@
     <Compile Include="App_Start\Startup.MobileApp.cs" />
     <Compile Include="Controllers\AppUserController.cs" />
     <Compile Include="Controllers\MusicianProfileController.cs" />
+    <Compile Include="Controllers\MusicianSearchController.cs" />
     <Compile Include="Controllers\MusiciansGenresByInstrumentController.cs" />
     <Compile Include="Controllers\MusiciansInstrumentsByGenreController.cs" />
     <Compile Include="Migrations\201705042101440_start9.cs" />
@@ -259,6 +260,7 @@
     </Compile>
     <Compile Include="Services\AppUserService.cs" />
     <Compile Include="Services\MusicianProfileService.cs" />
+    <Compile Include="Services\MusicianSearchService.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\vmAppUser.cs" />
@@ -266,11 +268,13 @@
     <Compile Include="ViewModels\vmInstrument.cs" />
     <Compile Include="ViewModels\vmMusician.cs" />
     <Compile Include="ViewModels\vmMusicianProfile.cs" />
+    <Compile Include="ViewModels\vmMusicianResult.cs" />
     <Compile Include="ViewModels\vmMusiciansGenresByInstrument.cs" />
     <Compile Include="ViewModels\vmMusiciansInstrumentsByGenre.cs" />
     <Compile Include="ViewModels\vmPhotograph.cs" />
     <Compile Include="ViewModels\vmRating.cs" />
     <Compile Include="ViewModels\vmSpokenLanguage.cs" />
+    <Compile Include="ViewModels\vmMusicianSearch.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config">
