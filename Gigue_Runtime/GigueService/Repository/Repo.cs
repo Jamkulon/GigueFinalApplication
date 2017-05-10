@@ -18,29 +18,29 @@ namespace GigueService.Controllers
         {
             return _db.Set<T>().AsQueryable();
         }
-        /// <summary>
-        /// Generic query method
-        /// </summary>
+        // <summary>
+        // Generic query method
+        // </summary>
         public void Add<T>(T entityToCreate) where T : class
         {
             _db.Set<T>().Add(entityToCreate);
             this.SaveChanges();
         }
 
+        //=================================================================
+        // <summary>
+        // Update an existing entity
+        // </summary>
+        public void Update<T>(T entityToUpdate) where T : class
+        {
+            _db.Entry(entityToUpdate).State = System.Data.Entity.EntityState.Modified;
+            this.SaveChanges();
+        }
 
-        /// <summary>
-        /// Update an existing entity
-        /// </summary>
-        //public void Update<T>(T entityToUpdate) where T : class
-        //{
-        //    _db.Set<T>().Update(entityToUpdate);
-        //    this.SaveChanges();
-        //}
-
-
-        /// <summary>
-        /// Delete an existing entity
-        /// </summary>
+        //=================================================================
+        // <summary>
+        // Delete an existing entity
+        // </summary>
         public void Delete<T>(T entityToDelete) where T : class
         {
             _db.Set<T>().Remove(entityToDelete);
@@ -48,7 +48,7 @@ namespace GigueService.Controllers
         }
 
 
-
+        //=================================================================
         /// <summary>
         /// Save changes to the database
         /// </summary>
@@ -56,5 +56,6 @@ namespace GigueService.Controllers
         {
             _db.SaveChanges();
         }
+        //=================================================================
     }
 }

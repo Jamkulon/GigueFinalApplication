@@ -71,24 +71,42 @@ namespace GigueService.Controllers
             return null;
 
         }
-        //=================================================================================
-        // POST: api/AppUser
-        public AppUser Post([FromBody]vmAppUser user)
-        {
-            //service.TestLog(user);
 
+        //==================================================
+        public vmAppUser Post([FromBody]vmAppUser vmAU)
+
+        {
+            vmAppUser vmAP = new vmAppUser();
             if (ModelState.IsValid)
             {
-                return service.AddUser(user);
+
+                vmAP = service.PostUser(vmAU);
+                return vmAP;
             }
             else
             {
+                BadRequest("This data is not valid.");
+
                 return null;
             }
         }
+        //=================================================================================
         // PUT: api/AppUser/5
-        public void Put(int id, [FromBody]string value)
+        public vmAppUser Put(int id,[FromBody]vmAppUser vmAU)
         {
+            vmAppUser vmAP = new vmAppUser();
+
+            if (ModelState.IsValid)
+            {
+
+                vmAP = service.UpdateAppUser(vmAU);
+                return vmAP;
+            }
+            else
+            {
+                BadRequest("The data is not valid.");
+                return null;
+            }
         }
         //=================================================================================
         // DELETE: api/AppUser/5
