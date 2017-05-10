@@ -6,156 +6,158 @@
     android:focusable="true"
     android:id="@+id/mainView"
     android:background="#424242">
-    <ScrollView
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/scrollView1">
-        <TableLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:stretchColumns="1">
-        <!--Enter First Name-->
-            <TextView
-                android:text="CREATE A PROFILE"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView1"
-                android:textStyle="bold"
-                android:typeface="serif"
-                android:gravity="center"
-                android:textColor="#f2854b" />
-            <EditText
-                android:hint="Enter First Name"
-                android:inputType="textPersonName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/editFirstName"
-                android:textColor="#ffffff" />
-        <!--Enter Last Name-->
-            <EditText
-                android:hint="Enter Last Name"
-                android:inputType="textPersonName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/editLastName"
-                android:textColor="#ffffff" />
-        <!--Enter Email Address-->
-            <EditText
-                android:hint="Enter Your Email Address"
-                android:inputType="textEmailAddress"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/editEmailAddress"
-                android:textColor="#ffffff" />
-        <!--Select User City-->
-            <TextView
-                android:layout_width="343.0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dip"
-                android:text="@string/cities_prompt"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp" />
-            <Spinner
-                android:id="@+id/spinnerCity"
-                android:layout_width="308.0dp"
-                android:layout_height="wrap_content"
-                android:prompt="@string/cities_prompt"
-                android:layout_marginRight="40dp"
-                android:layout_marginLeft="40dp" />
-        <!--Select User State-->
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dip"
-                android:text="@string/state_prompt"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp" />
-            <Spinner
-                android:id="@+id/spinnerState"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:prompt="@string/state_prompt"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp" />
-        <!--Select User Zip Code-->
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dip"
-                android:text="@string/zip_prompt"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp" />
-            <Spinner
-                android:id="@+id/spinnerZip"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:prompt="@string/zip_prompt"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp" />
-        <!--Select Instruments You Play-->
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dip"
-                android:text="What is your PRIMARY Instrument?"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp" />
-            <Spinner
-                android:id="@+id/spinnerInstrumentPlayed"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:prompt="@string/instrument_prompt"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp" />
-        <!--Select Your Primary Music Style-->
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dip"
-                android:text="What is your PRIMARY Music Genre?"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp" />
-            <Spinner
-                android:id="@+id/spinnerMusicGenres"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:prompt="@string/genre_prompt"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp" />
-        <!--Select Languages You Speak-->
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dip"
-                android:text="What is your PRIMARY Language Spoken?"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp" />
-            <Spinner
-                android:id="@+id/spinnerLanguagesSpoken"
-                android:textColor="#ffffff"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:prompt="@string/language_prompt"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp" />
-        <!--Submit Profile Button-->
-        </TableLayout>
-    </ScrollView>
-    <Button
-        android:text="Submit"
-        android:id="@+id/button1"
-        android:background="@drawable/Login_Style_Button"
-        android:textStyle="bold"
-        android:typeface="serif"
-        android:textSize="16sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="100dp"
-        android:layout_marginStart="100dp"
-        android:gravity="center"
-        android:textColor="#ffffff" />
+  <ScrollView
+      android:minWidth="25px"
+      android:minHeight="25px"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/scrollView1">
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:stretchColumns="1">
+      <!--Enter First Name-->
+      <TextView
+          android:text="CREATE A PROFILE"
+          android:textAppearance="?android:attr/textAppearanceLarge"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/textView1"
+          android:textStyle="bold"
+          android:typeface="serif"
+          android:gravity="center"
+          android:textColor="#f2854b" />
+      <EditText
+          android:hint="Enter First Name"
+          android:inputType="textPersonName"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/editFirstName"
+          android:textColor="#ffffff" />
+      <!--Enter Last Name-->
+      <EditText
+          android:hint="Enter Last Name"
+          android:inputType="textPersonName"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/editLastName"
+          android:textColor="#ffffff" />
+      <!--Enter Email Address-->
+      <EditText
+          android:hint="Enter Your Email Address"
+          android:inputType="textEmailAddress"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/editEmailAddress"
+          android:textColor="#ffffff" />
+      <!--Select User City-->
+      <TextView
+          android:layout_width="343.0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dip"
+          android:text="@string/cities_prompt"
+          android:layout_marginLeft="30dp"
+          android:layout_marginRight="30dp" />
+      <Spinner
+          android:id="@+id/spinnerCity"
+          android:layout_width="308.0dp"
+          android:layout_height="wrap_content"
+          android:prompt="@string/cities_prompt"
+          android:layout_marginRight="40dp"
+          android:layout_marginLeft="40dp" />
+      <!--Select User State-->
+      <TextView
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dip"
+          android:text="@string/state_prompt"
+          android:layout_marginLeft="30dp"
+          android:layout_marginRight="30dp" />
+      <Spinner
+          android:id="@+id/spinnerState"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:prompt="@string/state_prompt"
+          android:layout_marginLeft="40dp"
+          android:layout_marginRight="40dp" />
+      <!--Select User Zip Code-->
+      <TextView
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dip"
+          android:text="@string/zip_prompt"
+          android:layout_marginLeft="30dp"
+          android:layout_marginRight="30dp" />
+      <Spinner
+          android:id="@+id/spinnerZip"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:prompt="@string/zip_prompt"
+          android:layout_marginLeft="40dp"
+          android:layout_marginRight="40dp" />
+      <!--Select Instruments You Play-->
+      <TextView
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dip"
+          android:text="What is your PRIMARY Instrument?"
+          android:layout_marginLeft="30dp"
+          android:layout_marginRight="30dp" />
+      <Spinner
+          android:id="@+id/spinnerInstrumentPlayed"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:prompt="@string/instrument_prompt"
+          android:layout_marginLeft="40dp"
+          android:layout_marginRight="40dp" />
+      <!--Select Your Primary Music Style-->
+      <TextView
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dip"
+          android:text="What is your PRIMARY Music Genre?"
+          android:layout_marginLeft="30dp"
+          android:layout_marginRight="30dp" />
+      <Spinner
+          android:id="@+id/spinnerMusicGenres"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:prompt="@string/genre_prompt"
+          android:layout_marginLeft="40dp"
+          android:layout_marginRight="40dp" />
+      <!--Select Languages You Speak-->
+      <TextView
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dip"
+          android:text="What is your PRIMARY Language Spoken?"
+          android:layout_marginLeft="30dp"
+          android:layout_marginRight="30dp" />
+      <Spinner
+          android:id="@+id/spinnerLanguagesSpoken"
+          android:textColor="#ffffff"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:prompt="@string/language_prompt"
+          android:layout_marginLeft="40dp"
+          android:layout_marginRight="40dp" />
+      <!--Submit Profile Button-->
+
+      <Button
+      android:text="Submit"
+      android:id="@+id/button1"
+      android:background="@drawable/Login_Style_Button"
+      android:textStyle="bold"
+      android:typeface="serif"
+      android:textSize="16sp"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="30dp"
+      android:layout_marginRight="100dp"
+      android:layout_marginStart="100dp"
+      android:gravity="center"
+      android:textColor="#ffffff" />
+    </TableLayout>
+  </ScrollView>
+
 </LinearLayout>
