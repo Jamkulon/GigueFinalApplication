@@ -3,14 +3,18 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#7f7fff">
+    android:background="#424242">
 <!--Enter User First Name-->
     <TextView
-        android:text="Create Your User Profile"
+        android:text="CREATE A PROFILE"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView1" />
+        android:id="@+id/textView1"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:textColor="#f2854b"
+        android:gravity="center" />
     <EditText
         android:hint="Enter Your First Name"
         android:inputType="textPersonName"
@@ -69,5 +73,9 @@
         android:text="Submit Profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/submitUserProfile" />
+        android:id="@+id/submitUserProfile"
+        android:background="@drawable/Login_Style_Button"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="20dp" />
 </LinearLayout>
