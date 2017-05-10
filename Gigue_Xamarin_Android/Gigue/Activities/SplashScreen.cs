@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Gigue.Activities
 {
-    [Activity(Label = "SplashScreen")]
+    [Activity(Theme = ("@android:style/Theme.NoTitleBar"))]
     public class SplashScreen : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

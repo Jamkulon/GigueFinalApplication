@@ -18,7 +18,7 @@ using Newtonsoft.Json;
 
 namespace Gigue
 {
-    [Activity(Label = "Registration")]
+    [Activity(Theme = ("@android:style/Theme.NoTitleBar"))]
     public class RegistrationActivity : Activity
     {
 

@@ -13,7 +13,7 @@ using Gigue.Adapters;
 
 namespace Gigue.Activities
 {
-    [Activity(Label = "searchResults")]
+    [Activity(Theme = ("@android:style/Theme.NoTitleBar"))]
     public class searchResults : Activity
     {
         public UserData userdata = new UserData();
