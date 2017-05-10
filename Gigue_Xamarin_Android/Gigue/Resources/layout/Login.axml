@@ -6,28 +6,41 @@
     android:focusable="true"
     android:id="@+id/mainView"
     android:clickable="true"
-    android:background="@drawable/dierdre5">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="125dp"
-        android:text="Please Log In"
-        android:gravity="center"
-        android:textColor="#FFA500"
-        android:textSize="40sp" />
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true">
+    android:background="#424242">
+
+  <ScrollView
+      android:minWidth="25px"
+      android:minHeight="25px"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/scrollView1">
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:stretchColumns="1">
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="125dp"
+          android:text="PLEASE LOGIN"
+          android:gravity="center"
+          android:textColor="#f2854b"
+          android:textSize="40sp"
+          android:textStyle="bold"
+          android:typeface="serif" />
+      <LinearLayout
+          android:orientation="vertical"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_centerInParent="true">
         <EditText
             android:id="@+id/txtUserName"
             android:inputType="textPersonName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="42.0dp"
             android:background="@drawable/edit_text_style"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="10dp"
             android:textColor="#FF4500"
             android:hint="username"
             android:textColorHint="#d3d3d3" />
@@ -35,23 +48,28 @@
             android:id="@+id/txtPassword"
             android:inputType="textPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="42.0dp"
             android:background="@drawable/edit_text_style"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:textColor="#FF4500"
             android:hint="password"
             android:textColorHint="#d3d3d3" />
         <Button
             android:id="@+id/btnLogin"
             android:text="Login"
-            android:layout_width="match_parent"
+            android:layout_width="145.5dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginRight="40dp"
             android:layout_marginLeft="40dp"
-            android:background="@drawable/button_email_style" />
+            android:background="@drawable/Login_Style_Button"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:layout_gravity="center"
+            android:textColor="#ffffff" />
         <CheckBox
             android:text="Remember Me"
             android:layout_width="match_parent"
@@ -61,7 +79,12 @@
             android:layout_marginLeft="100dp"
             android:layout_marginRight="100dp"
             android:gravity="center"
-            android:textColor="#FFA500"
-            android:button="@drawable/checkbox_style" />
-    </LinearLayout>
+            android:button="@drawable/checkbox_style"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:textSize="16sp"
+            android:textColor="#ffffff" />
+      </LinearLayout>
+    </TableLayout>
+  </ScrollView>
 </RelativeLayout>

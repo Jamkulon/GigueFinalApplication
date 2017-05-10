@@ -73,6 +73,7 @@ namespace GigueService.Services
         }
 
         //=================================================================
+
         //1.  Add a new user.  The AppUserId is zero by default.  
         //2.  Update an existing user.  The AppUserId is derived from the database 
         //    and is not changed either by the application user or anywhere within the code.
@@ -111,6 +112,7 @@ namespace GigueService.Services
                     _repo.Update(newUser);
                 }
                 return vmAU;
+
             }
         }
         //=================================================================

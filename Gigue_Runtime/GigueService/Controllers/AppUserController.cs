@@ -71,18 +71,22 @@ namespace GigueService.Controllers
             return null;
 
         }
+
         //==================================================
         public vmAppUser Post([FromBody]vmAppUser vmAU)
+
         {
             vmAppUser vmAP = new vmAppUser();
             if (ModelState.IsValid)
             {
+
                 vmAP = service.PostUser(vmAU);
                 return vmAP;
             }
             else
             {
                 BadRequest("This data is not valid.");
+
                 return null;
             }
         }

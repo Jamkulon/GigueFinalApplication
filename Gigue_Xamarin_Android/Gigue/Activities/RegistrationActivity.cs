@@ -13,12 +13,17 @@ using Android;
 using Android.Views.InputMethods;
 using Gigue.Adapters;
 using Gigue.Activities;
+using Gigue.ViewModels;
+using Newtonsoft.Json;
 
 namespace Gigue
 {
-    [Activity(Label = "Register")]
+    [Activity(Theme = ("@android:style/Theme.NoTitleBar"))]
     public class RegistrationActivity : Activity
     {
+
+        RelativeLayout rRelativeLayout;
+
         EditText mFirstName;
         EditText mLastName;
         EditText mEmailName;
@@ -44,6 +49,9 @@ namespace Gigue
             mMusician.Click += mMusician_Click;
             mUser.Click += mUser_Click;
 
+            rRelativeLayout = FindViewById<RelativeLayout>(Resource.Id.mainView);
+            rRelativeLayout.Click += rRelativeLayout_Click;
+
             // Create your application here
         }
 
@@ -52,49 +60,76 @@ namespace Gigue
         async void mMusician_Click(object sender, EventArgs e)
         {
             // Build appuser object
-            DataObjects.AppUser itemToAdd = new DataObjects.AppUser
+            vmAppUser itemToAdd = new vmAppUser
             {
-                //AppUserId = 0,
-                //UserName = "",
-                //LastName = mLastName.Text.Trim(),
-                //FirstName = mFirstName.Text.Trim(),
-                //City = "",
-                //State = "",
-                //PostalCode = "",
-                //Email = mEmailName.Text.Trim(),
-                //ReceiveAdvertisements = false,
-                //IsMusician = false
-
                 AppUserId = 0,
                 UserName = "",
-                LastName = "Bonamassa",
-                FirstName = "Joe",
+                LastName = mLastName.Text.Trim(),
+                FirstName = mFirstName.Text.Trim(),
                 City = "",
                 State = "",
                 PostalCode = "",
-                Email = "jb@gmail.com",
+                Email = mEmailName.Text.Trim(),
                 ReceiveAdvertisements = false,
                 IsMusician = false
             };
 
             //send post request
-            await userdata.AddAppUser(itemToAdd);
+            vmAppUser currentUser = await userdata.AddAppUser(itemToAdd);
 
             //Switch to Musician Profile
             Intent intent = new Intent(this, typeof(createMusicianProfile));
 
-            this.StartActivity(intent);
-        }
-        void mUser_Click(object sender, EventArgs e)
-        {
+            User user = new User()
+            {
+                FirstName = currentUser.FirstName,
+                LastName = currentUser.LastName,
+                Email = currentUser.Email,
+                AppUserId = currentUser.AppUserId
+            };
+            intent.PutExtra("User", JsonConvert.SerializeObject(user));
 
+            this.StartActivity(intent);
+            this.OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);
+        }
+
+        async void mUser_Click(object sender, EventArgs e)
+        {
+            // Build appuser object
+            vmAppUser itemToAdd = new vmAppUser
+            {
+                AppUserId = 0,
+                UserName = "",
+                LastName = mLastName.Text.Trim(),
+                FirstName = mFirstName.Text.Trim(),
+                City = "",
+                State = "",
+                PostalCode = "",
+                Email = mEmailName.Text.Trim(),
+                ReceiveAdvertisements = false,
+                IsMusician = false
+            };
+
+            //send post request
+            vmAppUser currentUser = await userdata.AddAppUser(itemToAdd);
 
             //Switch to  User Profile
             Intent intent = new Intent(this, typeof(createUserProfile));
 
+            User user = new User()
+            {
+                FirstName = currentUser.FirstName,
+                LastName = currentUser.LastName,
+                Email = currentUser.Email,
+                AppUserId = currentUser.AppUserId
+            };
+
+            intent.PutExtra("User", JsonConvert.SerializeObject(user));
+
             this.StartActivity(intent);
+            this.OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);
         }
-        void mRelativeLayout_Click(object sender, EventArgs e)
+        void rRelativeLayout_Click(object sender, EventArgs e)
         {
             InputMethodManager inputManager = (InputMethodManager)this.GetSystemService(Activity.InputMethodService);
             inputManager.HideSoftInputFromWindow(this.CurrentFocus.WindowToken, HideSoftInputFlags.None);

@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using System.Net.Http;
 using Newtonsoft.Json;
-using Gigue.DataObjects;
+using Gigue.ViewModels;
 using System.Text;
 using System.Net.Http.Headers;
 using System;
@@ -27,19 +27,19 @@ namespace Gigue.Adapters
         }
 
         // Get data parse into list
-        public async Task<List<AppUser>> GetAppUsers()
+        public async Task<List<vmAppUser>> GetAppUsers()
         {
             // Create http client
             HttpClient client = await GetClient();
             // Use GET to retrieve users
             var result = await client.GetStringAsync(string.Concat(applicationURL, "appuser/"));
             // Deserialize JSON Object
-            var userdata = JsonConvert.DeserializeObject<List<AppUser>>(result);
+            var userdata = JsonConvert.DeserializeObject<List<vmAppUser>>(result);
             // Parse data into newUsers and return it
-            var newUsers = new List<AppUser>();
+            var newUsers = new List<vmAppUser>();
             foreach (var user in userdata)
             {
-                var newuser = new AppUser()
+                var newuser = new vmAppUser()
                 {
                     AppUserId = user.AppUserId,
                     UserName = user.UserName
@@ -51,7 +51,7 @@ namespace Gigue.Adapters
 
 
         // Post new appuser
-        public async Task<bool> AddAppUser(AppUser itemToAdd)
+        public async Task<vmAppUser> AddAppUser(vmAppUser itemToAdd)
         {
             // Create http client
             HttpClient client = await GetClient();
@@ -61,21 +61,27 @@ namespace Gigue.Adapters
             var content = new StringContent(data, Encoding.UTF8, "application/json");
             //Send the data
             var response = await client.PostAsync(string.Concat(applicationURL, "appuser/"), content);
-            //Return the response status as bool
-            return response.IsSuccessStatusCode;
+            //return the response as a vmAppUser object
+            return JsonConvert.DeserializeObject<vmAppUser>(
+                await response.Content.ReadAsStringAsync());
 
         }
 
         // Update by Id
-        public async Task<bool> UpdateTodoItemAsync(int itemIndex, AppUser itemToUpdate)
+        public async Task<vmAppUser> UpdateAppUser(int appUserId, vmAppUser itemToUpdate)
         {
+            // Create http client
             HttpClient client = await GetClient();
+            //Serialize object to JSON
             var data = JsonConvert.SerializeObject(itemToUpdate);
+            //Convert it to a formated stringcontent byte array
             var content = new StringContent(data, Encoding.UTF8, "application/json");
-            var response = await client.PutAsync(string.Concat(applicationURL, itemIndex), content);
-            return response.IsSuccessStatusCode;
-        }
-
+            //Send the data
+            var response = await client.PutAsync(string.Concat(applicationURL, appUserId), content);
+            //return the response as a vmAppUser object
+            return JsonConvert.DeserializeObject<vmAppUser>(
+                await response.Content.ReadAsStringAsync());
+        } 
         // Delete by Id
         public async Task<bool> DeleteTodoItemAsync(int itemIndex)
         {

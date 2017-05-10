@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Gigue.Activities
 {
-    [Activity(Label = "SearchPage")]
+    [Activity(Theme = ("@android:style/Theme.NoTitleBar"))]
     public class Search : Activity
     {
 

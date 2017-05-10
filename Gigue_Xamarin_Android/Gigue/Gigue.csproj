@@ -188,13 +188,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Activities\Browse.cs" />
     <Compile Include="Activities\createMusicianProfile.cs" />
     <Compile Include="Activities\createUserProfile.cs" />
     <Compile Include="Activities\Login.cs" />
     <Compile Include="Activities\MusicianProfile.cs" />
     <Compile Include="Activities\Search.cs" />
     <Compile Include="Activities\searchResults.cs" />
+    <Compile Include="Activities\SplashScreen.cs" />
     <Compile Include="Activities\TestData.cs" />
     <Compile Include="Activities\Home.cs" />
     <Compile Include="Adapters\UserData.cs" />
@@ -219,6 +219,7 @@
     <Compile Include="ToDoItem.cs" />
     <Compile Include="ToDoItemAdapter.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="ViewModels\vmAppUser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -241,9 +242,6 @@
     <AndroidResource Include="Resources\layout\musicianProfile.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\browseMusicians.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
     <AndroidResource Include="Resources\layout\SearchResults.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -251,6 +249,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\HomePage.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\splashScreen.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -275,7 +276,9 @@
     <AndroidResource Include="Resources\drawable-xhdpi\checkbox_style.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\edit_text_style.xml" />
+    <AndroidResource Include="Resources\drawable-xhdpi\edit_text_style.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
@@ -300,6 +303,21 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\ConcertGig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\guitarist.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\mericaband.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\playingguitar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Login_Style_Button.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\rounded_search.xml" />
   </ItemGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

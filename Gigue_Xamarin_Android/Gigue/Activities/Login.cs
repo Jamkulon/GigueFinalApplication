@@ -17,14 +17,13 @@ using Android.Views.InputMethods;
 
 namespace Gigue.Activities
 {
-    [Activity(MainLauncher = false, Label = "Login")]
+    [Activity(MainLauncher = false, Theme = ("@android:style/Theme.NoTitleBar"))]
     public class Login : Activity
     {
 
         RelativeLayout mRelativeLayout;
         Button mButton;
         EditText mUsername;
-        Button mRegister;
 
         //private MobileServiceClient client;
 
