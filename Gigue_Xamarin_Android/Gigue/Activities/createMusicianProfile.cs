@@ -13,7 +13,7 @@ using Newtonsoft.Json;
 
 namespace Gigue.Activities
 {
-    [Activity(Label = "Create Your Musician Profile")]
+    [Activity (Theme = ("@android:style/Theme.NoTitleBar"))]
     public class createMusicianProfile : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

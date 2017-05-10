@@ -15,7 +15,7 @@ using Gigue.Adapters;
 
 namespace Gigue.Activities
 {
-    [Activity(Label = "Create Your User Profile")]
+    [Activity(Theme = ("@android:style/Theme.NoTitleBar"))]
     public class createUserProfile : Activity
     {
         EditText mRegisterFirst;

@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Gigue.Activities
 {
-    [Activity(Label = "Profile for:")]
+    [Activity(Theme = ("@android:style/Theme.NoTitleBar"))]
     public class MusicianProfile : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
