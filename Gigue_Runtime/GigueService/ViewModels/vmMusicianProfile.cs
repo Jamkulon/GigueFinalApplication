@@ -26,7 +26,7 @@ namespace GigueService.ViewModels
         public decimal? Rate { get; set; }
         public int? Rating { get; set; }
         public bool? IsMusicianForHire { get; set; }
-        public List<vmInstrument> Instruments { get; set; }
+        public List<vmInstrumentMusProfile> InstrumentsMusProfile { get; set; }
         public List<vmGenre> Genres { get; set; }
         public List<vmSpokenLanguage> Languages { get; set; }
         public List<vmPhotograph> Photographs { get; set; }

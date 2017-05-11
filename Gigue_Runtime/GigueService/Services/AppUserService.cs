@@ -28,7 +28,6 @@ namespace GigueService.Services
         {
             _repo = repo;
             _db = db;
-
         }
         //=================================================================
         //Methods().
@@ -44,8 +43,7 @@ namespace GigueService.Services
             var user = _repo.Query<AppUser>().Where(a => a.AppUserId == id).FirstOrDefault();
             if (user == null)
             {
-                BadRequest("The index, AppUserID, does not exist in the AppUsers table.");
-                return null;
+               return null;
             }
             else
             {
@@ -66,12 +64,6 @@ namespace GigueService.Services
                 return au;
             }
         }
-
-        private void BadRequest(string v)
-        {
-            throw new NotImplementedException();
-        }
-
         //=================================================================
 
         //1.  Add a new user.  The AppUserId is zero by default.  
@@ -81,16 +73,8 @@ namespace GigueService.Services
         //
         public vmAppUser PostUser(vmAppUser vmAU)
         {
-            AppUser testuser = _repo.Query<AppUser>().Where(a => a.AppUserId == vmAU.AppUserId).FirstOrDefault();
-            if (testuser == null)
+            AppUser newUser = new AppUser
             {
-                BadRequest("The index, AppUserId, does not exist in the AppUser database.");
-                return null;
-            }
-            else
-            {
-                AppUser newUser = new AppUser
-                {
                     AppUserId = vmAU.AppUserId,
                     UserName = vmAU.UserName,
                     PassWord = vmAU.PassWord,
@@ -102,18 +86,16 @@ namespace GigueService.Services
                     Email = vmAU.Email,
                     IsMusician = vmAU.IsMusician,
                     ReceiveAdvertisements = vmAU.ReceiveAdvertisements
-                };
-                if (newUser.AppUserId == 0)
-                {
-                    _repo.Add(newUser);
-                }
-                else
-                {
-                    _repo.Update(newUser);
-                }
-                return vmAU;
-
+            };
+            if (newUser.AppUserId == 0)
+            {
+                _repo.Add(newUser);
             }
+            else
+            {
+                _repo.Update(newUser);
+            }
+            return vmAU;
         }
         //=================================================================
         public void RemoveUser(int id)

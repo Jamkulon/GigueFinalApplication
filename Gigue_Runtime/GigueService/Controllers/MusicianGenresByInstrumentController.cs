@@ -10,71 +10,54 @@ using System.Net.Http;
 using System.Web.Http;
 
 namespace GigueService.Controllers
-{ 
+{
     // Use the MobileAppController attribute for each ApiController you want to use  
     // from your mobile clients 
 
     [MobileAppController]
-    public class MusicianProfileController : ApiController
+    public class MusicianGenresByInstrumentController : ApiController
     {
         //===========================================================================================
         //Fields.
         //===========================================================================================
-        public MusicianProfileService MPservice;
+
+        //===========================================================================================
+        //Properties
+        public MusicianGenresByInstrumentService service;
         public Repo repo;
         public GigueContext db;
         //===========================================================================================
-        //Properties.
-
-
-        //===========================================================================================
         //Constructor().
-        public MusicianProfileController()
+        public MusicianGenresByInstrumentController()
         {
             db = new GigueContext();
             repo = new Repo(db);
-            MPservice = new MusicianProfileService(repo, db);
+            service = new MusicianGenresByInstrumentService(repo, db);
         }
         //====================================================================================
-        //Methods()
-        //====================================================================================
-        [Route("api/MusicianProfile/{id}")]
-        [HttpGet]
-        public vmMusicianProfile Get(int id)
-        {
-            try
-            {
-                var vmM = MPservice.GetUserById(id);
-                return vmM;
-            }
-            catch
-            {
-                BadRequest("No data found to match the request.");
-                return null;
-            }
-        }
-        //====================================================================================
-        // GET: api/MusicianProfile
+        // GET: api/MusiciansGenresByInstrument
         //public IEnumerable<string> Get()
         //{
         //    return new string[] { "value1", "value2" };
         //}
         //====================================================================================
-        // POST: api/MusicianProfile
-        public vmMusicianProfile Post([FromBody]vmMusicianProfile vmMP)
+        // GET: api/MusiciansGenresByInstrument/5
+        //Using the instrument Id get all the musicians that play that instrument.
+        [Route("api/MusiciansGenresByInstrument/{id}")]
+        [HttpGet]
+        public List<vmMusiciansGenresByInstrument> Get(int Id)
         {
-            vmMusicianProfile vmMPnew = new vmMusicianProfile();
             if (ModelState.IsValid)
             {
-                vmMPnew = MPservice.PostAddMusicianProfile(vmMP);
-                if (vmMPnew == null)
+                List<vmMusiciansGenresByInstrument> vmMGIs = service.GetMusiciansGenresByInstrument(Id);
+                if (vmMGIs == null)
                 {
-                    BadRequest("AppUserId is not zero and it does not exist in the database.");
+                    BadRequest("No musician exits inthe data base with the index of id.");
                     return null;
                 }
                 else
                 {
-                    return vmMP;
+                    return vmMGIs;
                 }
             }
             else
@@ -82,18 +65,22 @@ namespace GigueService.Controllers
                 BadRequest("This data is not valid.");
                 return null;
             }
-
         }
+        //==================================================================================
+        // POST: api/MusiciansGenresByInstrument
+        //public void Post([FromBody]string value)
+        //{
+        //}
         //====================================================================================
-        //// PUT: api/MusicianProfile/5
+        // PUT: api/MusiciansGenresByInstrument/5
         //public void Put(int id, [FromBody]string value)
         //{
         //}
         //====================================================================================
-        //// DELETE: api/MusicianProfile/5
+        // DELETE: api/MusiciansGenresByInstrument/5
         //public void Delete(int id)
         //{
         //}
-        //====================================================================================
     }
 }
+

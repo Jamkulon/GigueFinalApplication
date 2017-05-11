@@ -15,9 +15,6 @@ namespace GigueService.Services
         //=================================================================
         private Repo _repo;
         private GigueContext _db;
-     
-
-
         //=================================================================
         //Properties.
         //=================================================================
@@ -28,8 +25,9 @@ namespace GigueService.Services
         {
             _repo = repo;
             _db = db;
-        }
         
+        }
+
         //=================================================================
         //Methods().
         //=================================================================
@@ -67,18 +65,19 @@ namespace GigueService.Services
             //Using the InstrumentId found in each row of the resulting list build a list of instruments 
             //that the musician plays.  
 
-            List<vmInstrument> tempIs = new List<vmInstrument>();
+            List<vmInstrumentMusProfile> tempIs = new List<vmInstrumentMusProfile>();
 
             if (ms != null)
             {
                 foreach (MusicianInstrument musI in ms)
                 {
                     Instrument inst = _repo.Query<Instrument>().Where(g => g.InstrumentId == musI.InstrumentId).FirstOrDefault();
-                    vmInstrument vmInst = new vmInstrument
-                {
+                    vmInstrumentMusProfile vmInst = new vmInstrumentMusProfile
+                    {
                     InstrumentId = inst.InstrumentId,
-                    InstrumentName = inst.InstrumentName
-                };
+                    InstrumentName = inst.InstrumentName,
+                    PrimaryInstrument = musI.IsPrimary
+                    };
                 tempIs.Add(vmInst);
             };
             //====================================================================================
@@ -93,7 +92,8 @@ namespace GigueService.Services
                 vmGenre vmGen = new ViewModels.vmGenre
                 {
                     GenreId = gen.GenreId,
-                    GenreName = gen.GenreName
+                    GenreName = gen.GenreName,
+                    IsPrimary = musG.IsPrimary
                 };
                 tempGs.Add(vmGen);
             };
@@ -152,7 +152,7 @@ namespace GigueService.Services
                     IsMusicianForHire = mus.IsMusicianForHire,
                     Rate = mus.Rate,
                     Rating = mus.Rating,
-                    Instruments = tempIs,
+                    InstrumentsMusProfile = tempIs,
                     Genres = tempGs,
                     Languages = tempLs,
                     Photographs = tempPs
@@ -167,6 +167,153 @@ namespace GigueService.Services
             }
         }
         //====================================================================================
-        //=================================================================
+        public vmMusicianProfile PostAddMusicianProfile(vmMusicianProfile vmMP)
+        {
+            //===================================================================
+            AppUser AppUserToPost = new AppUser
+            {
+                AppUserId = vmMP.AppUserId,
+                UserName = vmMP.UserName,
+                PassWord = vmMP.PassWord,
+                LastName = vmMP.LastName,
+                FirstName = vmMP.FirstName,
+                City = vmMP.City,
+                State = vmMP.State,
+                PostalCode = vmMP.PostalCode,
+                Email = vmMP.PostalCode,
+                ReceiveAdvertisements = vmMP.ReceiveAdvertisements,
+                IsMusician = vmMP.IsMusician
+            };
+            if (AppUserToPost.AppUserId == 0)
+            {
+                _repo.Add(AppUserToPost);
+            }
+            else
+            {
+                _repo.Update(AppUserToPost);
+            }
+            //=======================================================================
+            Musician MusicianToPost = new Musician
+            {
+                MusicianId = vmMP.MusicianId,
+                StageName = vmMP.StageName,
+                CellPhone = vmMP.CellPhone,
+                Biography = vmMP.Biography,
+                Rate = vmMP.Rate,
+                Rating = vmMP.Rating,
+                IsMusicianForHire = vmMP.IsMusicianForHire
+            };
+            if (MusicianToPost.MusicianId == 0)
+            {
+                _repo.Add(MusicianToPost);
+            }
+            else
+            {
+                _repo.Update(MusicianToPost);
+            }
+            //==================================================================================
+            AppUser tempAppUser = _repo.Query<AppUser>().Where(r => r.LastName == AppUserToPost.LastName).FirstOrDefault();
+            Musician tempMusician = _repo.Query<Musician>().Where(s => s.StageName == MusicianToPost.StageName).FirstOrDefault();
+            if (tempAppUser != null && tempMusician != null)
+            {
+                UserMusician umTest = _repo.Query<UserMusician>().Where(t => t.AppUserId == tempAppUser.AppUserId && t.MusicianId == tempMusician.MusicianId).FirstOrDefault();
+                if (umTest == null)
+                {
+                    UserMusician newUm = new UserMusician
+                    {
+                        AppUser = tempAppUser,
+                        AppUserId = tempAppUser.AppUserId,
+                        Musician = tempMusician,
+                        MusicianId = tempMusician.MusicianId
+                    };
+                    _repo.Add(newUm);
+                }
+                //==============================================================================
+                foreach (vmInstrumentMusProfile i in vmMP.InstrumentsMusProfile)
+                {
+                    Instrument newI = _repo.Query<Instrument>().Where(u => u.InstrumentId == i.InstrumentId).FirstOrDefault();
+                    MusicianInstrument testMI = _repo.Query<MusicianInstrument>().Where(v => v.InstrumentId == newI.InstrumentId && v.MusicianId == tempMusician.MusicianId).FirstOrDefault();
+                
+                    if (testMI == null)
+                    {
+                        MusicianInstrument newMI = new MusicianInstrument
+                        {
+                            Instrument = newI,
+                            InstrumentId = newI.InstrumentId,
+                            Musician = tempMusician,
+                            MusicianId = tempMusician.MusicianId,
+                            IsPrimary = i.PrimaryInstrument
+                        };
+                        _repo.Add(newMI);
+                    }
+                    else
+                    {
+                        testMI.IsPrimary = i.PrimaryInstrument;
+                        _repo.Update(testMI);
+                    }
+                }
+                //=============================================================================
+                foreach (vmGenre g in vmMP.Genres)
+                {
+                    Genre newG = _repo.Query<Genre>().Where(w => w.GenreId == g.GenreId).FirstOrDefault();
+                    MusicianGenre testMG = _repo.Query<MusicianGenre>().Where(x => x.GenreId == newG.GenreId &&
+                            x.MusicianId == tempMusician.MusicianId).FirstOrDefault();
+                    if (testMG == null)
+                    {
+                        MusicianGenre newMG = new MusicianGenre
+                        {
+                            Genre = newG,
+                            GenreId = newG.GenreId,
+                            Musician = tempMusician,
+                            MusicianId = tempMusician.MusicianId,
+                            IsPrimary = g.IsPrimary
+                        };
+                        _repo.Add(newMG);
+                    }
+                    else
+                    {
+                        testMG.IsPrimary = g.IsPrimary;
+                        _repo.Update(testMG);
+                                            }
+                }
+                //============================================================================
+                foreach (vmSpokenLanguage s in vmMP.Languages)
+                {
+                    SpokenLanguage newS = _repo.Query<SpokenLanguage>().Where(y => y.SpokenLanguageId == s.SpokenLanguageId).FirstOrDefault();
+                    MusicianLanguage testML = _repo.Query<MusicianLanguage>().Where(z => z.SpokenLanguageId == newS.SpokenLanguageId && z.MusicianId == tempMusician.MusicianId).FirstOrDefault();
+                    if (testML == null)
+                    {
+                        MusicianLanguage newML = new MusicianLanguage
+                        {
+                            SpokenLanguage = newS,
+                            SpokenLanguageId = newS.SpokenLanguageId,
+                            Musician = tempMusician,
+                            MusicianId = tempMusician.MusicianId
+                        };
+                        _repo.Add(newML);
+                    }
+                }
+                //============================================================================
+                foreach (vmPhotograph p in vmMP.Photographs)
+                {
+                    Photograph newP = _repo.Query<Photograph>().Where(w => w.PhotographId == p.PhotographId).FirstOrDefault();
+                    MusicianPhotograph testMP = _repo.Query<MusicianPhotograph>().Where(z => z.PhotographId == newP.PhotographId && z.MusicianId == tempMusician.MusicianId).FirstOrDefault();
+                    if (testMP == null)
+                    {
+                        MusicianPhotograph newMP = new MusicianPhotograph
+                        {
+                            Photograph = newP,
+                            PhotographId = newP.PhotographId,
+                            Musician = tempMusician,
+                            MusicianId = tempMusician.MusicianId
+                        };
+                        _repo.Add(newMP);
+                    }
+                }
+                //============================================================================
+            };
+            return vmMP;
+        }
+        //====================================================================================
     }
 }
