@@ -13,9 +13,11 @@ using Newtonsoft.Json;
 
 namespace Gigue.Activities
 {
-    [Activity (Theme = ("@android:style/Theme.NoTitleBar"))]
+    [Activity (WindowSoftInputMode = SoftInput.AdjustResize, Theme = ("@android:style/Theme.NoTitleBar"))]
     public class createMusicianProfile : RegistrationActivity
     {
+        Button mSubmitMusicianProfile;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             EditText mRegisterFirst;
@@ -23,9 +25,14 @@ namespace Gigue.Activities
             EditText mRegisteredEmail;
             User mRegisteredUser;
 
+          
+
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.CreateMusicianProfile);
+
+            mSubmitMusicianProfile = FindViewById<Button>(Resource.Id.btnSubmitMusician);
+            mSubmitMusicianProfile.Click += mSubmitMusicianProfile_Click;
 
             mRegisterFirst = FindViewById<EditText>(Resource.Id.editFirstName);
             mRegisterLast = FindViewById<EditText>(Resource.Id.editLastName);
@@ -106,6 +113,11 @@ namespace Gigue.Activities
             
             //string toast = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
             //Toast.MakeText(this, toast, ToastLength.Long).Show();
+        }
+        void mSubmitMusicianProfile_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(Search));
+            this.StartActivity(intent);
         }
     }
 }

@@ -2180,8 +2180,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0a00ba
 			public const int btnResults = 2131361978;
 			
-			// aapt resource value: 0x7f0a00bd
-			public const int btnThanks = 2131361981;
+			// aapt resource value: 0x7f0a0083
+			public const int btnSubmitMusician = 2131361923;
 			
 			// aapt resource value: 0x7f0a00b7
 			public const int btnUser = 2131361975;
@@ -2192,8 +2192,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0a000d
 			public const int button = 2131361805;
 			
-			// aapt resource value: 0x7f0a0083
-			public const int button1 = 2131361923;
+			// aapt resource value: 0x7f0a00bd
+			public const int button9 = 2131361981;
 			
 			// aapt resource value: 0x7f0a0068
 			public const int buttonAddToDo = 2131361896;
@@ -2900,7 +2900,7 @@ namespace Gigue
 			public const int support_simple_spinner_dropdown_item = 2130903108;
 			
 			// aapt resource value: 0x7f030045
-			public const int thankYou = 2130903109;
+			public const int thanks = 2130903109;
 			
 			static Layout()
 			{

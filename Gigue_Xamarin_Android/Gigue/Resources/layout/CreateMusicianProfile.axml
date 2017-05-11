@@ -144,7 +144,7 @@
         <!--Submit Profile Button-->
             <Button
                 android:text="Submit"
-                android:id="@+id/button1"
+                android:id="@+id/btnSubmitMusician"
                 android:background="@drawable/Login_Style_Button"
                 android:textStyle="bold"
                 android:typeface="serif"
