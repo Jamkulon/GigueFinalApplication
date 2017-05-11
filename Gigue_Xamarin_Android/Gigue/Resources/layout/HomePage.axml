@@ -14,7 +14,7 @@
         <ImageView
             android:src="@drawable/imageedit_9_7239508233"
             android:layout_width="match_parent"
-            android:layout_height="221.0dp"
+            android:layout_height="355.5dp"
             android:id="@+id/imageView1"
             android:layout_marginTop="120dp" />
     </RelativeLayout>
