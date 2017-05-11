@@ -44,7 +44,7 @@ namespace GigueService.Controllers
         public void Delete<T>(T entityToDelete) where T : class
         {
             _db.Set<T>().Remove(entityToDelete);
-            this.SaveChanges();
+            _db.SaveChanges();
         }
 
 

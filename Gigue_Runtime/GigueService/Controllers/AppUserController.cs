@@ -62,6 +62,10 @@ namespace GigueService.Controllers
             try
             {
                 var user = service.GetUserById(id);
+                if (user == null)
+                {
+                    BadRequest("No data found to match request");
+                }
                 return user;
             }
             catch
@@ -74,19 +78,25 @@ namespace GigueService.Controllers
 
         //==================================================
         public vmAppUser Post([FromBody]vmAppUser vmAU)
-
         {
             vmAppUser vmAP = new vmAppUser();
             if (ModelState.IsValid)
             {
 
                 vmAP = service.PostUser(vmAU);
-                return vmAP;
+                if (vmAP == null)
+                {
+                    BadRequest("AppUserId is not zero and it does not exist in the database.");
+                    return null;
+                }
+                else
+                {
+                    return vmAP;
+                }
             }
             else
             {
                 BadRequest("This data is not valid.");
-
                 return null;
             }
         }
