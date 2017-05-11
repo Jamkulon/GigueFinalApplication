@@ -22,7 +22,7 @@ namespace Gigue
     public class RegistrationActivity : Activity
     {
 
-        RelativeLayout rRelativeLayout;
+        LinearLayout rLinearLayout;
 
         EditText mFirstName;
         EditText mLastName;
@@ -35,9 +35,9 @@ namespace Gigue
 
         //RelativeLayout mRelativeLayout;
 
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected override void OnCreate(Bundle bundle)
         {
-            base.OnCreate(savedInstanceState);
+            base.OnCreate(bundle);
             SetContentView(Resource.Layout.Registration);
 
             mFirstName = FindViewById<EditText>(Resource.Id.txtFirstName);
@@ -49,8 +49,8 @@ namespace Gigue
             mMusician.Click += mMusician_Click;
             mUser.Click += mUser_Click;
 
-            rRelativeLayout = FindViewById<RelativeLayout>(Resource.Id.mainView);
-            rRelativeLayout.Click += rRelativeLayout_Click;
+            rLinearLayout = FindViewById<LinearLayout>(Resource.Id.mainView);
+            rLinearLayout.Click += rLinearLayout_Click;
 
             // Create your application here
         }
@@ -114,7 +114,7 @@ namespace Gigue
             vmAppUser currentUser = await userdata.AddAppUser(itemToAdd);
 
             //Switch to  User Profile
-            Intent intent = new Intent(this, typeof(createUserProfile));
+            Intent intent = new Intent(this, typeof(ThankYou));
 
             User user = new User()
             {
@@ -129,7 +129,7 @@ namespace Gigue
             this.StartActivity(intent);
             this.OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);
         }
-        void rRelativeLayout_Click(object sender, EventArgs e)
+        void rLinearLayout_Click(object sender, EventArgs e)
         {
             InputMethodManager inputManager = (InputMethodManager)this.GetSystemService(Activity.InputMethodService);
             inputManager.HideSoftInputFromWindow(this.CurrentFocus.WindowToken, HideSoftInputFlags.None);

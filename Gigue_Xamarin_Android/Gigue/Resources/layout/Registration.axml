@@ -1,107 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:focusable="true"
     android:id="@+id/mainView"
     android:clickable="true"
-    android:background="#424242">
-    <ScrollView
-        android:minWidth="25px"
-        android:minHeight="25px"
+    android:background="#424242"
+    android:weightSum="100">
+    <ImageView
+        android:src="@drawable/imageedit_9_7239508233"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/imageView1"
+        android:layout_weight="15" />
+    <TextView
+        android:text="REGISTRATION"
+        android:gravity="center"
+        android:textColor="#f2854b"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:layout_width="fill_parent"
+        android:id="@+id/textView1"
+        android:layout_height="0dp"
+        android:layout_weight="10" />
+    <EditText
+        android:id="@+id/txtFirstName"
+        android:inputType="textCapSentences"
+        android:background="@drawable/edit_text_style"
+        android:textColor="#FF4500"
+        android:hint="First Name"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:textColorHint="#d3d3d3"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="25dp"
+        android:layout_weight="4"
+        android:backgroundTint="#ffffbe61" />
+    <EditText
+        android:id="@+id/txtLastName"
+        android:inputType="textCapSentences"
+        android:background="@drawable/edit_text_style"
+        android:textColor="#FF4500"
+        android:hint="Last Name"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:textColorHint="#d3d3d3"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="4"
+        android:backgroundTint="#ffffbe61" />
+    <EditText
+        android:id="@+id/txtEmail"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/edit_text_style"
+        android:textColor="#FF4500"
+        android:hint="Email Address"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:textColorHint="#d3d3d3"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="4"
+        android:backgroundTint="#ffffbe61" />
+    <EditText
+        android:id="@+id/txtPassword"
+        android:inputType="textPassword"
+        android:background="@drawable/edit_text_style"
+        android:textColor="#FF4500"
+        android:hint="Password"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:textColorHint="#d3d3d3"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="4"
+        android:backgroundTint="#ffffbe61" />
+    <TextView
+        android:text="Hey Musicians!"
+        android:gravity="center"
+        android:textColor="#f2854b"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:layout_width="fill_parent"
+        android:id="@+id/textView1"
+        android:layout_height="0dp"
+        android:layout_weight="10" />
+    <Button
+        android:text="Sign Up Here"
+        android:layout_width="281.5dp"
+        android:layout_height="0dp"
+        android:id="@+id/btnMusician"
+        android:background="@drawable/musicianLoginButton"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:textSize="20sp"
+        android:layout_weight="5"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:backgroundTint="#ff8b0000" />
+    <TextView
+        android:text="Can't Play or Sing?"
+        android:gravity="center"
+        android:textColor="#f2854b"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:layout_width="fill_parent"
+        android:id="@+id/textView1"
+        android:layout_height="0dp"
+        android:layout_weight="10" />
+    <Button
+        android:text="Sign Up Anyway"
+        android:layout_width="278.0dp"
+        android:layout_height="0dp"
+        android:id="@+id/btnUser"
+        android:background="@drawable/userSignUpButton"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:layout_marginLeft="0dp"
+        android:textColor="#ffffff"
+        android:layout_weight="5"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:backgroundTint="#ff006400" />
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/scrollView1">
-        <TableLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:stretchColumns="1">
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="361.0dp"
-                android:layout_height="533.5dp"
-                android:layout_centerInParent="true"
-                android:gravity="center"
-                android:background="#424242">
-                <TextView
-                    android:text="REGISTRATION"
-                    android:gravity="center"
-                    android:textColor="#f2854b"
-                    android:textSize="40sp"
-                    android:textStyle="bold"
-                    android:typeface="serif"
-                    android:layout_width="match_parent"
-                    android:id="@+id/textView1"
-                    android:layout_height="84.5dp" />
-                <EditText
-                    android:id="@+id/txtFirstName"
-                    android:inputType="textCapSentences"
-                    android:background="@drawable/edit_text_style"
-                    android:textColor="#FF4500"
-                    android:hint="First Name"
-                    android:textColorHint="#d3d3d3"
-                    android:layout_width="365.0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp" />
-                <EditText
-                    android:id="@+id/txtLastName"
-                    android:inputType="textCapSentences"
-                    android:background="@drawable/edit_text_style"
-                    android:textColor="#FF4500"
-                    android:hint="Last Name"
-                    android:textColorHint="#d3d3d3"
-                    android:layout_width="365.0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp" />
-                <EditText
-                    android:id="@+id/txtEmail"
-                    android:inputType="textEmailAddress"
-                    android:background="@drawable/edit_text_style"
-                    android:textColor="#FF4500"
-                    android:hint="Email Address"
-                    android:textColorHint="#d3d3d3"
-                    android:layout_width="365.0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp" />
-                <EditText
-                    android:id="@+id/txtPassword"
-                    android:inputType="textPassword"
-                    android:background="@drawable/edit_text_style"
-                    android:textColor="#FF4500"
-                    android:hint="Password"
-                    android:textColorHint="#d3d3d3"
-                    android:layout_width="365.0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp" />
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:id="@+id/linearLayout1"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="100dp">
-                    <Button
-                        android:text="Create Musician Profile"
-                        android:layout_width="120dp"
-                        android:layout_height="60dp"
-                        android:id="@+id/btnMusician"
-                        android:background="@drawable/Login_Style_Button"
-                        android:textStyle="bold"
-                        android:typeface="serif"
-                        android:textSize="14sp" />
-                    <Button
-                        android:text="Create User Profile"
-                        android:layout_width="120dp"
-                        android:layout_height="60dp"
-                        android:id="@+id/btnUser"
-                        android:background="@drawable/Login_Style_Button"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:typeface="serif"
-                        android:layout_marginLeft="20dp"
-                        android:textColor="#ffffff" />
-                </LinearLayout>
-            </LinearLayout>
-        </TableLayout>
-    </ScrollView>
-</RelativeLayout>
+        android:id="@+id/textView2"
+        android:layout_weight="29" />
+</LinearLayout>

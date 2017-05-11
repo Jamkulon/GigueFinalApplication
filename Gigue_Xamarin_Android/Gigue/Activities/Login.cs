@@ -17,13 +17,15 @@ using Android.Views.InputMethods;
 
 namespace Gigue.Activities
 {
-    [Activity(MainLauncher = false, Theme = ("@android:style/Theme.NoTitleBar"))]
+    [Activity(MainLauncher = true, Theme = ("@android:style/Theme.NoTitleBar"))]
     public class Login : Activity
     {
 
-        RelativeLayout mRelativeLayout;
+        LinearLayout mLinearLayout;
         Button mButton;
         EditText mUsername;
+        TextView mSignUp;
+        TextView mMoreInfo;
 
         //private MobileServiceClient client;
 
@@ -35,11 +37,15 @@ namespace Gigue.Activities
 
             SetContentView(Resource.Layout.Login);
 
-            mRelativeLayout = FindViewById<RelativeLayout>(Resource.Id.mainView);
+            mMoreInfo = FindViewById<TextView>(Resource.Id.moreInfo);
+            mSignUp = FindViewById<TextView>(Resource.Id.signUp);
+            mLinearLayout = FindViewById<LinearLayout>(Resource.Id.mainView);
             mUsername = FindViewById<EditText>(Resource.Id.txtUserName);
             mButton = FindViewById<Button>(Resource.Id.btnLogin);
             mButton.Click += mButton_Click;
-            mRelativeLayout.Click += mRelativeLayout_Click;
+            mLinearLayout.Click += mLinearLayout_Click;
+            mSignUp.Click += mSignUp_Click;
+            mMoreInfo.Click += mMoreInfo_Click;
         }
 
         //Login Button Click
@@ -51,10 +57,20 @@ namespace Gigue.Activities
             this.OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);
         }
 
-        void mRelativeLayout_Click(object sender, EventArgs e)
+        void mLinearLayout_Click(object sender, EventArgs e)
         {
             InputMethodManager inputManager = (InputMethodManager)this.GetSystemService(Activity.InputMethodService);
             inputManager.HideSoftInputFromWindow(this.CurrentFocus.WindowToken, HideSoftInputFlags.None);
+        }
+        void mSignUp_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(RegistrationActivity));
+            this.StartActivity(intent);
+        }
+        void mMoreInfo_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(InformationPage));
+            this.StartActivity(intent);
         }
     }
 }

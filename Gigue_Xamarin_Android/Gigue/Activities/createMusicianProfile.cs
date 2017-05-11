@@ -14,7 +14,7 @@ using Newtonsoft.Json;
 namespace Gigue.Activities
 {
     [Activity (Theme = ("@android:style/Theme.NoTitleBar"))]
-    public class createMusicianProfile : Activity
+    public class createMusicianProfile : RegistrationActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {

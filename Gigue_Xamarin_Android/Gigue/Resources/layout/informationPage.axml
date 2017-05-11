@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#424242"
+    android:weightSum="100">
+<!--About Gigue Header-->
+    <TextView
+        android:text="About Gigue"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="fill_parent"
+        android:textColor="#39FF14"
+        android:layout_weight="5"
+        android:layout_height="0dp"
+        android:id="@+id/textView1"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:background="#808080"
+        android:layout_gravity="center"
+        android:padding="3dp" />
+<!--Information Page Paragraph 1-->
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:id="@+id/infoP1"
+        android:background="#424242"
+        android:layout_weight="15"
+        android:textColor="#f2854b"
+        android:text="Gigue is an app designed to allow musicians to find a quick sub for a local gig.You can easily find musicians by what type of instrument they play, the genre of music, their location and see if they are currently avialable to sub."
+        android:gravity="center"
+        android:textSize="18sp" />
+<!--For Musicians Header-->
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:id="@+id/textView2"
+        android:text="For Musicians"
+        android:textColor="#39FF14"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:background="#808080"
+        android:layout_gravity="center"
+        android:padding="3dp"
+        android:textSize="16sp" />
+<!--Information Page Paragraph 2-->
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:id="@+id/infoP2"
+        android:background="#424242"
+        android:layout_weight="20"
+        android:textColor="#f2854b"
+        android:text="As a musician, you can select your status, either looking for a gig to sub on, or not currently available.  You can add yourself to our community and get found by bands that might need someone to fill in for them on a pinch!"
+        android:gravity="center"
+        android:textSize="18sp" />
+<!--Non-Musician Header-->
+    <TextView
+        android:text="For Non Musicians"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="fill_parent"
+        android:layout_weight="5"
+        android:layout_height="0dp"
+        android:id="@+id/textView3"
+        android:textColor="#39FF14"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:background="#808080"
+        android:layout_gravity="center"
+        android:padding="3dp"
+        android:textSize="16sp" />
+<!--Information Page Paragraph 3-->
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:id="@+id/infoP3"
+        android:background="#424242"
+        android:layout_weight="20"
+        android:textColor="#f2854b"
+        android:text="Even if you are not a musician, you can still search the database of available musicians that are looking for work.  If you are having an event, or someone canceled or got sick for you event, you can find someone in your area that can help you out in a tight spot."
+        android:gravity="center"
+        android:textSize="18sp" />
+<!--Back to Login Page Button-->
+    <Button
+        android:id="@+id/btnBackToLogin"
+        android:text="Back to Login Screen"
+        android:layout_height="0.0dp"
+        android:layout_weight="5"
+        android:layout_width="277.0dp"
+        android:background="@drawable/Login_Style_Button"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:layout_gravity="center"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:padding="3dp" />
+    <ImageView
+        android:src="@drawable/imageedit_9_7239508233"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="25"
+        android:id="@+id/imageView1"
+        android:padding="5dp" />
+</LinearLayout>

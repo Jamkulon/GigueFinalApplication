@@ -13,7 +13,7 @@ using Gigue.Activities;
 
 namespace Gigue
 {
-    [Activity(MainLauncher= true, Theme = ("@android:style/Theme.NoTitleBar"))]
+    [Activity(MainLauncher= false, Theme = ("@android:style/Theme.NoTitleBar"))]
     public class Home : Activity
     {
         Button mLogin;
