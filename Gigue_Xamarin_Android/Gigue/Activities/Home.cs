@@ -28,7 +28,7 @@ namespace Gigue
             base.OnResume();
             Task startupWork = new Task(() =>
             {
-                Task.Delay(5000);
+                Task.Delay(7000);
             });
             startupWork.ContinueWith(t =>
            {
