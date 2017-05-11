@@ -131,8 +131,7 @@ namespace Gigue
         }
         void rLinearLayout_Click(object sender, EventArgs e)
         {
-            InputMethodManager inputManager = (InputMethodManager)this.GetSystemService(Activity.InputMethodService);
-            inputManager.HideSoftInputFromWindow(this.CurrentFocus.WindowToken, HideSoftInputFlags.None);
+           
         }
     }
 }

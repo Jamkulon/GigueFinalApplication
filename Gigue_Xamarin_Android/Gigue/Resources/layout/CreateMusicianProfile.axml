@@ -135,7 +135,6 @@
                 android:layout_marginRight="30dp" />
             <Spinner
                 android:id="@+id/spinnerLanguagesSpoken"
-                android:textColor="#ffffff"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:prompt="@string/language_prompt"
