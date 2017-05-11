@@ -2171,8 +2171,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0a008f
 			public const int btnBackToLogin = 2131361935;
 			
-			// aapt resource value: 0x7f0a0092
-			public const int btnLogin = 2131361938;
+			// aapt resource value: 0x7f0a0093
+			public const int btnLogin = 2131361939;
 			
 			// aapt resource value: 0x7f0a00b2
 			public const int btnMusician = 2131361970;
@@ -2357,8 +2357,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0a00ac
 			public const int line3 = 2131361964;
 			
-			// aapt resource value: 0x7f0a0096
-			public const int linearLayout1 = 2131361942;
+			// aapt resource value: 0x7f0a0090
+			public const int linearLayout1 = 2131361936;
 			
 			// aapt resource value: 0x7f0a001b
 			public const int listMode = 2131361819;
@@ -2378,14 +2378,14 @@ namespace Gigue
 			// aapt resource value: 0x7f0a00ba
 			public const int menu_refresh = 2131361978;
 			
-			// aapt resource value: 0x7f0a0095
-			public const int messenger_send_button = 2131361941;
+			// aapt resource value: 0x7f0a0096
+			public const int messenger_send_button = 2131361942;
 			
 			// aapt resource value: 0x7f0a002d
 			public const int middle = 2131361837;
 			
-			// aapt resource value: 0x7f0a0094
-			public const int moreInfo = 2131361940;
+			// aapt resource value: 0x7f0a0095
+			public const int moreInfo = 2131361941;
 			
 			// aapt resource value: 0x7f0a0025
 			public const int multiply = 2131361829;
@@ -2507,8 +2507,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0a0022
 			public const int showTitle = 2131361826;
 			
-			// aapt resource value: 0x7f0a0093
-			public const int signUp = 2131361939;
+			// aapt resource value: 0x7f0a0094
+			public const int signUp = 2131361940;
 			
 			// aapt resource value: 0x7f0a001a
 			public const int small = 2131361818;
@@ -2621,11 +2621,11 @@ namespace Gigue
 			// aapt resource value: 0x7f0a00b0
 			public const int txtLastName = 2131361968;
 			
-			// aapt resource value: 0x7f0a0091
-			public const int txtPassword = 2131361937;
+			// aapt resource value: 0x7f0a0092
+			public const int txtPassword = 2131361938;
 			
-			// aapt resource value: 0x7f0a0090
-			public const int txtUserName = 2131361936;
+			// aapt resource value: 0x7f0a0091
+			public const int txtUserName = 2131361937;
 			
 			// aapt resource value: 0x7f0a000b
 			public const int unknown = 2131361803;
