@@ -10,33 +10,32 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Gigue.Activities;
+using System.Threading.Tasks;
 
 namespace Gigue
 {
-    [Activity(MainLauncher= false, WindowSoftInputMode = SoftInput.AdjustResize, Theme = ("@android:style/Theme.NoTitleBar"))]
+    [Activity(MainLauncher= true, WindowSoftInputMode = SoftInput.AdjustResize, Theme = ("@android:style/Theme.NoTitleBar"))]
     public class Home : Activity
     {
-        Button mLogin;
-        Button mRegister;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.HomePage);
 
-            mLogin = FindViewById<Button>(Resource.Id.buttonLoginPage);
-            mRegister = FindViewById<Button>(Resource.Id.buttonRegisterPage);
-            mLogin.Click += mLogin_Click;
-            mRegister.Click += mRegister_Click;
         }
-        void mLogin_Click(object sender, EventArgs e)
+        protected override void OnResume()
         {
-            Intent intent = new Intent(this, typeof(Login));
-            this.StartActivity(intent);
-        }
-        void mRegister_Click(object sender, EventArgs e)
-        {
-            Intent intent = new Intent(this, typeof(RegistrationActivity));
-            this.StartActivity(intent);
+            base.OnResume();
+            Task startupWork = new Task(() =>
+            {
+                Task.Delay(5000);
+            });
+            startupWork.ContinueWith(t =>
+           {
+               StartActivity(new Intent(Application.Context, typeof(Login)));
+           }, TaskScheduler.FromCurrentSynchronizationContext());
+
+           startupWork.Start();
         }
     }
 }

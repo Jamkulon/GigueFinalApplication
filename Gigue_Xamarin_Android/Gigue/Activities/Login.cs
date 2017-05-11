@@ -17,7 +17,7 @@ using Android.Views.InputMethods;
 
 namespace Gigue.Activities
 {
-    [Activity(MainLauncher = true, WindowSoftInputMode = SoftInput.AdjustResize, Theme = ("@android:style/Theme.NoTitleBar"))]
+    [Activity(MainLauncher = false, WindowSoftInputMode = SoftInput.AdjustResize, Theme = ("@android:style/Theme.NoTitleBar"))]
     public class Login : Activity
     {
 
