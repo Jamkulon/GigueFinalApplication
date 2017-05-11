@@ -15,16 +15,16 @@
         android:id="@+id/imageView1"
         android:layout_weight="15" />
     <TextView
-        android:text="REGISTRATION"
+        android:text="Register and Join Our Community!"
         android:gravity="center"
         android:textColor="#f2854b"
-        android:textSize="35sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         android:typeface="serif"
         android:layout_width="fill_parent"
         android:id="@+id/textView1"
         android:layout_height="0dp"
-        android:layout_weight="10" />
+        android:layout_weight="15" />
     <EditText
         android:id="@+id/txtFirstName"
         android:inputType="textCapSentences"
@@ -37,7 +37,7 @@
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_marginTop="25dp"
-        android:layout_weight="4"
+        android:layout_weight="7"
         android:backgroundTint="#ffffbe61" />
     <EditText
         android:id="@+id/txtLastName"
@@ -51,7 +51,7 @@
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
-        android:layout_weight="4"
+        android:layout_weight="7"
         android:backgroundTint="#ffffbe61" />
     <EditText
         android:id="@+id/txtEmail"
@@ -65,7 +65,7 @@
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
-        android:layout_weight="4"
+        android:layout_weight="7"
         android:backgroundTint="#ffffbe61" />
     <EditText
         android:id="@+id/txtPassword"
@@ -79,7 +79,7 @@
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
-        android:layout_weight="4"
+        android:layout_weight="7"
         android:backgroundTint="#ffffbe61" />
     <TextView
         android:text="Hey Musicians!"
@@ -101,7 +101,7 @@
         android:textStyle="bold"
         android:typeface="serif"
         android:textSize="20sp"
-        android:layout_weight="5"
+        android:layout_weight="7.5"
         android:gravity="center"
         android:layout_gravity="center"
         android:backgroundTint="#ff8b0000" />
@@ -127,13 +127,9 @@
         android:typeface="serif"
         android:layout_marginLeft="0dp"
         android:textColor="#ffffff"
-        android:layout_weight="5"
+        android:layout_weight="7.5"
         android:layout_gravity="center"
         android:gravity="center"
         android:backgroundTint="#ff006400" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView2"
-        android:layout_weight="29" />
+    
 </LinearLayout>

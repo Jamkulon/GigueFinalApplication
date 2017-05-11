@@ -15,7 +15,7 @@ using Gigue.Adapters;
 
 namespace Gigue.Activities
 {
-    [Activity(Theme = ("@android:style/Theme.NoTitleBar"))]
+    [Activity(WindowSoftInputMode = SoftInput.AdjustResize, Theme = ("@android:style/Theme.NoTitleBar"))]
     public class createUserProfile : Activity
     {
         EditText mRegisterFirst;

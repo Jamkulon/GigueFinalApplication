@@ -18,7 +18,7 @@ using Newtonsoft.Json;
 
 namespace Gigue
 {
-    [Activity(Theme = ("@android:style/Theme.NoTitleBar"))]
+    [Activity(WindowSoftInputMode = SoftInput.AdjustResize, Theme = ("@android:style/Theme.NoTitleBar"))]
     public class RegistrationActivity : Activity
     {
 

@@ -198,7 +198,7 @@
     <Compile Include="Activities\SplashScreen.cs" />
     <Compile Include="Activities\TestData.cs" />
     <Compile Include="Activities\Home.cs" />
-    <Compile Include="Activities\ThankYou.cs" />
+    <Compile Include="Activities\Thanks.cs" />
     <Compile Include="Adapters\UserData.cs" />
     <Compile Include="DataObjects\AppUser.cs" />
     <Compile Include="DataObjects\Genre.cs" />
@@ -260,7 +260,7 @@
     <AndroidResource Include="Resources\layout\informationPage.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\thankYou.axml">
+    <AndroidResource Include="Resources\layout\thanks.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Gigue.Activities
 {
-    [Activity(Theme = ("@android:style/Theme.NoTitleBar"))]
+    [Activity(WindowSoftInputMode = SoftInput.AdjustResize, Theme = ("@android:style/Theme.NoTitleBar"))]
     public class MusicianProfile : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

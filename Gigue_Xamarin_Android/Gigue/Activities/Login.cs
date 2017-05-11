@@ -17,12 +17,12 @@ using Android.Views.InputMethods;
 
 namespace Gigue.Activities
 {
-    [Activity(MainLauncher = true, Theme = ("@android:style/Theme.NoTitleBar"))]
+    [Activity(MainLauncher = true, WindowSoftInputMode = SoftInput.AdjustResize, Theme = ("@android:style/Theme.NoTitleBar"))]
     public class Login : Activity
     {
 
         LinearLayout mLinearLayout;
-        Button mButton;
+        Button mLogin;
         EditText mUsername;
         TextView mSignUp;
         TextView mMoreInfo;
@@ -41,15 +41,17 @@ namespace Gigue.Activities
             mSignUp = FindViewById<TextView>(Resource.Id.signUp);
             mLinearLayout = FindViewById<LinearLayout>(Resource.Id.mainView);
             mUsername = FindViewById<EditText>(Resource.Id.txtUserName);
-            mButton = FindViewById<Button>(Resource.Id.btnLogin);
-            mButton.Click += mButton_Click;
+            mLogin = FindViewById<Button>(Resource.Id.btnLogin);
+            mLogin.Click += mLogin_Click;
             mLinearLayout.Click += mLinearLayout_Click;
             mSignUp.Click += mSignUp_Click;
             mMoreInfo.Click += mMoreInfo_Click;
+
+
         }
 
         //Login Button Click
-        void mButton_Click(object sender, EventArgs e)
+        void mLogin_Click(object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(Search));
 
