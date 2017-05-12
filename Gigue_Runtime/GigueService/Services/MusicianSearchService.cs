@@ -49,19 +49,18 @@ namespace GigueService.Services
                 //2.  Last name is null.  City is null.  Prime instrument is described.
                 //3.  Last name is null.  City and prime instrument are described. 
 
-                if (vmMS.City != null && vmMS.PrimeInstrument != null)
+                if (!string.IsNullOrEmpty(vmMS.City) && !string.IsNullOrEmpty(vmMS.PrimeInstrument))
                 {
                     vmMRs = GetMusiciansByCityInstrument(vmMS);
                 }
-                else if (vmMS.City != null)
+                else if (!string.IsNullOrEmpty(vmMS.City))
                 {
                     vmMRs = GetMusicianInstrumentsByCity(vmMS);
                 }
-                else if (vmMS.PrimeInstrument != null)
+                else if (!string.IsNullOrEmpty(vmMS.PrimeInstrument))
                 {
                     vmMRs = GetMusicianCitiesByInstrument(vmMS);
                 }
-               
             }
             return vmMRs;
         }
