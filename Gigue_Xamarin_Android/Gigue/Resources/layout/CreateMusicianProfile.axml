@@ -7,7 +7,7 @@
     android:descendantFocusability="beforeDescendants"
     android:focusableInTouchMode="true"
     android:id="@+id/mainView"
-    android:background="#424242">
+    android:background="#242424">
     <ScrollView
         android:minWidth="25px"
         android:minHeight="25px"
