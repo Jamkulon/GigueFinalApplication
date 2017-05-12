@@ -35,11 +35,11 @@ namespace GigueService.Services
 
             List<vmMusicianResult> vmMRs = new List<vmMusicianResult>();
             //LastName is provided.
-            if (vmMS.LastName != string.IsNullOrEmpty)
+            if (string.IsNullOrEmpty(vmMS.LastName))
             {
                 vmMRs = GetMusicianByLastName(vmMS);
             }
-            else if ( vmMS.FirstName != string.IsNullOrEmpty)
+            else if ( string.IsNullOrEmpty(vmMS.FirstName))
             {
                 vmMRs = GetMusicianByFirstName(vmMS);
             }
