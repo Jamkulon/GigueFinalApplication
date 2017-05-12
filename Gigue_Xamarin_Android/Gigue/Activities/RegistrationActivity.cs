@@ -127,7 +127,7 @@ namespace Gigue
             intent.PutExtra("User", JsonConvert.SerializeObject(user));
 
             this.StartActivity(intent);
-            this.OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);
+            this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
         }
         void rLinearLayout_Click(object sender, EventArgs e)
         {
