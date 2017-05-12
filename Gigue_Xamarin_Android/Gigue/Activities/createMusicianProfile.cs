@@ -109,10 +109,7 @@ namespace Gigue.Activities
             Spinner spinner = (Spinner)sender;
 
 
-            //code used to show selection, no longer needed
             
-            //string toast = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
-            //Toast.MakeText(this, toast, ToastLength.Long).Show();
         }
         void mSubmitMusicianProfile_Click(object sender, EventArgs e)
         {

@@ -31,6 +31,24 @@ namespace Gigue.Activities
             mViewProfile = FindViewById<Button>(Resource.Id.btnViewProfile);
             mViewProfile.Click += mViewProfile_Click;
 
+            Spinner citySpinner = FindViewById<Spinner>(Resource.Id.spinnerCity);
+
+            citySpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+            var CityAdapter = ArrayAdapter.CreateFromResource(
+                    this, Resource.Array.cities_array, Android.Resource.Layout.SimpleSpinnerItem);
+
+            CityAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            citySpinner.Adapter = CityAdapter;
+
+
+            Spinner instrumentSpinner = FindViewById<Spinner>(Resource.Id.spinnerInstrumentPlayed);
+            instrumentSpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+            var instrumentAdapter = ArrayAdapter.CreateFromResource(
+                    this, Resource.Array.instrument_array, Android.Resource.Layout.SimpleSpinnerItem);
+
+            instrumentAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            instrumentSpinner.Adapter = instrumentAdapter;
+
             // Create your application here
         }
         void mSearchResults_Click(object sender, EventArgs r)
@@ -42,6 +60,13 @@ namespace Gigue.Activities
         {
             Intent intent = new Intent(this, typeof(MusicianProfile));
             this.StartActivity(intent);
+        }
+        private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
+        {
+            Spinner spinner = (Spinner)sender;
+
+
+
         }
     }
 }

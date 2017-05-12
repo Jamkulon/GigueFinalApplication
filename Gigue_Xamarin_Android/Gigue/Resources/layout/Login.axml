@@ -16,6 +16,7 @@
                   android:layout_height="125dp">
     <ImageView
         android:src="@drawable/imageedit_9_7239508233"
+        android:paddingTop="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView1" />
