@@ -6,108 +6,108 @@
     android:focusable="true"
     android:minWidth="25px"
     android:minHeight="25px"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
     android:id="@+id/mainView"
     android:clickable="true"
     android:background="#424242">
-
-  <LinearLayout android:layout_width="match_parent"
-                  android:id="@+id/linearLayout1"
-                  android:gravity="center"
-                  android:layout_height="125dp">
-    <ImageView
-        android:src="@drawable/imageedit_9_7239508233"
-        android:paddingTop="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView1" />
-  </LinearLayout>
-
-  <ScrollView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/linearLayout1"
+        android:gravity="center"
+        android:layout_height="125dp">
+        <ImageView
+            android:src="@drawable/imageedit_9_7239508233"
+            android:paddingTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView1" />
+    </LinearLayout>
+    <ScrollView
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/scrollView1">
-    <TableLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:stretchColumns="1">
-      <EditText
-          android:id="@+id/txtUserName"
-          android:inputType="textPersonName"
-          android:layout_width="match_parent"
-          android:layout_height="35dp"
-          android:background="@drawable/edit_text_style"
-          android:layout_marginLeft="20dp"
-          android:layout_marginRight="20dp"
-          android:layout_marginBottom="10dp"
-          android:textColor="#FF4500"
-          android:hint="Account Email"
-          android:textColorHint="#d3d3d3"
-          android:layout_marginTop="10dp" />
-      <EditText
-          android:id="@+id/txtPassword"
-          android:inputType="textPassword"
-          android:layout_width="match_parent"
-          android:layout_height="35dp"
-          android:background="@drawable/edit_text_style"
-          android:layout_marginLeft="20dp"
-          android:layout_marginRight="20dp"
-          android:layout_marginTop="10dp"
-          android:textColor="#FF4500"
-          android:hint="Password"
-          android:textColorHint="#d3d3d3" />
-      <Button
-          android:id="@+id/btnLogin"
-          android:text="Login"
-          android:layout_height="40dp"
-          android:layout_width="match_parent"
-          android:background="@drawable/Login_Style_Button"
-          android:textSize="20sp"
-          android:textStyle="bold"
-          android:typeface="serif"
-          android:layout_gravity="center"
-          android:textColor="#ffffff"
-          android:gravity="center"
-          android:layout_marginTop="20dp"
-          android:layout_marginLeft="100dp"
-          android:layout_marginRight="100dp" />
-      <TextView
-          android:text="Don't have an account?"
-          android:layout_width="match_parent"
-          android:layout_height="26.5dp"
-          android:id="@+id/textView3"
-          android:gravity="right"
-          android:textSize="15sp"
-          android:layout_marginRight="20dp"
-          android:layout_marginTop="20dp"
-          android:textColor="#ffffff"
-          android:textStyle="bold"
-          android:typeface="serif" />
-      <TextView
-          android:text="Sign Up"
-          android:layout_width="match_parent"
-          android:layout_height="42.0dp"
-          android:id="@+id/signUp"
-          android:clickable="true"
-          android:textStyle="bold"
-          android:gravity="right"
-          android:textSize="20sp"
-          android:textColor="#f2854b"
-          android:typeface="sans"
-          android:layout_marginRight="25dp" />
-      <TextView
-          android:text="Learn more about Gigue"
-          android:layout_width="wrap_content"
-          android:layout_height="41.5dp"
-          android:id="@+id/moreInfo"
-          android:gravity="center"
-          android:clickable="true"
-          android:textStyle="bold"
-          android:textSize="20sp"
-          android:typeface="serif"
-          android:textColor="#ffffff"
-          android:layout_marginLeft="70dp" />
-    </TableLayout>
-  </ScrollView>
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:stretchColumns="1">
+            <EditText
+                android:id="@+id/txtUserName"
+                android:inputType="textPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@drawable/edit_text_style"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="#FF4500"
+                android:hint="Account Email"
+                android:textColorHint="#d3d3d3"
+                android:layout_marginTop="10dp" />
+            <EditText
+                android:id="@+id/txtPassword"
+                android:inputType="textPassword"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@drawable/edit_text_style"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:textColor="#FF4500"
+                android:hint="Password"
+                android:textColorHint="#d3d3d3" />
+            <Button
+                android:id="@+id/btnLogin"
+                android:text="Login"
+                android:layout_height="40dp"
+                android:layout_width="match_parent"
+                android:background="@drawable/Login_Style_Button"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:layout_gravity="center"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="100dp" />
+            <TextView
+                android:text="Don't have an account?"
+                android:layout_width="match_parent"
+                android:layout_height="26.5dp"
+                android:id="@+id/textView3"
+                android:gravity="right"
+                android:textSize="15sp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:typeface="serif" />
+            <TextView
+                android:text="Sign Up"
+                android:layout_width="match_parent"
+                android:layout_height="42.0dp"
+                android:id="@+id/signUp"
+                android:clickable="true"
+                android:textStyle="bold"
+                android:gravity="right"
+                android:textSize="20sp"
+                android:textColor="#f2854b"
+                android:typeface="sans"
+                android:layout_marginRight="25dp" />
+            <TextView
+                android:text="Learn more about Gigue"
+                android:layout_width="wrap_content"
+                android:id="@+id/moreInfo"
+                android:gravity="center"
+                android:clickable="true"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:typeface="serif"
+                android:textColor="#ffffff"
+                android:layout_gravity="top" />
+        </TableLayout>
+    </ScrollView>
 </LinearLayout>

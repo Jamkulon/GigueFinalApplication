@@ -3,114 +3,127 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
     android:focusable="true"
-    android:id="@+id/mainView"
+    android:id="@+id/srchView"
+  
     android:background="#424242">
-  <ScrollView
-      android:minWidth="25px"
-      android:minHeight="25px"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:id="@+id/scrollView1">
-    <TableLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:stretchColumns="1">
-      <!--Enter First Name-->
-      <TextView
-          android:text="Search For Possible Gig Rescuers!!"
-          android:textAppearance="?android:attr/textAppearanceLarge"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:id="@+id/textView1"
-          android:textStyle="bold"
-          android:typeface="serif"
-          android:gravity="center"
-          android:textColor="#f2854b" />
-      <EditText
-          android:hint="Search by Name"
-          android:inputType="textPersonName"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:id="@+id/editFirstName"
-          android:textColor="#000000" />
-      <Button
-          android:text="Search by Name"
-          android:id="@+id/btnNameSearch"
-          android:background="@drawable/Login_Style_Button"
-          android:textStyle="bold"
-          android:typeface="serif"
-          android:textSize="16sp"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginTop="30dp"
-          android:layout_marginRight="100dp"
-          android:layout_marginStart="100dp"
-          android:gravity="center"
-          android:textColor="#ffffff" />
-      
-      
-      <!--Select User City-->
-      <TextView
-          android:layout_width="343.0dp"
-          android:layout_height="wrap_content"
-          android:layout_marginTop="10dip"
-          android:text="Search by City"
-          android:layout_marginLeft="30dp"
-          android:layout_marginRight="30dp" />
-      <Spinner
-          android:id="@+id/spinnerCity"
-          android:layout_width="308.0dp"
-          android:layout_height="wrap_content"
-          android:prompt="@string/cities_prompt"
-          android:layout_marginRight="40dp"
-          android:layout_marginLeft="40dp" />
-      
-      <!--Select Instruments You Play-->
-      <TextView
-          android:layout_width="fill_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginTop="10dip"
-          android:text="Search by Instrument"
-          android:layout_marginLeft="30dp"
-          android:layout_marginRight="30dp" />
-      <Spinner
-          android:id="@+id/spinnerInstrumentPlayed"
-          android:layout_width="fill_parent"
-          android:layout_height="wrap_content"
-          android:prompt="@string/instrument_prompt"
-          android:layout_marginLeft="40dp"
-          android:layout_marginRight="40dp" />
-      
-      <!--Search Button-->
-      <Button
-          android:text="Save My Gig!"
-          android:id="@+id/btnResults"
-          android:background="@drawable/Login_Style_Button"
-          android:textStyle="bold"
-          android:typeface="serif"
-          android:textSize="16sp"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginTop="30dp"
-          android:layout_marginRight="100dp"
-          android:layout_marginStart="100dp"
-          android:gravity="center"
-          android:textColor="#ffffff" />
-      <Button
-          android:text="See My Profile"
-          android:id="@+id/btnViewProfile"
-          android:background="@drawable/Login_Style_Button"
-          android:textStyle="bold"
-          android:typeface="serif"
-          android:textSize="16sp"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginTop="30dp"
-          android:layout_marginRight="100dp"
-          android:layout_marginStart="100dp"
-          android:gravity="center"
-          android:textColor="#ffffff" />
-    </TableLayout>
-  </ScrollView>
+    <ScrollView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollSrch">
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:stretchColumns="1">
+        <!--Enter First Name-->
+            <TextView
+                android:text="Search For Possible Gig Rescuers!"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnSearchMusicians"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:gravity="center"
+                android:textColor="#f2854b" />
+            <EditText
+                android:hint="First Name"
+                android:inputType="textPersonName"
+                android:layout_width="346.0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/enterFirstName"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:textColor="#000000" />
+            <EditText
+                android:hint="Last Name"
+                android:inputType="textPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/enterLastName"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:textColor="#000000" />
+            <Button
+                android:text="Search by Name"
+                android:id="@+id/btnNameSearch"
+                android:background="@drawable/Login_Style_Button"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="100dp"
+                android:layout_marginStart="100dp"
+                android:gravity="center"
+                android:textColor="#ffffff" />
+        <!--Select User City-->
+            <TextView
+                android:layout_width="343.0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:text="Search by City"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp" />
+            <Spinner
+                android:id="@+id/spinnerCity"
+                android:layout_width="308.0dp"
+                android:layout_height="wrap_content"
+                android:prompt="@string/cities_prompt"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp" />
+        <!--Select Instruments You Play-->
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:text="Search by Instrument"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp" />
+            <Spinner
+                android:id="@+id/spinnerInstrumentPlayed"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:prompt="@string/instrument_prompt"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp" />
+        <!--Search Button-->
+            <Button
+                android:text="Save My Gig!"
+                android:id="@+id/btnResults"
+                android:background="@drawable/Login_Style_Button"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="100dp"
+                android:layout_marginStart="100dp"
+                android:gravity="center"
+                android:textColor="#ffffff" />
+            <Button
+                android:text="See My Profile"
+                android:id="@+id/btnViewProfile"
+                android:background="@drawable/Login_Style_Button"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="100dp"
+                android:layout_marginStart="100dp"
+                android:gravity="center"
+                android:textColor="#ffffff" />
+        </TableLayout>
+    </ScrollView>
 </LinearLayout>
