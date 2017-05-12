@@ -34,19 +34,21 @@ namespace GigueService.Controllers
         //===============================================================
         //Methods().    
         //===============================================================    
+        //Get a list of all the musicians, last name, first name, city and primary instrument. 
         // GET: api/MusicianSearch
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
         //=================================================================
-        // GET: api/MusicianSearch/5
+        //Get a single musician describing last name, first name, city, and primary instrument. 
+        //GET: api/MusicianSearch/5
         public string Get(int id)
         {
             return "value";
         }
         //=================================================================
-        //Use the post method to view an object from the client side and to return either a single vmMusicianSearch if the Stage Name is described or a list of VMMusicianSearches if either the the city or prime instrument is described. 
+        //Get a list of musicians.  Use the post method to pass an object to the servier side from the client side.  Return either a single vmMusicianSearch object (Last name, first name, city, and primary instrument) if the last name is described or a list of vmMusicianSearch objects if either the the city or prime instrument is described. 
         // POST: api/MusicianSearch
         public List<vmMusicianResult> Post([FromBody]vmMusicianSearch vmMS)
         {
