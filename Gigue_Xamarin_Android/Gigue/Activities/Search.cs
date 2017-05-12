@@ -9,13 +9,14 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Views.InputMethods;
 
 namespace Gigue.Activities
 {
     [Activity(WindowSoftInputMode = SoftInput.AdjustResize, Theme = ("@android:style/Theme.NoTitleBar"))]
     public class Search : Activity
     {
-
+        LinearLayout sLinearLayout;
         Button mSearchResults;
         Button mViewProfile;
         
@@ -23,14 +24,22 @@ namespace Gigue.Activities
         {
             base.OnCreate(savedInstanceState);
 
+            //Set this page's main view//
             SetContentView(Resource.Layout.searchPage);
 
+            //Linear Layout Hide Keyboar//
+            sLinearLayout = FindViewById<LinearLayout>(Resource.Id.srchView);
+            sLinearLayout.Click += sLinearLayout_Click;
+
+            //Search Results Button Click Event//
             mSearchResults = FindViewById<Button>(Resource.Id.btnResults);
             mSearchResults.Click += mSearchResults_Click;
 
+            //View Profile Click Event
             mViewProfile = FindViewById<Button>(Resource.Id.btnViewProfile);
             mViewProfile.Click += mViewProfile_Click;
 
+            //City Spinner class and method//
             Spinner citySpinner = FindViewById<Spinner>(Resource.Id.spinnerCity);
 
             citySpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
@@ -40,7 +49,7 @@ namespace Gigue.Activities
             CityAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             citySpinner.Adapter = CityAdapter;
 
-
+            //Instrument Spinner class and methods//
             Spinner instrumentSpinner = FindViewById<Spinner>(Resource.Id.spinnerInstrumentPlayed);
             instrumentSpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
             var instrumentAdapter = ArrayAdapter.CreateFromResource(
@@ -49,24 +58,33 @@ namespace Gigue.Activities
             instrumentAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             instrumentSpinner.Adapter = instrumentAdapter;
 
-            // Create your application here
+            // Search Click Activity to Send to Search Results Page
         }
         void mSearchResults_Click(object sender, EventArgs r)
         {
             Intent intent = new Intent(this, typeof(searchResults));
             this.StartActivity(intent);
         }
+
+        // View Profile Activity to Send to Profile Page
         void mViewProfile_Click(object sender, EventArgs r)
         {
             Intent intent = new Intent(this, typeof(MusicianProfile));
             this.StartActivity(intent);
         }
+
+        //Spinner Item Selected view events//
         private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
             Spinner spinner = (Spinner)sender;
+            
+        }
 
-
-
+        //Linear Layout to make keyboard disappear upon clicking off and edit text field//
+        void sLinearLayout_Click(object sender, EventArgs e)
+        {
+            InputMethodManager inputManager = (InputMethodManager)this.GetSystemService(Activity.InputMethodService);
+            inputManager.HideSoftInputFromWindow(this.CurrentFocus.WindowToken, HideSoftInputFlags.None);
         }
     }
 }
