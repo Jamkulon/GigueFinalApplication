@@ -61,6 +61,18 @@ namespace Gigue
 			// aapt resource value: 0x7f040009
 			public const int abc_slide_out_top = 2130968585;
 			
+			// aapt resource value: 0x7f04000a
+			public const int slide_in_bottom = 2130968586;
+			
+			// aapt resource value: 0x7f04000b
+			public const int slide_in_top = 2130968587;
+			
+			// aapt resource value: 0x7f04000c
+			public const int slide_out_bottom = 2130968588;
+			
+			// aapt resource value: 0x7f04000d
+			public const int slide_out_top = 2130968589;
+			
 			static Animation()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -2096,8 +2108,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0a0065
 			public const int LinearLayout1 = 2131361893;
 			
-			// aapt resource value: 0x7f0a00c4
-			public const int SearchResultListView = 2131361988;
+			// aapt resource value: 0x7f0a00c9
+			public const int SearchResultListView = 2131361993;
 			
 			// aapt resource value: 0x7f0a009b
 			public const int action0 = 2131361947;
@@ -2189,11 +2201,14 @@ namespace Gigue
 			// aapt resource value: 0x7f0a00be
 			public const int btnMusician = 2131361982;
 			
-			// aapt resource value: 0x7f0a00c1
-			public const int btnNameSearch = 2131361985;
+			// aapt resource value: 0x7f0a00c6
+			public const int btnNameSearch = 2131361990;
 			
-			// aapt resource value: 0x7f0a00c2
-			public const int btnResults = 2131361986;
+			// aapt resource value: 0x7f0a00c7
+			public const int btnResults = 2131361991;
+			
+			// aapt resource value: 0x7f0a00c3
+			public const int btnSearchMusicians = 2131361987;
 			
 			// aapt resource value: 0x7f0a0083
 			public const int btnSubmitMusician = 2131361923;
@@ -2201,14 +2216,14 @@ namespace Gigue
 			// aapt resource value: 0x7f0a00bf
 			public const int btnUser = 2131361983;
 			
-			// aapt resource value: 0x7f0a00c3
-			public const int btnViewProfile = 2131361987;
+			// aapt resource value: 0x7f0a00c8
+			public const int btnViewProfile = 2131361992;
 			
 			// aapt resource value: 0x7f0a000d
 			public const int button = 2131361805;
 			
-			// aapt resource value: 0x7f0a00c5
-			public const int button9 = 2131361989;
+			// aapt resource value: 0x7f0a00ca
+			public const int button9 = 2131361994;
 			
 			// aapt resource value: 0x7f0a0068
 			public const int buttonAddToDo = 2131361896;
@@ -2321,6 +2336,12 @@ namespace Gigue
 			// aapt resource value: 0x7f0a00ae
 			public const int end_padder = 2131361966;
 			
+			// aapt resource value: 0x7f0a00c4
+			public const int enterFirstName = 2131361988;
+			
+			// aapt resource value: 0x7f0a00c5
+			public const int enterLastName = 2131361989;
+			
 			// aapt resource value: 0x7f0a0037
 			public const int expand_activities_button = 2131361847;
 			
@@ -2405,8 +2426,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0a009e
 			public const int media_actions = 2131361950;
 			
-			// aapt resource value: 0x7f0a00c6
-			public const int menu_refresh = 2131361990;
+			// aapt resource value: 0x7f0a00cb
+			public const int menu_refresh = 2131361995;
 			
 			// aapt resource value: 0x7f0a0096
 			public const int messenger_send_button = 2131361942;
@@ -2482,6 +2503,9 @@ namespace Gigue
 			
 			// aapt resource value: 0x7f0a0041
 			public const int scrollIndicatorUp = 2131361857;
+			
+			// aapt resource value: 0x7f0a00c2
+			public const int scrollSrch = 2131361986;
 			
 			// aapt resource value: 0x7f0a0042
 			public const int scrollView = 2131361858;
@@ -2572,6 +2596,9 @@ namespace Gigue
 			
 			// aapt resource value: 0x7f0a0029
 			public const int src_over = 2131361833;
+			
+			// aapt resource value: 0x7f0a00c1
+			public const int srchView = 2131361985;
 			
 			// aapt resource value: 0x7f0a000e
 			public const int standard = 2131361806;

@@ -6,9 +6,11 @@
     android:focusable="true"
     android:minWidth="25px"
     android:minHeight="25px"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
     android:id="@+id/mainView"
     android:clickable="true"
-    android:background="#242424">
+    android:background="#424242">
     <LinearLayout
         android:layout_width="match_parent"
         android:id="@+id/linearLayout1"
@@ -98,7 +100,6 @@
             <TextView
                 android:text="Learn more about Gigue"
                 android:layout_width="wrap_content"
-                android:layout_height="41.5dp"
                 android:id="@+id/moreInfo"
                 android:gravity="center"
                 android:clickable="true"
@@ -106,7 +107,7 @@
                 android:textSize="20sp"
                 android:typeface="serif"
                 android:textColor="#ffffff"
-                android:layout_marginLeft="70dp" />
+                android:layout_gravity="top" />
         </TableLayout>
     </ScrollView>
 </LinearLayout>

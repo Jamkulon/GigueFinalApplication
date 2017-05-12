@@ -56,7 +56,7 @@ namespace Gigue.Activities
             Intent intent = new Intent(this, typeof(Search));
 
             this.StartActivity(intent);
-            this.OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);
+            this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
         }
 
         void mLinearLayout_Click(object sender, EventArgs e)
@@ -68,11 +68,13 @@ namespace Gigue.Activities
         {
             Intent intent = new Intent(this, typeof(RegistrationActivity));
             this.StartActivity(intent);
+            this.OverridePendingTransition(Resource.Animation.slide_in_bottom, Resource.Animation.slide_out_top);
         }
         void mMoreInfo_Click(object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(InformationPage));
             this.StartActivity(intent);
+            this.OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);
         }
     }
 }
