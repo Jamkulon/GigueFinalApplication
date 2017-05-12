@@ -2177,6 +2177,9 @@ namespace Gigue
 			// aapt resource value: 0x7f0a00b2
 			public const int btnMusician = 2131361970;
 			
+			// aapt resource value: 0x7f0a00b5
+			public const int btnNameSearch = 2131361973;
+			
 			// aapt resource value: 0x7f0a00b6
 			public const int btnResults = 2131361974;
 			
@@ -2458,9 +2461,6 @@ namespace Gigue
 			
 			// aapt resource value: 0x7f0a0078
 			public const int scrollView1 = 2131361912;
-			
-			// aapt resource value: 0x7f0a00b5
-			public const int searchView1 = 2131361973;
 			
 			// aapt resource value: 0x7f0a005a
 			public const int search_badge = 2131361882;
