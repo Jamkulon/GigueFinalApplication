@@ -33,6 +33,7 @@ namespace Gigue.Activities
         {
             Intent intent = new Intent(this, typeof(Login));
             this.StartActivity(intent);
+            this.OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);
         }
     }
 }

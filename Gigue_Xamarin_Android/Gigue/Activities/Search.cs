@@ -64,6 +64,7 @@ namespace Gigue.Activities
         {
             Intent intent = new Intent(this, typeof(searchResults));
             this.StartActivity(intent);
+            this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
         }
 
         // View Profile Activity to Send to Profile Page
@@ -71,6 +72,7 @@ namespace Gigue.Activities
         {
             Intent intent = new Intent(this, typeof(MusicianProfile));
             this.StartActivity(intent);
+            this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
         }
 
         //Spinner Item Selected view events//

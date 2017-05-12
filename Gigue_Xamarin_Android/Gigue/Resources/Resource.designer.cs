@@ -61,6 +61,18 @@ namespace Gigue
 			// aapt resource value: 0x7f040009
 			public const int abc_slide_out_top = 2130968585;
 			
+			// aapt resource value: 0x7f04000a
+			public const int slide_in_bottom = 2130968586;
+			
+			// aapt resource value: 0x7f04000b
+			public const int slide_in_top = 2130968587;
+			
+			// aapt resource value: 0x7f04000c
+			public const int slide_out_bottom = 2130968588;
+			
+			// aapt resource value: 0x7f04000d
+			public const int slide_out_top = 2130968589;
+			
 			static Animation()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
