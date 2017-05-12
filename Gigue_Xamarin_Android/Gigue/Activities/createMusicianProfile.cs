@@ -115,6 +115,7 @@ namespace Gigue.Activities
         {
             Intent intent = new Intent(this, typeof(Search));
             this.StartActivity(intent);
+            this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
         }
     }
 }

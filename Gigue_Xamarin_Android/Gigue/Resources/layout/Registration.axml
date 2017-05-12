@@ -10,7 +10,7 @@
     android:focusableInTouchMode="true"
     android:id="@+id/mainView"
     android:clickable="true"
-    android:background="#424242"
+    android:background="#242424"
     android:weightSum="100">
     <ScrollView
         android:minWidth="25px"
@@ -36,59 +36,56 @@
             <EditText
                 android:id="@+id/txtFirstName"
                 android:inputType="textCapSentences"
-                android:background="@drawable/edit_text_style"
-                android:textColor="#FF4500"
+                android:textColor="#000000"
                 android:hint="First Name"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:textColorHint="#d3d3d3"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginTop="25dp"
                 android:layout_weight="7"
-                android:backgroundTint="#ffffbe61" />
+                 />
             <EditText
                 android:id="@+id/txtLastName"
                 android:inputType="textCapSentences"
-                android:background="@drawable/edit_text_style"
-                android:textColor="#FF4500"
+                android:textColor="#000000"
                 android:hint="Last Name"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:textColorHint="#d3d3d3"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginTop="10dp"
                 android:layout_weight="7"
-                android:backgroundTint="#ffffbe61" />
+                 />
             <EditText
                 android:id="@+id/txtEmail"
                 android:inputType="textEmailAddress"
-                android:background="@drawable/edit_text_style"
-                android:textColor="#FF4500"
+               
+                android:textColor="#000000"
                 android:hint="Email Address"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:textColorHint="#d3d3d3"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginTop="10dp"
                 android:layout_weight="7"
-                android:backgroundTint="#ffffbe61" />
+                 />
             <EditText
                 android:id="@+id/txtPassword"
                 android:inputType="textPassword"
-                android:background="@drawable/edit_text_style"
-                android:textColor="#FF4500"
+                android:textColor="#000000"
                 android:hint="Password"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:textColorHint="#d3d3d3"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginTop="10dp"
                 android:layout_weight="7"
-                android:backgroundTint="#ffffbe61" />
+               />
             <TextView
                 android:text="Hey Musicians!"
                 android:gravity="center"

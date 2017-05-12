@@ -84,7 +84,7 @@ namespace Gigue.Activities
 
         async void mSubmitUserProfile_Click(object sender, EventArgs e)
         {
-
+            this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
             //Get data from spinners
             Spinner stateSpin = FindViewById<Spinner>(Resource.Id.spinnerState);
             Spinner citySpin = FindViewById<Spinner>(Resource.Id.spinnerCity);
@@ -115,9 +115,7 @@ namespace Gigue.Activities
         private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
             Spinner spinner = (Spinner)sender;
-                        
-            //string toast = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
-            //Toast.MakeText(this, toast, ToastLength.Long).Show();
+           
         }
     }
 }
