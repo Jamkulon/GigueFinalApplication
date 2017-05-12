@@ -35,9 +35,13 @@ namespace GigueService.Services
 
             List<vmMusicianResult> vmMRs = new List<vmMusicianResult>();
             //LastName is provided.
-            if (vmMS.LastName != null)
+            if (vmMS.LastName != string.IsNullOrEmpty)
             {
                 vmMRs = GetMusicianByLastName(vmMS);
+            }
+            else if ( vmMS.FirstName != string.IsNullOrEmpty)
+            {
+                vmMRs = GetMusicianByFirstName(vmMS);
             }
             else
             {
@@ -148,6 +152,27 @@ namespace GigueService.Services
 
            
             AppUser au = _repo.Query<AppUser>().Where(b => b.LastName == vmMS.LastName).FirstOrDefault();
+            UserMusician um = _repo.Query<UserMusician>().Where(c => c.AppUserId == au.AppUserId).FirstOrDefault();
+            Musician m = _repo.Query<Musician>().Where(d => d.MusicianId == um.MusicianId).FirstOrDefault();
+            MusicianInstrument mi = _repo.Query<MusicianInstrument>().Where(e => e.MusicianId == m.MusicianId && e.IsPrimary == true).FirstOrDefault();
+            Instrument i = _repo.Query<Instrument>().Where(f => f.InstrumentId == mi.InstrumentId).FirstOrDefault();
+            vmMusicianResult vmMRtemp = new vmMusicianResult
+            {
+                AppUserId = au.AppUserId,
+                FirstName = au.FirstName,
+                LastName = au.LastName,
+                City = au.City,
+                PrimeInstrument = i.InstrumentName
+            };
+            vmMRs.Add(vmMRtemp);
+            return vmMRs;
+        }
+        //================================================================================
+        public List<vmMusicianResult> GetMusicianByFirstName(vmMusicianSearch vmMS)
+        {
+            List<vmMusicianResult> vmMRs = new List<vmMusicianResult>();
+            
+            AppUser au = _repo.Query<AppUser>().Where(b => b.FirstName == vmMS.FirstName).FirstOrDefault();
             UserMusician um = _repo.Query<UserMusician>().Where(c => c.AppUserId == au.AppUserId).FirstOrDefault();
             Musician m = _repo.Query<Musician>().Where(d => d.MusicianId == um.MusicianId).FirstOrDefault();
             MusicianInstrument mi = _repo.Query<MusicianInstrument>().Where(e => e.MusicianId == m.MusicianId && e.IsPrimary == true).FirstOrDefault();
