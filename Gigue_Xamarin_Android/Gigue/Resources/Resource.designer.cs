@@ -2210,7 +2210,10 @@ namespace Gigue
 			// aapt resource value: 0x7f0a0083
 			public const int btnSubmitMusician = 2131361923;
 			
-			// aapt resource value: 0x7f0a00c1
+			// aapt resource value: 0x7f0a00cb
+			public const int btnThanksSearch = 2131361995;
+			
+			// aapt resource value: 0x7f0a00bf
 			public const int btnUser = 2131361985;
 			
 			// aapt resource value: 0x7f0a00c9
@@ -2218,9 +2221,6 @@ namespace Gigue
 			
 			// aapt resource value: 0x7f0a000d
 			public const int button = 2131361805;
-			
-			// aapt resource value: 0x7f0a00cb
-			public const int button9 = 2131361995;
 			
 			// aapt resource value: 0x7f0a0068
 			public const int buttonAddToDo = 2131361896;
@@ -2704,6 +2704,12 @@ namespace Gigue
 			
 			// aapt resource value: 0x7f0a0092
 			public const int txtPassword = 2131361938;
+			
+			// aapt resource value: 0x7f0a00c9
+			public const int txtThanksHeader = 2131361993;
+			
+			// aapt resource value: 0x7f0a00ca
+			public const int txtThanksUser = 2131361994;
 			
 			// aapt resource value: 0x7f0a000b
 			public const int unknown = 2131361803;

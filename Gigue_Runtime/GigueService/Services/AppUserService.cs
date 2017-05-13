@@ -95,7 +95,22 @@ namespace GigueService.Services
             {
                 _repo.Update(newUser);
             }
-            return vmAU;
+            vmAppUser returnUser = new vmAppUser
+            {
+                AppUserId = newUser.AppUserId,
+                UserName = newUser.UserName,
+                PassWord = newUser.PassWord,
+                LastName = newUser.LastName,
+                FirstName = newUser.FirstName,
+                City = newUser.City,
+                State = newUser.State,
+                PostalCode = newUser.PostalCode,
+                Email = newUser.Email,
+                IsMusician = newUser.IsMusician,
+                ReceiveAdvertisements = newUser.ReceiveAdvertisements
+            };
+
+            return returnUser;
         }
         //=================================================================
         public void RemoveUser(int id)
