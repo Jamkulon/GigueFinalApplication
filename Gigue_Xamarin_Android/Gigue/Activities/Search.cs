@@ -75,7 +75,20 @@ namespace Gigue.Activities
         }
         void mSearchResults_Click(object sender, EventArgs r)
         {
+            //Build musician search object
+            vmMusicianSearch searchParam = new vmMusicianSearch
+            {
+                FirstName = mFirtName.Text.Trim(),
+                LastName = MLastName.Text.Trim(),
+                City = mCity.SelectedItem.ToString(),
+                PrimeInstrument = MPrimeInst.SelectedItem.ToString()
+            };
+
             Intent intent = new Intent(this, typeof(searchResults));
+
+            //Send the search package
+            intent.PutExtra("searchParam", JsonConvert.SerializeObject(searchParam));
+
             this.StartActivity(intent);
             this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
         }

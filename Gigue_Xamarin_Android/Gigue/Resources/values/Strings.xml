@@ -43,6 +43,7 @@
   <!--Select Cities Array-->
   <string name="cities_prompt">Choose Your City</string>
   <string-array name="cities_array">
+    <item></item>
     <item>Phoenix</item>
     <item>Chandler</item>
     <item>Mesa</item>

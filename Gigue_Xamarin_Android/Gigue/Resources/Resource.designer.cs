@@ -2687,6 +2687,9 @@ namespace Gigue
 			// aapt resource value: 0x7f0a00bd
 			public const int txtEmail = 2131361981;
 			
+			// aapt resource value: 0x7f0a0091
+			public const int txtEmailAddress = 2131361937;
+			
 			// aapt resource value: 0x7f0a00bb
 			public const int txtFirstName = 2131361979;
 			
@@ -2695,9 +2698,6 @@ namespace Gigue
 			
 			// aapt resource value: 0x7f0a0092
 			public const int txtPassword = 2131361938;
-			
-			// aapt resource value: 0x7f0a0091
-			public const int txtUserName = 2131361937;
 			
 			// aapt resource value: 0x7f0a000b
 			public const int unknown = 2131361803;

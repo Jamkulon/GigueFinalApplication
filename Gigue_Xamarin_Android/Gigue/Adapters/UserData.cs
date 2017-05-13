@@ -49,6 +49,34 @@ namespace Gigue.Adapters
             return newUsers;
         }
 
+        // Get Musician Search
+        public async Task<vmMusicianSearch> GetMusicianSearch(vmMusicianSearch mSearchParam)
+        {
+            // Create http client
+            HttpClient client = await GetClient();
+            //Serialize object to JSON
+            var data = JsonConvert.SerializeObject(mSearchParam);
+            //Convert it to a formated stringcontent byte array
+            var content = new StringContent(data, Encoding.UTF8, "application/json");
+            //Send the data
+            var response = await client.PostAsync(string.Concat(applicationURL, "musiciansearch/"), content);
+            //return the response as a vmMusicianSearch object
+            return JsonConvert.DeserializeObject<vmMusicianSearch>(
+                await response.Content.ReadAsStringAsync());
+            //// Parse data into newUsers and return it
+            //var newUsers = new List<vmMusicianSearch>();
+            //foreach (var user in response)
+            //{
+            //    var newuser = new vmMusicianSearch()
+            //    {
+            //        AppUserId = user.AppUserId,
+            //        UserName = user.UserName
+            //    };
+            //    newUsers.Add(user);
+            //}
+            //return newUsers;
+
+        }
 
         // Post new appuser
         public async Task<vmAppUser> AddAppUser(vmAppUser itemToAdd)
