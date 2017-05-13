@@ -227,6 +227,18 @@
     <Compile Include="ToDoItemAdapter.cs" />
     <Compile Include="User.cs" />
     <Compile Include="ViewModels\vmAppUser.cs" />
+    <Compile Include="ViewModels\vmGenre.cs" />
+    <Compile Include="ViewModels\vmInstrument.cs" />
+    <Compile Include="ViewModels\vmInstrumentMusProfile.cs" />
+    <Compile Include="ViewModels\vmMusician.cs" />
+    <Compile Include="ViewModels\vmMusicianProfile.cs" />
+    <Compile Include="ViewModels\vmMusicianResult.cs" />
+    <Compile Include="ViewModels\vmMusicianSearch.cs" />
+    <Compile Include="ViewModels\vmMusiciansGenresByInstrument.cs" />
+    <Compile Include="ViewModels\vmMusiciansInstrumentsByGenre.cs" />
+    <Compile Include="ViewModels\vmPhotograph.cs" />
+    <Compile Include="ViewModels\vmRating.cs" />
+    <Compile Include="ViewModels\vmSpokenLanguage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
