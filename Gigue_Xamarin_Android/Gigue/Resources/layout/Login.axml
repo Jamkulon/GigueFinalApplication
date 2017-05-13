@@ -58,6 +58,52 @@
                 android:textColor="#FF4500"
                 android:hint="Password"
                 android:textColorHint="#d3d3d3" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:weightSum="100"
+                android:id="@+id/linearLayout3"
+                android:layout_height="55.5dp">
+                <RelativeLayout
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_weight="50"
+                    android:layout_width="149.5dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/relativeLayout1"
+                    android:gravity="center">
+                    <TextView
+                        android:text="Forgot Password?"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/textView5"
+                        android:gravity="center"
+                        android:layout_toRightOf="@id/textView5"
+                        android:clickable="true"
+                        android:layout_below="@id/textView5" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_weight="50"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/relativeLayout3"
+                    android:gravity="center"
+                    android:paddingRight="10dp">
+                    <Switch
+                        android:text="Keep Me Logged In?"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/keepLoggedIn"
+                        android:checked="true"
+                        android:textOn="YES"
+                        android:textOff="NO"
+                        android:layout_marginLeft="0.0dp"
+                        android:layout_width="wrap_content" />
+                </RelativeLayout>
+            </LinearLayout>
             <Button
                 android:id="@+id/btnLogin"
                 android:text="Login"
