@@ -10,6 +10,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.Views.InputMethods;
+using Gigue.ViewModels;
+using Newtonsoft.Json;
 
 namespace Gigue.Activities
 {
@@ -19,13 +21,24 @@ namespace Gigue.Activities
         LinearLayout sLinearLayout;
         Button mSearchResults;
         Button mViewProfile;
-        
+        Spinner mCity;
+        EditText mFirtName;
+        EditText MLastName;
+        Spinner MPrimeInst;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             //Set this page's main view//
             SetContentView(Resource.Layout.searchPage);
+
+            //Assign globals
+            mCity = FindViewById<Spinner>(Resource.Id.spinnerCity);
+            mFirtName = FindViewById<EditText>(Resource.Id.enterFirstName);
+            MLastName = FindViewById<EditText>(Resource.Id.enterLastName);
+            MPrimeInst = FindViewById<Spinner>(Resource.Id.spinnerInstrumentPlayed);
+
 
             //Linear Layout Hide Keyboar//
             sLinearLayout = FindViewById<LinearLayout>(Resource.Id.srchView);
@@ -62,7 +75,20 @@ namespace Gigue.Activities
         }
         void mSearchResults_Click(object sender, EventArgs r)
         {
+            //Build musician search object
+            vmMusicianSearch searchParam = new vmMusicianSearch
+            {
+                FirstName = mFirtName.Text.Trim(),
+                LastName = MLastName.Text.Trim(),
+                City = mCity.SelectedItem.ToString(),
+                PrimeInstrument = MPrimeInst.SelectedItem.ToString()
+            };
+
             Intent intent = new Intent(this, typeof(searchResults));
+
+            //Send the search package
+            intent.PutExtra("searchParam", JsonConvert.SerializeObject(searchParam));
+
             this.StartActivity(intent);
             this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
         }
@@ -70,6 +96,14 @@ namespace Gigue.Activities
         // View Profile Activity to Send to Profile Page
         void mViewProfile_Click(object sender, EventArgs r)
         {
+            //Build musician search object
+            vmMusicianSearch searchParam = new vmMusicianSearch
+            {
+                
+                City = mCity.SelectedItem.ToString(),
+                PrimeInstrument = MPrimeInst.SelectedItem.ToString()
+            };
+
             Intent intent = new Intent(this, typeof(MusicianProfile));
             this.StartActivity(intent);
             this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);

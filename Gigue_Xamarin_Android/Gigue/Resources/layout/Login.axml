@@ -34,8 +34,8 @@
             android:layout_height="fill_parent"
             android:stretchColumns="1">
             <EditText
-                android:id="@+id/txtUserName"
-                android:inputType="textPersonName"
+                android:id="@+id/txtEmailAddress"
+                android:inputType="textEmailAddress"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:background="@drawable/edit_text_style"
