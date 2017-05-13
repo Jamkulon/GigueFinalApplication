@@ -28,7 +28,7 @@
         android:textColor="#f2854b"
         android:text="Gigue is an app designed to allow musicians to find a quick sub for a local gig.You can easily find musicians by what type of instrument they play, the genre of music, their location and see if they are currently avialable to sub."
         android:gravity="center"
-        android:textSize="18sp" />
+        android:textSize="16sp" />
 <!--For Musicians Header-->
     <TextView
         android:textAppearance="?android:attr/textAppearanceMedium"
