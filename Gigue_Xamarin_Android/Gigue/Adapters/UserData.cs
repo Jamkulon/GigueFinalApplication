@@ -17,7 +17,6 @@ namespace Gigue.Adapters
         private async Task<HttpClient> GetClient()
         {
             HttpClient client = new HttpClient();
-            //client.DefaultRequestHeaders.Add("Accept", "application/json");
             client.BaseAddress = new Uri(applicationURL);
             client.DefaultRequestHeaders.Add("ZUMO-API-VERSION", "2.0.0");
             client.DefaultRequestHeaders.Accept.Clear();
