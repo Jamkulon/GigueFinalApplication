@@ -22,9 +22,9 @@ namespace Gigue.Activities
             
             //GetUsers();
 
-            GetMusicianSearch(mSearchParam);
+            //GetMusicianSearch(mSearchParam);
 
-            //AddUser();
+            AddUser();
         }
 
         //Get vmMusicianSearch results into adapter
@@ -60,9 +60,9 @@ namespace Gigue.Activities
 
             var user = new vmAppUser()
             {
-                FirstName = "Kris",
-                LastName = "inniss",
-                UserName = "k@mail.com"
+                FirstName = "Test",
+                LastName = "User4",
+                UserName = "tu4@mail.com"
 
             };
             await userdata.AddAppUser(user);
