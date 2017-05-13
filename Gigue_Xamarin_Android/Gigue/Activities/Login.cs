@@ -23,7 +23,7 @@ namespace Gigue.Activities
 
         LinearLayout mLinearLayout;
         Button mLogin;
-        EditText mUsername;
+        EditText mEmailAddress;
         TextView mSignUp;
         TextView mMoreInfo;
 
@@ -40,7 +40,7 @@ namespace Gigue.Activities
             mMoreInfo = FindViewById<TextView>(Resource.Id.moreInfo);
             mSignUp = FindViewById<TextView>(Resource.Id.signUp);
             mLinearLayout = FindViewById<LinearLayout>(Resource.Id.mainView);
-            mUsername = FindViewById<EditText>(Resource.Id.txtUserName);
+            mEmailAddress = FindViewById<EditText>(Resource.Id.txtEmailAddress);
             mLogin = FindViewById<Button>(Resource.Id.btnLogin);
             mLogin.Click += mLogin_Click;
             mLinearLayout.Click += mLinearLayout_Click;
