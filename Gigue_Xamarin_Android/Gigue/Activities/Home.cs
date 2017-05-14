@@ -39,12 +39,17 @@ namespace Gigue
            startupWork.Start();
         }
 
+        //protected override void OnSleep()
+        //{
+            
+        //}
+
         protected override void OnDestroy()
         {
-            ISharedPreferences GiguePrefs = PreferenceManager.GetDefaultSharedPreferences(this);
-            ISharedPreferencesEditor editor = GiguePrefs.Edit();
-            editor.Clear();
-            editor.Apply();
+            //ISharedPreferences GiguePrefs = PreferenceManager.GetDefaultSharedPreferences(this);
+            //ISharedPreferencesEditor editor = GiguePrefs.Edit();
+            //editor.Clear();
+            //editor.Apply();
 
             base.OnDestroy();
         }

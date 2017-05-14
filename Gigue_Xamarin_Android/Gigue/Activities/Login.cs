@@ -5,7 +5,6 @@ using Android.OS;
 using Android.Views;
 using Android.Widget;
 using Android.Views.InputMethods;
-using Android.Preferences;
 
 namespace Gigue.Activities
 {
@@ -16,9 +15,11 @@ namespace Gigue.Activities
         LinearLayout mLinearLayout;
         Button mLogin;
         EditText mEmailAddress;
+        EditText mPassword;
         TextView mSignUp;
         TextView mMoreInfo;
-        String spGigueEmail;
+        string spGigueEmail;
+        string spPassword;
         
 
 
@@ -37,6 +38,7 @@ namespace Gigue.Activities
             mLinearLayout = FindViewById<LinearLayout>(Resource.Id.mainView);
             mEmailAddress = FindViewById<EditText>(Resource.Id.txtEmailAddress);
             mLogin = FindViewById<Button>(Resource.Id.btnLogin);
+            mPassword = FindViewById<EditText>(Resource.Id.txtPassword);
             mLogin.Click += mLogin_Click;
             mLinearLayout.Click += mLinearLayout_Click;
             mSignUp.Click += mSignUp_Click;
@@ -49,14 +51,22 @@ namespace Gigue.Activities
         void mLogin_Click(object sender, EventArgs e)
         {
             //Store prefs to app settings - Will be removed on exit
-            ISharedPreferences GiguePrefs = PreferenceManager.GetDefaultSharedPreferences(this);
-            ISharedPreferencesEditor editor = GiguePrefs.Edit();
-            editor.PutString(spGigueEmail,mEmailAddress.Text);
-            editor.Apply();
+            //ISharedPreferences GiguePrefs = PreferenceManager.GetDefaultSharedPreferences(this);
+            //ISharedPreferencesEditor editor = GiguePrefs.Edit();
+            //editor.PutString(spGigueEmail,mEmailAddress.Text);
+            //editor.Apply();
 
             //Test SharedPreferences
-            var mySetting = GiguePrefs.GetString(spGigueEmail, "");
-            Console.WriteLine(mySetting);
+            //var mySetting = GiguePrefs.GetString(spGigueEmail, "");
+            //Console.WriteLine(mySetting);
+
+
+            //Persistent App data
+            string spGigueEmail = mEmailAddress.Text;
+            string spPassword = mPassword.Text;
+            if (Android.App.Current.Properties.Exists("UserEmail"));
+            Android.App.
+
 
 
 
