@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#242424"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:id="@+id/circleImageView1"
+        android:src="@drawable/james2"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        app:civ_border_color="#fff2854b"
+        app:civ_border_width="2dp"
+        app:civ_fill_color="#00000000" />
+    <TextView
+        android:text="James Kulon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:textColor="#ffffff" />
+    <TextView
+        android:text="Bass Guitar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView10"
+        android:gravity="center"
+        android:textColor="#f2854b"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:typeface="serif" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="24.5dp"
+        android:id="@+id/linearLayout1"
+        android:layout_marginTop="10dp"
+        android:background="#333333"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        <TextView
+            android:text="Email:"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView2"
+            android:textColor="#f2854b"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:text="james.kulon@gmail.com"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/emailView"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:typeface="serif" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout2"
+        android:background="#333333"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        <TextView
+            android:text="Phone:"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView4"
+            android:textColor="#f2854b"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:text="480-888-8888"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/phoneView"
+            android:layout_marginLeft="5dp"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:typeface="serif" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout3"
+        android:background="#333333"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        <TextView
+            android:text="Experience:"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView6"
+            android:layout_marginLeft="10dp"
+            android:textColor="#f2854b"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:typeface="serif" />
+        <TextView
+            android:text="20 years"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/experienceView"
+            android:layout_marginLeft="5dp"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:typeface="serif" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout4"
+        android:background="#333333"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        <TextView
+            android:text="About Me:"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView8"
+            android:layout_marginLeft="10dp"
+            android:textColor="#f2854b"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:typeface="serif" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout5"
+        android:background="#333333"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        <TextView
+            android:text="Hi Im James Kulon iubwef iubf iub eiu eiuh weuh piohjwepuf eeiuh epiuh fiuweu fpipha ihfipueefoihjewfiuhh fiuhefyhbweuh iueihf epiuf "
+            android:id="@+id/aboutView"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:typeface="serif"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp" />
+    </LinearLayout>
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/switch1"
+        android:textOn="Available for Work"
+        android:textOff="Not Available" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="39.5dp"
+        android:id="@+id/linearLayout6">
+        <Button
+            android:text="Search"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/btnSearch"
+            android:background="@android:color/transparent"
+            android:textColor="#f2854b"
+            android:textStyle="bold"
+            android:typeface="serif" />
+        <Button
+            android:text="Edit Profile"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/btnEditProfile"
+            android:background="@android:color/transparent"
+            android:textColor="#f2854b"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:layout_marginLeft="10dp" />
+    </LinearLayout>
+</LinearLayout>
