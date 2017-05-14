@@ -17,15 +17,24 @@ namespace Gigue.Activities
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
-
+            Button mSearch;
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Profile);
 
+            mSearch = FindViewById<Button>(Resource.Id.btnSearch);
+            mSearch.Click += mSearch_Click;
 
             //var lv = FindViewById<ListView>(Resource.Id.listView);
 
             //lv.Adapter = new ArrayAdapter<User>(this, Android.Resource.Layout.SimpleListItem1, Android.Resource.Id.Text1, MainActivity.Users);
 
+        }
+
+        void mSearch_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(Search));
+
+            this.StartActivity(intent);
         }
     }
 }

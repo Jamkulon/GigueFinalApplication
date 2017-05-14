@@ -1,4 +1,4 @@
-﻿using GigueService.Controllers;
+using GigueService.Controllers;
 using GigueService.Models;
 using GigueService.ViewModels;
 using System;
