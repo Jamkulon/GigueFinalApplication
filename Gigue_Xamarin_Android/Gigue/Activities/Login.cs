@@ -1,31 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using System.Net;
-using Gigue;
-using Newtonsoft.Json;
-using Microsoft.WindowsAzure.MobileServices;
 using Android.Views.InputMethods;
+using Android.Preferences;
 
 namespace Gigue.Activities
 {
     [Activity(MainLauncher = false, WindowSoftInputMode = SoftInput.AdjustResize, Theme = ("@android:style/Theme.NoTitleBar"))]
     public class Login : Activity
     {
-
+        
         LinearLayout mLinearLayout;
         Button mLogin;
         EditText mEmailAddress;
         TextView mSignUp;
         TextView mMoreInfo;
+        String spGigueEmail;
+        
+
 
         //private MobileServiceClient client;
 
@@ -53,6 +48,19 @@ namespace Gigue.Activities
         //Login Button Click
         void mLogin_Click(object sender, EventArgs e)
         {
+            //Store prefs to app settings - Will be removed on exit
+            ISharedPreferences GiguePrefs = PreferenceManager.GetDefaultSharedPreferences(this);
+            ISharedPreferencesEditor editor = GiguePrefs.Edit();
+            editor.PutString(spGigueEmail,mEmailAddress.Text);
+            editor.Apply();
+
+            //Test SharedPreferences
+            var mySetting = GiguePrefs.GetString(spGigueEmail, "");
+            Console.WriteLine(mySetting);
+
+
+
+
             Intent intent = new Intent(this, typeof(Search));
 
             this.StartActivity(intent);
