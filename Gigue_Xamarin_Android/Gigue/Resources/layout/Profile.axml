@@ -7,16 +7,6 @@
     android:layout_height="match_parent"
     android:minWidth="25px"
     android:minHeight="25px">
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:id="@+id/circleImageView1"
-        android:src="@drawable/james"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        app:civ_border_color="#fff2854b"
-        app:civ_border_width="2dp"
-        app:civ_fill_color="#00000000" />
     <TextView
         android:text="James Kulon"
         android:layout_width="match_parent"
@@ -60,7 +50,7 @@
             android:text="james.kulon@gmail.com"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/textView3"
+            android:id="@+id/emailView"
             android:gravity="center"
             android:layout_marginLeft="10dp"
             android:textColor="#ffffff"
@@ -89,7 +79,7 @@
             android:text="480-888-8888"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/textView5"
+            android:id="@+id/phoneView"
             android:layout_marginLeft="5dp"
             android:gravity="center"
             android:textColor="#ffffff"
@@ -118,7 +108,7 @@
             android:text="20 years"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/textView7"
+            android:id="@+id/experienceView"
             android:layout_marginLeft="5dp"
             android:gravity="center"
             android:textColor="#ffffff"
@@ -156,7 +146,7 @@
         android:layout_marginRight="10dp">
         <TextView
             android:text="Hi Im James Kulon iubwef iubf iub eiu eiuh weuh piohjwepuf eeiuh epiuh fiuweu fpipha ihfipueefoihjewfiuhh fiuhefyhbweuh iueihf epiuf "
-            android:id="@+id/textView9"
+            android:id="@+id/aboutView"
             android:textColor="#ffffff"
             android:textSize="16sp"
             android:typeface="serif"
@@ -164,4 +154,10 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp" />
     </LinearLayout>
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/switch1"
+        android:textOn="Available for Work"
+        android:textOff="Not Available" />
 </LinearLayout>
