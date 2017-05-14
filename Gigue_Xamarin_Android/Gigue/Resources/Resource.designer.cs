@@ -2222,8 +2222,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0a00cc
 			public const int btnSearchMusicians = 2131361996;
 			
-			// aapt resource value: 0x7f0a0083
-			public const int btnSubmitMusician = 2131361923;
+			// aapt resource value: 0x7f0a007e
+			public const int btnSubmitMusician = 2131361918;
 			
 			// aapt resource value: 0x7f0a00d4
 			public const int btnThanksSearch = 2131362004;
@@ -2237,17 +2237,14 @@ namespace Gigue
 			// aapt resource value: 0x7f0a000d
 			public const int button = 2131361805;
 			
-			// aapt resource value: 0x7f0a0068
-			public const int buttonAddToDo = 2131361896;
-			
 			// aapt resource value: 0x7f0a003d
 			public const int buttonPanel = 2131361853;
 			
 			// aapt resource value: 0x7f0a00a2
 			public const int cancel_action = 2131361954;
 			
-			// aapt resource value: 0x7f0a006e
-			public const int cancel_button = 2131361902;
+			// aapt resource value: 0x7f0a0069
+			public const int cancel_button = 2131361897;
 			
 			// aapt resource value: 0x7f0a0012
 			public const int center = 2131361810;
@@ -2267,38 +2264,38 @@ namespace Gigue
 			// aapt resource value: 0x7f0a002f
 			public const int collapseActionView = 2131361839;
 			
-			// aapt resource value: 0x7f0a0072
-			public const int com_facebook_body_frame = 2131361906;
-			
-			// aapt resource value: 0x7f0a0074
-			public const int com_facebook_button_xout = 2131361908;
-			
 			// aapt resource value: 0x7f0a006d
-			public const int com_facebook_device_auth_instructions = 2131361901;
-			
-			// aapt resource value: 0x7f0a006a
-			public const int com_facebook_fragment_container = 2131361898;
+			public const int com_facebook_body_frame = 2131361901;
 			
 			// aapt resource value: 0x7f0a006f
-			public const int com_facebook_login_activity_progress_bar = 2131361903;
+			public const int com_facebook_button_xout = 2131361903;
 			
-			// aapt resource value: 0x7f0a0070
-			public const int com_facebook_smart_instructions_0 = 2131361904;
+			// aapt resource value: 0x7f0a0068
+			public const int com_facebook_device_auth_instructions = 2131361896;
 			
-			// aapt resource value: 0x7f0a0071
-			public const int com_facebook_smart_instructions_or = 2131361905;
+			// aapt resource value: 0x7f0a0065
+			public const int com_facebook_fragment_container = 2131361893;
 			
-			// aapt resource value: 0x7f0a0076
-			public const int com_facebook_tooltip_bubble_view_bottom_pointer = 2131361910;
-			
-			// aapt resource value: 0x7f0a0075
-			public const int com_facebook_tooltip_bubble_view_text_body = 2131361909;
-			
-			// aapt resource value: 0x7f0a0073
-			public const int com_facebook_tooltip_bubble_view_top_pointer = 2131361907;
+			// aapt resource value: 0x7f0a006a
+			public const int com_facebook_login_activity_progress_bar = 2131361898;
 			
 			// aapt resource value: 0x7f0a006b
-			public const int confirmation_code = 2131361899;
+			public const int com_facebook_smart_instructions_0 = 2131361899;
+			
+			// aapt resource value: 0x7f0a006c
+			public const int com_facebook_smart_instructions_or = 2131361900;
+			
+			// aapt resource value: 0x7f0a0071
+			public const int com_facebook_tooltip_bubble_view_bottom_pointer = 2131361905;
+			
+			// aapt resource value: 0x7f0a0070
+			public const int com_facebook_tooltip_bubble_view_text_body = 2131361904;
+			
+			// aapt resource value: 0x7f0a006e
+			public const int com_facebook_tooltip_bubble_view_top_pointer = 2131361902;
+			
+			// aapt resource value: 0x7f0a0066
+			public const int confirmation_code = 2131361894;
 			
 			// aapt resource value: 0x7f0a0040
 			public const int contentPanel = 2131361856;
@@ -2321,23 +2318,23 @@ namespace Gigue
 			// aapt resource value: 0x7f0a0016
 			public const int display_always = 2131361814;
 			
-			// aapt resource value: 0x7f0a007c
-			public const int editEmailAddress = 2131361916;
+			// aapt resource value: 0x7f0a0077
+			public const int editEmailAddress = 2131361911;
 			
-			// aapt resource value: 0x7f0a007a
-			public const int editFirstName = 2131361914;
+			// aapt resource value: 0x7f0a0075
+			public const int editFirstName = 2131361909;
 			
-			// aapt resource value: 0x7f0a007b
-			public const int editLastName = 2131361915;
+			// aapt resource value: 0x7f0a0076
+			public const int editLastName = 2131361910;
 			
-			// aapt resource value: 0x7f0a0086
-			public const int editUserEmailAddress = 2131361926;
+			// aapt resource value: 0x7f0a0081
+			public const int editUserEmailAddress = 2131361921;
 			
-			// aapt resource value: 0x7f0a0084
-			public const int editUserFirstName = 2131361924;
+			// aapt resource value: 0x7f0a007f
+			public const int editUserFirstName = 2131361919;
 			
-			// aapt resource value: 0x7f0a0085
-			public const int editUserLastName = 2131361925;
+			// aapt resource value: 0x7f0a0080
+			public const int editUserLastName = 2131361920;
 			
 			// aapt resource value: 0x7f0a0058
 			public const int edit_query = 2131361880;
@@ -2438,14 +2435,11 @@ namespace Gigue
 			// aapt resource value: 0x7f0a001b
 			public const int listMode = 2131361819;
 			
-			// aapt resource value: 0x7f0a0069
-			public const int listViewToDo = 2131361897;
-			
 			// aapt resource value: 0x7f0a003a
 			public const int list_item = 2131361850;
 			
-			// aapt resource value: 0x7f0a0077
-			public const int mainView = 2131361911;
+			// aapt resource value: 0x7f0a0072
+			public const int mainView = 2131361906;
 			
 			// aapt resource value: 0x7f0a00a4
 			public const int media_actions = 2131361956;
@@ -2540,8 +2534,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0a0042
 			public const int scrollView = 2131361858;
 			
-			// aapt resource value: 0x7f0a0078
-			public const int scrollView1 = 2131361912;
+			// aapt resource value: 0x7f0a0073
+			public const int scrollView1 = 2131361907;
 			
 			// aapt resource value: 0x7f0a005a
 			public const int search_badge = 2131361882;
@@ -2597,23 +2591,23 @@ namespace Gigue
 			// aapt resource value: 0x7f0a003e
 			public const int spacer = 2131361854;
 			
+			// aapt resource value: 0x7f0a0078
+			public const int spinnerCity = 2131361912;
+			
+			// aapt resource value: 0x7f0a007b
+			public const int spinnerInstrumentPlayed = 2131361915;
+			
 			// aapt resource value: 0x7f0a007d
-			public const int spinnerCity = 2131361917;
+			public const int spinnerLanguagesSpoken = 2131361917;
 			
-			// aapt resource value: 0x7f0a0080
-			public const int spinnerInstrumentPlayed = 2131361920;
+			// aapt resource value: 0x7f0a007c
+			public const int spinnerMusicGenres = 2131361916;
 			
-			// aapt resource value: 0x7f0a0082
-			public const int spinnerLanguagesSpoken = 2131361922;
+			// aapt resource value: 0x7f0a0079
+			public const int spinnerState = 2131361913;
 			
-			// aapt resource value: 0x7f0a0081
-			public const int spinnerMusicGenres = 2131361921;
-			
-			// aapt resource value: 0x7f0a007e
-			public const int spinnerState = 2131361918;
-			
-			// aapt resource value: 0x7f0a007f
-			public const int spinnerZip = 2131361919;
+			// aapt resource value: 0x7f0a007a
+			public const int spinnerZip = 2131361914;
 			
 			// aapt resource value: 0x7f0a0007
 			public const int split_action_bar = 2131361799;
@@ -2639,8 +2633,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0a0050
 			public const int submenuarrow = 2131361872;
 			
-			// aapt resource value: 0x7f0a0087
-			public const int submitUserProfile = 2131361927;
+			// aapt resource value: 0x7f0a0082
+			public const int submitUserProfile = 2131361922;
 			
 			// aapt resource value: 0x7f0a0061
 			public const int submit_area = 2131361889;
@@ -2687,8 +2681,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0a00be
 			public const int textView8 = 2131361982;
 			
-			// aapt resource value: 0x7f0a0066
-			public const int textViewTitle = 2131361894;
+			// aapt resource value: 0x7f0a008f
+			public const int textView5 = 2131361935;
 			
 			// aapt resource value: 0x7f0a00a9
 			public const int time = 2131361961;
@@ -2870,28 +2864,28 @@ namespace Gigue
 			public const int abc_select_dialog_material = 2130903066;
 			
 			// aapt resource value: 0x7f03001b
-			public const int Activity_To_Do = 2130903067;
+			public const int com_facebook_activity_layout = 2130903067;
 			
 			// aapt resource value: 0x7f03001c
-			public const int com_facebook_activity_layout = 2130903068;
+			public const int com_facebook_device_auth_dialog_fragment = 2130903068;
 			
 			// aapt resource value: 0x7f03001d
-			public const int com_facebook_device_auth_dialog_fragment = 2130903069;
+			public const int com_facebook_login_fragment = 2130903069;
 			
 			// aapt resource value: 0x7f03001e
-			public const int com_facebook_login_fragment = 2130903070;
+			public const int com_facebook_smart_device_dialog_fragment = 2130903070;
 			
 			// aapt resource value: 0x7f03001f
-			public const int com_facebook_smart_device_dialog_fragment = 2130903071;
+			public const int com_facebook_tooltip_bubble = 2130903071;
 			
 			// aapt resource value: 0x7f030020
-			public const int com_facebook_tooltip_bubble = 2130903072;
+			public const int CreateMusicianProfile = 2130903072;
 			
 			// aapt resource value: 0x7f030021
-			public const int CreateMusicianProfile = 2130903073;
+			public const int CreateUserProfile = 2130903073;
 			
 			// aapt resource value: 0x7f030022
-			public const int CreateUserProfile = 2130903074;
+			public const int HomePage = 2130903074;
 			
 			// aapt resource value: 0x7f030023
 			public const int forgotPassword = 2130903075;

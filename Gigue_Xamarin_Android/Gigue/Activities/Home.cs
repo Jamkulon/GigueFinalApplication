@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 using Gigue.Activities;
 using System.Threading.Tasks;
+using Android.Preferences;
 
 namespace Gigue
 {
@@ -36,6 +37,21 @@ namespace Gigue
            }, TaskScheduler.FromCurrentSynchronizationContext());
 
            startupWork.Start();
+        }
+
+        //protected override void OnSleep()
+        //{
+            
+        //}
+
+        protected override void OnDestroy()
+        {
+            //ISharedPreferences GiguePrefs = PreferenceManager.GetDefaultSharedPreferences(this);
+            //ISharedPreferencesEditor editor = GiguePrefs.Edit();
+            //editor.Clear();
+            //editor.Apply();
+
+            base.OnDestroy();
         }
     }
 }
