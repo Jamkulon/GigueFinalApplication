@@ -26,6 +26,7 @@ namespace Gigue.Activities
         EditText mEmailAddress;
         TextView mSignUp;
         TextView mMoreInfo;
+        TextView mForgotPw;
 
         //private MobileServiceClient client;
 
@@ -42,12 +43,19 @@ namespace Gigue.Activities
             mLinearLayout = FindViewById<LinearLayout>(Resource.Id.mainView);
             mEmailAddress = FindViewById<EditText>(Resource.Id.txtEmailAddress);
             mLogin = FindViewById<Button>(Resource.Id.btnLogin);
+            mForgotPw = FindViewById<TextView>(Resource.Id.txtForgotPw);
+            mForgotPw.Click += mForgotPw_Click;
             mLogin.Click += mLogin_Click;
             mLinearLayout.Click += mLinearLayout_Click;
             mSignUp.Click += mSignUp_Click;
             mMoreInfo.Click += mMoreInfo_Click;
 
 
+        }
+
+        private void MForgotPw_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         //Login Button Click
@@ -73,6 +81,12 @@ namespace Gigue.Activities
         void mMoreInfo_Click(object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(InformationPage));
+            this.StartActivity(intent);
+            this.OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);
+        }
+        void mForgotPw_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(ForgotPassword));
             this.StartActivity(intent);
             this.OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);
         }

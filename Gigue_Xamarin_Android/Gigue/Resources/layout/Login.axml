@@ -10,7 +10,7 @@
     android:focusableInTouchMode="true"
     android:id="@+id/mainView"
     android:clickable="true"
-    android:background="#424242">
+    android:background="#242424">
     <LinearLayout
         android:layout_width="match_parent"
         android:id="@+id/linearLayout1"
@@ -78,11 +78,10 @@
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:id="@+id/textView5"
+                        android:id="@+id/txtForgotPw"
                         android:gravity="center"
-                        android:layout_toRightOf="@id/textView5"
                         android:clickable="true"
-                        android:layout_below="@id/textView5" />
+                         />
                 </RelativeLayout>
                 <RelativeLayout
                     android:minWidth="25px"
