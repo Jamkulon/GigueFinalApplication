@@ -59,16 +59,7 @@ namespace Gigue.Activities
             //Test SharedPreferences
             //var mySetting = GiguePrefs.GetString(spGigueEmail, "");
             //Console.WriteLine(mySetting);
-
-
-            //Persistent App data
-            string spGigueEmail = mEmailAddress.Text;
-            string spPassword = mPassword.Text;
-            if (Android.App.Current.Properties.Exists("UserEmail"));
-            Android.App.
-
-
-
+            
 
 
             Intent intent = new Intent(this, typeof(Search));
