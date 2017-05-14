@@ -2111,6 +2111,9 @@ namespace Gigue
 			// aapt resource value: 0x7f0a00c8
 			public const int SearchResultListView = 2131361992;
 			
+			// aapt resource value: 0x7f0a00ba
+			public const int aboutView = 2131361978;
+			
 			// aapt resource value: 0x7f0a009b
 			public const int action0 = 2131361947;
 			
@@ -2246,9 +2249,6 @@ namespace Gigue
 			// aapt resource value: 0x7f0a00a4
 			public const int chronometer = 2131361956;
 			
-			// aapt resource value: 0x7f0a00af
-			public const int circleImageView1 = 2131361967;
-			
 			// aapt resource value: 0x7f0a002f
 			public const int collapseActionView = 2131361839;
 			
@@ -2327,6 +2327,9 @@ namespace Gigue
 			// aapt resource value: 0x7f0a0058
 			public const int edit_query = 2131361880;
 			
+			// aapt resource value: 0x7f0a00b0
+			public const int emailView = 2131361968;
+			
 			// aapt resource value: 0x7f0a002c
 			public const int end = 2131361836;
 			
@@ -2344,6 +2347,9 @@ namespace Gigue
 			
 			// aapt resource value: 0x7f0a004c
 			public const int expanded_menu = 2131361868;
+			
+			// aapt resource value: 0x7f0a00b6
+			public const int experienceView = 2131361974;
 			
 			// aapt resource value: 0x7f0a0004
 			public const int home = 2131361796;
@@ -2467,6 +2473,9 @@ namespace Gigue
 			
 			// aapt resource value: 0x7f0a003f
 			public const int parentPanel = 2131361855;
+			
+			// aapt resource value: 0x7f0a00b3
+			public const int phoneView = 2131361971;
 			
 			// aapt resource value: 0x7f0a006c
 			public const int progress_bar = 2131361900;
@@ -2636,8 +2645,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0a0079
 			public const int textView1 = 2131361913;
 			
-			// aapt resource value: 0x7f0a00b0
-			public const int textView10 = 2131361968;
+			// aapt resource value: 0x7f0a00af
+			public const int textView10 = 2131361967;
 			
 			// aapt resource value: 0x7f0a008b
 			public const int textView2 = 2131361931;
@@ -2648,20 +2657,11 @@ namespace Gigue
 			// aapt resource value: 0x7f0a00b2
 			public const int textView4 = 2131361970;
 			
-			// aapt resource value: 0x7f0a00b3
-			public const int textView5 = 2131361971;
-			
 			// aapt resource value: 0x7f0a00b5
 			public const int textView6 = 2131361973;
 			
-			// aapt resource value: 0x7f0a00b6
-			public const int textView7 = 2131361974;
-			
 			// aapt resource value: 0x7f0a00b8
 			public const int textView8 = 2131361976;
-			
-			// aapt resource value: 0x7f0a00ba
-			public const int textView9 = 2131361978;
 			
 			// aapt resource value: 0x7f0a0066
 			public const int textViewTitle = 2131361894;
