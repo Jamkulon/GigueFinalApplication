@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -19,15 +19,13 @@ namespace Gigue.Activities
             SetContentView(Resource.Layout.SearchResults);
             
             vmMusicianSearch mSearchParam = JsonConvert.DeserializeObject<vmMusicianSearch>(Intent.GetStringExtra("searchParam"));
-            
-            //GetUsers();
 
+            //Perform Search
             GetMusicianSearch(mSearchParam);
 
-            //AddUser();
         }
 
-        //Get vmMusicianSearch results into adapter
+        //Get vmMusicianSearch results into adapter         ==================Method not working yet.  =================================
         private async void GetMusicianSearch(vmMusicianSearch searchParam)
         {
             var MSListView = FindViewById<ListView>(Resource.Id.SearchResultListView);
@@ -41,31 +39,18 @@ namespace Gigue.Activities
             MSListView.Adapter = new ArrayAdapter<vmMusicianSearch>(this, Android.Resource.Layout.SimpleListItem1, Android.Resource.Id.Text1, users);
         }
 
-        //get usersnames from list diplsy on activity
-        private async void GetUsers()
-        {
-            var listText = FindViewById<ListView>(Resource.Id.SearchResultListView);
-            var userinfo = await userdata.GetAppUsers();
-            var users = new List<string>();
-            foreach (var u in (dynamic)userinfo)
-            {
-                var userName = u.UserName.ToString();
-                users.Add(userName);
-            }
-            listText.Adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, Android.Resource.Id.Text1, users);
-        }
-
-        public async void AddUser()
-        {
-
-            var user = new vmAppUser()
-            {
-                FirstName = "Kris",
-                LastName = "inniss",
-                UserName = "k@mail.com"
-
-            };
-            await userdata.AddAppUser(user);
-        }
+        //get usersnames from list diplsy on activity     ==================Old List Method =====================
+        //private async void GetUsers()
+        //{
+        //    var listText = FindViewById<ListView>(Resource.Id.SearchResultListView);
+        //    var userinfo = await userdata.GetAppUsers();
+        //    var users = new List<string>();
+        //    foreach (var u in (dynamic)userinfo)
+        //    {
+        //        var userName = u.UserName.ToString();
+        //        users.Add(userName);
+        //    }
+        //    listText.Adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, Android.Resource.Id.Text1, users);
+        //}
     }
 }
