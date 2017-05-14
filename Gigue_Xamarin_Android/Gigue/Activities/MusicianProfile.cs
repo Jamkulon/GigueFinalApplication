@@ -17,12 +17,17 @@ namespace Gigue.Activities
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+
+            Button mEditProfile;
             Button mSearch;
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Profile);
 
             mSearch = FindViewById<Button>(Resource.Id.btnSearch);
             mSearch.Click += mSearch_Click;
+
+            mEditProfile = FindViewById<Button>(Resource.Id.btnEditProfile);
+            mEditProfile.Click += mEditProfile_Click;
 
             //var lv = FindViewById<ListView>(Resource.Id.listView);
 
@@ -35,6 +40,13 @@ namespace Gigue.Activities
             Intent intent = new Intent(this, typeof(Search));
 
             this.StartActivity(intent);
+        }
+        void mEditProfile_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(editMusicianProfile));
+
+            this.StartActivity(intent);
+            this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
         }
     }
 }

@@ -61,7 +61,7 @@ namespace Gigue.Activities
         //Login Button Click event to take you to Search page
         void mLogin_Click(object sender, EventArgs e)
         {
-            Intent intent = new Intent(this, typeof(Search));
+            Intent intent = new Intent(this, typeof(MusicianProfile));
 
             this.StartActivity(intent);
             this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
