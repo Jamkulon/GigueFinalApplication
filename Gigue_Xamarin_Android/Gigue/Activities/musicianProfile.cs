@@ -19,7 +19,7 @@ namespace Gigue.Activities
         {
 
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.musicianProfile);
+            SetContentView(Resource.Layout.Profile);
 
 
             //var lv = FindViewById<ListView>(Resource.Id.listView);

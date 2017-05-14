@@ -194,6 +194,7 @@
   <ItemGroup>
     <Compile Include="Activities\createMusicianProfile.cs" />
     <Compile Include="Activities\createUserProfile.cs" />
+    <Compile Include="Activities\ForgotPassword.cs" />
     <Compile Include="Activities\InformationPage.cs" />
     <Compile Include="Activities\Login.cs" />
     <Compile Include="Activities\MusicianProfile.cs" />
@@ -276,6 +277,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\Profile.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\forgotPassword.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -366,6 +370,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="GigueToDo.txt" />
+    <AndroidResource Include="Resources\drawable\james2.jpg" />
   </ItemGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

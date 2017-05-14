@@ -11,7 +11,7 @@
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:id="@+id/circleImageView1"
-        android:src="@drawable/james"
+        android:src="@drawable/james2"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         app:civ_border_color="#fff2854b"
