@@ -2210,10 +2210,10 @@ namespace Gigue
 			// aapt resource value: 0x7f0a0083
 			public const int btnSubmitMusician = 2131361923;
 			
-			// aapt resource value: 0x7f0a00cb
-			public const int btnThanksSearch = 2131361995;
+			// aapt resource value: 0x7f0a00cd
+			public const int btnThanksSearch = 2131361997;
 			
-			// aapt resource value: 0x7f0a00bf
+			// aapt resource value: 0x7f0a00c1
 			public const int btnUser = 2131361985;
 			
 			// aapt resource value: 0x7f0a00c9
@@ -2426,8 +2426,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0a00a2
 			public const int media_actions = 2131361954;
 			
-			// aapt resource value: 0x7f0a00cc
-			public const int menu_refresh = 2131361996;
+			// aapt resource value: 0x7f0a00ce
+			public const int menu_refresh = 2131361998;
 			
 			// aapt resource value: 0x7f0a009a
 			public const int messenger_send_button = 2131361946;
@@ -2705,11 +2705,11 @@ namespace Gigue
 			// aapt resource value: 0x7f0a0092
 			public const int txtPassword = 2131361938;
 			
-			// aapt resource value: 0x7f0a00c9
-			public const int txtThanksHeader = 2131361993;
+			// aapt resource value: 0x7f0a00cb
+			public const int txtThanksHeader = 2131361995;
 			
-			// aapt resource value: 0x7f0a00ca
-			public const int txtThanksUser = 2131361994;
+			// aapt resource value: 0x7f0a00cc
+			public const int txtThanksUser = 2131361996;
 			
 			// aapt resource value: 0x7f0a000b
 			public const int unknown = 2131361803;
@@ -2945,7 +2945,7 @@ namespace Gigue
 			public const int notification_template_part_time = 2130903099;
 			
 			// aapt resource value: 0x7f03003c
-			public const int Profile = 2130903100;
+			public const int Old_Profile = 2130903100;
 			
 			// aapt resource value: 0x7f03003d
 			public const int Registration = 2130903101;
