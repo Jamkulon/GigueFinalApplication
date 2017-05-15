@@ -28,15 +28,15 @@ namespace Gigue.Activities
         //Get vmMusicianSearch results into adapter         ==================Method not working yet.  =================================
         private async void GetMusicianSearch(vmMusicianSearch searchParam)
         {
-            var MSListView = FindViewById<ListView>(Resource.Id.SearchResultListView);
-            var MSInfo = await userdata.GetMusicianSearch(searchParam);
-            var users = new List<vmMusicianSearch>();
-            //foreach (var u in MSInfo)
-            //{
-            //    var userName = u.UserName.ToString();
-            //    users.Add(userName);
-            //}
-            MSListView.Adapter = new ArrayAdapter<vmMusicianSearch>(this, Android.Resource.Layout.SimpleListItem1, Android.Resource.Id.Text1, users);
+            var listText = FindViewById<ListView>(Resource.Id.SearchResultListView);
+            List<vmMusicianResult> userinfo = await userdata.GetMusicianSearch(searchParam);
+            var users = new List<vmMusicianResult>();
+            foreach (var u in (dynamic)userinfo)
+            {
+                var FirstName = u.FirstName.ToString();
+                users.Add(FirstName);
+            }
+            listText.Adapter = new ArrayAdapter<vmMusicianResult>(this, Android.Resource.Layout.SimpleListItem1, Android.Resource.Id.Text1, users);
         }
 
         //get usersnames from list diplsy on activity     ==================Old List Method =====================

@@ -49,6 +49,7 @@
     <EnableProguard>False</EnableProguard>
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
     <AndroidTlsProvider>btls</AndroidTlsProvider>
+    <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -413,7 +414,6 @@
     <AndroidResource Include="Resources\anim\slide_out_top.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="GigueToDo.txt" />
     <AndroidResource Include="Resources\drawable\james2.jpg" />
   </ItemGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
