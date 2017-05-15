@@ -45,12 +45,22 @@
         android:textSize="16sp"
         android:textStyle="bold"
         android:typeface="serif" />
+    <Button
+        android:text="Edit Profile"
+        android:id="@+id/btnEditProfile"
+        android:background="@android:color/transparent"
+        android:textColor="#f2854b"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:layout_width="match_parent"
+        android:layout_height="21.0dp"
+        android:gravity="right"
+        android:textSize="12sp" />
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="24.5dp"
         android:id="@+id/linearLayout1"
-        android:layout_marginTop="10dp"
         android:background="#333333"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp">
@@ -185,22 +195,12 @@
         android:id="@+id/linearLayout6">
         <Button
             android:text="Search"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
             android:id="@+id/btnSearch"
-            android:background="@android:color/transparent"
-            android:textColor="#f2854b"
+            android:background="@drawable/Login_Style_Button"
+            android:textColor="#ffffff"
             android:textStyle="bold"
             android:typeface="serif" />
-        <Button
-            android:text="Edit Profile"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/btnEditProfile"
-            android:background="@android:color/transparent"
-            android:textColor="#f2854b"
-            android:textStyle="bold"
-            android:typeface="serif"
-            android:layout_marginLeft="10dp" />
     </LinearLayout>
 </LinearLayout>
