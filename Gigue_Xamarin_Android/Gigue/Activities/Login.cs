@@ -1,18 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
+
 using Android.Widget;
-using System.Net;
-using Gigue;
-using Newtonsoft.Json;
-using Microsoft.WindowsAzure.MobileServices;
 using Android.Views.InputMethods;
 
 namespace Gigue.Activities
@@ -28,7 +20,7 @@ namespace Gigue.Activities
         EditText mEmailAddress;
         Button mLogin;
         TextView mForgotPw;
-
+        private Switch mLoggedIn;
         //private MobileServiceClient client;
 
         const string applicationURL = @"https://gigue.azurewebsites.net/api/";
@@ -47,7 +39,8 @@ namespace Gigue.Activities
             mEmailAddress = FindViewById<EditText>(Resource.Id.txtEmailAddress);
             mLogin = FindViewById<Button>(Resource.Id.btnLogin);
             mForgotPw = FindViewById<TextView>(Resource.Id.txtForgotPw);
-
+            mLoggedIn = FindViewById<Switch>(Resource.Id.keepLoggedIn);
+            
 
             //Click events for every button or item on the page
             mMoreInfo.Click += mMoreInfo_Click;
@@ -55,6 +48,8 @@ namespace Gigue.Activities
             mLinearLayout.Click += mLinearLayout_Click;
             mLogin.Click += mLogin_Click;
             mForgotPw.Click += mForgotPw_Click;
+
+           
 
         }
 
