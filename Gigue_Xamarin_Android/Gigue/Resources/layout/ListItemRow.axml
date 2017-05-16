@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+    
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:minHeight="50dp">
@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/txtFirstName"
-        android:layout_toLeftof="@id/txtCity"
+     
         android:paddingLeft="10dp"
         android:paddingTop="5dp"
         android:textColor="#fff"
@@ -41,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/txtLastName"
-        android.layout_toRightof="@id/txtPrimaryInst"
+       
         android:paddingLeft="10dp"
         android:paddingTop="5dp"
         android:textColor="#fff"
