@@ -24,6 +24,9 @@ namespace Gigue.Activities
         Button mSubmitUserProfile;
         User mRegisteredUser;
         int mRegisteredId;
+        Spinner mStateSpinner;
+        Spinner mCitySpinner;
+        Spinner mZipCodeSpinner;
 
         public UserData userdata = new UserData();
 
@@ -50,46 +53,42 @@ namespace Gigue.Activities
 
 
             //spinner class
-            Spinner stateSpinner = FindViewById<Spinner>(Resource.Id.spinnerState);
-            Spinner citySpinner = FindViewById<Spinner>(Resource.Id.spinnerCity);
-            Spinner zipCodeSpinner = FindViewById<Spinner>(Resource.Id.spinnerZip);
+            mStateSpinner = FindViewById<Spinner>(Resource.Id.spinnerState);
+            mCitySpinner = FindViewById<Spinner>(Resource.Id.spinnerCity);
+            mZipCodeSpinner = FindViewById<Spinner>(Resource.Id.spinnerZip);
 
 
             //state spinner
-            stateSpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs> (spinner_ItemSelected);
+            mStateSpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs> (spinner_ItemSelected);
             var StateAdapter = ArrayAdapter.CreateFromResource(
                     this, Resource.Array.states_array, Android.Resource.Layout.SimpleSpinnerItem);
             
 
             StateAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            stateSpinner.Adapter = StateAdapter;
+            mStateSpinner.Adapter = StateAdapter;
 
             //city spinner
-            citySpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+            mCitySpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
             var CityAdapter = ArrayAdapter.CreateFromResource(
                     this, Resource.Array.cities_array, Android.Resource.Layout.SimpleSpinnerItem);
 
             CityAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            citySpinner.Adapter = CityAdapter;
+            mCitySpinner.Adapter = CityAdapter;
 
             //Zip Code Spinner Adapter
-            zipCodeSpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+            mZipCodeSpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
             var zipCodeAdapter = ArrayAdapter.CreateFromResource(
                     this, Resource.Array.zip_array, Android.Resource.Layout.SimpleSpinnerItem);
 
             zipCodeAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            zipCodeSpinner.Adapter = zipCodeAdapter;
+            mZipCodeSpinner.Adapter = zipCodeAdapter;
             // Create your application here
         }
 
         async void mSubmitUserProfile_Click(object sender, EventArgs e)
         {
             this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
-            //Get data from spinners
-            Spinner stateSpin = FindViewById<Spinner>(Resource.Id.spinnerState);
-            Spinner citySpin = FindViewById<Spinner>(Resource.Id.spinnerCity);
-            Spinner zipSpin = FindViewById<Spinner>(Resource.Id.spinnerZip);
-
+            
             // Build appuser object
             vmAppUser itemToAdd = new vmAppUser
             {
@@ -97,16 +96,16 @@ namespace Gigue.Activities
                 UserName = "",
                 LastName = mRegisterLast.Text.Trim(),
                 FirstName = mRegisterFirst.Text.Trim(),
-                City = citySpin.SelectedItem.ToString(),
-                State = stateSpin.SelectedItem.ToString(),
-                PostalCode = zipSpin.SelectedItem.ToString(),
+                City = mCitySpinner.SelectedItem.ToString(),
+                State = mStateSpinner.SelectedItem.ToString(),
+                PostalCode = mZipCodeSpinner.SelectedItem.ToString(),
                 Email = mRegisteredEmail.Text.Trim(),
                 ReceiveAdvertisements = false,
                 IsMusician = false
             };
 
             //send post request
-            vmAppUser currentUser = await userdata.UpdateAppUser(mRegisteredId , itemToAdd);
+            vmAppUser currentUser = await userdata.UpdateAppUser(itemToAdd);
 
             //TODO Add intent to move to the search page
 

@@ -244,6 +244,7 @@
     <Compile Include="Activities\SplashScreen.cs" />
     <Compile Include="Activities\TestData.cs" />
     <Compile Include="Activities\Home.cs" />
+    <Compile Include="Adapters\SearchListAdapter.cs" />
     <Compile Include="Adapters\UserData.cs" />
     <Compile Include="DataObjects\AppUser.cs" />
     <Compile Include="DataObjects\Genre.cs" />
@@ -260,7 +261,7 @@
     <Compile Include="DataObjects\UserMusician.cs" />
     <Compile Include="DataObjects\UserMusicianRating.cs" />
     <Compile Include="Activities\RegistrationActivity.cs" />
-    <Compile Include="editMusicianProfile.cs" />
+    <Compile Include="Activities\editMusicianProfile.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Activities\ThankYou.cs" />
@@ -327,17 +328,20 @@
     <AndroidResource Include="Resources\layout\editMusicianProfile.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\ListItemRow.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
-    <AndroidResource Include="Resources\layout\Activity_To_Do.axml" />
-    <AndroidResource Include="Resources\layout\Row_List_To_Do.axml" />
     <AndroidResource Include="Resources\values\styles.xml" />
     <AndroidResource Include="Resources\drawable-ldpi\ic_launcher.png" />
     <AndroidResource Include="Resources\drawable-mdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_launcher.png" />
-    <AndroidResource Include="Resources\menu\activity_main.xml" />
+    <AndroidResource Include="Resources\menu\activity_main.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <AndroidResource Include="Resources\values-v11\styles.xml" />
     <AndroidResource Include="Resources\values-v14\styles.xml" />
   </ItemGroup>
@@ -414,8 +418,14 @@
     <AndroidResource Include="Resources\anim\slide_out_top.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="GigueToDo.txt" />
     <AndroidResource Include="Resources\drawable\james2.jpg" />
+    <Content Include="Resources\menu\toolbar.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <AndroidResource Include="Resources\values\toolbar_style.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Menu\" />
   </ItemGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

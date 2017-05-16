@@ -97,7 +97,7 @@ namespace Gigue.Activities
         void mViewProfile_Click(object sender, EventArgs r)
         {
             //Build musician search object
-            vmMusicianSearch searchParam = new vmMusicianSearch
+            vmMusicianResult searchParam = new vmMusicianResult
             {
                 
                 City = mCity.SelectedItem.ToString(),
