@@ -88,7 +88,8 @@
                         android:id="@+id/txtForgotPw"
                         android:gravity="center"
                         android:clickable="true"
-                        android:textSize="10dp" />
+                        android:textSize="10dp"
+                        android:textColor="#BDBDBD" />
                 </RelativeLayout>
                 <RelativeLayout
                     android:minWidth="25px"
