@@ -298,9 +298,6 @@
     <AndroidResource Include="Resources\layout\Registration.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\musicianProfile.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
     <AndroidResource Include="Resources\layout\SearchResults.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
