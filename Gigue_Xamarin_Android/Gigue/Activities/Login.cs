@@ -13,8 +13,8 @@ using System.Collections.Generic;
 
 namespace Gigue.Activities
 {
-    [Activity(MainLauncher = false, WindowSoftInputMode = SoftInput.AdjustResize, Theme = "@style/Theme.AppCompat.Light.NoActionBar")]
-    public class Login : AppCompatActivity
+    [Activity(MainLauncher = false, WindowSoftInputMode = SoftInput.AdjustResize, Theme = ("@android:style/Theme.NoTitleBar"))]
+    public class Login : Activity
     {
 
         //add classes and items for all events on this page
@@ -37,9 +37,6 @@ namespace Gigue.Activities
 
             SetContentView(Resource.Layout.Login);
 
-            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
-            toolbar.SetTitleTextColor(Android.Graphics.Color.White);
-            SetSupportActionBar(toolbar);
             //declare all objects on the page
             mMoreInfo = FindViewById<TextView>(Resource.Id.moreInfo);
             mSignUp = FindViewById<TextView>(Resource.Id.signUp);
@@ -60,32 +57,6 @@ namespace Gigue.Activities
             retrieveset();
             mEmailAddress.Text = mUserEmail;
 
-        }
-        public override bool OnCreateOptionsMenu(IMenu menu)
-        {
-            var inflater = MenuInflater;
-            inflater.Inflate(Resource.Menu.activity_main, menu);
-            return true;
-        }
-        public override bool OnOptionsItemSelected(IMenuItem item)
-        {
-            int id = item.ItemId;
-            if (id == Resource.Id.tool_profile)
-            {
-                Toast.MakeText(this, "Profile clicked", ToastLength.Short).Show();
-                return true;
-            }
-            else if (id == Resource.Id.tool_search)
-            {
-                Toast.MakeText(this, "Search clicked", ToastLength.Short).Show();
-                return true;
-            }
-            else if (id == Resource.Id.tool_infoPage)
-            {
-                Toast.MakeText(this, "InfoPage clicked", ToastLength.Short).Show();
-                return true;
-            }
-            return base.OnOptionsItemSelected(item);
         }
 
         //Login Button Click event to take you to Search page

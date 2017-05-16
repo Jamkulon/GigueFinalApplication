@@ -7,7 +7,14 @@
     android:focusableInTouchMode="true"
     android:focusable="true"
     android:id="@+id/srchView"
-    android:background="#424242">
+    android:background="#242424">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:theme="@style/ToolBarColor"
+        android:minHeight="?attr/actionBarSize"
+        android:background="#333333"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     <ScrollView
         android:minWidth="25px"
         android:minHeight="25px"
@@ -39,8 +46,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/enterFirstName"
                 android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:textColor="#000000" />
+                android:layout_marginRight="30dp" />
             <EditText
                 android:hint="Last Name"
                 android:inputType="textPersonName"
@@ -48,8 +54,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/enterLastName"
                 android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:textColor="#000000" />
+                android:layout_marginRight="30dp" />
             <TextView
                 android:text="OR"
                 android:textAppearance="?android:attr/textAppearanceLarge"

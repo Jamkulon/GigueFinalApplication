@@ -12,11 +12,12 @@ using Android.Widget;
 using Android.Views.InputMethods;
 using Gigue.ViewModels;
 using Newtonsoft.Json;
+using Android.Support.V7.App;
 
 namespace Gigue.Activities
 {
-    [Activity(WindowSoftInputMode = SoftInput.AdjustResize, Theme = ("@android:style/Theme.NoTitleBar"))]
-    public class Search : Activity
+    [Activity(WindowSoftInputMode = SoftInput.AdjustResize, Theme = "@style/Theme.AppCompat.Light.NoActionBar")]
+    public class Search : AppCompatActivity
     {
         LinearLayout sLinearLayout;
         Button mSearchResults;
@@ -33,6 +34,9 @@ namespace Gigue.Activities
             //Set this page's main view//
             SetContentView(Resource.Layout.searchPage);
 
+            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+            toolbar.SetTitleTextColor(Android.Graphics.Color.White);
+            SetSupportActionBar(toolbar);
             //Assign globals
             mCity = FindViewById<Spinner>(Resource.Id.spinnerCity);
             mFirtName = FindViewById<EditText>(Resource.Id.enterFirstName);
@@ -72,6 +76,33 @@ namespace Gigue.Activities
             instrumentSpinner.Adapter = instrumentAdapter;
 
             // Search Click Activity to Send to Search Results Page
+        }
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            var inflater = MenuInflater;
+            inflater.Inflate(Resource.Menu.activity_main, menu);
+            return true;
+        }
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            int id = item.ItemId;
+            if (id == Resource.Id.tool_profile)
+            {
+                Toast.MakeText(this, "Profile clicked", ToastLength.Short).Show();
+                return true;
+            }
+            else if (id == Resource.Id.tool_search)
+            {
+                Toast.MakeText(this, "Search clicked", ToastLength.Short).Show();
+                return true;
+            }
+            else if (id == Resource.Id.tool_infoPage)
+            {
+                Toast.MakeText(this, "InfoPage clicked", ToastLength.Short).Show();
+                Intent intent = new Intent(this, typeof(Search));
+                return true;
+            }
+            return base.OnOptionsItemSelected(item);
         }
         void mSearchResults_Click(object sender, EventArgs r)
         {
