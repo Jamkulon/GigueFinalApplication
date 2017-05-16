@@ -5,72 +5,86 @@
     android:background="#242424"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    android:clickable="true"
     android:minWidth="25px"
     android:minHeight="25px">
-  <android.support.v7.widget.Toolbar
+  
+    <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:theme="@style/ToolBarColor"
         android:minHeight="?attr/actionBarSize"
         android:background="#333333"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:id="@+id/circleImageView1"
-        android:src="@drawable/james2"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        app:civ_border_color="#fff2854b"
-        app:civ_border_width="2dp"
-        app:civ_fill_color="#00000000" />
-    <RatingBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/ratingBar1"
-        android:numStars="5"
-        android:stepSize="0.1"
-        android:layout_marginLeft="0.0dp"
-        android:layout_gravity="center" />
-    <TextView
-        android:text="James Kulon"
+  <ScrollView
+        android:minWidth="25px"
+        android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView1"
-        android:gravity="center"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:typeface="serif"
-        android:textColor="#ffffff" />
-    <TextView
-        android:text="Bass Guitar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView10"
-        android:gravity="center"
-        android:textColor="#f2854b"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:typeface="serif" />
-    <Button
-        android:text="Edit Profile"
-        android:id="@+id/btnEditProfile"
-        android:background="@android:color/transparent"
-        android:textColor="#f2854b"
-        android:textStyle="bold"
-        android:typeface="serif"
-        android:layout_width="match_parent"
-        android:layout_height="21.0dp"
-        android:gravity="right"
-        android:textSize="12sp" />
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="24.5dp"
-        android:id="@+id/linearLayout1"
-        android:background="#333333"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
+        android:id="@+id/scrollViewProfile">
+    <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:stretchColumns="1">
+      <de.hdodenhof.circleimageview.CircleImageView
+          android:layout_width="130dp"
+          android:layout_height="130dp"
+          android:id="@+id/circleImageView1"
+          android:src="@drawable/james2"
+          android:layout_gravity="center"
+          android:layout_marginTop="10dp"
+          app:civ_border_color="#fff2854b"
+          app:civ_border_width="2dp"
+          app:civ_fill_color="#00000000" />
+      <RatingBar
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/ratingBar1"
+          android:numStars="5"
+          android:stepSize="0.1"
+          android:layout_marginLeft="0.0dp"
+          android:layout_gravity="center" />
+      <TextView
+          android:text="James Kulon"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/textView1"
+          android:gravity="center"
+          android:textSize="25sp"
+          android:textStyle="bold"
+          android:typeface="serif"
+          android:textColor="#ffffff" />
+      <TextView
+          android:text="Bass Guitar"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/textView10"
+          android:gravity="center"
+          android:textColor="#f2854b"
+          android:textSize="16sp"
+          android:textStyle="bold"
+          android:typeface="serif" />
+      <Button
+          android:text="Edit Profile"
+          android:id="@+id/btnEditProfile"
+          android:background="@android:color/transparent"
+          android:textColor="#f2854b"
+          android:textStyle="bold"
+          android:typeface="serif"
+          android:layout_width="match_parent"
+          android:layout_height="21.0dp"
+          android:gravity="right"
+          android:textSize="12sp" />
+      <LinearLayout
+          android:orientation="horizontal"
+          android:layout_width="match_parent"
+          android:layout_height="24.5dp"
+          android:id="@+id/linearLayout1"
+          android:background="#333333"
+          android:layout_marginLeft="10dp"
+          android:layout_marginRight="10dp">
         <TextView
             android:text="Email:"
             android:layout_width="wrap_content"
@@ -91,15 +105,15 @@
             android:textColor="#ffffff"
             android:textSize="16sp"
             android:typeface="serif" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout2"
-        android:background="#333333"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
+      </LinearLayout>
+      <LinearLayout
+          android:orientation="horizontal"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/linearLayout2"
+          android:background="#333333"
+          android:layout_marginLeft="10dp"
+          android:layout_marginRight="10dp">
         <TextView
             android:text="Phone:"
             android:layout_width="wrap_content"
@@ -120,15 +134,15 @@
             android:textColor="#ffffff"
             android:textSize="16sp"
             android:typeface="serif" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout3"
-        android:background="#333333"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
+      </LinearLayout>
+      <LinearLayout
+          android:orientation="horizontal"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/linearLayout3"
+          android:background="#333333"
+          android:layout_marginLeft="10dp"
+          android:layout_marginRight="10dp">
         <TextView
             android:text="Experience:"
             android:layout_width="wrap_content"
@@ -149,15 +163,15 @@
             android:textColor="#ffffff"
             android:textSize="16sp"
             android:typeface="serif" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout4"
-        android:background="#333333"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
+      </LinearLayout>
+      <LinearLayout
+          android:orientation="horizontal"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/linearLayout4"
+          android:background="#333333"
+          android:layout_marginLeft="10dp"
+          android:layout_marginRight="10dp">
         <TextView
             android:text="About Me:"
             android:layout_width="wrap_content"
@@ -168,17 +182,17 @@
             android:textSize="18dp"
             android:textStyle="bold"
             android:typeface="serif" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout5"
-        android:background="#333333"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
+      </LinearLayout>
+      <LinearLayout
+          android:orientation="horizontal"
+          android:minWidth="25px"
+          android:minHeight="25px"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/linearLayout5"
+          android:background="#333333"
+          android:layout_marginLeft="10dp"
+          android:layout_marginRight="10dp">
         <TextView
             android:text="Hi Im James Kulon iubwef iubf iub eiu eiuh weuh piohjwepuf eeiuh epiuh fiuweu fpipha ihfipueefoihjewfiuhh fiuhefyhbweuh iueihf epiuf "
             android:id="@+id/aboutView"
@@ -188,18 +202,24 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp" />
-    </LinearLayout>
-    <Switch
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/switch1"
-        android:textOn="Available for Work"
-        android:textOff="Not Available" />
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="39.5dp"
-        android:id="@+id/linearLayout6">
+      </LinearLayout>
+      <Switch
+          android:text="                             Are You Available to Sub?"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:checked="true"
+          android:clickable="true"
+          android:id="@+id/profileSwitch"
+          android:textOn="Available for Work"
+          android:textOff="Not Available"
+          android:textColor="#f2854b"
+          android:textSize="18dp"
+          android:textStyle="bold" />
+      <LinearLayout
+          android:orientation="horizontal"
+          android:layout_width="match_parent"
+          android:layout_height="39.5dp"
+          android:id="@+id/linearLayout6">
         <Button
             android:text="Search"
             android:layout_width="100dp"
@@ -209,5 +229,7 @@
             android:textColor="#ffffff"
             android:textStyle="bold"
             android:typeface="serif" />
-    </LinearLayout>
+      </LinearLayout>
+    </TableLayout>
+  </ScrollView>
 </LinearLayout>

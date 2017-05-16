@@ -6,14 +6,17 @@
     android:minHeight="50dp">
     <TextView
         android:id="@+id/txtFirstName"
-        android:layout_width="wrap_content"
+        android:layout_width="177.5dp"
         android:layout_height="wrap_content"
         android:lineSpacingExtra="3dp"
         android:paddingLeft="10dp"
         android:paddingTop="5dp"
-        android:textColor="#ffffff"
+        android:textColor="#f2854b"
         android:textStyle="bold"
-        android:typeface="sans" />
+        android:typeface="sans"
+        android:layout_alignParentLeft="true"
+        android:gravity="right"
+        android:textSize="20sp" />
     <TextView
         android:id="@+id/txtLastName"
         android:layout_width="wrap_content"
@@ -22,19 +25,24 @@
         android:lineSpacingExtra="3dp"
         android:paddingLeft="10dp"
         android:paddingTop="5dp"
-        android:textColor="#ffffff"
+        android:textColor="#f2854b"
         android:textStyle="bold"
-        android:typeface="sans" />
+        android:typeface="sans"
+        android:layout_alignParentRight="true"
+        android:gravity="left"
+        android:textSize="20sp" />
     <TextView
         android:id="@+id/txtPrimaryInst"
-        android:layout_width="wrap_content"
+        android:layout_width="177.5dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/txtFirstName"
         android:paddingLeft="10dp"
         android:paddingTop="5dp"
-        android:textColor="#ffffff"
+        android:textColor="#f2854b"
         android:textStyle="bold"
-        android:typeface="sans" />
+        android:typeface="sans"
+        android:layout_alignParentLeft="true"
+        android:gravity="center" />
     <TextView
         android:id="@+id/txtCity"
         android:layout_width="wrap_content"
@@ -42,7 +50,10 @@
         android:layout_below="@id/txtLastName"
         android:paddingLeft="10dp"
         android:paddingTop="5dp"
-        android:textColor="#ffffff"
+        android:textColor="#f2854b"
         android:textStyle="bold"
-        android:typeface="sans" />
+        android:typeface="sans"
+        android:layout_toRightOf="@+id/txtPrimaryInst"
+        android:layout_alignParentRight="true"
+        android:gravity="center" />
 </RelativeLayout>
