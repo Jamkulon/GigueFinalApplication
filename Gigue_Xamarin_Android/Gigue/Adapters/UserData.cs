@@ -77,6 +77,7 @@ namespace Gigue.Adapters
             //    };
             //    musicianResults.Add(newmusician);
             //}
+            Console.WriteLine(userMusicians[0].LastName);
             return userMusicians;
 
 
