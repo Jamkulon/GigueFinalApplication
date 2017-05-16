@@ -5,6 +5,7 @@ using Android.Content;
 using Android.OS;
 using Android.Widget;
 using Newtonsoft.Json;
+using Gigue.ViewModels;
 
 namespace Gigue.Activities
 {
@@ -13,7 +14,7 @@ namespace Gigue.Activities
     {
         TextView mThanksUser;
         Button mThankYou;
-        User mRegisteredUser;
+        vmMusicianProfile mRegisteredUser;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -22,7 +23,7 @@ namespace Gigue.Activities
             SetContentView(Resource.Layout.thanks);
 
             //Get PutExtra data
-            mRegisteredUser = JsonConvert.DeserializeObject<User>(Intent.GetStringExtra("User"));
+            mRegisteredUser = JsonConvert.DeserializeObject<vmMusicianProfile>(Intent.GetStringExtra("User"));
 
             //Update the form dynamically
             RunOnUiThread(() => UpdateUserInfo());
