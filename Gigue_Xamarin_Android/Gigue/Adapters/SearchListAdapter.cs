@@ -61,6 +61,7 @@ namespace Gigue.Adapters
             row.FindViewById<TextView>(Resource.Id.txtFirstName).Text = item.FirstName;
             row.FindViewById<TextView>(Resource.Id.txtLastName).Text = item.LastName;
             row.FindViewById<TextView>(Resource.Id.txtPrimaryInst).Text = item.PrimeInstrument;
+            row.FindViewById<TextView>(Resource.Id.txtCity).Text = item.City;
            
 
             return row;
