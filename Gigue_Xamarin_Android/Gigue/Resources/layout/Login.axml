@@ -10,7 +10,7 @@
     android:focusableInTouchMode="true"
     android:id="@+id/mainView"
     android:clickable="true"
-    android:background="#242424">
+    android:background="@drawable/mericaband">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:theme="@style/ToolBarColor"
@@ -89,7 +89,8 @@
                         android:gravity="center"
                         android:clickable="true"
                         android:textSize="10dp"
-                        android:textColor="#BDBDBD" />
+                        android:textColor="#f2854b"
+                        android:textStyle="bold" />
                 </RelativeLayout>
                 <RelativeLayout
                     android:minWidth="25px"
@@ -107,8 +108,9 @@
                         android:checked="true"
                         android:clickable="true"
                         android:layout_width="149.0dp"
-                        android:textColor="#BDBDBD"
-                        android:textSize="10dp" />
+                        android:textColor="#f2854b"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
                 </RelativeLayout>
             </LinearLayout>
             <Button
