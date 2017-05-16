@@ -49,7 +49,7 @@ namespace Gigue.Adapters
         }
 
         // Get Musician Search
-        public async Task<vmMusicianSearch> GetMusicianSearch(vmMusicianSearch mSearchParam)
+        public async Task<List<vmMusicianResult>> GetMusicianSearch(vmMusicianSearch mSearchParam)
         {
             // Create http client
             HttpClient client = await GetClient();
@@ -58,12 +58,38 @@ namespace Gigue.Adapters
             //Convert it to a formated stringcontent byte array
             var content = new StringContent(data, Encoding.UTF8, "application/json");
             //Send the data
+
             var response = await client.PostAsync(string.Concat(applicationURL, "musiciansearch/"), content);
             //return the response as a vmMusicianSearch object
-            return JsonConvert.DeserializeObject<vmMusicianSearch>(
+            var userMusicians = JsonConvert.DeserializeObject<List<vmMusicianResult>>(
                 await response.Content.ReadAsStringAsync());
-            //// Parse data into newUsers and return it
-            //var newUsers = new List<vmMusicianSearch>();
+            //List<vmMusicianResult> musicianResults = new List<vmMusicianResult>();
+
+            //foreach (var m in userMusicians)
+            //{
+            //    var newmusician = new vmMusicianResult()
+            //    {
+            //        AppUserId = m.AppUserId,
+            //        FirstName = m.FirstName,
+            //        LastName = m.LastName,
+            //        City = m.City,
+            //        PrimeInstrument = m.PrimeInstrument
+            //    };
+            //    musicianResults.Add(newmusician);
+            //}
+            Console.WriteLine(userMusicians[0].LastName);
+            return userMusicians;
+
+
+
+
+            //List<vmMusicianResult> myJSON = JsonConvert.DeserializeObject<vmMusicianResult>(
+            //    await response.Content.ReadAsStringAsync());
+
+            //return myJSON;
+
+            // Parse data into newUsers and return it
+            //var newUsers = new List<vmMusicianResult>();
             //foreach (var user in response)
             //{
             //    var newuser = new vmMusicianSearch()

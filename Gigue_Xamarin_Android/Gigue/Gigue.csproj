@@ -244,6 +244,7 @@
     <Compile Include="Activities\SplashScreen.cs" />
     <Compile Include="Activities\TestData.cs" />
     <Compile Include="Activities\Home.cs" />
+    <Compile Include="Adapters\SearchListAdapter.cs" />
     <Compile Include="Adapters\UserData.cs" />
     <Compile Include="DataObjects\AppUser.cs" />
     <Compile Include="DataObjects\Genre.cs" />
@@ -327,11 +328,12 @@
     <AndroidResource Include="Resources\layout\editMusicianProfile.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\ListItemRow.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
-    <AndroidResource Include="Resources\layout\Activity_To_Do.axml" />
-    <AndroidResource Include="Resources\layout\Row_List_To_Do.axml" />
     <AndroidResource Include="Resources\values\styles.xml" />
     <AndroidResource Include="Resources\drawable-ldpi\ic_launcher.png" />
     <AndroidResource Include="Resources\drawable-mdpi\ic_launcher.png" />
@@ -416,7 +418,6 @@
     <AndroidResource Include="Resources\anim\slide_out_top.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="GigueToDo.txt" />
     <AndroidResource Include="Resources\drawable\james2.jpg" />
     <Content Include="Resources\menu\toolbar.xml">
       <SubType>Designer</SubType>
