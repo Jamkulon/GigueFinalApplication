@@ -23,7 +23,7 @@ namespace Gigue
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.HomePage);
 
-        }
+    }
         protected override void OnResume()
         {
             base.OnResume();
