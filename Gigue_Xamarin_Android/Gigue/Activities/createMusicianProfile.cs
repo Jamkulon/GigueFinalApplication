@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Newtonsoft.Json;
+using Gigue.ViewModels;
 
 namespace Gigue.Activities
 {
@@ -17,15 +18,21 @@ namespace Gigue.Activities
     public class createMusicianProfile : RegistrationActivity
     {
         Button mSubmitMusicianProfile;
+        EditText mRegisterFirst;
+        EditText mRegisterLast;
+        EditText mRegisteredEmail;
+        User mRegisteredUser;
+        int mRegisteredId;
+        Spinner mStateSpinner;
+        Spinner mCitySpinner;
+        Spinner mZipCodeSpinner;
+        Spinner mInstrumentSpinner;
+        Spinner mGenreSpinner;
+        Spinner mLanguageSpinner;
+
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            EditText mRegisterFirst;
-            EditText mRegisterLast;
-            EditText mRegisteredEmail;
-            User mRegisteredUser;
-
-          
 
             base.OnCreate(savedInstanceState);
 
@@ -43,76 +50,93 @@ namespace Gigue.Activities
             mRegisterFirst.Text = mRegisteredUser.FirstName.ToString();
             mRegisterLast.Text = mRegisteredUser.LastName.ToString();
             mRegisteredEmail.Text = mRegisteredUser.Email.ToString();
+            mRegisteredId = mRegisteredUser.AppUserId;
 
             // Spinners for 
-
-            Spinner stateSpinner = FindViewById<Spinner>(Resource.Id.spinnerState);
-            Spinner citySpinner = FindViewById<Spinner>(Resource.Id.spinnerCity);
-            Spinner zipCodeSpinner = FindViewById<Spinner>(Resource.Id.spinnerZip);
-            Spinner instrumentSpinner = FindViewById<Spinner>(Resource.Id.spinnerInstrumentPlayed);
-            Spinner genreSpinner = FindViewById<Spinner>(Resource.Id.spinnerMusicGenres);
-            Spinner languageSpinner = FindViewById<Spinner>(Resource.Id.spinnerLanguagesSpoken);
+            mStateSpinner = FindViewById<Spinner>(Resource.Id.spinnerState);
+            mCitySpinner = FindViewById<Spinner>(Resource.Id.spinnerCity);
+            mZipCodeSpinner = FindViewById<Spinner>(Resource.Id.spinnerZip);
+            mInstrumentSpinner = FindViewById<Spinner>(Resource.Id.spinnerInstrumentPlayed);
+            mGenreSpinner = FindViewById<Spinner>(Resource.Id.spinnerMusicGenres);
+            mLanguageSpinner = FindViewById<Spinner>(Resource.Id.spinnerLanguagesSpoken);
 
 
             //state spinner
-            stateSpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+            mStateSpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
             var StateAdapter = ArrayAdapter.CreateFromResource(
                     this, Resource.Array.states_array, Android.Resource.Layout.SimpleSpinnerItem);
 
             StateAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            stateSpinner.Adapter = StateAdapter;
+            mStateSpinner.Adapter = StateAdapter;
 
             //city spinner
-            citySpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+            mCitySpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
             var CityAdapter = ArrayAdapter.CreateFromResource(
                     this, Resource.Array.cities_array, Android.Resource.Layout.SimpleSpinnerItem);
 
             CityAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            citySpinner.Adapter = CityAdapter;
+            mCitySpinner.Adapter = CityAdapter;
 
             //Zip Code Spinner Adapter
-            zipCodeSpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+            mZipCodeSpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
             var zipCodeAdapter = ArrayAdapter.CreateFromResource(
                     this, Resource.Array.zip_array, Android.Resource.Layout.SimpleSpinnerItem);
 
             zipCodeAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            zipCodeSpinner.Adapter = zipCodeAdapter;
+            mZipCodeSpinner.Adapter = zipCodeAdapter;
 
             //Instrument Select Code Spinner Adapter
-            instrumentSpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+            mInstrumentSpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
             var instrumentAdapter = ArrayAdapter.CreateFromResource(
                     this, Resource.Array.instrument_array, Android.Resource.Layout.SimpleSpinnerItem);
 
             instrumentAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            instrumentSpinner.Adapter = instrumentAdapter;
+            mInstrumentSpinner.Adapter = instrumentAdapter;
 
             //Music Genre Select Spinner
-            instrumentSpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+            mInstrumentSpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
             var genreAdapter = ArrayAdapter.CreateFromResource(
                     this, Resource.Array.genre_array, Android.Resource.Layout.SimpleSpinnerItem);
 
            genreAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            genreSpinner.Adapter = genreAdapter;
+            mGenreSpinner.Adapter = genreAdapter;
 
             //Language Select Spinner
-            languageSpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+            mLanguageSpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
             var languageAdapter = ArrayAdapter.CreateFromResource(
                     this, Resource.Array.language_array, Android.Resource.Layout.SimpleSpinnerItem);
 
             languageAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            languageSpinner.Adapter = languageAdapter;
+            mLanguageSpinner.Adapter = languageAdapter;
             // Create your application here
         }
 
         private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
-            Spinner spinner = (Spinner)sender;
-
-
-            
+            Spinner spinner = (Spinner)sender;     
         }
-        void mSubmitMusicianProfile_Click(object sender, EventArgs e)
+
+        private async void mSubmitMusicianProfile_Click(object sender, EventArgs e)
         {
+            // Build appuser object
+            vmAppUser itemToAdd = new vmAppUser
+            {
+                AppUserId = mRegisteredId,
+                UserName = "",
+                LastName = mRegisterLast.Text.Trim(),
+                FirstName = mRegisterFirst.Text.Trim(),
+                City = mCitySpinner.SelectedItem.ToString(),
+                State = mStateSpinner.SelectedItem.ToString(),
+                PostalCode = mZipCodeSpinner.SelectedItem.ToString(),
+                Email = mRegisteredEmail.Text.Trim(),
+                ReceiveAdvertisements = false,
+                IsMusician = true
+            };
+
+            //send post request
+            vmAppUser currentUser = await userdata.UpdateAppUser(itemToAdd);
+
+
             Intent intent = new Intent(this, typeof(Search));
             this.StartActivity(intent);
             this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);

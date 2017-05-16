@@ -11,7 +11,7 @@
         android:lineSpacingExtra="3dp"
         android:paddingLeft="10dp"
         android:paddingTop="5dp"
-        android:textColor="#ffffff"
+        android:textColor="#fff"
         android:textStyle="bold"
         android:typeface="sans" />
     <TextView
@@ -19,27 +19,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/txtFirstName"
+        android:lineSpacingExtra="3dp"
         android:paddingLeft="10dp"
         android:paddingTop="5dp"
         android:textColor="#fff"
-        android:textSize="11sp" />
+        android:textStyle="bold"
+        android:typeface="sans" />
     <TextView
         android:id="@+id/txtPrimaryInst"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/txtFirstName"
+        android:layout_toLeftof="@id/txtCity"
         android:paddingLeft="10dp"
         android:paddingTop="5dp"
         android:textColor="#fff"
-        android:textSize="11sp" />
+        android:textStyle="bold"
+        android:typeface="sans" />
   <TextView
-    android:id="@+id/txtCity"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/txtFirstName"
-    android.layout_toRightof="txtPrimaryInst"
-    android:paddingLeft="10dp"
-    android:paddingTop="5dp"
-    android:textColor="#fff"
-    android:textSize="11sp" />
+        android:id="@+id/txtCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtLastName"
+        android.layout_toRightof="@id/txtPrimaryInst"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:typeface="sans" />
 </RelativeLayout>

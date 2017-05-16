@@ -99,6 +99,33 @@ namespace Gigue
         }
         void mEditMusicianProfile_Click(object sender, EventArgs e)
         {
+            //Get data from spinners
+            Spinner stateSpinner = FindViewById<Spinner>(Resource.Id.spinnerState);
+            Spinner citySpinner = FindViewById<Spinner>(Resource.Id.spinnerCity);
+            Spinner zipCodeSpinner = FindViewById<Spinner>(Resource.Id.spinnerZip);
+            Spinner instrumentSpinner = FindViewById<Spinner>(Resource.Id.spinnerInstrumentPlayed);
+            Spinner genreSpinner = FindViewById<Spinner>(Resource.Id.spinnerMusicGenres);
+            Spinner languageSpinner = FindViewById<Spinner>(Resource.Id.spinnerLanguagesSpoken);
+
+            // Build appuser object
+            //vmAppUser itemToAdd = new vmAppUser
+            //{
+            //    AppUserId = mRegisteredId,
+            //    UserName = "",
+            //    LastName = mRegisterLast.Text.Trim(),
+            //    FirstName = mRegisterFirst.Text.Trim(),
+            //    City = citySpin.SelectedItem.ToString(),
+            //    State = stateSpin.SelectedItem.ToString(),
+            //    PostalCode = zipSpin.SelectedItem.ToString(),
+            //    Email = mRegisteredEmail.Text.Trim(),
+            //    ReceiveAdvertisements = false,
+            //    IsMusician = false
+            //};
+
+            //send post request
+            //vmAppUser currentUser = await userdata.UpdateAppUser(mRegisteredId, itemToAdd);
+
+
             Intent intent = new Intent(this, typeof(MusicianProfile));
 
             this.StartActivity(intent);
