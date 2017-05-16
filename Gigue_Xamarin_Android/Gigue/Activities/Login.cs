@@ -13,8 +13,8 @@ using System.Collections.Generic;
 
 namespace Gigue.Activities
 {
-    [Activity(MainLauncher = false, WindowSoftInputMode = SoftInput.AdjustResize, Theme = ("@android:style/Theme.NoTitleBar"))]
-    public class Login : Activity
+    [Activity(MainLauncher = false, WindowSoftInputMode = SoftInput.AdjustResize, Theme = ("@style/Theme.AppCompat.Light.NoActionBar"))]
+    public class Login : AppCompatActivity
     {
 
         //add classes and items for all events on this page

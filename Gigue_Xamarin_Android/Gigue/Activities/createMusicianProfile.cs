@@ -11,10 +11,11 @@ using Android.Views;
 using Android.Widget;
 using Newtonsoft.Json;
 using Gigue.ViewModels;
+using Android.Support.V7.App;
 
 namespace Gigue.Activities
 {
-    [Activity (WindowSoftInputMode = SoftInput.AdjustResize, Theme = ("@android:style/Theme.NoTitleBar"))]
+    [Activity (WindowSoftInputMode = SoftInput.AdjustResize, Theme = "@style/Theme.AppCompat.Light.NoActionBar")]
     public class createMusicianProfile : RegistrationActivity
     {
         Button mSubmitMusicianProfile;
@@ -37,6 +38,10 @@ namespace Gigue.Activities
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.CreateMusicianProfile);
+
+            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+            toolbar.SetTitleTextColor(Android.Graphics.Color.White);
+            SetSupportActionBar(toolbar);
 
             mSubmitMusicianProfile = FindViewById<Button>(Resource.Id.btnSubmitMusician);
             mSubmitMusicianProfile.Click += mSubmitMusicianProfile_Click;
@@ -109,6 +114,32 @@ namespace Gigue.Activities
             languageAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             mLanguageSpinner.Adapter = languageAdapter;
             // Create your application here
+        }
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            var inflater = MenuInflater;
+            inflater.Inflate(Resource.Menu.activity_main, menu);
+            return true;
+        }
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            int id = item.ItemId;
+            if (id == Resource.Id.tool_profile)
+            {
+                Toast.MakeText(this, "Profile clicked", ToastLength.Short).Show();
+                return true;
+            }
+            else if (id == Resource.Id.tool_search)
+            {
+                Toast.MakeText(this, "Search clicked", ToastLength.Short).Show();
+                return true;
+            }
+            else if (id == Resource.Id.tool_infoPage)
+            {
+                Toast.MakeText(this, "InfoPage clicked", ToastLength.Short).Show();
+                return true;
+            }
+            return base.OnOptionsItemSelected(item);
         }
 
         private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)

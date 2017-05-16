@@ -6,6 +6,13 @@
     android:descendantFocusability="beforeDescendants"
     android:focusableInTouchMode="true"
     android:background="#424242">
+  <android.support.v7.widget.Toolbar
+    android:id="@+id/toolbar"
+    android:theme="@style/ToolBarColor"
+    android:minHeight="?attr/actionBarSize"
+    android:background="#333333"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
 <!--Enter User First Name-->
     <TextView
         android:text="CREATE A PROFILE"
