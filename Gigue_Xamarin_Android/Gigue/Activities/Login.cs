@@ -13,7 +13,7 @@ using System.Collections.Generic;
 
 namespace Gigue.Activities
 {
-    [Activity(MainLauncher = false, WindowSoftInputMode = SoftInput.AdjustResize, Theme = "@style/Theme.AppCompat.Light.NoActionBar")]
+    [Activity(MainLauncher = false, WindowSoftInputMode = SoftInput.AdjustResize, Theme = ("@style/Theme.AppCompat.Light.NoActionBar"))]
     public class Login : AppCompatActivity
     {
 
@@ -22,14 +22,18 @@ namespace Gigue.Activities
         TextView mSignUp;
         LinearLayout mLinearLayout;
         EditText mEmailAddress;
+        EditText mPassword;
         Button mLogin;
         TextView mForgotPw;
         private Switch mLoggedIn;
-        string mUserEmail;
+        //bool mIsLoggedIn;
+
 
         //private MobileServiceClient client;
 
         const string applicationURL = @"https://gigue.azurewebsites.net/api/";
+
+        vmMusicianProfile mRegisteredUser = new vmMusicianProfile();
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -37,14 +41,12 @@ namespace Gigue.Activities
 
             SetContentView(Resource.Layout.Login);
 
-            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
-            toolbar.SetTitleTextColor(Android.Graphics.Color.White);
-            SetSupportActionBar(toolbar);
             //declare all objects on the page
             mMoreInfo = FindViewById<TextView>(Resource.Id.moreInfo);
             mSignUp = FindViewById<TextView>(Resource.Id.signUp);
             mLinearLayout = FindViewById<LinearLayout>(Resource.Id.mainView);
             mEmailAddress = FindViewById<EditText>(Resource.Id.txtEmailAddress);
+            mPassword = FindViewById<EditText>(Resource.Id.txtPassword);
             mLogin = FindViewById<Button>(Resource.Id.btnLogin);
             mForgotPw = FindViewById<TextView>(Resource.Id.txtForgotPw);
             mLoggedIn = FindViewById<Switch>(Resource.Id.keepLoggedIn);
@@ -57,46 +59,41 @@ namespace Gigue.Activities
             mLogin.Click += mLogin_Click;
             mForgotPw.Click += mForgotPw_Click;
 
-            retrieveset();
-            mEmailAddress.Text = mUserEmail;
+            //if (mIsLoggedIn == true)
+            //{
+                retrieveset();
+                mEmailAddress.Text = mRegisteredUser.Email;
+                mPassword.Text = mRegisteredUser.PassWord;
+                //TODO Create intent.Extra and push it to correct profile page
+            //}
 
-        }
-        public override bool OnCreateOptionsMenu(IMenu menu)
-        {
-            var inflater = MenuInflater;
-            inflater.Inflate(Resource.Menu.activity_main, menu);
-            return true;
-        }
-        public override bool OnOptionsItemSelected(IMenuItem item)
-        {
-            int id = item.ItemId;
-            if (id == Resource.Id.tool_profile)
-            {
-                Toast.MakeText(this, "Profile clicked", ToastLength.Short).Show();
-                return true;
-            }
-            else if (id == Resource.Id.tool_search)
-            {
-                Toast.MakeText(this, "Search clicked", ToastLength.Short).Show();
-                return true;
-            }
-            else if (id == Resource.Id.tool_infoPage)
-            {
-                Toast.MakeText(this, "InfoPage clicked", ToastLength.Short).Show();
-                return true;
-            }
-            return base.OnOptionsItemSelected(item);
+            //mLoggedIn.CheckedChange += delegate (object sender, CompoundButton.CheckedChangeEventArgs e) {
+            //    mIsLoggedIn = mLoggedIn.Checked;
+            //    (e.IsChecked)
+            //    //store
+            //    var prefs = Application.Context.GetSharedPreferences("GIGUE", FileCreationMode.Private);
+            //    var prefEditor = prefs.Edit();
+            //    prefEditor.PutString("profile", musicianProfile);
+            //    prefEditor.Apply();
+
+
+            //};
+
         }
 
         //Login Button Click event to take you to Search page
         void mLogin_Click(object sender, EventArgs e)
         {
+            mRegisteredUser.Email = mEmailAddress.Text.ToString().Trim();
+            mRegisteredUser.PassWord = mPassword.Text.ToString().Trim();
             saveset();
-            
+
             Intent intent = new Intent(this, typeof(MusicianProfile));
 
-            this.StartActivity(intent);
-            this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
+            intent.PutExtra("User", JsonConvert.SerializeObject(mRegisteredUser));
+
+            StartActivity(intent);
+            OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
         }
 
         //makes keyboard dissappear when clicked outside of the layout
@@ -110,50 +107,71 @@ namespace Gigue.Activities
         void mSignUp_Click(object sender, EventArgs e)
         {
 
-            //Store info to sharedprefs
+            //TODO Store info to sharedprefs
+
 
 
             Intent intent = new Intent(this, typeof(RegistrationActivity));
-            this.StartActivity(intent);
-            this.OverridePendingTransition(Resource.Animation.slide_in_bottom, Resource.Animation.slide_out_top);
+            StartActivity(intent);
+            OverridePendingTransition(Resource.Animation.slide_in_bottom, Resource.Animation.slide_out_top);
         }
 
         //More Information click event to got to Information Page
         void mMoreInfo_Click(object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(InformationPage));
-            this.StartActivity(intent);
-            this.OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);
+            StartActivity(intent);
+            OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);
         }
 
         //Forgot Password click event to take you to reset password page
         void mForgotPw_Click(object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ForgotPassword));
-            this.StartActivity(intent);
-            this.OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);
+            StartActivity(intent);
+            OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);
         }
 
         protected void saveset()
         {
-
+            string musicianProfile = JsonConvert.SerializeObject(mRegisteredUser);
             //store
             var prefs = Application.Context.GetSharedPreferences("GIGUE", FileCreationMode.Private);
             var prefEditor = prefs.Edit();
-            prefEditor.PutString("EMAIL", mEmailAddress.Text.ToString().Trim());
+            prefEditor.PutString("profile", musicianProfile);
             prefEditor.Apply();
 
         }
 
         protected void retrieveset()
         {
-            //retreive 
+            string strMusicianProfile;
+            vmMusicianProfile vmProf;
+            //Retreive existing records
             var prefs = Application.Context.GetSharedPreferences("GIGUE", FileCreationMode.Private);
-            mUserEmail = prefs.GetString("EMAIL", null);
+            strMusicianProfile = prefs.GetString("profile", null);
+            //If email is null, return new vmMusicianProfile
+            if (strMusicianProfile == null)
+            {
+                mRegisteredUser = new vmMusicianProfile();
+            }
+            else
+            {
+                vmProf = JsonConvert.DeserializeObject<vmMusicianProfile>(strMusicianProfile);
+                if (vmProf == null)
+                {
+                    mRegisteredUser = new vmMusicianProfile();
+                }
+                else
+                {
+                    mRegisteredUser = vmProf;
+                }
+            }
 
             //Show a toast
-            RunOnUiThread(() => Toast.MakeText(this, mUserEmail, ToastLength.Long).Show());
-
+            //RunOnUiThread(() => Toast.MakeText(this, mUserEmail, ToastLength.Long).Show());
         }
+
     }
+
 }

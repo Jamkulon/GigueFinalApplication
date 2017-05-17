@@ -7,33 +7,40 @@
     android:focusableInTouchMode="true"
     android:focusable="true"
     android:background="#424242">
-  <TextView
-      android:text="Thank You!"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:background="#242424"
-      android:textColor="#f2854b"
-      android:gravity="center"
-      android:textSize="18sp"
-      android:id="@+id/txtThanksHeader" />
-  <TextView
-      android:text=""
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:textSize="18sp"
-      android:id="@+id/txtThanksUser" />
-  <Button
-      android:text="On to Search"
-      android:id="@+id/btnThanksSearch"
-      android:background="@drawable/Login_Style_Button"
-      android:textStyle="bold"
-      android:typeface="serif"
-      android:textSize="16sp"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="30dp"
-      android:layout_marginRight="100dp"
-      android:layout_marginStart="100dp"
-      android:gravity="center"
-      android:textColor="#ffffff"/>
+  <android.support.v7.widget.Toolbar
+    android:id="@+id/toolbar"
+    android:theme="@style/ToolBarColor"
+    android:minHeight="?attr/actionBarSize"
+    android:background="#333333"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+    <TextView
+        android:text="Thank You!"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#242424"
+        android:textColor="#f2854b"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:id="@+id/txtThanksHeader" />
+    <TextView
+        android:text=""
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:id="@+id/txtThanksUser" />
+    <Button
+        android:text="On to Search"
+        android:id="@+id/btnThanksSearch"
+        android:background="@drawable/Login_Style_Button"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginStart="100dp"
+        android:gravity="center"
+        android:textColor="#ffffff" />
 </LinearLayout>

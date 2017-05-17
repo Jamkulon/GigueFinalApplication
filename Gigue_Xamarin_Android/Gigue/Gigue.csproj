@@ -298,9 +298,6 @@
     <AndroidResource Include="Resources\layout\Registration.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\musicianProfile.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
     <AndroidResource Include="Resources\layout\SearchResults.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -419,6 +416,7 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\james2.jpg" />
+    <AndroidResource Include="Resources\drawable\Dierdre2.png" />
     <Content Include="Resources\menu\toolbar.xml">
       <SubType>Designer</SubType>
     </Content>

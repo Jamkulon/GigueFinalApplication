@@ -10,6 +10,7 @@
   <!--//Choose a state Array-->
   <string name="state_prompt">Choose Your State</string>
   <string-array name="states_array">
+    <item></item>
     <item>Alabama</item>
     <item>Arizona</item>
     <item>Arkansas</item>
@@ -53,6 +54,7 @@
   <!--Select Zip Code Array-->
   <string name="zip_prompt">Choose Your Zip Code</string>
   <string-array name="zip_array">
+    <item></item>
     <item>85055</item>
     <item>99653</item>
     <item>85021</item>
@@ -62,6 +64,7 @@
   <!--Select Instrument Array-->
   <string name="instrument_prompt">Choose Your Primary Instrument</string>
   <string-array name="instrument_array">
+    <item></item>
     <item>Bass Guitar</item>
     <item>Electric Guitar</item>
     <item>Drums</item>
@@ -71,6 +74,7 @@
   <!--Select Music Genre Array-->
   <string name="genre_prompt">Choose Your Primary Genre</string>
   <string-array name="genre_array">
+    <item></item>
     <item>Rock</item>
     <item>Jazz</item>
     <item>Zydeco</item>
@@ -81,6 +85,7 @@
   <!--Select Music Genre Array-->
   <string name="language_prompt">Choose Your Primary Language</string>
   <string-array name="language_array">
+    <item></item>
     <item>English</item>
     <item>Spanish</item>
     <item>Italian</item>

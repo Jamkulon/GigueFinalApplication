@@ -12,17 +12,18 @@ using Android.Widget;
 using Newtonsoft.Json;
 using Gigue.ViewModels;
 using Gigue.Adapters;
+using Android.Support.V7.App;
 
-namespace Gigue.Activities
+namespace Gigue
 {
-    [Activity(WindowSoftInputMode = SoftInput.AdjustResize, Theme = ("@android:style/Theme.NoTitleBar"))]
-    public class createUserProfile : Activity
+    [Activity(WindowSoftInputMode = SoftInput.AdjustResize, Theme = "@style/Theme.AppCompat.Light.NoActionBar")]
+    public class createUserProfile : AppCompatActivity
     {
         EditText mRegisterFirst;
         EditText mRegisterLast;
         EditText mRegisteredEmail;
         Button mSubmitUserProfile;
-        User mRegisteredUser;
+        vmMusicianProfile mRegisteredUser;
         int mRegisteredId;
         Spinner mStateSpinner;
         Spinner mCitySpinner;
@@ -36,6 +37,10 @@ namespace Gigue.Activities
             base.OnCreate(Bundle);
             SetContentView(Resource.Layout.CreateUserProfile);
 
+            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+            toolbar.SetTitleTextColor(Android.Graphics.Color.White);
+            SetSupportActionBar(toolbar);
+
             mRegisterFirst = FindViewById<EditText>(Resource.Id.editUserFirstName);
             mRegisterLast = FindViewById<EditText>(Resource.Id.editUserLastName);
             mRegisteredEmail = FindViewById<EditText>(Resource.Id.editUserEmailAddress);
@@ -43,7 +48,7 @@ namespace Gigue.Activities
             mSubmitUserProfile = FindViewById<Button>(Resource.Id.submitUserProfile);
             mSubmitUserProfile.Click += mSubmitUserProfile_Click;
 
-            mRegisteredUser = JsonConvert.DeserializeObject<User>(Intent.GetStringExtra("User"));
+            mRegisteredUser = JsonConvert.DeserializeObject<vmMusicianProfile>(Intent.GetStringExtra("User"));
 
             mRegisterFirst.Text = mRegisteredUser.FirstName.ToString();
             mRegisterLast.Text = mRegisteredUser.LastName.ToString();
@@ -84,6 +89,32 @@ namespace Gigue.Activities
             mZipCodeSpinner.Adapter = zipCodeAdapter;
             // Create your application here
         }
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            var inflater = MenuInflater;
+            inflater.Inflate(Resource.Menu.activity_main, menu);
+            return true;
+        }
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            int id = item.ItemId;
+            if (id == Resource.Id.tool_profile)
+            {
+                Toast.MakeText(this, "Profile clicked", ToastLength.Short).Show();
+                return true;
+            }
+            else if (id == Resource.Id.tool_search)
+            {
+                Toast.MakeText(this, "Search clicked", ToastLength.Short).Show();
+                return true;
+            }
+            else if (id == Resource.Id.tool_infoPage)
+            {
+                Toast.MakeText(this, "InfoPage clicked", ToastLength.Short).Show();
+                return true;
+            }
+            return base.OnOptionsItemSelected(item);
+        }
 
         async void mSubmitUserProfile_Click(object sender, EventArgs e)
         {
@@ -106,8 +137,6 @@ namespace Gigue.Activities
 
             //send post request
             vmAppUser currentUser = await userdata.UpdateAppUser(itemToAdd);
-
-            //TODO Add intent to move to the search page
 
         }
 

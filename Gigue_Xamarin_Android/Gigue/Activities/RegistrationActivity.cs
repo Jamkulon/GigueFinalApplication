@@ -15,11 +15,12 @@ using Gigue.Adapters;
 using Gigue.Activities;
 using Gigue.ViewModels;
 using Newtonsoft.Json;
+using Android.Support.V7.App;
 
 namespace Gigue
 {
-    [Activity(WindowSoftInputMode = SoftInput.AdjustResize, Theme = ("@android:style/Theme.NoTitleBar"))]
-    public class RegistrationActivity : Activity
+    [Activity(WindowSoftInputMode = SoftInput.AdjustResize, Theme = "@style/Theme.AppCompat.Light.NoActionBar")]
+    public class RegistrationActivity : AppCompatActivity
     {
 
         LinearLayout rLinearLayout;
@@ -30,6 +31,7 @@ namespace Gigue
         EditText mPassword;
         Button mMusician;
         Button mUser;
+        vmMusicianProfile mRegisteredUser;
 
         public UserData userdata = new UserData();
 
@@ -39,6 +41,10 @@ namespace Gigue
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.Registration);
+
+            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+            toolbar.SetTitleTextColor(Android.Graphics.Color.White);
+            SetSupportActionBar(toolbar);
 
             mFirstName = FindViewById<EditText>(Resource.Id.txtFirstName);
             mLastName = FindViewById<EditText>(Resource.Id.txtLastName);
@@ -124,7 +130,8 @@ namespace Gigue
                 AppUserId = currentUser.AppUserId
             };
 
-            intent.PutExtra("User", JsonConvert.SerializeObject(user));
+            intent.PutExtra("User", JsonConvert.SerializeObject(mRegisteredUser));
+            //intent.PutExtra("User", JsonConvert.SerializeObject(user));
 
             this.StartActivity(intent);
             this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
@@ -132,6 +139,32 @@ namespace Gigue
         void rLinearLayout_Click(object sender, EventArgs e)
         {
            
+        }
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            var inflater = MenuInflater;
+            inflater.Inflate(Resource.Menu.activity_main, menu);
+            return true;
+        }
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            int id = item.ItemId;
+            if (id == Resource.Id.tool_profile)
+            {
+                Toast.MakeText(this, "Profile clicked", ToastLength.Short).Show();
+                return true;
+            }
+            else if (id == Resource.Id.tool_search)
+            {
+                Toast.MakeText(this, "Search clicked", ToastLength.Short).Show();
+                return true;
+            }
+            else if (id == Resource.Id.tool_infoPage)
+            {
+                Toast.MakeText(this, "InfoPage clicked", ToastLength.Short).Show();
+                return true;
+            }
+            return base.OnOptionsItemSelected(item);
         }
     }
 }

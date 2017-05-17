@@ -13,17 +13,19 @@ using Newtonsoft.Json;
 using Gigue.Activities;
 using Gigue.ViewModels;
 using Gigue.Adapters;
+using Android.Support.V7.App;
 
 namespace Gigue
 {
-    [Activity(WindowSoftInputMode = SoftInput.AdjustResize, Theme = ("@android:style/Theme.NoTitleBar"))]
+    [Activity(WindowSoftInputMode = SoftInput.AdjustResize, Theme = "@style/Theme.AppCompat.Light.NoActionBar")]
+
     public class editMusicianProfile : MusicianProfile
     {
         Button mEditMusicianProfile;
         EditText mRegisterFirst;
         EditText mRegisterLast;
         EditText mRegisteredEmail;
-        User mRegisteredUser;
+        vmMusicianProfile mRegisteredUser;
         int mRegisteredId;
         Spinner mStateSpinner;
         Spinner mCitySpinner;
@@ -40,10 +42,18 @@ namespace Gigue
 
             SetContentView(Resource.Layout.editMusicianProfile);
 
+            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+            toolbar.SetTitleTextColor(Android.Graphics.Color.White);
+            SetSupportActionBar(toolbar);
+
+            mRegisteredUser = JsonConvert.DeserializeObject<vmMusicianProfile>(Intent.GetStringExtra("User"));
+
+            GetMusicianById(mRegisteredUser.AppUserId);
+
             mEditMusicianProfile = FindViewById<Button>(Resource.Id.btnEditMusician);
             mEditMusicianProfile.Click += mEditMusicianProfile_Click;
-            // Spinners for 
 
+            // Spinners for 
             mStateSpinner = FindViewById<Spinner>(Resource.Id.spinnerState);
             mCitySpinner = FindViewById<Spinner>(Resource.Id.spinnerCity);
             mZipCodeSpinner = FindViewById<Spinner>(Resource.Id.spinnerZip);
@@ -51,22 +61,30 @@ namespace Gigue
             mGenreSpinner = FindViewById<Spinner>(Resource.Id.spinnerMusicGenres);
             mLanguageSpinner = FindViewById<Spinner>(Resource.Id.spinnerLanguagesSpoken);
 
+            mRegisterFirst = FindViewById<EditText>(Resource.Id.editFirstName);
+            mRegisterLast = FindViewById<EditText>(Resource.Id.editLastName);
+            mRegisteredEmail = FindViewById<EditText>(Resource.Id.editEmailAddress);
+
+            mRegisterFirst.Text = mRegisteredUser.FirstName;
+            mRegisterLast.Text = mRegisteredUser.LastName;
+            mRegisteredEmail.Text = mRegisteredUser.Email;
 
             //state spinner
             mStateSpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
             var StateAdapter = ArrayAdapter.CreateFromResource(
                     this, Resource.Array.states_array, Android.Resource.Layout.SimpleSpinnerItem);
-
             StateAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             mStateSpinner.Adapter = StateAdapter;
+            //TODO Preselect spinners
+            //mStateSpinner.SetSelection(StateAdapter.GetPosition(mRegisteredUser.State));
 
             //city spinner
             mCitySpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
             var CityAdapter = ArrayAdapter.CreateFromResource(
                     this, Resource.Array.cities_array, Android.Resource.Layout.SimpleSpinnerItem);
-
             CityAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             mCitySpinner.Adapter = CityAdapter;
+            //mCitySpinner.SetSelection(StateAdapter.GetPosition(mRegisteredUser.City));
 
             //Zip Code Spinner Adapter
             mZipCodeSpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
@@ -100,6 +118,40 @@ namespace Gigue
             languageAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             mLanguageSpinner.Adapter = languageAdapter;
             // Create your application here
+        }
+
+        private async void GetMusicianById(int userid)
+        {
+            //Send the search package
+            vmMusicianProfile userProfile = await userdata.GetMusicianSearchById(userid);
+            mRegisteredUser = userProfile;
+        }
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            var inflater = MenuInflater;
+            inflater.Inflate(Resource.Menu.activity_main, menu);
+            return true;
+        }
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            int id = item.ItemId;
+            if (id == Resource.Id.tool_profile)
+            {
+                Toast.MakeText(this, "Profile clicked", ToastLength.Short).Show();
+                return true;
+            }
+            else if (id == Resource.Id.tool_search)
+            {
+                Toast.MakeText(this, "Search clicked", ToastLength.Short).Show();
+                return true;
+            }
+            else if (id == Resource.Id.tool_infoPage)
+            {
+                Toast.MakeText(this, "InfoPage clicked", ToastLength.Short).Show();
+                return true;
+            }
+            return base.OnOptionsItemSelected(item);
         }
 
         private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
