@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:focusable="true"
+    android:clickable="true"
     android:descendantFocusability="beforeDescendants"
     android:focusableInTouchMode="true"
     android:id="@+id/mainView"
@@ -174,6 +175,24 @@
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp" />
         <!--Submit Profile Button-->
+            <TextView
+                android:text="Tell Us About Yourself:"
+                android:id="@+id/textView3"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:textColor="#f2854b"
+                android:paddingTop="10dp" />
+            <EditText
+                android:id="@+id/editText2"
+                android:textColor="#FF4500"
+                android:background="@drawable/edit_text_style"
+                android:layout_marginTop="10dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="match_parent" />
+            <EditText
+                android:id="@+id/editText1" />
             <Button
                 android:text="Submit"
                 android:id="@+id/btnSubmitMusician"
