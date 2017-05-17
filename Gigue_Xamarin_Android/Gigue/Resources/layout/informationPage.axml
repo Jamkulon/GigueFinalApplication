@@ -6,13 +6,13 @@
     android:minHeight="25px"
     android:minWidth="25px"
     android:background="#242424">
-  <android.support.v7.widget.Toolbar
-    android:id="@+id/toolbar"
-    android:theme="@style/ToolBarColor"
-    android:minHeight="?attr/actionBarSize"
-    android:background="#333333"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:theme="@style/ToolBarColor"
+        android:minHeight="?attr/actionBarSize"
+        android:background="#333333"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 <!--About Gigue Header-->
     <TextView
         android:text="About Gigue"
@@ -23,9 +23,10 @@
         android:id="@+id/textView1"
         android:gravity="center"
         android:textSize="30sp"
-        android:background="#242424"
+        android:background="#333333"
         android:layout_gravity="center"
-        android:padding="3dp" />
+        android:padding="3dp"
+        android:layout_marginTop="20dp" />
 <!--Information Page Paragraph 1-->
     <TextView
         android:layout_width="match_parent"
@@ -46,7 +47,7 @@
         android:textColor="#39FF14"
         android:gravity="center"
         android:textStyle="bold"
-        android:background="#808080"
+        android:background="#333333"
         android:layout_gravity="center"
         android:padding="3dp"
         android:textSize="16sp" />
@@ -70,7 +71,7 @@
         android:textColor="#39FF14"
         android:gravity="center"
         android:textStyle="bold"
-        android:background="#808080"
+        android:background="#333333"
         android:layout_gravity="center"
         android:padding="3dp"
         android:textSize="16sp" />
@@ -87,21 +88,18 @@
 <!--Back to Login Page Button-->
     <Button
         android:id="@+id/btnBackToLogin"
-        android:text="Back to Login Screen"
+        android:text="Back to Login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/Login_Style_Button"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         android:typeface="serif"
         android:layout_gravity="center"
-        android:textColor="#000000"
+        android:textColor="#fff"
         android:gravity="center"
-        android:padding="3dp" />
-    <ImageView
-        android:src="@drawable/imageedit_9_7239508233"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView1"
-        android:padding="5dp" />
+        android:padding="3dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="20dp" />
 </LinearLayout>
