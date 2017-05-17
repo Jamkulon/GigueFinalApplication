@@ -42,9 +42,8 @@
           android:layout_height="wrap_content"
           android:id="@+id/ratingBar1"
           android:numStars="5"
-          android:stepSize="0.1"
-          android:layout_marginLeft="0.0dp"
-          android:layout_gravity="center" />
+          android:clickable="true"
+          android:stepSize="0.1"/>
       <TextView
           android:text="James Kulon"
           android:layout_width="match_parent"
@@ -212,7 +211,7 @@
           android:textOn="Available for Work"
           android:textOff="Not Available"
           android:textColor="#f2854b"
-          android:textSize="18dp"
+          android:textSize="15dp"
           android:textStyle="bold" />
       <LinearLayout
           android:orientation="horizontal"
