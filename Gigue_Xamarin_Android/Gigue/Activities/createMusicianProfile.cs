@@ -22,7 +22,7 @@ namespace Gigue.Activities
         EditText mRegisterFirst;
         EditText mRegisterLast;
         EditText mRegisteredEmail;
-        User mRegisteredUser;
+        vmMusicianProfile mRegisteredUser;
         int mRegisteredId;
         Spinner mStateSpinner;
         Spinner mCitySpinner;
@@ -50,7 +50,7 @@ namespace Gigue.Activities
             mRegisterLast = FindViewById<EditText>(Resource.Id.editLastName);
             mRegisteredEmail = FindViewById<EditText>(Resource.Id.editEmailAddress);
 
-            mRegisteredUser = JsonConvert.DeserializeObject<User>(Intent.GetStringExtra("User"));
+            mRegisteredUser = JsonConvert.DeserializeObject<vmMusicianProfile>(Intent.GetStringExtra("User"));
 
             mRegisterFirst.Text = mRegisteredUser.FirstName.ToString();
             mRegisterLast.Text = mRegisteredUser.LastName.ToString();

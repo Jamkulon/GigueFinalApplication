@@ -26,6 +26,7 @@ namespace Gigue.Activities
         EditText mFirtName;
         EditText MLastName;
         Spinner MPrimeInst;
+        vmMusicianProfile mRegisteredUser;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -127,15 +128,19 @@ namespace Gigue.Activities
         // View Profile Activity to Send to Profile Page
         void mViewProfile_Click(object sender, EventArgs r)
         {
-            //Build musician search object
-            vmMusicianResult searchParam = new vmMusicianResult
-            {
+
+            ////Build musician search object
+            //vmMusicianResult searchParam = new vmMusicianResult
+            //{
                 
-                City = mCity.SelectedItem.ToString(),
-                PrimeInstrument = MPrimeInst.SelectedItem.ToString()
-            };
+            //    City = mCity.SelectedItem.ToString(),
+            //    PrimeInstrument = MPrimeInst.SelectedItem.ToString()
+            //};
 
             Intent intent = new Intent(this, typeof(MusicianProfile));
+
+            intent.PutExtra("User", JsonConvert.SerializeObject(mRegisteredUser));
+
             this.StartActivity(intent);
             this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
         }

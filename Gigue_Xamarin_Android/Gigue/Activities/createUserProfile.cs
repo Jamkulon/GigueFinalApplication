@@ -23,7 +23,7 @@ namespace Gigue
         EditText mRegisterLast;
         EditText mRegisteredEmail;
         Button mSubmitUserProfile;
-        User mRegisteredUser;
+        vmMusicianProfile mRegisteredUser;
         int mRegisteredId;
         Spinner mStateSpinner;
         Spinner mCitySpinner;
@@ -48,7 +48,7 @@ namespace Gigue
             mSubmitUserProfile = FindViewById<Button>(Resource.Id.submitUserProfile);
             mSubmitUserProfile.Click += mSubmitUserProfile_Click;
 
-            mRegisteredUser = JsonConvert.DeserializeObject<User>(Intent.GetStringExtra("User"));
+            mRegisteredUser = JsonConvert.DeserializeObject<vmMusicianProfile>(Intent.GetStringExtra("User"));
 
             mRegisterFirst.Text = mRegisteredUser.FirstName.ToString();
             mRegisterLast.Text = mRegisteredUser.LastName.ToString();
@@ -137,8 +137,6 @@ namespace Gigue
 
             //send post request
             vmAppUser currentUser = await userdata.UpdateAppUser(itemToAdd);
-
-            //TODO Add intent to move to the search page
 
         }
 

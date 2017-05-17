@@ -14,8 +14,9 @@ namespace Gigue.Activities
     public class searchResults : Activity
     {
         public UserData userdata = new UserData();
-        public List<vmMusicianResult> userinfo;
+        public List<vmMusicianResult> mUserInfo;
         private ListView mListView;
+        
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -35,19 +36,42 @@ namespace Gigue.Activities
         private async void GetMusicianSearch(vmMusicianSearch searchParam)
         {
             
-            userinfo = await userdata.GetMusicianSearch(searchParam);
+            mUserInfo = await userdata.GetMusicianSearch(searchParam);
 
-            SearchListAdapter adapter = new SearchListAdapter(this, userinfo);
-            mListView.Adapter = adapter;
-            mListView.ItemClick += MListView_ItemClick;
+            //Test for results
+            if (mUserInfo != null)
+            {
+                SearchListAdapter adapter = new SearchListAdapter(this, mUserInfo);
+                mListView.Adapter = adapter;
+                mListView.ItemClick += MListView_ItemClick;
+            }
+            //TODO Add what to do if no list is returned
+            else
+            {
+                mUserInfo = new List<vmMusicianResult>();
+                SearchListAdapter adapter = new SearchListAdapter(this, mUserInfo);
+                mListView.Adapter = adapter;
+                mListView.ItemClick += MListView_ItemClick;
+            }
+            
 
-
-            //mListView.Adapter = new ArrayAdapter<vmMusicianResult>(this, Android.Resource.Layout.SimpleListItem1, Android.Resource.Id.Text1, users);
         }
 
         private void MListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            Console.WriteLine(userinfo[e.Position].LastName);
+            //Console.WriteLine(userinfo[e.Position].LastName);
+            vmAppUser user = new vmAppUser
+            {
+                AppUserId = mUserInfo[e.Position].AppUserId
+            };
+
+            //Switch to  User Profile
+            //TODO Change intent name to SearchedProfile
+            Intent intent = new Intent(this, typeof(editMusicianProfile));
+            intent.PutExtra("User", JsonConvert.SerializeObject(user));
+
+            this.StartActivity(intent);
+            this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
         }
 
         //get usersnames from list diplsy on activity     ==================Old List Method =====================
