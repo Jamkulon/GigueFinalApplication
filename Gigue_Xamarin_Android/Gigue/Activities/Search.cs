@@ -44,6 +44,7 @@ namespace Gigue.Activities
             MLastName = FindViewById<EditText>(Resource.Id.enterLastName);
             MPrimeInst = FindViewById<Spinner>(Resource.Id.spinnerInstrumentPlayed);
 
+            
 
             //Linear Layout Hide Keyboar//
             sLinearLayout = FindViewById<LinearLayout>(Resource.Id.srchView);
@@ -128,14 +129,6 @@ namespace Gigue.Activities
         // View Profile Activity to Send to Profile Page
         void mViewProfile_Click(object sender, EventArgs r)
         {
-
-            ////Build musician search object
-            //vmMusicianResult searchParam = new vmMusicianResult
-            //{
-                
-            //    City = mCity.SelectedItem.ToString(),
-            //    PrimeInstrument = MPrimeInst.SelectedItem.ToString()
-            //};
 
             Intent intent = new Intent(this, typeof(MusicianProfile));
 

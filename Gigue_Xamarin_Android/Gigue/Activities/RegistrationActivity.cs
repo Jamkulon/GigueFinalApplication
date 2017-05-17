@@ -31,6 +31,7 @@ namespace Gigue
         EditText mPassword;
         Button mMusician;
         Button mUser;
+        vmMusicianProfile mRegisteredUser;
 
         public UserData userdata = new UserData();
 
@@ -129,7 +130,8 @@ namespace Gigue
                 AppUserId = currentUser.AppUserId
             };
 
-            intent.PutExtra("User", JsonConvert.SerializeObject(user));
+            intent.PutExtra("User", JsonConvert.SerializeObject(mRegisteredUser));
+            //intent.PutExtra("User", JsonConvert.SerializeObject(user));
 
             this.StartActivity(intent);
             this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);

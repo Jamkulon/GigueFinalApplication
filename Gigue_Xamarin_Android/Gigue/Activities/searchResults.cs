@@ -45,7 +45,6 @@ namespace Gigue.Activities
                 mListView.Adapter = adapter;
                 mListView.ItemClick += MListView_ItemClick;
             }
-            //TODO Add what to do if no list is returned
             else
             {
                 mUserInfo = new List<vmMusicianResult>();
