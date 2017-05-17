@@ -63,7 +63,7 @@ namespace Gigue.Adapters
             //return the response as a vmMusicianSearch object
             var userMusicians = JsonConvert.DeserializeObject<List<vmMusicianResult>>(
                 await response.Content.ReadAsStringAsync());
-            //Console.WriteLine(userMusicians[0].LastName);
+            //Console.WriteLine(userMusicians.Count);
             return userMusicians;
 
         }
