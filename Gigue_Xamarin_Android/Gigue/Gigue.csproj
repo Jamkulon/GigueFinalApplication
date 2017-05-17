@@ -417,6 +417,19 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\james2.jpg" />
     <AndroidResource Include="Resources\drawable\Dierdre2.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\Dierdre5.jpg" />
+    <AndroidResource Include="Resources\drawable-ldpi\Dierdre5.jpg" />
+    <AndroidResource Include="Resources\drawable-mdpi\Dierdre5.jpg" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Dierdre5.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\guitarist.jpg" />
+    <AndroidResource Include="Resources\drawable-ldpi\guitarist.jpg" />
+    <AndroidResource Include="Resources\drawable-mdpi\guitarist.jpg" />
+    <AndroidResource Include="Resources\drawable-xhdpi\guitarist.jpg" />
+    <AndroidResource Include="Resources\drawable\ResetButton.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ResetButton.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\ResetButton.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ResetButton.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ResetButton.png" />
     <Content Include="Resources\menu\toolbar.xml">
       <SubType>Designer</SubType>
     </Content>
