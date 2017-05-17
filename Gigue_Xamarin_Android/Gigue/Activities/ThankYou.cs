@@ -7,9 +7,14 @@ using Android.Widget;
 using Newtonsoft.Json;
 using Gigue.ViewModels;
 
-namespace Gigue.Activities
+using Android.Support.V7.App;
+using Gigue.Activities;
+using Android.Views;
+
+
+namespace Gigue
 {
-    [Activity(Theme = ("@android:style/Theme.NoTitleBar"))]
+    [Activity(Theme = "@style/Theme.AppCompat.Light.NoActionBar")]
     public class ThankYou : RegistrationActivity
     {
         TextView mThanksUser;
@@ -21,6 +26,10 @@ namespace Gigue.Activities
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.thanks);
+
+            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+            toolbar.SetTitleTextColor(Android.Graphics.Color.White);
+            SetSupportActionBar(toolbar);
 
             //Get PutExtra data
             mRegisteredUser = JsonConvert.DeserializeObject<vmMusicianProfile>(Intent.GetStringExtra("User"));
@@ -34,7 +43,32 @@ namespace Gigue.Activities
 
 
         }
-
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            var inflater = MenuInflater;
+            inflater.Inflate(Resource.Menu.activity_main, menu);
+            return true;
+        }
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            int id = item.ItemId;
+            if (id == Resource.Id.tool_profile)
+            {
+                Toast.MakeText(this, "Profile clicked", ToastLength.Short).Show();
+                return true;
+            }
+            else if (id == Resource.Id.tool_search)
+            {
+                Toast.MakeText(this, "Search clicked", ToastLength.Short).Show();
+                return true;
+            }
+            else if (id == Resource.Id.tool_infoPage)
+            {
+                Toast.MakeText(this, "InfoPage clicked", ToastLength.Short).Show();
+                return true;
+            }
+            return base.OnOptionsItemSelected(item);
+        }
         private void UpdateUserInfo()
         {
             mThanksUser = FindViewById<TextView>(Resource.Id.txtThanksUser);
