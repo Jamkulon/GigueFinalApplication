@@ -16,6 +16,7 @@ namespace Gigue.Activities
         public UserData userdata = new UserData();
         public List<vmMusicianResult> mUserInfo;
         private ListView mListView;
+        vmMusicianProfile mRegisteredUser;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -38,7 +39,8 @@ namespace Gigue.Activities
             mUserInfo = await userdata.GetMusicianSearch(searchParam);
 
             //Test for results
-            if (mUserInfo != null)
+
+            if (mUserInfo.Count > 0)
             {
                 SearchListAdapter adapter = new SearchListAdapter(this, mUserInfo);
                 mListView.Adapter = adapter;
@@ -46,12 +48,10 @@ namespace Gigue.Activities
             }
             else
             {
-                mUserInfo = new List<vmMusicianResult>();
                 SearchListAdapter adapter = new SearchListAdapter(this, mUserInfo);
                 mListView.Adapter = adapter;
                 mListView.ItemClick += MListView_ItemClick;
             }
-            
 
         }
 
@@ -85,5 +85,14 @@ namespace Gigue.Activities
         //    }
         //    listText.Adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, Android.Resource.Id.Text1, users);
         //}
+        protected void saveset()
+        {
+            string musicianProfile = JsonConvert.SerializeObject(mRegisteredUser);
+            //store
+            var prefs = Application.Context.GetSharedPreferences("GIGUE", FileCreationMode.Private);
+            var prefEditor = prefs.Edit();
+            prefEditor.PutString("profile", musicianProfile);
+            prefEditor.Apply();
+        }
     }
 }

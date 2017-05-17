@@ -46,6 +46,8 @@ namespace Gigue
             toolbar.SetTitleTextColor(Android.Graphics.Color.White);
             SetSupportActionBar(toolbar);
 
+            mRegisteredUser = JsonConvert.DeserializeObject<vmMusicianProfile>(Intent.GetStringExtra("User"));
+
             mFirstName = FindViewById<EditText>(Resource.Id.txtFirstName);
             mLastName = FindViewById<EditText>(Resource.Id.txtLastName);
             mEmailName = FindViewById<EditText>(Resource.Id.txtEmail);
@@ -86,14 +88,7 @@ namespace Gigue
             //Switch to Musician Profile
             Intent intent = new Intent(this, typeof(createMusicianProfile));
 
-            User user = new User()
-            {
-                FirstName = currentUser.FirstName,
-                LastName = currentUser.LastName,
-                Email = currentUser.Email,
-                AppUserId = currentUser.AppUserId
-            };
-            intent.PutExtra("User", JsonConvert.SerializeObject(user));
+            intent.PutExtra("User", JsonConvert.SerializeObject(mRegisteredUser));
 
             this.StartActivity(intent);
             this.OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);
@@ -122,13 +117,10 @@ namespace Gigue
             //Switch to  User Profile
             Intent intent = new Intent(this, typeof(ThankYou));
 
-            User user = new User()
-            {
-                FirstName = currentUser.FirstName,
-                LastName = currentUser.LastName,
-                Email = currentUser.Email,
-                AppUserId = currentUser.AppUserId
-            };
+            mRegisteredUser.FirstName = currentUser.FirstName;
+            mRegisteredUser.LastName = currentUser.LastName;
+            mRegisteredUser.Email = currentUser.Email;
+            mRegisteredUser.AppUserId = currentUser.AppUserId;
 
             intent.PutExtra("User", JsonConvert.SerializeObject(mRegisteredUser));
             //intent.PutExtra("User", JsonConvert.SerializeObject(user));
