@@ -10,14 +10,8 @@
     android:focusableInTouchMode="true"
     android:id="@+id/mainView"
     android:clickable="true"
-    android:background="@drawable/mericaband">
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:theme="@style/ToolBarColor"
-        android:minHeight="?attr/actionBarSize"
-        android:background="#333333"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+    android:background="#242424">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:id="@+id/linearLayout1"

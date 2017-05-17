@@ -13,10 +13,11 @@ using Newtonsoft.Json;
 using Gigue.Activities;
 using Gigue.ViewModels;
 using Gigue.Adapters;
+using Android.Support.V7.App;
 
 namespace Gigue
 {
-    [Activity(WindowSoftInputMode = SoftInput.AdjustResize, Theme = ("@android:style/Theme.NoTitleBar"))]
+    [Activity(WindowSoftInputMode = SoftInput.AdjustResize, Theme = "@style/Theme.AppCompat.Light.NoActionBar")]
     public class editMusicianProfile : MusicianProfile
     {
         Button mEditMusicianProfile;
@@ -39,6 +40,10 @@ namespace Gigue
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.editMusicianProfile);
+
+            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+            toolbar.SetTitleTextColor(Android.Graphics.Color.White);
+            SetSupportActionBar(toolbar);
 
             mEditMusicianProfile = FindViewById<Button>(Resource.Id.btnEditMusician);
             mEditMusicianProfile.Click += mEditMusicianProfile_Click;
@@ -100,6 +105,32 @@ namespace Gigue
             languageAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             mLanguageSpinner.Adapter = languageAdapter;
             // Create your application here
+        }
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            var inflater = MenuInflater;
+            inflater.Inflate(Resource.Menu.activity_main, menu);
+            return true;
+        }
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            int id = item.ItemId;
+            if (id == Resource.Id.tool_profile)
+            {
+                Toast.MakeText(this, "Profile clicked", ToastLength.Short).Show();
+                return true;
+            }
+            else if (id == Resource.Id.tool_search)
+            {
+                Toast.MakeText(this, "Search clicked", ToastLength.Short).Show();
+                return true;
+            }
+            else if (id == Resource.Id.tool_infoPage)
+            {
+                Toast.MakeText(this, "InfoPage clicked", ToastLength.Short).Show();
+                return true;
+            }
+            return base.OnOptionsItemSelected(item);
         }
 
         private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)

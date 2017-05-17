@@ -8,6 +8,13 @@
     android:focusableInTouchMode="true"
     android:id="@+id/mainView"
     android:background="#242424">
+  <android.support.v7.widget.Toolbar
+  android:id="@+id/toolbar"
+  android:theme="@style/ToolBarColor"
+  android:minHeight="?attr/actionBarSize"
+  android:background="#333333"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content" />
     <ScrollView
         android:minWidth="25px"
         android:minHeight="25px"

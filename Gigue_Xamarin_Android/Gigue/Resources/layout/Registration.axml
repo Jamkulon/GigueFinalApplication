@@ -12,6 +12,13 @@
     android:clickable="true"
     android:background="#242424"
     android:weightSum="100">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:theme="@style/ToolBarColor"
+        android:minHeight="?attr/actionBarSize"
+        android:background="#333333"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     <ScrollView
         android:minWidth="25px"
         android:minHeight="25px"
@@ -45,7 +52,7 @@
                 android:layout_height="0dp"
                 android:layout_marginTop="25dp"
                 android:layout_weight="7"
-                 />
+                android:background="@drawable/edit_text_style" />
             <EditText
                 android:id="@+id/txtLastName"
                 android:inputType="textCapSentences"
@@ -58,11 +65,10 @@
                 android:layout_height="0dp"
                 android:layout_marginTop="10dp"
                 android:layout_weight="7"
-                 />
+                android:background="@drawable/edit_text_style" />
             <EditText
                 android:id="@+id/txtEmail"
                 android:inputType="textEmailAddress"
-               
                 android:textColor="#000000"
                 android:hint="Email Address"
                 android:layout_marginLeft="10dp"
@@ -72,7 +78,7 @@
                 android:layout_height="0dp"
                 android:layout_marginTop="10dp"
                 android:layout_weight="7"
-                 />
+                android:background="@drawable/edit_text_style" />
             <EditText
                 android:id="@+id/txtPassword"
                 android:inputType="textPassword"
@@ -85,7 +91,7 @@
                 android:layout_height="0dp"
                 android:layout_marginTop="10dp"
                 android:layout_weight="7"
-               />
+                android:background="@drawable/edit_text_style" />
             <TextView
                 android:text="Hey Musicians!"
                 android:gravity="center"
@@ -102,16 +108,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:id="@+id/btnMusician"
-                android:background="@drawable/musicianLoginButton"
+                android:background="@drawable/Login_Style_Button"
                 android:textStyle="bold"
                 android:typeface="serif"
                 android:textSize="20sp"
                 android:layout_weight="7.5"
                 android:gravity="center"
                 android:layout_gravity="center"
-                android:backgroundTint="#ff8b0000" />
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="100dp" />
             <TextView
-                android:text="Can't Play or Sing?"
+                android:text="Guest"
                 android:gravity="center"
                 android:textColor="#f2854b"
                 android:textSize="25sp"
@@ -122,20 +129,20 @@
                 android:layout_height="0dp"
                 android:layout_weight="10" />
             <Button
-                android:text="Sign Up Anyway"
+                android:text="Sign Up"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:id="@+id/btnUser"
-                android:background="@drawable/userSignUpButton"
+                android:background="@drawable/Login_Style_Button"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:typeface="serif"
-                android:layout_marginLeft="0dp"
+                android:layout_marginLeft="100dp"
                 android:textColor="#ffffff"
                 android:layout_weight="7.5"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:backgroundTint="#ff006400" />
+                android:layout_marginRight="100dp" />
         </TableLayout>
     </ScrollView>
 </LinearLayout>
