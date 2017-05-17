@@ -137,12 +137,10 @@ namespace Gigue.Activities
         //sign up button click event to go to Registration
         void mSignUp_Click(object sender, EventArgs e)
         {
-
-            //TODO Store info to sharedprefs
-
-
-
             Intent intent = new Intent(this, typeof(RegistrationActivity));
+
+            intent.PutExtra("User", JsonConvert.SerializeObject(mRegisteredUser));
+
             StartActivity(intent);
             OverridePendingTransition(Resource.Animation.slide_in_bottom, Resource.Animation.slide_out_top);
         }

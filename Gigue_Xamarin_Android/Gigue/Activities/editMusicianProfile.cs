@@ -187,6 +187,8 @@ namespace Gigue
 
             Intent intent = new Intent(this, typeof(MusicianProfile));
 
+            intent.PutExtra("User", JsonConvert.SerializeObject(mRegisteredUser));
+
             this.StartActivity(intent);
             this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
         }

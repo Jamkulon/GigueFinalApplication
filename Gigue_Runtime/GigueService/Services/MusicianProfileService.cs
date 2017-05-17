@@ -214,6 +214,15 @@ namespace GigueService.Services
             //==================================================================================
             AppUser tempAppUser = _repo.Query<AppUser>().Where(r => r.LastName == AppUserToPost.LastName).FirstOrDefault();
             Musician tempMusician = _repo.Query<Musician>().Where(s => s.StageName == MusicianToPost.StageName).FirstOrDefault();
+            if (vmMP.AppUserId == null)
+            {
+                vmMP.AppUserId = tempAppUser.AppUserId;
+            }
+            if (vmMP.MusicianId == null)
+            {
+                vmMP.MusicianId = tempMusician.MusicianId;
+            }
+
             if (tempAppUser != null && tempMusician != null)
             {
                 UserMusician umTest = _repo.Query<UserMusician>().Where(t => t.AppUserId == tempAppUser.AppUserId && t.MusicianId == tempMusician.MusicianId).FirstOrDefault();
