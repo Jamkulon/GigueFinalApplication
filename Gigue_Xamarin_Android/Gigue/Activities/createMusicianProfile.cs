@@ -12,6 +12,7 @@ using Android.Widget;
 using Newtonsoft.Json;
 using Gigue.ViewModels;
 using Android.Support.V7.App;
+using Android.Views.InputMethods;
 
 namespace Gigue.Activities
 {
@@ -30,6 +31,8 @@ namespace Gigue.Activities
         Spinner mInstrumentSpinner;
         Spinner mGenreSpinner;
         Spinner mLanguageSpinner;
+
+        LinearLayout mLinearLayout;
 
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -65,6 +68,8 @@ namespace Gigue.Activities
             mGenreSpinner = FindViewById<Spinner>(Resource.Id.spinnerMusicGenres);
             mLanguageSpinner = FindViewById<Spinner>(Resource.Id.spinnerLanguagesSpoken);
 
+            mLinearLayout = FindViewById<LinearLayout>(Resource.Id.mainView);
+            mLinearLayout.Click += mLinearLayout_Click;
 
             //state spinner
             mStateSpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
@@ -171,6 +176,11 @@ namespace Gigue.Activities
             Intent intent = new Intent(this, typeof(Search));
             this.StartActivity(intent);
             this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
+        }
+        void mLinearLayout_Click(object sender, EventArgs e)
+        {
+            InputMethodManager inputManager = (InputMethodManager)this.GetSystemService(Activity.InputMethodService);
+            inputManager.HideSoftInputFromWindow(this.CurrentFocus.WindowToken, HideSoftInputFlags.None);
         }
     }
 }

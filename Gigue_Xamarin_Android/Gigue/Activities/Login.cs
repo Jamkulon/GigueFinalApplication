@@ -26,7 +26,8 @@ namespace Gigue.Activities
         Button mLogin;
         TextView mForgotPw;
         private Switch mLoggedIn;
-        bool mIsLoggedIn;
+        //bool mIsLoggedIn;
+
 
         //private MobileServiceClient client;
 
@@ -107,6 +108,7 @@ namespace Gigue.Activities
         {
 
             //TODO Store info to sharedprefs
+
 
 
             Intent intent = new Intent(this, typeof(RegistrationActivity));

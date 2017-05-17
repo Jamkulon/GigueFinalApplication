@@ -16,7 +16,6 @@ namespace Gigue.Activities
         public UserData userdata = new UserData();
         public List<vmMusicianResult> mUserInfo;
         private ListView mListView;
-        
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -45,7 +44,6 @@ namespace Gigue.Activities
                 mListView.Adapter = adapter;
                 mListView.ItemClick += MListView_ItemClick;
             }
-            //TODO Add what to do if no list is returned
             else
             {
                 mUserInfo = new List<vmMusicianResult>();
