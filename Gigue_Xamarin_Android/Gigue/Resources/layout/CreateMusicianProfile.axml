@@ -8,7 +8,7 @@
     android:descendantFocusability="beforeDescendants"
     android:focusableInTouchMode="true"
     android:id="@+id/mainView"
-    android:background="#242424">
+    android:background="#545454">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:theme="@style/ToolBarColor"
@@ -86,7 +86,8 @@
                 android:text="@string/cities_prompt"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
-                android:textColor="#f2854b" />
+                android:textColor="#f2854b"
+                android:textStyle="bold" />
             <Spinner
                 android:id="@+id/spinnerCity"
                 android:layout_width="308.0dp"
@@ -102,7 +103,8 @@
                 android:text="@string/state_prompt"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
-                android:textColor="#f2854b" />
+                android:textColor="#f2854b"
+                android:textStyle="bold" />
             <Spinner
                 android:id="@+id/spinnerState"
                 android:layout_width="fill_parent"
@@ -118,7 +120,8 @@
                 android:text="@string/zip_prompt"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
-                android:textColor="#f2854b" />
+                android:textColor="#f2854b"
+                android:textStyle="bold" />
             <Spinner
                 android:id="@+id/spinnerZip"
                 android:layout_width="fill_parent"
@@ -134,7 +137,8 @@
                 android:text="What is your PRIMARY Instrument?"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
-                android:textColor="#f2854b" />
+                android:textColor="#f2854b"
+                android:textStyle="bold" />
             <Spinner
                 android:id="@+id/spinnerInstrumentPlayed"
                 android:layout_width="fill_parent"
@@ -150,7 +154,8 @@
                 android:text="What is your PRIMARY Music Genre?"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
-                android:textColor="#f2854b" />
+                android:textColor="#f2854b"
+                android:textStyle="bold" />
             <Spinner
                 android:id="@+id/spinnerMusicGenres"
                 android:layout_width="fill_parent"
@@ -166,7 +171,8 @@
                 android:text="What is your PRIMARY Language Spoken?"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
-                android:textColor="#f2854b" />
+                android:textColor="#f2854b"
+                android:textStyle="bold" />
             <Spinner
                 android:id="@+id/spinnerLanguagesSpoken"
                 android:layout_width="fill_parent"
@@ -181,7 +187,8 @@
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:textColor="#f2854b"
-                android:paddingTop="10dp" />
+                android:paddingTop="10dp"
+                android:textStyle="bold" />
             <EditText
                 android:id="@+id/editText2"
                 android:textColor="#FF4500"

@@ -10,6 +10,7 @@ using Android.Support.V7.App;
 using Newtonsoft.Json;
 using Gigue.ViewModels;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace Gigue.Activities
 {
@@ -27,6 +28,10 @@ namespace Gigue.Activities
         TextView mForgotPw;
         private Switch mLoggedIn;
         //bool mIsLoggedIn;
+
+
+        private int progressBarStatus;
+
 
 
         //private MobileServiceClient client;
@@ -50,6 +55,7 @@ namespace Gigue.Activities
             mLogin = FindViewById<Button>(Resource.Id.btnLogin);
             mForgotPw = FindViewById<TextView>(Resource.Id.txtForgotPw);
             mLoggedIn = FindViewById<Switch>(Resource.Id.keepLoggedIn);
+
 
 
             //Click events for every button or item on the page
@@ -87,6 +93,31 @@ namespace Gigue.Activities
             mRegisteredUser.Email = mEmailAddress.Text.ToString().Trim();
             mRegisteredUser.PassWord = mPassword.Text.ToString().Trim();
             saveset();
+
+            ProgressDialog progressBar = new ProgressDialog(this);
+            progressBar.SetCancelable(true);
+            //progressBar.SetMessage("Page is Loading...");
+            progressBar.SetProgressStyle(ProgressDialogStyle.Horizontal);
+            progressBar.Progress = 0;
+            progressBar.Max = 100;
+            progressBar.Show();
+            progressBarStatus = 0;
+
+            //Run Thread and increase preogress value
+            new Thread(new ThreadStart(delegate {
+
+                while(progressBarStatus < 100)
+                {
+                    progressBarStatus += 10;
+
+                    progressBar.Progress += progressBarStatus;
+                    Thread.Sleep(100);
+                }
+                //    RunOnUiThread(() => { progressBar.SetMessage("File is downloaded..."); });
+                //    //progressBar.SetMessage("File is downloaded...");
+                //    //Toast.MakeText(this, "File is downloaded", ToastLength.Long).Show();
+            })).Start();
+
 
             Intent intent = new Intent(this, typeof(MusicianProfile));
 

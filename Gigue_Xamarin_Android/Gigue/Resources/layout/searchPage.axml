@@ -7,7 +7,7 @@
     android:focusableInTouchMode="true"
     android:focusable="true"
     android:id="@+id/srchView"
-    android:background="#242424">
+    android:background="#545454">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:theme="@style/ToolBarColor"
@@ -86,7 +86,8 @@
                 android:text="Search by City"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
-                android:textColor="#f2854b" />
+                android:textColor="#f2854b"
+                android:textStyle="bold" />
             <Spinner
                 android:id="@+id/spinnerCity"
                 android:layout_width="308.0dp"
@@ -94,7 +95,7 @@
                 android:prompt="@string/cities_prompt"
                 android:layout_marginRight="40dp"
                 android:layout_marginLeft="40dp"
-                android:backgroundTint="#ffffa500" />
+                android:backgroundTint="#00000000" />
         <!--Select Instruments You Play-->
             <TextView
                 android:layout_width="fill_parent"
@@ -103,7 +104,8 @@
                 android:text="Search by Instrument"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
-                android:textColor="#f2854b" />
+                android:textColor="#f2854b"
+                android:textStyle="bold" />
             <Spinner
                 android:id="@+id/spinnerInstrumentPlayed"
                 android:layout_width="308dp"
@@ -111,7 +113,7 @@
                 android:prompt="@string/instrument_prompt"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
-                android:backgroundTint="#ffffa500" />
+                android:backgroundTint="#00000000" />
         <!--Search Button-->
             <Button
                 android:text="Search"
