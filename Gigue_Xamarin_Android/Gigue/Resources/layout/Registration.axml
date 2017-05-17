@@ -120,7 +120,8 @@
                 android:gravity="center"
                 android:layout_gravity="center"
                 android:layout_marginLeft="100dp"
-                android:layout_marginRight="100dp" />
+                android:layout_marginRight="100dp"
+                android:textColor="#fff" />
             <TextView
                 android:text="Guest"
                 android:gravity="center"

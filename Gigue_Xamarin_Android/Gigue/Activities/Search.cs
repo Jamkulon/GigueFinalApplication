@@ -44,7 +44,6 @@ namespace Gigue.Activities
             MLastName = FindViewById<EditText>(Resource.Id.enterLastName);
             MPrimeInst = FindViewById<Spinner>(Resource.Id.spinnerInstrumentPlayed);
 
-            
 
             //Linear Layout Hide Keyboar//
             sLinearLayout = FindViewById<LinearLayout>(Resource.Id.srchView);
@@ -91,17 +90,19 @@ namespace Gigue.Activities
             if (id == Resource.Id.tool_profile)
             {
                 Toast.MakeText(this, "Profile clicked", ToastLength.Short).Show();
+                StartActivity(typeof(MusicianProfile));
                 return true;
             }
-            else if (id == Resource.Id.tool_search)
+            else if (id == Resource.Id.tool_Login)
             {
-                Toast.MakeText(this, "Search clicked", ToastLength.Short).Show();
+                Toast.MakeText(this, "Login clicked", ToastLength.Short).Show();
+                StartActivity(typeof(Login));
                 return true;
             }
             else if (id == Resource.Id.tool_infoPage)
             {
                 Toast.MakeText(this, "InfoPage clicked", ToastLength.Short).Show();
-                Intent intent = new Intent(this, typeof(Search));
+                StartActivity(typeof(InformationPage));
                 return true;
             }
             return base.OnOptionsItemSelected(item);

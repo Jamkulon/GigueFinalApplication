@@ -2409,8 +2409,26 @@ namespace Gigue
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
+			// aapt resource value: 0x7f020145
+			public const int avd_hide_password_1 = 2130837829;
+			
+			// aapt resource value: 0x7f020146
+			public const int avd_hide_password_2 = 2130837830;
+			
+			// aapt resource value: 0x7f020147
+			public const int avd_hide_password_3 = 2130837831;
+			
 			// aapt resource value: 0x7f020054
 			public const int avd_show_password = 2130837588;
+			
+			// aapt resource value: 0x7f020148
+			public const int avd_show_password_1 = 2130837832;
+			
+			// aapt resource value: 0x7f020149
+			public const int avd_show_password_2 = 2130837833;
+			
+			// aapt resource value: 0x7f02014a
+			public const int avd_show_password_3 = 2130837834;
 			
 			// aapt resource value: 0x7f020055
 			public const int button_email_style = 2130837589;
@@ -3258,7 +3276,7 @@ namespace Gigue
 			
 			// aapt resource value: 0x7f0b0111
 			public const int btnResults = 2131427601;
-			
+		
 			// aapt resource value: 0x7f0b0108
 			public const int btnSearch = 2131427592;
 			
@@ -3279,6 +3297,9 @@ namespace Gigue
 			
 			// aapt resource value: 0x7f0b0013
 			public const int button = 2131427347;
+			
+			// aapt resource value: 0x7f0b010a
+			public const int button1 = 2131427594;
 			
 			// aapt resource value: 0x7f0b0057
 			public const int buttonPanel = 2131427415;
@@ -4328,28 +4349,31 @@ namespace Gigue
 			public const int Registration = 2130903122;
 			
 			// aapt resource value: 0x7f030053
-			public const int searchPage = 2130903123;
+			public const int ResultsNotFound = 2130903123;
 			
 			// aapt resource value: 0x7f030054
-			public const int SearchResults = 2130903124;
+			public const int searchPage = 2130903124;
 			
 			// aapt resource value: 0x7f030055
-			public const int select_dialog_item_material = 2130903125;
+			public const int SearchResults = 2130903125;
 			
 			// aapt resource value: 0x7f030056
-			public const int select_dialog_multichoice_material = 2130903126;
+			public const int select_dialog_item_material = 2130903126;
 			
 			// aapt resource value: 0x7f030057
-			public const int select_dialog_singlechoice_material = 2130903127;
+			public const int select_dialog_multichoice_material = 2130903127;
 			
 			// aapt resource value: 0x7f030058
-			public const int splashScreen = 2130903128;
+			public const int select_dialog_singlechoice_material = 2130903128;
 			
 			// aapt resource value: 0x7f030059
-			public const int support_simple_spinner_dropdown_item = 2130903129;
+			public const int splashScreen = 2130903129;
 			
 			// aapt resource value: 0x7f03005a
-			public const int thanks = 2130903130;
+			public const int support_simple_spinner_dropdown_item = 2130903130;
+			
+			// aapt resource value: 0x7f03005b
+			public const int thanks = 2130903131;
 			
 			static Layout()
 			{

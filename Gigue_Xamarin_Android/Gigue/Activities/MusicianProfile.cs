@@ -56,19 +56,22 @@ namespace Gigue.Activities
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             int id = item.ItemId;
-            if (id == Resource.Id.tool_profile)
+            if (id == Resource.Id.tool_Login)
             {
-                Toast.MakeText(this, "Profile clicked", ToastLength.Short).Show();
+                Toast.MakeText(this, "Login clicked", ToastLength.Short).Show();
+                    StartActivity(typeof(Login));
                 return true;
             }
             else if (id == Resource.Id.tool_search)
             {
                 Toast.MakeText(this, "Search clicked", ToastLength.Short).Show();
+                    StartActivity(typeof(Search));
                 return true;
             }
             else if (id == Resource.Id.tool_infoPage)
             {
                 Toast.MakeText(this, "InfoPage clicked", ToastLength.Short).Show();
+                StartActivity(typeof(InformationPage));
                 return true;
             }
             return base.OnOptionsItemSelected(item);

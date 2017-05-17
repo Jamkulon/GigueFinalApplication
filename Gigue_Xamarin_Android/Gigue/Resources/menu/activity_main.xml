@@ -4,6 +4,10 @@
   tools:context=".Login"
   >
   <item
+       android:id="@+id/tool_Login"
+       android:title="Login"
+    />
+  <item
      android:id="@+id/tool_profile"
      android:title="Profile"
     />

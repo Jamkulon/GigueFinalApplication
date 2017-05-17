@@ -16,7 +16,6 @@ namespace Gigue.Activities
     [Activity(Theme = "@style/Theme.AppCompat.Light.NoActionBar")]
     public class InformationPage : AppCompatActivity
     {
-
         Button mBackToLogin;
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -45,16 +44,19 @@ namespace Gigue.Activities
             if (id == Resource.Id.tool_profile)
             {
                 Toast.MakeText(this, "Profile clicked", ToastLength.Short).Show();
+                StartActivity(typeof(MusicianProfile));
                 return true;
             }
             else if (id == Resource.Id.tool_search)
             {
                 Toast.MakeText(this, "Search clicked", ToastLength.Short).Show();
+                StartActivity(typeof(Search));
                 return true;
             }
-            else if (id == Resource.Id.tool_infoPage)
+            else if (id == Resource.Id.tool_Login)
             {
-                Toast.MakeText(this, "InfoPage clicked", ToastLength.Short).Show();
+                Toast.MakeText(this, "Login clicked", ToastLength.Short).Show();
+                StartActivity(typeof(Login));
                 return true;
             }
             return base.OnOptionsItemSelected(item);
