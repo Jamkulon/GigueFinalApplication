@@ -10,7 +10,6 @@
     android:clickable="true"
     android:minWidth="25px"
     android:minHeight="25px">
-  
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:theme="@style/ToolBarColor"

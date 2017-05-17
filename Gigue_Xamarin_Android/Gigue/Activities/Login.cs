@@ -28,6 +28,7 @@ namespace Gigue.Activities
         private Switch mLoggedIn;
         //bool mIsLoggedIn;
 
+
         //private MobileServiceClient client;
 
         const string applicationURL = @"https://gigue.azurewebsites.net/api/";
@@ -107,6 +108,7 @@ namespace Gigue.Activities
         {
 
             //TODO Store info to sharedprefs
+
 
 
             Intent intent = new Intent(this, typeof(RegistrationActivity));

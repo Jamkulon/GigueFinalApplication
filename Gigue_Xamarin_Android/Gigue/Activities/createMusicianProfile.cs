@@ -13,6 +13,7 @@ using Newtonsoft.Json;
 using Gigue.ViewModels;
 using Android.Support.V7.App;
 
+
 namespace Gigue.Activities
 {
     [Activity (WindowSoftInputMode = SoftInput.AdjustResize, Theme = "@style/Theme.AppCompat.Light.NoActionBar")]

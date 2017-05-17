@@ -18,6 +18,7 @@ using Android.Support.V7.App;
 namespace Gigue
 {
     [Activity(WindowSoftInputMode = SoftInput.AdjustResize, Theme = "@style/Theme.AppCompat.Light.NoActionBar")]
+
     public class editMusicianProfile : MusicianProfile
     {
         Button mEditMusicianProfile;
