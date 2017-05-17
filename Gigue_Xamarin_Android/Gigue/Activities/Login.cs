@@ -26,7 +26,7 @@ namespace Gigue.Activities
         Button mLogin;
         TextView mForgotPw;
         private Switch mLoggedIn;
-        bool mIsLoggedIn;
+        //bool mIsLoggedIn;
 
         //private MobileServiceClient client;
 

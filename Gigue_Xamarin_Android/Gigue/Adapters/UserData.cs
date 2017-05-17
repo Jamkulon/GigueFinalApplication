@@ -63,8 +63,27 @@ namespace Gigue.Adapters
             //return the response as a vmMusicianSearch object
             var userMusicians = JsonConvert.DeserializeObject<List<vmMusicianResult>>(
                 await response.Content.ReadAsStringAsync());
-            Console.WriteLine(userMusicians[0].LastName);
+            //Console.WriteLine(userMusicians[0].LastName);
             return userMusicians;
+
+        }
+
+        // Get Musician Search by Id
+        public async Task<vmMusicianProfile> GetMusicianSearchById(int userid)
+        {
+            // Create http client
+            HttpClient client = await GetClient();
+            //Serialize object to JSON
+            var data = JsonConvert.SerializeObject(userid);
+            //Convert it to a formated stringcontent byte array
+            var content = new StringContent(data, Encoding.UTF8, "application/json");
+            //Send the data
+            var response = await client.PostAsync(string.Concat(applicationURL, "musicianprofile/"), content);
+            //return the response as a vmMusicianSearch object
+            var userMusician = JsonConvert.DeserializeObject<vmMusicianProfile>(
+                await response.Content.ReadAsStringAsync());
+            //Console.WriteLine(userMusicians[0].LastName);
+            return userMusician;
 
         }
 

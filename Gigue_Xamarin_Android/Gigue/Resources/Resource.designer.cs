@@ -2409,7 +2409,6 @@ namespace Gigue
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
-
 			// aapt resource value: 0x7f020145
 			public const int avd_hide_password_1 = 2130837829;
 			
@@ -2418,12 +2417,10 @@ namespace Gigue
 			
 			// aapt resource value: 0x7f020147
 			public const int avd_hide_password_3 = 2130837831;
-
 			
 			// aapt resource value: 0x7f020054
 			public const int avd_show_password = 2130837588;
 			
-
 			// aapt resource value: 0x7f020148
 			public const int avd_show_password_1 = 2130837832;
 			
@@ -2432,7 +2429,6 @@ namespace Gigue
 			
 			// aapt resource value: 0x7f02014a
 			public const int avd_show_password_3 = 2130837834;
-
 			
 			// aapt resource value: 0x7f020055
 			public const int button_email_style = 2130837589;
