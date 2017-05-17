@@ -2,5 +2,6 @@
 <resources>
   <style name="ToolBarColor" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
     <item name="android:textColorPrimary">#ffffff</item>
+    
   </style>
 </resources>

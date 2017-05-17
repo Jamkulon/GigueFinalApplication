@@ -178,6 +178,8 @@
             <TextView
                 android:text="Tell Us About Yourself:"
                 android:id="@+id/textView3"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
                 android:textColor="#f2854b"
                 android:paddingTop="10dp" />
             <EditText
