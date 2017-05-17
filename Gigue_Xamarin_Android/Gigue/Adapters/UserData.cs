@@ -49,7 +49,7 @@ namespace Gigue.Adapters
         }
 
         // Get Musician Search
-        public async Task<vmMusicianSearch> GetMusicianSearch(vmMusicianSearch mSearchParam)
+        public async Task<List<vmMusicianResult>> GetMusicianSearch(vmMusicianSearch mSearchParam)
         {
             // Create http client
             HttpClient client = await GetClient();
@@ -58,22 +58,13 @@ namespace Gigue.Adapters
             //Convert it to a formated stringcontent byte array
             var content = new StringContent(data, Encoding.UTF8, "application/json");
             //Send the data
+
             var response = await client.PostAsync(string.Concat(applicationURL, "musiciansearch/"), content);
             //return the response as a vmMusicianSearch object
-            return JsonConvert.DeserializeObject<vmMusicianSearch>(
+            var userMusicians = JsonConvert.DeserializeObject<List<vmMusicianResult>>(
                 await response.Content.ReadAsStringAsync());
-            //// Parse data into newUsers and return it
-            //var newUsers = new List<vmMusicianSearch>();
-            //foreach (var user in response)
-            //{
-            //    var newuser = new vmMusicianSearch()
-            //    {
-            //        AppUserId = user.AppUserId,
-            //        UserName = user.UserName
-            //    };
-            //    newUsers.Add(user);
-            //}
-            //return newUsers;
+            Console.WriteLine(userMusicians[0].LastName);
+            return userMusicians;
 
         }
 
@@ -94,8 +85,24 @@ namespace Gigue.Adapters
 
         }
 
-        // Update by Id
-        public async Task<vmAppUser> UpdateAppUser(int appUserId, vmAppUser itemToUpdate)
+        // Update vmAppUser by Id
+        public async Task<vmAppUser> UpdateAppUser(vmAppUser itemToUpdate)
+        {
+            // Create http client
+            HttpClient client = await GetClient();
+            //Serialize object to JSON
+            var data = JsonConvert.SerializeObject(itemToUpdate);
+            //Convert it to a formated stringcontent byte array
+            var content = new StringContent(data, Encoding.UTF8, "application/json");
+            //Send the data
+            var response = await client.PutAsync(string.Concat(applicationURL, "appuser/"), content);
+            //return the response as a vmAppUser object
+            return JsonConvert.DeserializeObject<vmAppUser>(
+                await response.Content.ReadAsStringAsync());
+        }
+
+        // Update vmMusicianProfile by Id
+        public async Task<vmMusicianProfile> UpdateMusician(int appUserId, vmMusicianProfile itemToUpdate)
         {
             // Create http client
             HttpClient client = await GetClient();
@@ -106,9 +113,13 @@ namespace Gigue.Adapters
             //Send the data
             var response = await client.PutAsync(string.Concat(applicationURL, appUserId), content);
             //return the response as a vmAppUser object
-            return JsonConvert.DeserializeObject<vmAppUser>(
+            return JsonConvert.DeserializeObject<vmMusicianProfile>(
                 await response.Content.ReadAsStringAsync());
-        } 
+        }
+
+
+
+
         // Delete by Id
         public async Task<bool> DeleteTodoItemAsync(int itemIndex)
         {

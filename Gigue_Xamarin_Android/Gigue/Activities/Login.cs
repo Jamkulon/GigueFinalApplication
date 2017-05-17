@@ -1,24 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
+
 using Android.Widget;
-using System.Net;
-using Gigue;
-using Newtonsoft.Json;
-using Microsoft.WindowsAzure.MobileServices;
 using Android.Views.InputMethods;
+using Android.Support.V7.App;
+using Newtonsoft.Json;
+using Gigue.ViewModels;
+using System.Collections.Generic;
 
 namespace Gigue.Activities
 {
-    [Activity(MainLauncher = false, WindowSoftInputMode = SoftInput.AdjustResize, Theme = ("@android:style/Theme.NoTitleBar"))]
-    public class Login : Activity
+    [Activity(MainLauncher = false, WindowSoftInputMode = SoftInput.AdjustResize, Theme = "@style/Theme.AppCompat.Light.NoActionBar")]
+    public class Login : AppCompatActivity
     {
 
         //add classes and items for all events on this page
@@ -28,6 +24,8 @@ namespace Gigue.Activities
         EditText mEmailAddress;
         Button mLogin;
         TextView mForgotPw;
+        private Switch mLoggedIn;
+        string mUserEmail;
 
         //private MobileServiceClient client;
 
@@ -39,7 +37,9 @@ namespace Gigue.Activities
 
             SetContentView(Resource.Layout.Login);
 
-
+            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+            toolbar.SetTitleTextColor(Android.Graphics.Color.White);
+            SetSupportActionBar(toolbar);
             //declare all objects on the page
             mMoreInfo = FindViewById<TextView>(Resource.Id.moreInfo);
             mSignUp = FindViewById<TextView>(Resource.Id.signUp);
@@ -47,6 +47,7 @@ namespace Gigue.Activities
             mEmailAddress = FindViewById<EditText>(Resource.Id.txtEmailAddress);
             mLogin = FindViewById<Button>(Resource.Id.btnLogin);
             mForgotPw = FindViewById<TextView>(Resource.Id.txtForgotPw);
+            mLoggedIn = FindViewById<Switch>(Resource.Id.keepLoggedIn);
 
 
             //Click events for every button or item on the page
@@ -56,11 +57,42 @@ namespace Gigue.Activities
             mLogin.Click += mLogin_Click;
             mForgotPw.Click += mForgotPw_Click;
 
+            retrieveset();
+            mEmailAddress.Text = mUserEmail;
+
+        }
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            var inflater = MenuInflater;
+            inflater.Inflate(Resource.Menu.activity_main, menu);
+            return true;
+        }
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            int id = item.ItemId;
+            if (id == Resource.Id.tool_profile)
+            {
+                Toast.MakeText(this, "Profile clicked", ToastLength.Short).Show();
+                return true;
+            }
+            else if (id == Resource.Id.tool_search)
+            {
+                Toast.MakeText(this, "Search clicked", ToastLength.Short).Show();
+                return true;
+            }
+            else if (id == Resource.Id.tool_infoPage)
+            {
+                Toast.MakeText(this, "InfoPage clicked", ToastLength.Short).Show();
+                return true;
+            }
+            return base.OnOptionsItemSelected(item);
         }
 
         //Login Button Click event to take you to Search page
         void mLogin_Click(object sender, EventArgs e)
         {
+            saveset();
+            
             Intent intent = new Intent(this, typeof(MusicianProfile));
 
             this.StartActivity(intent);
@@ -77,6 +109,10 @@ namespace Gigue.Activities
         //sign up button click event to go to Registration
         void mSignUp_Click(object sender, EventArgs e)
         {
+
+            //Store info to sharedprefs
+
+
             Intent intent = new Intent(this, typeof(RegistrationActivity));
             this.StartActivity(intent);
             this.OverridePendingTransition(Resource.Animation.slide_in_bottom, Resource.Animation.slide_out_top);
@@ -96,6 +132,28 @@ namespace Gigue.Activities
             Intent intent = new Intent(this, typeof(ForgotPassword));
             this.StartActivity(intent);
             this.OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);
+        }
+
+        protected void saveset()
+        {
+
+            //store
+            var prefs = Application.Context.GetSharedPreferences("GIGUE", FileCreationMode.Private);
+            var prefEditor = prefs.Edit();
+            prefEditor.PutString("EMAIL", mEmailAddress.Text.ToString().Trim());
+            prefEditor.Apply();
+
+        }
+
+        protected void retrieveset()
+        {
+            //retreive 
+            var prefs = Application.Context.GetSharedPreferences("GIGUE", FileCreationMode.Private);
+            mUserEmail = prefs.GetString("EMAIL", null);
+
+            //Show a toast
+            RunOnUiThread(() => Toast.MakeText(this, mUserEmail, ToastLength.Long).Show());
+
         }
     }
 }

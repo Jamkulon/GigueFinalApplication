@@ -213,11 +213,13 @@
     <Compile Include="App_Start\NinjectDependencyScope.cs" />
     <Compile Include="App_Start\Startup.MobileApp.cs" />
     <Compile Include="Controllers\AppUserController.cs" />
+    <Compile Include="Controllers\CityController.cs" />
     <Compile Include="Controllers\MusicianController.cs" />
     <Compile Include="Controllers\MusicianProfileController.cs" />
     <Compile Include="Controllers\MusicianSearchController.cs" />
     <Compile Include="Controllers\MusicianGenresByInstrumentController.cs" />
     <Compile Include="Controllers\MusiciansInstrumentsByGenreController.cs" />
+    <Compile Include="Controllers\StateController.cs" />
     <Compile Include="Migrations\201705042101440_start9.cs" />
     <Compile Include="Migrations\201705042101440_start9.Designer.cs">
       <DependentUpon>201705042101440_start9.cs</DependentUpon>
@@ -260,10 +262,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Services\AppUserService.cs" />
+    <Compile Include="Services\CityService.cs" />
     <Compile Include="Services\MusicianGenresByInstrumentService.cs" />
     <Compile Include="Services\MusicianProfileService.cs" />
     <Compile Include="Services\MusicianSearchService.cs" />
     <Compile Include="Services\MusicianService.cs" />
+    <Compile Include="Services\StateService.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\vmAppUser.cs" />

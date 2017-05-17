@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="50dp">
+    <TextView
+        android:id="@+id/txtFirstName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="3dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:typeface="sans" />
+    <TextView
+        android:id="@+id/txtLastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/txtFirstName"
+        android:lineSpacingExtra="3dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:typeface="sans" />
+    <TextView
+        android:id="@+id/txtPrimaryInst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtFirstName"
+     
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:typeface="sans" />
+  <TextView
+        android:id="@+id/txtCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtLastName"
+       
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:typeface="sans" />
+</RelativeLayout>

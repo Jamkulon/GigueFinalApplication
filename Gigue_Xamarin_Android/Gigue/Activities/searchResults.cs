@@ -6,6 +6,7 @@ using Android.Widget;
 using Gigue.Adapters;
 using Gigue.ViewModels;
 using Newtonsoft.Json;
+using System;
 
 namespace Gigue.Activities
 {
@@ -13,10 +14,15 @@ namespace Gigue.Activities
     public class searchResults : Activity
     {
         public UserData userdata = new UserData();
+        public List<vmMusicianResult> userinfo;
+        private ListView mListView;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.SearchResults);
+
+            mListView = FindViewById<ListView>(Resource.Id.SearchResultListView);
             
             vmMusicianSearch mSearchParam = JsonConvert.DeserializeObject<vmMusicianSearch>(Intent.GetStringExtra("searchParam"));
 
@@ -28,15 +34,20 @@ namespace Gigue.Activities
         //Get vmMusicianSearch results into adapter         ==================Method not working yet.  =================================
         private async void GetMusicianSearch(vmMusicianSearch searchParam)
         {
-            var MSListView = FindViewById<ListView>(Resource.Id.SearchResultListView);
-            var MSInfo = await userdata.GetMusicianSearch(searchParam);
-            var users = new List<vmMusicianSearch>();
-            //foreach (var u in MSInfo)
-            //{
-            //    var userName = u.UserName.ToString();
-            //    users.Add(userName);
-            //}
-            MSListView.Adapter = new ArrayAdapter<vmMusicianSearch>(this, Android.Resource.Layout.SimpleListItem1, Android.Resource.Id.Text1, users);
+            
+            userinfo = await userdata.GetMusicianSearch(searchParam);
+
+            SearchListAdapter adapter = new SearchListAdapter(this, userinfo);
+            mListView.Adapter = adapter;
+            mListView.ItemClick += MListView_ItemClick;
+
+
+            //mListView.Adapter = new ArrayAdapter<vmMusicianResult>(this, Android.Resource.Layout.SimpleListItem1, Android.Resource.Id.Text1, users);
+        }
+
+        private void MListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            Console.WriteLine(userinfo[e.Position].LastName);
         }
 
         //get usersnames from list diplsy on activity     ==================Old List Method =====================

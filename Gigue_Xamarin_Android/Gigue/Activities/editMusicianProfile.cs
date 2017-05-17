@@ -11,6 +11,8 @@ using Android.Views;
 using Android.Widget;
 using Newtonsoft.Json;
 using Gigue.Activities;
+using Gigue.ViewModels;
+using Gigue.Adapters;
 
 namespace Gigue
 {
@@ -18,12 +20,22 @@ namespace Gigue
     public class editMusicianProfile : MusicianProfile
     {
         Button mEditMusicianProfile;
+        EditText mRegisterFirst;
+        EditText mRegisterLast;
+        EditText mRegisteredEmail;
+        User mRegisteredUser;
+        int mRegisteredId;
+        Spinner mStateSpinner;
+        Spinner mCitySpinner;
+        Spinner mZipCodeSpinner;
+        Spinner mInstrumentSpinner;
+        Spinner mGenreSpinner;
+        Spinner mLanguageSpinner;
+
+        public UserData userdata = new UserData();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-           
-
-
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.editMusicianProfile);
@@ -32,61 +44,61 @@ namespace Gigue
             mEditMusicianProfile.Click += mEditMusicianProfile_Click;
             // Spinners for 
 
-            Spinner stateSpinner = FindViewById<Spinner>(Resource.Id.spinnerState);
-            Spinner citySpinner = FindViewById<Spinner>(Resource.Id.spinnerCity);
-            Spinner zipCodeSpinner = FindViewById<Spinner>(Resource.Id.spinnerZip);
-            Spinner instrumentSpinner = FindViewById<Spinner>(Resource.Id.spinnerInstrumentPlayed);
-            Spinner genreSpinner = FindViewById<Spinner>(Resource.Id.spinnerMusicGenres);
-            Spinner languageSpinner = FindViewById<Spinner>(Resource.Id.spinnerLanguagesSpoken);
+            mStateSpinner = FindViewById<Spinner>(Resource.Id.spinnerState);
+            mCitySpinner = FindViewById<Spinner>(Resource.Id.spinnerCity);
+            mZipCodeSpinner = FindViewById<Spinner>(Resource.Id.spinnerZip);
+            mInstrumentSpinner = FindViewById<Spinner>(Resource.Id.spinnerInstrumentPlayed);
+            mGenreSpinner = FindViewById<Spinner>(Resource.Id.spinnerMusicGenres);
+            mLanguageSpinner = FindViewById<Spinner>(Resource.Id.spinnerLanguagesSpoken);
 
 
             //state spinner
-            stateSpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+            mStateSpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
             var StateAdapter = ArrayAdapter.CreateFromResource(
                     this, Resource.Array.states_array, Android.Resource.Layout.SimpleSpinnerItem);
 
             StateAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            stateSpinner.Adapter = StateAdapter;
+            mStateSpinner.Adapter = StateAdapter;
 
             //city spinner
-            citySpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+            mCitySpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
             var CityAdapter = ArrayAdapter.CreateFromResource(
                     this, Resource.Array.cities_array, Android.Resource.Layout.SimpleSpinnerItem);
 
             CityAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            citySpinner.Adapter = CityAdapter;
+            mCitySpinner.Adapter = CityAdapter;
 
             //Zip Code Spinner Adapter
-            zipCodeSpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+            mZipCodeSpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
             var zipCodeAdapter = ArrayAdapter.CreateFromResource(
                     this, Resource.Array.zip_array, Android.Resource.Layout.SimpleSpinnerItem);
 
             zipCodeAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            zipCodeSpinner.Adapter = zipCodeAdapter;
+            mZipCodeSpinner.Adapter = zipCodeAdapter;
 
             //Instrument Select Code Spinner Adapter
-            instrumentSpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+            mInstrumentSpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
             var instrumentAdapter = ArrayAdapter.CreateFromResource(
                     this, Resource.Array.instrument_array, Android.Resource.Layout.SimpleSpinnerItem);
 
             instrumentAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            instrumentSpinner.Adapter = instrumentAdapter;
+            mInstrumentSpinner.Adapter = instrumentAdapter;
 
             //Music Genre Select Spinner
-            instrumentSpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+            mGenreSpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
             var genreAdapter = ArrayAdapter.CreateFromResource(
                     this, Resource.Array.genre_array, Android.Resource.Layout.SimpleSpinnerItem);
 
             genreAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            genreSpinner.Adapter = genreAdapter;
+            mGenreSpinner.Adapter = genreAdapter;
 
             //Language Select Spinner
-            languageSpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+            mLanguageSpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
             var languageAdapter = ArrayAdapter.CreateFromResource(
                     this, Resource.Array.language_array, Android.Resource.Layout.SimpleSpinnerItem);
 
             languageAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            languageSpinner.Adapter = languageAdapter;
+            mLanguageSpinner.Adapter = languageAdapter;
             // Create your application here
         }
 
@@ -97,8 +109,27 @@ namespace Gigue
 
 
         }
-        void mEditMusicianProfile_Click(object sender, EventArgs e)
+        private async void mEditMusicianProfile_Click(object sender, EventArgs e)
         {
+            // Build appuser object
+            vmAppUser itemToAdd = new vmAppUser
+            {
+                AppUserId = mRegisteredId,
+                UserName = "",
+                LastName = mRegisterLast.Text.Trim(),
+                FirstName = mRegisterFirst.Text.Trim(),
+                City = mCitySpinner.SelectedItem.ToString(),
+                State = mStateSpinner.SelectedItem.ToString(),
+                PostalCode = mZipCodeSpinner.SelectedItem.ToString(),
+                Email = mRegisteredEmail.Text.Trim(),
+                ReceiveAdvertisements = false,
+                IsMusician = true
+            };
+
+            //send post request
+            vmAppUser currentUser = await userdata.UpdateAppUser(itemToAdd);
+
+
             Intent intent = new Intent(this, typeof(MusicianProfile));
 
             this.StartActivity(intent);
