@@ -5,14 +5,14 @@
     android:layout_height="match_parent"
     android:descendantFocusability="beforeDescendants"
     android:focusableInTouchMode="true"
-    android:background="#424242">
-  <android.support.v7.widget.Toolbar
-    android:id="@+id/toolbar"
-    android:theme="@style/ToolBarColor"
-    android:minHeight="?attr/actionBarSize"
-    android:background="#333333"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+    android:background="#242424">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:theme="@style/ToolBarColor"
+        android:minHeight="?attr/actionBarSize"
+        android:background="#333333"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 <!--Enter User First Name-->
     <TextView
         android:text="CREATE A PROFILE"
@@ -28,55 +28,88 @@
         android:hint="Enter Your First Name"
         android:inputType="textPersonName"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editUserFirstName" />
+        android:layout_height="35dp"
+        android:id="@+id/editUserFirstName"
+        android:background="@drawable/edit_text_style"
+        android:textColorHint="#d3d3d3"
+        android:textColor="#FF4500"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" />
 <!--Enter User Last Name-->
     <EditText
         android:hint="Enter Last Name"
         android:inputType="textPersonName"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editUserLastName" />
+        android:layout_height="35dp"
+        android:id="@+id/editUserLastName"
+        android:background="@drawable/edit_text_style"
+        android:textColorHint="#d3d3d3"
+        android:textColor="#FF4500"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" />
 <!--Enter User Email Address-->
     <EditText
         android:hint="Enter Your Email Address"
         android:inputType="textEmailAddress"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editUserEmailAddress" />
+        android:layout_height="35dp"
+        android:id="@+id/editUserEmailAddress"
+        android:background="@drawable/edit_text_style"
+        android:textColorHint="#d3d3d3"
+        android:textColor="#FF4500"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" />
 <!--Select User City-->
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dip"
-        android:text="@string/cities_prompt" />
+        android:layout_marginTop="10dp"
+        android:text="@string/cities_prompt"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:textColor="#f2854b" />
     <Spinner
         android:id="@+id/spinnerCity"
-        android:layout_width="fill_parent"
+        android:layout_width="308.0dp"
         android:layout_height="wrap_content"
-        android:prompt="@string/cities_prompt" />
+        android:prompt="@string/cities_prompt"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp" />
 <!--Select User State-->
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dip"
-        android:text="@string/state_prompt" />
+        android:text="@string/state_prompt"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:textColor="#f2854b" />
     <Spinner
         android:id="@+id/spinnerState"
-        android:layout_width="fill_parent"
+        android:layout_width="308.0dp"
         android:layout_height="wrap_content"
-        android:prompt="@string/state_prompt" />
+        android:prompt="@string/state_prompt"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp" />
 <!--Select User Zip Code-->
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dip"
-        android:text="@string/zip_prompt" />
+        android:text="@string/zip_prompt"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:textColor="#f2854b" />
     <Spinner
         android:id="@+id/spinnerZip"
-        android:layout_width="fill_parent"
+        android:layout_width="308.0dp"
         android:layout_height="wrap_content"
-        android:prompt="@string/zip_prompt" />
+        android:prompt="@string/zip_prompt"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp" />
 <!--Submit User Profile Button-->
     <Button
         android:text="Submit Profile"
