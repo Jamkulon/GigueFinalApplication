@@ -91,6 +91,7 @@ namespace Gigue
         void mThankYou_Click(object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(Search));
+            intent.PutExtra("User", JsonConvert.SerializeObject(mRegisteredUser));
             this.StartActivity(intent);
 
         }

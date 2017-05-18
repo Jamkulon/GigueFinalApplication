@@ -136,9 +136,6 @@ namespace Gigue.Adapters
                 await response.Content.ReadAsStringAsync());
         }
 
-
-
-
         // Delete by Id
         public async Task<bool> DeleteTodoItemAsync(int itemIndex)
         {
@@ -146,6 +143,5 @@ namespace Gigue.Adapters
             var response = await client.DeleteAsync(string.Concat(applicationURL, itemIndex));
             return response.IsSuccessStatusCode;
         }
-
     }
 }

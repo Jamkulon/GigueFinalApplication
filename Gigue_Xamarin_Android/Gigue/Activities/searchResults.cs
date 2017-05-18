@@ -6,7 +6,7 @@ using Android.Widget;
 using Gigue.Adapters;
 using Gigue.ViewModels;
 using Newtonsoft.Json;
-using System;
+
 
 namespace Gigue.Activities
 {
@@ -85,14 +85,5 @@ namespace Gigue.Activities
         //    }
         //    listText.Adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, Android.Resource.Id.Text1, users);
         //}
-        protected void saveset()
-        {
-            string musicianProfile = JsonConvert.SerializeObject(mRegisteredUser);
-            //store
-            var prefs = Application.Context.GetSharedPreferences("GIGUE", FileCreationMode.Private);
-            var prefEditor = prefs.Edit();
-            prefEditor.PutString("profile", musicianProfile);
-            prefEditor.Apply();
-        }
     }
 }
