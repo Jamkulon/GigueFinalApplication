@@ -190,7 +190,7 @@ namespace Gigue
             mRegisteredUser.ReceiveAdvertisements = itemToAdd.ReceiveAdvertisements;
             mRegisteredUser.IsMusician = itemToAdd.IsMusician;
 
-            sharedPrefs.saveset(mRegisteredUser);
+            saveset(mRegisteredUser);
 
             //send post request
             vmAppUser currentUser = await userdata.UpdateAppUser(itemToAdd);
@@ -203,5 +203,6 @@ namespace Gigue
             this.StartActivity(intent);
             this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
         }
+
     }
 }

@@ -46,8 +46,8 @@ namespace Gigue.Activities
             MPrimeInst = FindViewById<Spinner>(Resource.Id.spinnerInstrumentPlayed);
 
             //Set fields
-            mFirtName.Text = mRegisteredUser.FirstName;
-            MLastName.Text = mRegisteredUser.LastName;
+            //mFirtName.Text = mRegisteredUser.FirstName;
+            //MLastName.Text = mRegisteredUser.LastName;
 
             //Linear Layout Hide Keyboar//
             sLinearLayout = FindViewById<LinearLayout>(Resource.Id.srchView);
@@ -151,6 +151,7 @@ namespace Gigue.Activities
 
             //Send the search package
             intent.PutExtra("searchParam", JsonConvert.SerializeObject(searchParam));
+            intent.PutExtra("regUser", JsonConvert.SerializeObject(mRegisteredUser));
 
             this.StartActivity(intent);
             this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
