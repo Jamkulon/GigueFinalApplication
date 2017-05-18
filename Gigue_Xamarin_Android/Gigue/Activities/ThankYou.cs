@@ -84,6 +84,7 @@ namespace Gigue
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("You are registered as:");
             sb.AppendFormat("{0} {1}{2}", mRegisteredUser.FirstName, mRegisteredUser.LastName, System.Environment.NewLine);
+            sb.AppendFormat("{0}{1}", mRegisteredUser.Email, System.Environment.NewLine);
             sb.AppendLine("Please enjoy our application");
             mThanksUser.Text = sb.ToString();
         }
@@ -91,6 +92,7 @@ namespace Gigue
         void mThankYou_Click(object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(Search));
+            intent.PutExtra("User", JsonConvert.SerializeObject(mRegisteredUser));
             this.StartActivity(intent);
 
         }

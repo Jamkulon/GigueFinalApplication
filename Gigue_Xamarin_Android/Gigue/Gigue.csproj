@@ -247,6 +247,7 @@
     <Compile Include="Activities\Home.cs" />
     <Compile Include="Adapters\SearchListAdapter.cs" />
     <Compile Include="Adapters\UserData.cs" />
+    <Compile Include="Classes\SharedPrefs.cs" />
     <Compile Include="DataObjects\AppUser.cs" />
     <Compile Include="DataObjects\Genre.cs" />
     <Compile Include="DataObjects\Instrument.cs" />

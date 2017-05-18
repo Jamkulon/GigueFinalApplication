@@ -1,16 +1,13 @@
-﻿using System;
-
+using System;
 using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
-
 using Newtonsoft.Json;
 using Gigue.ViewModels;
-
 using Android.Support.V7.App;
-
+using Gigue.Classes;
 
 namespace Gigue.Activities
 {
@@ -18,11 +15,17 @@ namespace Gigue.Activities
     public class MusicianProfile : AppCompatActivity
     {
         vmMusicianProfile mRegisteredUser;
+        public SharedPrefs sharedPrefs = new SharedPrefs();
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            
+
             Button mEditProfile;
             Button mSearch;
+            TextView mProfileUserName;
+            TextView mProfileInstrument;
+            TextView mProfileAboutMe;
+
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Profile);
 
@@ -37,6 +40,14 @@ namespace Gigue.Activities
 
             mEditProfile = FindViewById<Button>(Resource.Id.btnEditProfile);
             mEditProfile.Click += mEditProfile_Click;
+
+            mProfileUserName = FindViewById<TextView>(Resource.Id.txtProfileUserName);
+            mProfileInstrument = FindViewById<TextView>(Resource.Id.txtPrimaryInst);
+            mProfileAboutMe = FindViewById<TextView>(Resource.Id.txtProfileBio);
+
+            mProfileAboutMe.Text = mRegisteredUser.Biography;
+
+            mProfileUserName.Text = mRegisteredUser.FirstName + " " + mRegisteredUser.LastName;
 
             //var lv = FindViewById<ListView>(Resource.Id.listView);
 
@@ -75,14 +86,15 @@ namespace Gigue.Activities
 
         void mSearch_Click(object sender, EventArgs e)
         {
-            Intent intent = new Intent(this, typeof(Search));
 
+            Intent intent = new Intent(this, typeof(Search));
             intent.PutExtra("User", JsonConvert.SerializeObject(mRegisteredUser));
 
             this.StartActivity(intent);
         }
         void mEditProfile_Click(object sender, EventArgs e)
         {
+            mRegisteredUser = retrieveset();
             Intent intent = new Intent(this, typeof(editMusicianProfile));
 
             intent.PutExtra("User", JsonConvert.SerializeObject(mRegisteredUser));
@@ -90,8 +102,9 @@ namespace Gigue.Activities
             this.StartActivity(intent);
             this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
         }
-        protected void saveset()
+        public void saveset(vmMusicianProfile user)
         {
+            mRegisteredUser = user;
             string musicianProfile = JsonConvert.SerializeObject(mRegisteredUser);
             //store
             var prefs = Application.Context.GetSharedPreferences("GIGUE", FileCreationMode.Private);
@@ -101,7 +114,7 @@ namespace Gigue.Activities
 
         }
 
-        protected void retrieveset()
+        public vmMusicianProfile retrieveset()
         {
             string strMusicianProfile;
             vmMusicianProfile vmProf;
@@ -112,6 +125,7 @@ namespace Gigue.Activities
             if (strMusicianProfile == null)
             {
                 mRegisteredUser = new vmMusicianProfile();
+                return mRegisteredUser;
             }
             else
             {
@@ -119,15 +133,14 @@ namespace Gigue.Activities
                 if (vmProf == null)
                 {
                     mRegisteredUser = new vmMusicianProfile();
+                    return mRegisteredUser;
                 }
                 else
                 {
                     mRegisteredUser = vmProf;
+                    return mRegisteredUser;
                 }
             }
-
-            //Show a toast
-            //RunOnUiThread(() => Toast.MakeText(this, mUserEmail, ToastLength.Long).Show());
         }
     }
 }
