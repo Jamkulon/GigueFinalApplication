@@ -240,6 +240,7 @@
     <Compile Include="Activities\Login.cs" />
     <Compile Include="Activities\MusicianProfile.cs" />
     <Compile Include="Activities\Search.cs" />
+    <Compile Include="Activities\SearchedMusician.cs" />
     <Compile Include="Activities\searchResults.cs" />
     <Compile Include="Activities\SplashScreen.cs" />
     <Compile Include="Activities\TestData.cs" />
@@ -330,6 +331,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\ResultsNotFound.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\searchedMusician.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -434,6 +438,16 @@
     <AndroidResource Include="Resources\drawable-ldpi\ResetButton.png" />
     <AndroidResource Include="Resources\drawable-mdpi\ResetButton.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\ResetButton.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\guitar_icon.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\guitar_icon.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\guitar_icon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\guitar_icon.png" />
+    <AndroidResource Include="Resources\drawable\guitar_icon.png" />
+    <AndroidResource Include="Resources\drawable\icon_musician_contact.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon_musician_contact.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\icon_musician_contact.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\icon_musician_contact.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icon_musician_contact.png" />
     <Content Include="Resources\menu\toolbar.xml">
       <SubType>Designer</SubType>
     </Content>

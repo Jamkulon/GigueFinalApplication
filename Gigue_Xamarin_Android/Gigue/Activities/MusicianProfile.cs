@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -11,7 +11,7 @@ using Gigue.Classes;
 
 namespace Gigue.Activities
 {
-    [Activity(WindowSoftInputMode = SoftInput.AdjustResize, Theme = "@style/Theme.AppCompat.Light.NoActionBar")]
+    [Activity(WindowSoftInputMode = SoftInput.AdjustResize, Theme = ("@style/Theme.AppCompat.Light.NoActionBar"))]
     public class MusicianProfile : AppCompatActivity
     {
         vmMusicianProfile mRegisteredUser;

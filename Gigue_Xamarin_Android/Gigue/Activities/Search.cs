@@ -8,6 +8,7 @@ using Android.Views.InputMethods;
 using Gigue.ViewModels;
 using Newtonsoft.Json;
 using Android.Support.V7.App;
+using System.Threading;
 
 namespace Gigue.Activities
 {
@@ -23,6 +24,8 @@ namespace Gigue.Activities
         Spinner MPrimeInst;
         vmMusicianProfile mRegisteredUser;
 
+
+        private int progressBarStatus;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -118,6 +121,31 @@ namespace Gigue.Activities
                 City = mCity.SelectedItem.ToString(),
                 PrimeInstrument = MPrimeInst.SelectedItem.ToString()
             };
+
+
+            ProgressDialog progressBar = new ProgressDialog(this);
+            progressBar.SetCancelable(true);
+            //progressBar.SetMessage("Page is Loading...");
+            progressBar.SetProgressStyle(ProgressDialogStyle.Horizontal);
+            progressBar.Progress = 0;
+            progressBar.Max = 100;
+            progressBar.Show();
+            progressBarStatus = 0;
+
+            //Run Thread and increase preogress value
+            new Thread(new ThreadStart(delegate {
+
+                while (progressBarStatus < 100)
+                {
+                    progressBarStatus += 10;
+
+                    progressBar.Progress += progressBarStatus;
+                    Thread.Sleep(100);
+                }
+                //    RunOnUiThread(() => { progressBar.SetMessage("File is downloaded..."); });
+                //    //progressBar.SetMessage("File is downloaded...");
+                //    //Toast.MakeText(this, "File is downloaded", ToastLength.Long).Show();
+            })).Start();
 
             Intent intent = new Intent(this, typeof(searchResults));
 
