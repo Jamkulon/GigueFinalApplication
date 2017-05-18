@@ -42,6 +42,8 @@ namespace Gigue.Activities
             toolbar.SetTitleTextColor(Android.Graphics.Color.White);
             SetSupportActionBar(toolbar);
 
+            mRegisteredUser = JsonConvert.DeserializeObject<vmMusicianProfile>(Intent.GetStringExtra("User"));
+
             mSubmitMusicianProfile = FindViewById<Button>(Resource.Id.btnSubmitMusician);
             mSubmitMusicianProfile.Click += mSubmitMusicianProfile_Click;
 
@@ -49,7 +51,7 @@ namespace Gigue.Activities
             mRegisterLast = FindViewById<EditText>(Resource.Id.editLastName);
             mRegisteredEmail = FindViewById<EditText>(Resource.Id.editEmailAddress);
 
-            mRegisteredUser = JsonConvert.DeserializeObject<vmMusicianProfile>(Intent.GetStringExtra("User"));
+            
 
             mRegisterFirst.Text = mRegisteredUser.FirstName.ToString();
             mRegisterLast.Text = mRegisteredUser.LastName.ToString();
@@ -178,13 +180,15 @@ namespace Gigue.Activities
             mRegisteredUser.ReceiveAdvertisements = itemToAdd.ReceiveAdvertisements;
             mRegisteredUser.IsMusician = itemToAdd.IsMusician;
 
-            sharedPrefs.saveset(mRegisteredUser);
+            saveset(mRegisteredUser);
             
             //send post request
+            //TODO Update to vmMusicianProfile from vmAppUser
             vmAppUser currentUser = await userdata.UpdateAppUser(itemToAdd);
 
 
             Intent intent = new Intent(this, typeof(Search));
+            intent.PutExtra("User", JsonConvert.SerializeObject(mRegisteredUser));
             this.StartActivity(intent);
             this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
         }
@@ -192,6 +196,46 @@ namespace Gigue.Activities
         {
             InputMethodManager inputManager = (InputMethodManager)this.GetSystemService(Activity.InputMethodService);
             inputManager.HideSoftInputFromWindow(this.CurrentFocus.WindowToken, HideSoftInputFlags.None);
+        }
+        public void saveset(vmMusicianProfile user)
+        {
+            mRegisteredUser = user;
+            string musicianProfile = JsonConvert.SerializeObject(mRegisteredUser);
+            //store
+            var prefs = Application.Context.GetSharedPreferences("GIGUE", FileCreationMode.Private);
+            var prefEditor = prefs.Edit();
+            prefEditor.PutString("profile", musicianProfile);
+            prefEditor.Apply();
+
+        }
+
+        public vmMusicianProfile retrieveset()
+        {
+            string strMusicianProfile;
+            vmMusicianProfile vmProf;
+            //Retreive existing records
+            var prefs = Application.Context.GetSharedPreferences("GIGUE", FileCreationMode.Private);
+            strMusicianProfile = prefs.GetString("profile", null);
+            //If email is null, return new vmMusicianProfile
+            if (strMusicianProfile == null)
+            {
+                mRegisteredUser = new vmMusicianProfile();
+                return mRegisteredUser;
+            }
+            else
+            {
+                vmProf = JsonConvert.DeserializeObject<vmMusicianProfile>(strMusicianProfile);
+                if (vmProf == null)
+                {
+                    mRegisteredUser = new vmMusicianProfile();
+                    return mRegisteredUser;
+                }
+                else
+                {
+                    mRegisteredUser = vmProf;
+                    return mRegisteredUser;
+                }
+            }
         }
     }
 }

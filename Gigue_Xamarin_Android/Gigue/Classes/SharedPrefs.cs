@@ -9,7 +9,7 @@ namespace Gigue.Classes
     {
         public vmMusicianProfile mRegisteredUser;
 
-        internal protected void saveset(vmMusicianProfile user)
+        public void saveset(vmMusicianProfile user)
         {
             mRegisteredUser = user;
             string musicianProfile = JsonConvert.SerializeObject(mRegisteredUser);
@@ -21,7 +21,7 @@ namespace Gigue.Classes
 
         }
 
-        internal protected vmMusicianProfile retrieveset()
+        public vmMusicianProfile retrieveset()
         {
             string strMusicianProfile;
             vmMusicianProfile vmProf;

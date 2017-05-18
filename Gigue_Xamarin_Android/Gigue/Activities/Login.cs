@@ -32,7 +32,7 @@ namespace Gigue.Activities
         vmMusicianProfile mRegisteredUser;
         int mAppUserId;
 
-        public SharedPrefs sharedPrefs = new SharedPrefs();
+        //public SharedPrefs sharedPrefs = new SharedPrefs();
 
         private int progressBarStatus;
 
@@ -69,13 +69,14 @@ namespace Gigue.Activities
 
             //if (mIsLoggedIn == true)
             //{
-            var result = sharedPrefs.retrieveset();
-            if (result.AppUserId > 0)
+            mRegisteredUser = retrieveset();
+            if (mRegisteredUser.AppUserId > 0)
             {
                 mEmailAddress.Text = mRegisteredUser.Email;
                 mPassword.Text = mRegisteredUser.PassWord;
                 mAppUserId = mRegisteredUser.AppUserId;
             }
+            Console.WriteLine("AppUserId = " + mRegisteredUser.AppUserId);
         }
 
         //Login Button Click event to take you to Search page
@@ -83,7 +84,10 @@ namespace Gigue.Activities
         {
             mRegisteredUser.Email = mEmailAddress.Text.ToString().Trim();
             mRegisteredUser.PassWord = mPassword.Text.ToString().Trim();
-            sharedPrefs.saveset(mRegisteredUser);
+            saveset(mRegisteredUser);
+            mRegisteredUser = retrieveset();
+            //Console.WriteLine(mRegisteredUser.Email);
+
 
             ProgressDialog progressBar = new ProgressDialog(this);
             progressBar.SetCancelable(true);
@@ -152,5 +156,46 @@ namespace Gigue.Activities
             StartActivity(intent);
             OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);
         }
+        public void saveset(vmMusicianProfile user)
+        {
+            mRegisteredUser = user;
+            string musicianProfile = JsonConvert.SerializeObject(mRegisteredUser);
+            //store
+            var prefs = Application.Context.GetSharedPreferences("GIGUE", FileCreationMode.Private);
+            var prefEditor = prefs.Edit();
+            prefEditor.PutString("profile", musicianProfile);
+            prefEditor.Apply();
+
+        }
+
+        public vmMusicianProfile retrieveset()
+        {
+            string strMusicianProfile;
+            vmMusicianProfile vmProf;
+            //Retreive existing records
+            var prefs = Application.Context.GetSharedPreferences("GIGUE", FileCreationMode.Private);
+            strMusicianProfile = prefs.GetString("profile", null);
+            //If email is null, return new vmMusicianProfile
+            if (strMusicianProfile == null)
+            {
+                mRegisteredUser = new vmMusicianProfile();
+                return mRegisteredUser;
+            }
+            else
+            {
+                vmProf = JsonConvert.DeserializeObject<vmMusicianProfile>(strMusicianProfile);
+                if (vmProf == null)
+                {
+                    mRegisteredUser = new vmMusicianProfile();
+                    return mRegisteredUser;
+                }
+                else
+                {
+                    mRegisteredUser = vmProf;
+                    return mRegisteredUser;
+                }
+            }
+        }
+
     }
 }

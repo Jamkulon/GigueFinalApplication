@@ -89,18 +89,19 @@ namespace Gigue
             vmAppUser currentUser = await userdata.AddAppUser(itemToAdd);
 
             //convert vmAppUser currentUser to vmMusicianProfile mRegisteredUser
-            //mRegisteredUser.UserName = currentUser.UserName;
-            //mRegisteredUser.PassWord = currentUser.PassWord;
-            //mRegisteredUser.LastName = currentUser.LastName;
-            //mRegisteredUser.FirstName = currentUser.FirstName;
-            //mRegisteredUser.City = currentUser.City;
-            //mRegisteredUser.State = currentUser.State;
-            //mRegisteredUser.PostalCode = currentUser.PostalCode;
-            //mRegisteredUser.Email = currentUser.Email;
-            //mRegisteredUser.ReceiveAdvertisements = currentUser.ReceiveAdvertisements;
-            //mRegisteredUser.IsMusician = currentUser.IsMusician;
+            mRegisteredUser.AppUserId = currentUser.AppUserId;
+            mRegisteredUser.UserName = currentUser.UserName;
+            mRegisteredUser.PassWord = currentUser.PassWord;
+            mRegisteredUser.LastName = currentUser.LastName;
+            mRegisteredUser.FirstName = currentUser.FirstName;
+            mRegisteredUser.City = currentUser.City;
+            mRegisteredUser.State = currentUser.State;
+            mRegisteredUser.PostalCode = currentUser.PostalCode;
+            mRegisteredUser.Email = currentUser.Email;
+            mRegisteredUser.ReceiveAdvertisements = currentUser.ReceiveAdvertisements;
+            mRegisteredUser.IsMusician = currentUser.IsMusician;
 
-            //sharedPrefs.saveset(mRegisteredUser);
+            saveset(mRegisteredUser);
 
             //Switch to Musician Profile
             Intent intent = new Intent(this, typeof(createMusicianProfile));
@@ -165,7 +166,7 @@ namespace Gigue
             //mRegisteredUser.ReceiveAdvertisements = currentUser.ReceiveAdvertisements;
             //mRegisteredUser.IsMusician = currentUser.IsMusician;
 
-            //sharedPrefs.saveset(mRegisteredUser);
+            saveset(mRegisteredUser);
 
             //Switch to  User Profile
             Intent intent = new Intent(this, typeof(ThankYou));
@@ -211,5 +212,46 @@ namespace Gigue
             }
             return base.OnOptionsItemSelected(item);
         }
+        public void saveset(vmMusicianProfile user)
+        {
+            mRegisteredUser = user;
+            string musicianProfile = JsonConvert.SerializeObject(mRegisteredUser);
+            //store
+            var prefs = Application.Context.GetSharedPreferences("GIGUE", FileCreationMode.Private);
+            var prefEditor = prefs.Edit();
+            prefEditor.PutString("profile", musicianProfile);
+            prefEditor.Apply();
+
+        }
+
+        public vmMusicianProfile retrieveset()
+        {
+            string strMusicianProfile;
+            vmMusicianProfile vmProf;
+            //Retreive existing records
+            var prefs = Application.Context.GetSharedPreferences("GIGUE", FileCreationMode.Private);
+            strMusicianProfile = prefs.GetString("profile", null);
+            //If email is null, return new vmMusicianProfile
+            if (strMusicianProfile == null)
+            {
+                mRegisteredUser = new vmMusicianProfile();
+                return mRegisteredUser;
+            }
+            else
+            {
+                vmProf = JsonConvert.DeserializeObject<vmMusicianProfile>(strMusicianProfile);
+                if (vmProf == null)
+                {
+                    mRegisteredUser = new vmMusicianProfile();
+                    return mRegisteredUser;
+                }
+                else
+                {
+                    mRegisteredUser = vmProf;
+                    return mRegisteredUser;
+                }
+            }
+        }
     }
+
 }
