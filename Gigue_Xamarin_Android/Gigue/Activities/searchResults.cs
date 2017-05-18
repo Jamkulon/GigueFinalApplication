@@ -65,7 +65,7 @@ namespace Gigue.Activities
 
             //Switch to  User Profile
             //TODO Change intent name to SearchedProfile
-            Intent intent = new Intent(this, typeof(editMusicianProfile));
+            Intent intent = new Intent(this, typeof(SearchedMusician));
             intent.PutExtra("User", JsonConvert.SerializeObject(user));
 
             this.StartActivity(intent);

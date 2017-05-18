@@ -5,8 +5,6 @@
     android:background="#242424"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:descendantFocusability="beforeDescendants"
-    android:focusableInTouchMode="true"
     android:clickable="true"
     android:minWidth="25px"
     android:minHeight="25px">
@@ -15,38 +13,29 @@
         android:theme="@style/ToolBarColor"
         android:minHeight="?attr/actionBarSize"
         android:background="#333333"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:id="@+id/circleImageView1"
-        android:src="@drawable/james2"
+        android:src="@drawable/guitarist"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         app:civ_border_color="#fff2854b"
         app:civ_border_width="2dp"
         app:civ_fill_color="#00000000" />
     <RatingBar
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ratingBar1"
         android:numStars="5"
         android:clickable="true"
         android:stepSize="0.5"
-        android:layout_width="wrap_content"
         android:layout_gravity="center" />
-    <ScrollView
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/scrollViewProfile">
-        <TableLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:stretchColumns="1">
+   
             <TextView
-                android:text="James Kulon"
+                android:text="Alex Lifeson"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView1"
@@ -65,17 +54,16 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:typeface="serif" />
-            <Button
-                android:text="Edit Profile"
-                android:id="@+id/btnEditProfile"
-                android:background="@android:color/transparent"
-                android:textColor="#f2854b"
-                android:textStyle="bold"
-                android:typeface="serif"
-                android:layout_width="match_parent"
-                android:layout_height="21.0dp"
-                android:gravity="right"
-                android:textSize="12sp" />
+  <ScrollView
+       android:minWidth="25px"
+       android:minHeight="25px"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/scrollViewProfile">
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:stretchColumns="1">
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
@@ -202,34 +190,35 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp" />
             </LinearLayout>
-            <Switch
-                android:text="                             Are You Available to Sub?"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:clickable="true"
-                android:id="@+id/profileSwitch"
-                android:textOn="Available for Work"
-                android:textOff="Not Available"
-                android:textColor="#f2854b"
-                android:textSize="15dp"
-                android:textStyle="bold" />
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="39.5dp"
+                android:layout_height="48.5dp"
                 android:id="@+id/linearLayout6"
-                android:gravity="center">
+                android:gravity="center"
+                android:layout_marginTop="10dp">
                 <Button
-                    android:text="Search"
-                    android:layout_width="100dp"
+                    android:text="Contact This Musician"
+                    android:layout_width="143.5dp"
                     android:layout_height="match_parent"
                     android:id="@+id/btnSearch"
                     android:background="@drawable/Login_Style_Button"
                     android:textColor="#ffffff"
                     android:textStyle="bold"
                     android:typeface="serif"
-                    android:gravity="center" />
+                    android:gravity="center"
+                    android:layout_marginRight="10dp" />
+                <Button
+                    android:text="Back to Search Results"
+                    android:layout_width="143.5dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/btnBackToSearch"
+                    android:background="@drawable/Login_Style_Button"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp" />
             </LinearLayout>
         </TableLayout>
     </ScrollView>

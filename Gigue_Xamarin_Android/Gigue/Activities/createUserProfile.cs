@@ -13,6 +13,7 @@ using Newtonsoft.Json;
 using Gigue.ViewModels;
 using Gigue.Adapters;
 using Android.Support.V7.App;
+using System.Threading;
 
 namespace Gigue
 {
@@ -31,6 +32,7 @@ namespace Gigue
 
         public UserData userdata = new UserData();
 
+        private int progressBarStatus;
 
         protected override void OnCreate(Bundle Bundle)
         {
@@ -135,6 +137,30 @@ namespace Gigue
                 IsMusician = false
             };
 
+
+            ProgressDialog progressBar = new ProgressDialog(this);
+            progressBar.SetCancelable(true);
+            //progressBar.SetMessage("Page is Loading...");
+            progressBar.SetProgressStyle(ProgressDialogStyle.Horizontal);
+            progressBar.Progress = 0;
+            progressBar.Max = 100;
+            progressBar.Show();
+            progressBarStatus = 0;
+
+            //Run Thread and increase preogress value
+            new Thread(new ThreadStart(delegate {
+
+                while (progressBarStatus < 100)
+                {
+                    progressBarStatus += 10;
+
+                    progressBar.Progress += progressBarStatus;
+                    Thread.Sleep(100);
+                }
+                //    RunOnUiThread(() => { progressBar.SetMessage("File is downloaded..."); });
+                //    //progressBar.SetMessage("File is downloaded...");
+                //    //Toast.MakeText(this, "File is downloaded", ToastLength.Long).Show();
+            })).Start();
             //send post request
             vmAppUser currentUser = await userdata.UpdateAppUser(itemToAdd);
 
