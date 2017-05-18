@@ -65,6 +65,7 @@ namespace Gigue
             mRegisterLast.Text = mRegisteredUser.LastName;
             mRegisteredEmail.Text = mRegisteredUser.Email;
 
+
             //state spinner
             mStateSpinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
             var StateAdapter = ArrayAdapter.CreateFromResource(

@@ -448,6 +448,7 @@
     <AndroidResource Include="Resources\drawable-ldpi\icon_musician_contact.png" />
     <AndroidResource Include="Resources\drawable-mdpi\icon_musician_contact.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon_musician_contact.png" />
+    <AndroidResource Include="Resources\drawable\Dierdre6.png" />
     <Content Include="Resources\menu\toolbar.xml">
       <SubType>Designer</SubType>
     </Content>

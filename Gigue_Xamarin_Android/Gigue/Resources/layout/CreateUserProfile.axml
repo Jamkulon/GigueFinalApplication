@@ -77,7 +77,8 @@
         android:layout_height="wrap_content"
         android:prompt="@string/cities_prompt"
         android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp" />
+        android:layout_marginRight="40dp"
+        android:background="#fff" />
 <!--Select User State-->
     <TextView
         android:layout_width="fill_parent"
@@ -93,7 +94,8 @@
         android:layout_height="wrap_content"
         android:prompt="@string/state_prompt"
         android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp" />
+        android:layout_marginRight="40dp"
+        android:background="#fff" />
 <!--Select User Zip Code-->
     <TextView
         android:layout_width="fill_parent"
@@ -109,7 +111,8 @@
         android:layout_height="wrap_content"
         android:prompt="@string/zip_prompt"
         android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp" />
+        android:layout_marginRight="40dp"
+        android:background="#fff" />
 <!--Submit User Profile Button-->
     <Button
         android:text="Submit Profile"
