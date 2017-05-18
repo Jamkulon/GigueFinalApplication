@@ -25,7 +25,8 @@
         <TableLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:stretchColumns="1">
+            android:stretchColumns="1"
+            android:background="#242424">
         <!--Enter First Name-->
             <TextView
                 android:text="We Just Need a Little More Info From Ya"
@@ -45,7 +46,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:id="@+id/editFirstName"
-                android:textColor="#FF4500"
+                android:textColor="#000"
                 android:background="@drawable/edit_text_style"
                 android:textColorHint="#d3d3d3"
                 android:layout_marginBottom="10dp"
@@ -59,7 +60,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:id="@+id/editLastName"
-                android:textColor="#FF4500"
+                android:textColor="#000"
                 android:background="@drawable/edit_text_style"
                 android:textColorHint="#d3d3d3"
                 android:layout_marginBottom="10dp"
@@ -73,7 +74,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:id="@+id/editEmailAddress"
-                android:textColor="#FF4500"
+                android:textColor="#000"
                 android:background="@drawable/edit_text_style"
                 android:textColorHint="#d3d3d3"
                 android:layout_marginBottom="10dp"
@@ -94,7 +95,8 @@
                 android:layout_height="wrap_content"
                 android:prompt="@string/cities_prompt"
                 android:layout_marginRight="40dp"
-                android:layout_marginLeft="40dp" />
+                android:layout_marginLeft="40dp"
+                android:background="#fff" />
         <!--Select User State-->
             <TextView
                 android:layout_width="fill_parent"
@@ -111,7 +113,8 @@
                 android:layout_height="wrap_content"
                 android:prompt="@string/state_prompt"
                 android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp" />
+                android:layout_marginRight="40dp"
+                android:background="#fff" />
         <!--Select User Zip Code-->
             <TextView
                 android:layout_width="fill_parent"
@@ -128,7 +131,8 @@
                 android:layout_height="wrap_content"
                 android:prompt="@string/zip_prompt"
                 android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp" />
+                android:layout_marginRight="40dp"
+                android:background="#fff" />
         <!--Select Instruments You Play-->
             <TextView
                 android:layout_width="fill_parent"
@@ -145,7 +149,8 @@
                 android:layout_height="wrap_content"
                 android:prompt="@string/instrument_prompt"
                 android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp" />
+                android:layout_marginRight="40dp"
+                android:background="#fff" />
         <!--Select Your Primary Music Style-->
             <TextView
                 android:layout_width="fill_parent"
@@ -162,7 +167,8 @@
                 android:layout_height="wrap_content"
                 android:prompt="@string/genre_prompt"
                 android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp" />
+                android:layout_marginRight="40dp"
+                android:background="#fff" />
         <!--Select Languages You Speak-->
             <TextView
                 android:layout_width="fill_parent"
@@ -179,7 +185,8 @@
                 android:layout_height="wrap_content"
                 android:prompt="@string/language_prompt"
                 android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp" />
+                android:layout_marginRight="40dp"
+                android:background="#fff" />
         <!--Submit Profile Button-->
             <TextView
                 android:text="Tell Us About Yourself:"

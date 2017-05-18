@@ -24,7 +24,8 @@
         <TableLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:stretchColumns="1">
+            android:stretchColumns="1"
+            android:background="#242424">
         <!--Enter First Name-->
             <TextView
                 android:text="Edit Your Existing Profile"
@@ -35,7 +36,8 @@
                 android:textStyle="bold"
                 android:typeface="serif"
                 android:gravity="center"
-                android:textColor="#f2854b" />
+                android:textColor="#f2854b"
+                android:layout_marginTop="10dp" />
             <EditText
                 android:hint="Enter First Name"
                 android:inputType="textCapSentences"
@@ -46,7 +48,7 @@
                 android:id="@+id/editFirstName"
                 android:background="@drawable/edit_text_style"
                 android:textColorHint="#d3d3d3"
-                android:textColor="#FF4500"
+                android:textColor="#000"
                 android:layout_marginBottom="10dp" />
         <!--Enter Last Name-->
             <EditText
@@ -57,7 +59,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:id="@+id/editLastName"
-                android:textColor="#FF4500"
+                android:textColor="#000"
                 android:background="@drawable/edit_text_style"
                 android:textColorHint="#d3d3d3"
                 android:layout_marginBottom="10dp" />
@@ -70,105 +72,128 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:id="@+id/editEmailAddress"
-                android:textColor="#FF4500"
+                android:textColor="#000"
                 android:background="@drawable/edit_text_style"
                 android:textColorHint="#d3d3d3"
                 android:layout_marginBottom="10dp" />
         <!--Select User City-->
             <TextView
-                android:layout_width="343.0dp"
-                android:layout_height="wrap_content"
                 android:text="@string/cities_prompt"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"
-                android:textColor="#f2854b" />
+                android:textColor="#f2854b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2"
+                android:layout_marginLeft="10dp" />
             <Spinner
                 android:id="@+id/spinnerCity"
-                android:layout_width="308.0dp"
-                android:layout_height="wrap_content"
                 android:prompt="@string/cities_prompt"
-                android:layout_marginRight="40dp"
-                android:layout_marginLeft="40dp" />
-        <!--Select User State-->
-            <TextView
-                android:layout_width="fill_parent"
+                android:background="#fff"
+                android:layout_width="110dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="@string/state_prompt"
+                android:layout_below="@id/textView2"
+                android:layout_marginTop="5dp"
                 android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"
-                android:textColor="#f2854b" />
+                android:layout_marginRight="40dp" />
+            <TextView
+                android:text="@string/state_prompt"
+                android:textColor="#f2854b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/spinnerCity"
+                android:id="@+id/textView3"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp" />
             <Spinner
                 android:id="@+id/spinnerState"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
                 android:prompt="@string/state_prompt"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView3"
+                android:background="#fff"
+                android:layout_marginTop="5dp"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp" />
-        <!--Select User Zip Code-->
             <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dip"
                 android:text="@string/zip_prompt"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"
-                android:textColor="#f2854b" />
+                android:textColor="#f2854b"
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/spinnerState"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp" />
             <Spinner
                 android:id="@+id/spinnerZip"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
                 android:prompt="@string/zip_prompt"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView5"
+                android:background="#fff"
+                android:layout_marginTop="5dp"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp" />
-        <!--Select Instruments You Play-->
             <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:text="What is your PRIMARY Instrument?"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"
-                android:textColor="#f2854b" />
+                android:textColor="#f2854b"
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/spinnerZip"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp" />
             <Spinner
                 android:id="@+id/spinnerInstrumentPlayed"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
                 android:prompt="@string/instrument_prompt"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView7"
+                android:background="#fff"
+                android:layout_marginTop="5dp"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp" />
-        <!--Select Your Primary Music Style-->
             <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:text="What is your PRIMARY Music Genre?"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"
-                android:textColor="#f2854b" />
+                android:textColor="#f2854b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/spinnerInstrumentPlayed"
+                android:id="@+id/textView8"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp" />
             <Spinner
                 android:id="@+id/spinnerMusicGenres"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
                 android:prompt="@string/genre_prompt"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView8"
+                android:background="#fff"
+                android:layout_marginTop="5dp"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp" />
-        <!--Select Languages You Speak-->
             <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:text="What is your PRIMARY Language Spoken?"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"
-                android:textColor="#f2854b" />
+                android:textColor="#f2854b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/spinnerMusicGenres"
+                android:id="@+id/textView9"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp" />
             <Spinner
                 android:id="@+id/spinnerLanguagesSpoken"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
                 android:prompt="@string/language_prompt"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView9"
+                android:background="#fff"
+                android:layout_marginTop="5dp"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp" />
+        <!--Select User State-->
+        <!--Select User Zip Code-->
+        <!--Select Instruments You Play-->
+        <!--Select Your Primary Music Style-->
+        <!--Select Languages You Speak-->
         <!--Submit Profile Button-->
             <Button
                 android:text="Submit"

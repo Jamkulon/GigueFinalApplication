@@ -43,7 +43,7 @@
             <EditText
                 android:id="@+id/txtFirstName"
                 android:inputType="textCapSentences"
-                android:textColor="#FF4500"
+                android:textColor="#000"
                 android:hint="First Name"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
@@ -57,7 +57,7 @@
             <EditText
                 android:id="@+id/txtLastName"
                 android:inputType="textCapSentences"
-                android:textColor="#FF4500"
+                android:textColor="#000"
                 android:hint="Last Name"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
@@ -71,7 +71,7 @@
             <EditText
                 android:id="@+id/txtEmail"
                 android:inputType="textEmailAddress"
-                android:textColor="#FF4500"
+                android:textColor="#000"
                 android:hint="Email Address"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
@@ -85,7 +85,7 @@
             <EditText
                 android:id="@+id/txtPassword"
                 android:inputType="textPassword"
-                android:textColor="#FF4500"
+                android:textColor="#000"
                 android:hint="Password"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
