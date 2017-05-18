@@ -31,11 +31,21 @@ namespace GigueService.Services
         //Methods().
         //=========================================================
         //If the StageName is provided query the data base by StageName.
-        public List<vmMusicianResult> GetMusicians(vmMusicianSearch vmMS) {
+        public List<vmMusicianResult> GetMusicians(vmMusicianSearch vmMStoTest)
+        {
+            vmMusicianSearch vmMS = testvmMSInput(vmMStoTest);
 
             List<vmMusicianResult> vmMRs = new List<vmMusicianResult>();
-            //LastName is provided.
-            if (!string.IsNullOrEmpty(vmMS.LastName))
+            //1.  LastName and FirstName provided.
+            //2.  LastName only.
+            //3.  FirstName only.
+
+            if (!string.IsNullOrEmpty(vmMS.LastName) && !string.IsNullOrEmpty(vmMS.FirstName))
+            {
+                vmMRs = GetMusiciansByFirstLastNames(vmMS);
+
+            }
+            else if (!string.IsNullOrEmpty(vmMS.LastName))
             {
                 vmMRs = GetMusicianByLastName(vmMS);
             }
@@ -45,9 +55,9 @@ namespace GigueService.Services
             }
             else
             {
-                //1.  Last name is null.  City is described.
-                //2.  Last name is null.  City is null.  Prime instrument is described.
-                //3.  Last name is null.  City and prime instrument are described. 
+                //1.  Last name and first name are null or empty.  City is described.
+                //2.  Last name and first name are null or empty.  City is null.  Prime instrument is described.
+                //3.  Last name and first name are null or empty.  City and prime instrument are described. 
 
                 if (!string.IsNullOrEmpty(vmMS.City) && !string.IsNullOrEmpty(vmMS.PrimeInstrument))
                 {
@@ -63,6 +73,34 @@ namespace GigueService.Services
                 }
             }
             return vmMRs;
+        }
+        //=============================================================================
+       
+        //=============================================================================
+        public vmMusicianSearch testvmMSInput(vmMusicianSearch vmMStoTest)
+        {
+            //Test for last name.
+            AppUser testLastName = _repo.Query<AppUser>().Where(a => a.LastName == vmMStoTest.LastName).FirstOrDefault();
+            if (testLastName == null)
+            {
+                vmMStoTest.LastName = null;
+            }
+            AppUser testFirstName = _repo.Query<AppUser>().Where(b => b.FirstName == vmMStoTest.FirstName).FirstOrDefault();
+            if (testFirstName == null)
+            {
+                vmMStoTest.FirstName = null;
+            }
+            AppUser testCity = _repo.Query<AppUser>().Where(c => c.City == vmMStoTest.City).FirstOrDefault();
+            if (testCity == null)
+            {
+                vmMStoTest.City = null;
+            }
+            Instrument testInst = _repo.Query<Instrument>().Where(d => d.InstrumentName == vmMStoTest.PrimeInstrument).FirstOrDefault();
+            if (testInst == null)
+            {
+                vmMStoTest.PrimeInstrument = null;
+            }
+            return vmMStoTest;
         }
         //================================================================================
         public List<vmMusicianResult> GetMusiciansByCityInstrument(vmMusicianSearch vmMS)
@@ -193,27 +231,32 @@ namespace GigueService.Services
         public List<vmMusicianResult> GetMusicianByLastName(vmMusicianSearch vmMS)
         {
             List<vmMusicianResult> vmMRs = new List<vmMusicianResult>();
-          
-            AppUser au = _repo.Query<AppUser>().Where(b => b.LastName == vmMS.LastName).FirstOrDefault();
-            if (au == null)
+            List<AppUser> aus = _repo.Query<AppUser>().Where(b => b.LastName == vmMS.LastName).ToList();
+            if (aus == null)
             {
                 return null;
             }
             else
             {
-                UserMusician um = _repo.Query<UserMusician>().Where(c => c.AppUserId == au.AppUserId).FirstOrDefault();
-                Musician m = _repo.Query<Musician>().Where(d => d.MusicianId == um.MusicianId).FirstOrDefault();
-                MusicianInstrument mi = _repo.Query<MusicianInstrument>().Where(e => e.MusicianId == m.MusicianId && e.IsPrimary == true).FirstOrDefault();
-                Instrument i = _repo.Query<Instrument>().Where(f => f.InstrumentId == mi.InstrumentId).FirstOrDefault();
-                vmMusicianResult vmMRtemp = new vmMusicianResult
+                foreach (AppUser au in aus)
                 {
-                    AppUserId = au.AppUserId,
-                    FirstName = au.FirstName,
-                    LastName = au.LastName,
-                    City = au.City,
-                    PrimeInstrument = i.InstrumentName
-                };
-                vmMRs.Add(vmMRtemp);
+                    UserMusician um = _repo.Query<UserMusician>().Where(c => c.AppUserId == au.AppUserId).FirstOrDefault();
+                    if (um != null)
+                    {
+                        Musician m = _repo.Query<Musician>().Where(d => d.MusicianId == um.MusicianId).FirstOrDefault();
+                        MusicianInstrument mi = _repo.Query<MusicianInstrument>().Where(e => e.MusicianId == m.MusicianId && e.IsPrimary == true).FirstOrDefault();
+                        Instrument i = _repo.Query<Instrument>().Where(f => f.InstrumentId == mi.InstrumentId).FirstOrDefault();
+                        vmMusicianResult vmMRtemp = new vmMusicianResult
+                        {
+                            AppUserId = au.AppUserId,
+                            FirstName = au.FirstName,
+                            LastName = au.LastName,
+                            City = au.City,
+                            PrimeInstrument = i.InstrumentName
+                        };
+                        vmMRs.Add(vmMRtemp);
+                    }
+                }
                 return vmMRs;
             }
         }
@@ -222,29 +265,66 @@ namespace GigueService.Services
         {
             List<vmMusicianResult> vmMRs = new List<vmMusicianResult>();
             
-            AppUser au = _repo.Query<AppUser>().Where(b => b.FirstName == vmMS.FirstName).FirstOrDefault();
-            if (au == null)
+            List<AppUser> aus = _repo.Query<AppUser>().Where(b => b.FirstName == vmMS.FirstName).ToList();
+            if (aus == null)
             {
                 return null;
             }
             else
             {
-                UserMusician um = _repo.Query<UserMusician>().Where(c => c.AppUserId == au.AppUserId).FirstOrDefault();
-                Musician m = _repo.Query<Musician>().Where(d => d.MusicianId == um.MusicianId).FirstOrDefault();
-                MusicianInstrument mi = _repo.Query<MusicianInstrument>().Where(e => e.MusicianId == m.MusicianId && e.IsPrimary == true).FirstOrDefault();
-                Instrument i = _repo.Query<Instrument>().Where(f => f.InstrumentId == mi.InstrumentId).FirstOrDefault();
-                vmMusicianResult vmMRtemp = new vmMusicianResult
+                foreach (AppUser au in aus)
                 {
-                    AppUserId = au.AppUserId,
-                    FirstName = au.FirstName,
-                    LastName = au.LastName,
-                    City = au.City,
-                    PrimeInstrument = i.InstrumentName
-                };
-                vmMRs.Add(vmMRtemp);
+                    UserMusician um = _repo.Query<UserMusician>().Where(c => c.AppUserId == au.AppUserId).FirstOrDefault();
+                    Musician m = _repo.Query<Musician>().Where(d => d.MusicianId == um.MusicianId).FirstOrDefault();
+                    MusicianInstrument mi = _repo.Query<MusicianInstrument>().Where(e => e.MusicianId == m.MusicianId && e.IsPrimary == true).FirstOrDefault();
+                    Instrument i = _repo.Query<Instrument>().Where(f => f.InstrumentId == mi.InstrumentId).FirstOrDefault();
+                    vmMusicianResult vmMRtemp = new vmMusicianResult
+                    {
+                        AppUserId = au.AppUserId,
+                        FirstName = au.FirstName,
+                        LastName = au.LastName,
+                        City = au.City,
+                        PrimeInstrument = i.InstrumentName
+                    };
+                    vmMRs.Add(vmMRtemp);
+                }
                 return vmMRs;
             }
 
+        }
+        //================================================================================
+        public List<vmMusicianResult> GetMusiciansByFirstLastNames(vmMusicianSearch vmMS)
+        {
+            List<vmMusicianResult> vmMRs = new List<vmMusicianResult>();
+            List<AppUser> aus = _repo.Query<AppUser>().Where(b => b.LastName == vmMS.LastName &&
+                                                b.FirstName == vmMS.FirstName).ToList();
+            if (aus == null)
+            {
+                return null;
+            }
+            else
+            {
+                foreach (AppUser au in aus)
+                {
+                    UserMusician um = _repo.Query<UserMusician>().Where(c => c.AppUserId == au.AppUserId).FirstOrDefault();
+                    if (um != null)
+                    {
+                        Musician m = _repo.Query<Musician>().Where(d => d.MusicianId == um.MusicianId).FirstOrDefault();
+                        MusicianInstrument mi = _repo.Query<MusicianInstrument>().Where(e => e.MusicianId == m.MusicianId && e.IsPrimary == true).FirstOrDefault();
+                        Instrument i = _repo.Query<Instrument>().Where(f => f.InstrumentId == mi.InstrumentId).FirstOrDefault();
+                        vmMusicianResult vmMRtemp = new vmMusicianResult
+                        {
+                            AppUserId = au.AppUserId,
+                            FirstName = au.FirstName,
+                            LastName = au.LastName,
+                            City = au.City,
+                            PrimeInstrument = i.InstrumentName
+                        };
+                        vmMRs.Add(vmMRtemp);
+                    }
+                }
+                return vmMRs;
+            }
         }
         //================================================================================
     }

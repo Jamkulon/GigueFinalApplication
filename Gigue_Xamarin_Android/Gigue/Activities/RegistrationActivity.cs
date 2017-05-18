@@ -1,5 +1,4 @@
-﻿using System;
-
+using System;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -196,18 +195,15 @@ namespace Gigue
             int id = item.ItemId;
             if (id == Resource.Id.tool_profile)
             {
-
-                return true;
+                
             }
             else if (id == Resource.Id.tool_search)
             {
-
-                return true;
+                
             }
             else if (id == Resource.Id.tool_infoPage)
             {
-
-                return true;
+               
             }
             return base.OnOptionsItemSelected(item);
         }
