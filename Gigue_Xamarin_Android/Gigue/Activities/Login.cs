@@ -11,6 +11,7 @@ using Newtonsoft.Json;
 using Gigue.ViewModels;
 using System.Collections.Generic;
 using System.Threading;
+using Gigue.Classes;
 
 namespace Gigue.Activities
 {
@@ -28,7 +29,10 @@ namespace Gigue.Activities
         TextView mForgotPw;
         private Switch mLoggedIn;
         //bool mIsLoggedIn;
+        vmMusicianProfile mRegisteredUser;
+        int mAppUserId;
 
+        public SharedPrefs sharedPrefs = new SharedPrefs();
 
         private int progressBarStatus;
 
@@ -38,7 +42,7 @@ namespace Gigue.Activities
 
         const string applicationURL = @"https://gigue.azurewebsites.net/api/";
 
-        vmMusicianProfile mRegisteredUser = new vmMusicianProfile();
+        //vmMusicianProfile mRegisteredUser = new vmMusicianProfile();
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -56,8 +60,6 @@ namespace Gigue.Activities
             mForgotPw = FindViewById<TextView>(Resource.Id.txtForgotPw);
             mLoggedIn = FindViewById<Switch>(Resource.Id.keepLoggedIn);
 
-
-
             //Click events for every button or item on the page
             mMoreInfo.Click += mMoreInfo_Click;
             mSignUp.Click += mSignUp_Click;
@@ -67,24 +69,13 @@ namespace Gigue.Activities
 
             //if (mIsLoggedIn == true)
             //{
-                retrieveset();
+            var result = sharedPrefs.retrieveset();
+            if (result.AppUserId > 0)
+            {
                 mEmailAddress.Text = mRegisteredUser.Email;
                 mPassword.Text = mRegisteredUser.PassWord;
-                //TODO Create intent.Extra and push it to correct profile page
-            //}
-
-            //mLoggedIn.CheckedChange += delegate (object sender, CompoundButton.CheckedChangeEventArgs e) {
-            //    mIsLoggedIn = mLoggedIn.Checked;
-            //    (e.IsChecked)
-            //    //store
-            //    var prefs = Application.Context.GetSharedPreferences("GIGUE", FileCreationMode.Private);
-            //    var prefEditor = prefs.Edit();
-            //    prefEditor.PutString("profile", musicianProfile);
-            //    prefEditor.Apply();
-
-
-            //};
-
+                mAppUserId = mRegisteredUser.AppUserId;
+            }
         }
 
         //Login Button Click event to take you to Search page
@@ -92,7 +83,7 @@ namespace Gigue.Activities
         {
             mRegisteredUser.Email = mEmailAddress.Text.ToString().Trim();
             mRegisteredUser.PassWord = mPassword.Text.ToString().Trim();
-            saveset();
+            sharedPrefs.saveset(mRegisteredUser);
 
             ProgressDialog progressBar = new ProgressDialog(this);
             progressBar.SetCancelable(true);
@@ -104,9 +95,10 @@ namespace Gigue.Activities
             progressBarStatus = 0;
 
             //Run Thread and increase preogress value
-            new Thread(new ThreadStart(delegate {
+            new Thread(new ThreadStart(delegate
+            {
 
-                while(progressBarStatus < 100)
+                while (progressBarStatus < 100)
                 {
                     progressBarStatus += 10;
 
@@ -160,47 +152,5 @@ namespace Gigue.Activities
             StartActivity(intent);
             OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);
         }
-
-        protected void saveset()
-        {
-            string musicianProfile = JsonConvert.SerializeObject(mRegisteredUser);
-            //store
-            var prefs = Application.Context.GetSharedPreferences("GIGUE", FileCreationMode.Private);
-            var prefEditor = prefs.Edit();
-            prefEditor.PutString("profile", musicianProfile);
-            prefEditor.Apply();
-
-        }
-
-        protected void retrieveset()
-        {
-            string strMusicianProfile;
-            vmMusicianProfile vmProf;
-            //Retreive existing records
-            var prefs = Application.Context.GetSharedPreferences("GIGUE", FileCreationMode.Private);
-            strMusicianProfile = prefs.GetString("profile", null);
-            //If email is null, return new vmMusicianProfile
-            if (strMusicianProfile == null)
-            {
-                mRegisteredUser = new vmMusicianProfile();
-            }
-            else
-            {
-                vmProf = JsonConvert.DeserializeObject<vmMusicianProfile>(strMusicianProfile);
-                if (vmProf == null)
-                {
-                    mRegisteredUser = new vmMusicianProfile();
-                }
-                else
-                {
-                    mRegisteredUser = vmProf;
-                }
-            }
-
-            //Show a toast
-            //RunOnUiThread(() => Toast.MakeText(this, mUserEmail, ToastLength.Long).Show());
-        }
-
     }
-
 }

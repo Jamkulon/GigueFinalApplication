@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.Views.InputMethods;
@@ -38,15 +33,21 @@ namespace Gigue.Activities
             //Set this page's main view//
             SetContentView(Resource.Layout.searchPage);
 
+            mRegisteredUser = JsonConvert.DeserializeObject<vmMusicianProfile>(Intent.GetStringExtra("User"));
+
             Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             toolbar.SetTitleTextColor(Android.Graphics.Color.White);
             SetSupportActionBar(toolbar);
+
             //Assign globals
             mCity = FindViewById<Spinner>(Resource.Id.spinnerCity);
             mFirtName = FindViewById<EditText>(Resource.Id.enterFirstName);
             MLastName = FindViewById<EditText>(Resource.Id.enterLastName);
             MPrimeInst = FindViewById<Spinner>(Resource.Id.spinnerInstrumentPlayed);
 
+            //Set fields
+            mFirtName.Text = mRegisteredUser.FirstName;
+            MLastName.Text = mRegisteredUser.LastName;
 
             //Linear Layout Hide Keyboar//
             sLinearLayout = FindViewById<LinearLayout>(Resource.Id.srchView);
@@ -171,7 +172,7 @@ namespace Gigue.Activities
         private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
             Spinner spinner = (Spinner)sender;
-            
+
         }
 
         //Linear Layout to make keyboard disappear upon clicking off and edit text field//
@@ -182,3 +183,4 @@ namespace Gigue.Activities
         }
     }
 }
+

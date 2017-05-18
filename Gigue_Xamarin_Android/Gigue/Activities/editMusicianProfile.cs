@@ -1,19 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Newtonsoft.Json;
 using Gigue.Activities;
 using Gigue.ViewModels;
 using Gigue.Adapters;
-using Android.Support.V7.App;
+using Gigue.Classes;
 
 namespace Gigue
 {
@@ -35,6 +30,7 @@ namespace Gigue
         Spinner mLanguageSpinner;
 
         public UserData userdata = new UserData();
+        public SharedPrefs sharedPrefs = new SharedPrefs();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -180,6 +176,21 @@ namespace Gigue
                 ReceiveAdvertisements = false,
                 IsMusician = true
             };
+
+            //convert vmAppUser itemToAdd to vmMusicianProfile mRegisteredUser
+            mRegisteredUser.AppUserId = itemToAdd.AppUserId;
+            mRegisteredUser.UserName = itemToAdd.UserName;
+            mRegisteredUser.PassWord = itemToAdd.PassWord;
+            mRegisteredUser.LastName = itemToAdd.LastName;
+            mRegisteredUser.FirstName = itemToAdd.FirstName;
+            mRegisteredUser.City = itemToAdd.City;
+            mRegisteredUser.State = itemToAdd.State;
+            mRegisteredUser.PostalCode = itemToAdd.PostalCode;
+            mRegisteredUser.Email = itemToAdd.Email;
+            mRegisteredUser.ReceiveAdvertisements = itemToAdd.ReceiveAdvertisements;
+            mRegisteredUser.IsMusician = itemToAdd.IsMusician;
+
+            sharedPrefs.saveset(mRegisteredUser);
 
             //send post request
             vmAppUser currentUser = await userdata.UpdateAppUser(itemToAdd);

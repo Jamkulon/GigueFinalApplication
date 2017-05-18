@@ -13,6 +13,7 @@ using Newtonsoft.Json;
 using Gigue.ViewModels;
 using Gigue.Adapters;
 using Android.Support.V7.App;
+using Gigue.Classes;
 using System.Threading;
 
 namespace Gigue
@@ -31,7 +32,7 @@ namespace Gigue
         Spinner mZipCodeSpinner;
 
         public UserData userdata = new UserData();
-
+        public SharedPrefs sharedPrefs = new SharedPrefs();
         private int progressBarStatus;
 
         protected override void OnCreate(Bundle Bundle)
@@ -56,8 +57,7 @@ namespace Gigue
             mRegisterLast.Text = mRegisteredUser.LastName.ToString();
             mRegisteredEmail.Text = mRegisteredUser.Email.ToString();
             mRegisteredId = mRegisteredUser.AppUserId;
-
-
+            
 
             //spinner class
             mStateSpinner = FindViewById<Spinner>(Resource.Id.spinnerState);
@@ -127,6 +127,7 @@ namespace Gigue
             {
                 AppUserId = mRegisteredId,
                 UserName = "",
+                PassWord = mRegisteredUser.PassWord,
                 LastName = mRegisterLast.Text.Trim(),
                 FirstName = mRegisterFirst.Text.Trim(),
                 City = mCitySpinner.SelectedItem.ToString(),
@@ -164,6 +165,21 @@ namespace Gigue
             //send post request
             vmAppUser currentUser = await userdata.UpdateAppUser(itemToAdd);
 
+            //convert vmAppUser currentUser to vmMusicianProfile
+            mRegisteredUser.AppUserId = currentUser.AppUserId;
+            mRegisteredUser.UserName = currentUser.UserName;
+            mRegisteredUser.PassWord = currentUser.PassWord;
+            mRegisteredUser.LastName = currentUser.LastName;
+            mRegisteredUser.FirstName = currentUser.FirstName;
+            mRegisteredUser.City = currentUser.City;
+            mRegisteredUser.State = currentUser.State;
+            mRegisteredUser.PostalCode = currentUser.PostalCode;
+            mRegisteredUser.Email = currentUser.Email;
+            mRegisteredUser.ReceiveAdvertisements = currentUser.ReceiveAdvertisements;
+            mRegisteredUser.IsMusician = currentUser.IsMusician;
+
+            sharedPrefs.saveset(mRegisteredUser);
+
         }
 
         private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
@@ -171,5 +187,6 @@ namespace Gigue
             Spinner spinner = (Spinner)sender;
            
         }
+        
     }
 }

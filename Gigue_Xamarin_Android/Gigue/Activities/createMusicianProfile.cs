@@ -1,18 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Newtonsoft.Json;
 using Gigue.ViewModels;
-using Android.Support.V7.App;
 using Android.Views.InputMethods;
+using Gigue.Classes;
 using System.Threading;
 
 namespace Gigue.Activities
@@ -35,9 +30,8 @@ namespace Gigue.Activities
 
         LinearLayout mLinearLayout;
 
+        public SharedPrefs sharedPrefs = new SharedPrefs();
         private int progressBarStatus;
-
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
 
@@ -172,6 +166,21 @@ namespace Gigue.Activities
                 IsMusician = true
             };
 
+            //convert vmAppUser itemToAdd to vmMusicianProfile mRegisteredUser
+            mRegisteredUser.AppUserId = itemToAdd.AppUserId;
+            mRegisteredUser.UserName = itemToAdd.UserName;
+            mRegisteredUser.PassWord = itemToAdd.PassWord;
+            mRegisteredUser.LastName = itemToAdd.LastName;
+            mRegisteredUser.FirstName = itemToAdd.FirstName;
+            mRegisteredUser.City = itemToAdd.City;
+            mRegisteredUser.State = itemToAdd.State;
+            mRegisteredUser.PostalCode = itemToAdd.PostalCode;
+            mRegisteredUser.Email = itemToAdd.Email;
+            mRegisteredUser.ReceiveAdvertisements = itemToAdd.ReceiveAdvertisements;
+            mRegisteredUser.IsMusician = itemToAdd.IsMusician;
+
+            sharedPrefs.saveset(mRegisteredUser);
+            
             //send post request
             vmAppUser currentUser = await userdata.UpdateAppUser(itemToAdd);
 

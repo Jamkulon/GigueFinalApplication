@@ -1,16 +1,13 @@
-﻿using System;
-
+using System;
 using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
-
 using Newtonsoft.Json;
 using Gigue.ViewModels;
-
 using Android.Support.V7.App;
-
+using Gigue.Classes;
 
 namespace Gigue.Activities
 {
@@ -18,6 +15,8 @@ namespace Gigue.Activities
     public class MusicianProfile : AppCompatActivity
     {
         vmMusicianProfile mRegisteredUser;
+        public SharedPrefs sharedPrefs = new SharedPrefs();
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             
@@ -75,59 +74,21 @@ namespace Gigue.Activities
 
         void mSearch_Click(object sender, EventArgs e)
         {
-            Intent intent = new Intent(this, typeof(Search));
 
+            Intent intent = new Intent(this, typeof(Search));
             intent.PutExtra("User", JsonConvert.SerializeObject(mRegisteredUser));
 
             this.StartActivity(intent);
         }
         void mEditProfile_Click(object sender, EventArgs e)
         {
+            sharedPrefs.retrieveset();
             Intent intent = new Intent(this, typeof(editMusicianProfile));
 
             intent.PutExtra("User", JsonConvert.SerializeObject(mRegisteredUser));
 
             this.StartActivity(intent);
             this.OverridePendingTransition(Resource.Animation.slide_in_top, Resource.Animation.slide_out_bottom);
-        }
-        protected void saveset()
-        {
-            string musicianProfile = JsonConvert.SerializeObject(mRegisteredUser);
-            //store
-            var prefs = Application.Context.GetSharedPreferences("GIGUE", FileCreationMode.Private);
-            var prefEditor = prefs.Edit();
-            prefEditor.PutString("profile", musicianProfile);
-            prefEditor.Apply();
-
-        }
-
-        protected void retrieveset()
-        {
-            string strMusicianProfile;
-            vmMusicianProfile vmProf;
-            //Retreive existing records
-            var prefs = Application.Context.GetSharedPreferences("GIGUE", FileCreationMode.Private);
-            strMusicianProfile = prefs.GetString("profile", null);
-            //If email is null, return new vmMusicianProfile
-            if (strMusicianProfile == null)
-            {
-                mRegisteredUser = new vmMusicianProfile();
-            }
-            else
-            {
-                vmProf = JsonConvert.DeserializeObject<vmMusicianProfile>(strMusicianProfile);
-                if (vmProf == null)
-                {
-                    mRegisteredUser = new vmMusicianProfile();
-                }
-                else
-                {
-                    mRegisteredUser = vmProf;
-                }
-            }
-
-            //Show a toast
-            //RunOnUiThread(() => Toast.MakeText(this, mUserEmail, ToastLength.Long).Show());
         }
     }
 }
