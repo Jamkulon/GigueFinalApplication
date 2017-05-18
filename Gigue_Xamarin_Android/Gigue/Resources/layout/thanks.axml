@@ -6,7 +6,7 @@
     android:descendantFocusability="beforeDescendants"
     android:focusableInTouchMode="true"
     android:focusable="true"
-    android:background="#424242">
+    android:background="#242424">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:theme="@style/ToolBarColor"
