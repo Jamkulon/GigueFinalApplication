@@ -13,6 +13,7 @@ using Newtonsoft.Json;
 using Gigue.ViewModels;
 using Android.Support.V7.App;
 using Android.Views.InputMethods;
+using System.Threading;
 
 namespace Gigue.Activities
 {
@@ -33,6 +34,8 @@ namespace Gigue.Activities
         Spinner mLanguageSpinner;
 
         LinearLayout mLinearLayout;
+
+        private int progressBarStatus;
 
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -172,6 +175,25 @@ namespace Gigue.Activities
             //send post request
             vmAppUser currentUser = await userdata.UpdateAppUser(itemToAdd);
 
+            ProgressDialog progressBar = new ProgressDialog(this);
+            progressBar.SetCancelable(true);
+            progressBar.SetProgressStyle(ProgressDialogStyle.Horizontal);
+            progressBar.Progress = 0;
+            progressBar.Max = 100;
+            progressBar.Show();
+            progressBarStatus = 0;
+
+            //Run Thread and increase preogress value
+            new Thread(new ThreadStart(delegate {
+
+                while (progressBarStatus < 100)
+                {
+                    progressBarStatus += 10;
+                    progressBar.Progress += progressBarStatus;
+                    Thread.Sleep(100);
+                }
+              
+            })).Start();
 
             Intent intent = new Intent(this, typeof(Search));
             this.StartActivity(intent);
