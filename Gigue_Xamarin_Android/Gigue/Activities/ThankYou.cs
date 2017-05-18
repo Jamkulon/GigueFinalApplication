@@ -6,8 +6,6 @@ using Android.OS;
 using Android.Widget;
 using Newtonsoft.Json;
 using Gigue.ViewModels;
-
-using Android.Support.V7.App;
 using Gigue.Activities;
 using Android.Views;
 

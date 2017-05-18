@@ -16,6 +16,7 @@ namespace Gigue.Activities
     {
         vmMusicianProfile mRegisteredUser;
         public SharedPrefs sharedPrefs = new SharedPrefs();
+       
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -25,6 +26,8 @@ namespace Gigue.Activities
             TextView mProfileUserName;
             TextView mProfileInstrument;
             TextView mProfileAboutMe;
+
+        
 
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Profile);
