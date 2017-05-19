@@ -121,7 +121,7 @@ namespace Gigue.Adapters
         }
 
         // Update vmMusicianProfile by Id
-        public async Task<vmMusicianProfile> UpdateMusician(int appUserId, vmMusicianProfile itemToUpdate)
+        public async Task<vmMusicianProfile> UpdateMusician(int appUserId, vmAppUser itemToUpdate)
         {
             // Create http client
             HttpClient client = await GetClient();

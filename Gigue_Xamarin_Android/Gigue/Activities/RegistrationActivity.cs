@@ -153,17 +153,17 @@ namespace Gigue
             vmAppUser currentUser = await userdata.AddAppUser(itemToAdd);
 
             //convert vmAppUser currentUser to vmMusicianProfile mRegisteredUser
-            //mRegisteredUser.AppUserId = currentUser.AppUserId;
-            //mRegisteredUser.UserName = currentUser.UserName;
-            //mRegisteredUser.PassWord = currentUser.PassWord;
-            //mRegisteredUser.LastName = currentUser.LastName;
-            //mRegisteredUser.FirstName = currentUser.FirstName;
-            //mRegisteredUser.City = currentUser.City;
-            //mRegisteredUser.State = currentUser.State;
-            //mRegisteredUser.PostalCode = currentUser.PostalCode;
-            //mRegisteredUser.Email = currentUser.Email;
-            //mRegisteredUser.ReceiveAdvertisements = currentUser.ReceiveAdvertisements;
-            //mRegisteredUser.IsMusician = currentUser.IsMusician;
+            mRegisteredUser.AppUserId = currentUser.AppUserId;
+            mRegisteredUser.UserName = currentUser.UserName;
+            mRegisteredUser.PassWord = currentUser.PassWord;
+            mRegisteredUser.LastName = currentUser.LastName;
+            mRegisteredUser.FirstName = currentUser.FirstName;
+            mRegisteredUser.City = currentUser.City;
+            mRegisteredUser.State = currentUser.State;
+            mRegisteredUser.PostalCode = currentUser.PostalCode;
+            mRegisteredUser.Email = currentUser.Email;
+            mRegisteredUser.ReceiveAdvertisements = currentUser.ReceiveAdvertisements;
+            mRegisteredUser.IsMusician = currentUser.IsMusician;
 
             saveset(mRegisteredUser);
 
