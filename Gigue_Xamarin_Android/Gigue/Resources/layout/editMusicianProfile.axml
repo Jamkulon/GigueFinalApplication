@@ -28,7 +28,7 @@
             android:background="#242424">
         <!--Enter First Name-->
             <TextView
-                android:text="Edit Your Existing Profile"
+                android:text="Edit Your Profile"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
