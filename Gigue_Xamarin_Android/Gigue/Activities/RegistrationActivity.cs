@@ -196,15 +196,15 @@ namespace Gigue
             int id = item.ItemId;
             if (id == Resource.Id.tool_profile)
             {
-                
+                return true;
             }
             else if (id == Resource.Id.tool_search)
             {
-                
+                return true;
             }
             else if (id == Resource.Id.tool_infoPage)
             {
-               
+                StartActivity(typeof(InformationPage));
             }
             return base.OnOptionsItemSelected(item);
         }

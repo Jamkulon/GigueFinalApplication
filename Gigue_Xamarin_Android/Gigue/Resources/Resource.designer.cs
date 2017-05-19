@@ -2430,7 +2430,6 @@ namespace Gigue
 			// aapt resource value: 0x7f02014e
 			public const int avd_show_password_3 = 2130837838;
 			
-
 			// aapt resource value: 0x7f020055
 			public const int button_email_style = 2130837589;
 			
