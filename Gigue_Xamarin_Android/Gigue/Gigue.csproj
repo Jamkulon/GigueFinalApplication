@@ -287,7 +287,9 @@
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
-    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Properties\AndroidManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
     <AndroidResource Include="Resources\layout\Login.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -381,9 +383,6 @@
     <AndroidResource Include="Resources\drawable\imageedit_9_7239508233.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Dierdre5.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\ConcertGig.png" />
   </ItemGroup>
   <ItemGroup>
@@ -449,6 +448,12 @@
     <AndroidResource Include="Resources\drawable-mdpi\icon_musician_contact.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon_musician_contact.png" />
     <AndroidResource Include="Resources\drawable\Dierdre6.png" />
+    <AndroidResource Include="Resources\drawable\icon_action_bar.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon_action_bar.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\icon_action_bar.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\icon_action_bar.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icon_action_bar.png" />
+    <AndroidResource Include="Resources\drawable\icon.png" />
     <Content Include="Resources\menu\toolbar.xml">
       <SubType>Designer</SubType>
     </Content>

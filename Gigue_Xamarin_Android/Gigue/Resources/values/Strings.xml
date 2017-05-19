@@ -11,34 +11,12 @@
   <string name="state_prompt">Choose Your State</string>
   <string-array name="states_array">
     <item></item>
-    <item>Alabama</item>
     <item>Arizona</item>
-    <item>Arkansas</item>
-    <item>California</item>
+    <item>Nevada</item>
+    <item>New Mexico</item>
+    <item>Texas</item>
     <item>Colorado</item>
-    <item>Connecticut</item>
-    <item>Deleware</item>
-    <item>Alaska</item>
-    <item>Arizona</item>
-    <item>California</item>
-    <item>Nevada</item>
-    <item>New York</item>
-    <item>Oregon</item>
-    <item>South Dakota</item>
-    <item>Alaska</item>
-    <item>Arizona</item>
-    <item>California</item>
-    <item>Nevada</item>
-    <item>New York</item>
-    <item>Oregon</item>
-    <item>South Dakota</item>
-    <item>Alaska</item>
-    <item>Arizona</item>
-    <item>California</item>
-    <item>Nevada</item>
-    <item>New York</item>
-    <item>Oregon</item>
-    <item>South Dakota</item>
+    
   </string-array>
 
   <!--Select Cities Array-->
@@ -46,9 +24,11 @@
   <string-array name="cities_array">
     <item></item>
     <item>Phoenix</item>
-    <item>Chandler</item>
     <item>Mesa</item>
-    <item>Flagstaff</item>
+    <item>Yuma</item>
+    <item>Cave Creek</item>
+    <item>Scottsdale</item>
+    <item>Tempe</item>
   </string-array>
 
   <!--Select Zip Code Array-->
