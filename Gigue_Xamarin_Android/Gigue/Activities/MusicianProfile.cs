@@ -68,19 +68,19 @@ namespace Gigue.Activities
             int id = item.ItemId;
             if (id == Resource.Id.tool_Login)
             {
-                Toast.MakeText(this, "Login clicked", ToastLength.Short).Show();
                     StartActivity(typeof(Login));
                 return true;
             }
             else if (id == Resource.Id.tool_search)
             {
-                Toast.MakeText(this, "Search clicked", ToastLength.Short).Show();
-                    StartActivity(typeof(Search));
+                mRegisteredUser = retrieveset();
+                Intent intent = new Intent(this, typeof(Search));
+                intent.PutExtra("User", JsonConvert.SerializeObject(mRegisteredUser));
+                StartActivity(intent);
                 return true;
             }
             else if (id == Resource.Id.tool_infoPage)
             {
-                Toast.MakeText(this, "InfoPage clicked", ToastLength.Short).Show();
                 StartActivity(typeof(InformationPage));
                 return true;
             }

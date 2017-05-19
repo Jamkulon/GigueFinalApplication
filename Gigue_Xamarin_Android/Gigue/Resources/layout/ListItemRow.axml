@@ -16,8 +16,10 @@
         android:textStyle="bold"
         android:typeface="sans"
         android:layout_alignParentLeft="true"
+
         android:textSize="15sp"
         android:gravity="left" />
+
     <TextView
         android:id="@+id/txtLastName"
         android:layout_width="wrap_content"
@@ -32,7 +34,8 @@
         android:typeface="sans"
         android:layout_alignParentRight="true"
         android:gravity="left"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:background="#333333" />
     <TextView
         android:id="@+id/txtPrimaryInst"
         android:layout_width="177.5dp"
@@ -46,6 +49,7 @@
         android:typeface="sans"
         android:layout_alignParentLeft="true"
         android:gravity="left" />
+
     <TextView
         android:id="@+id/txtCity"
         android:layout_width="wrap_content"
@@ -60,4 +64,5 @@
         android:layout_toRightOf="@+id/txtPrimaryInst"
         android:layout_alignParentRight="true"
         android:gravity="left" />
+
 </RelativeLayout>

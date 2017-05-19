@@ -135,19 +135,19 @@ namespace Gigue
             int id = item.ItemId;
             if (id == Resource.Id.tool_profile)
             {
-                Toast.MakeText(this, "Profile clicked", ToastLength.Short).Show();
                 StartActivity(typeof(MusicianProfile));
                 return true;
             }
             else if (id == Resource.Id.tool_search)
             {
-                Toast.MakeText(this, "Search clicked", ToastLength.Short).Show();
-                StartActivity(typeof(Search));
+                mRegisteredUser = retrieveset();
+                Intent intent = new Intent(this, typeof(Search));
+                intent.PutExtra("User", JsonConvert.SerializeObject(mRegisteredUser));
+                StartActivity(intent);
                 return true;
             }
             else if (id == Resource.Id.tool_infoPage)
             {
-                Toast.MakeText(this, "InfoPage clicked", ToastLength.Short).Show();
                 StartActivity(typeof(InformationPage));
                 return true;
             }
@@ -194,7 +194,7 @@ namespace Gigue
             saveset(mRegisteredUser);
 
             //send post request
-            vmAppUser currentUser = await userdata.UpdateAppUser(itemToAdd);
+            vmAppUser currentUser = await userdata.UpdateAppUser(itemToAdd.AppUserId, itemToAdd);
 
 
             Intent intent = new Intent(this, typeof(MusicianProfile));

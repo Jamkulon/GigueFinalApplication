@@ -153,17 +153,17 @@ namespace Gigue
             vmAppUser currentUser = await userdata.AddAppUser(itemToAdd);
 
             //convert vmAppUser currentUser to vmMusicianProfile mRegisteredUser
-            //mRegisteredUser.AppUserId = currentUser.AppUserId;
-            //mRegisteredUser.UserName = currentUser.UserName;
-            //mRegisteredUser.PassWord = currentUser.PassWord;
-            //mRegisteredUser.LastName = currentUser.LastName;
-            //mRegisteredUser.FirstName = currentUser.FirstName;
-            //mRegisteredUser.City = currentUser.City;
-            //mRegisteredUser.State = currentUser.State;
-            //mRegisteredUser.PostalCode = currentUser.PostalCode;
-            //mRegisteredUser.Email = currentUser.Email;
-            //mRegisteredUser.ReceiveAdvertisements = currentUser.ReceiveAdvertisements;
-            //mRegisteredUser.IsMusician = currentUser.IsMusician;
+            mRegisteredUser.AppUserId = currentUser.AppUserId;
+            mRegisteredUser.UserName = currentUser.UserName;
+            mRegisteredUser.PassWord = currentUser.PassWord;
+            mRegisteredUser.LastName = currentUser.LastName;
+            mRegisteredUser.FirstName = currentUser.FirstName;
+            mRegisteredUser.City = currentUser.City;
+            mRegisteredUser.State = currentUser.State;
+            mRegisteredUser.PostalCode = currentUser.PostalCode;
+            mRegisteredUser.Email = currentUser.Email;
+            mRegisteredUser.ReceiveAdvertisements = currentUser.ReceiveAdvertisements;
+            mRegisteredUser.IsMusician = currentUser.IsMusician;
 
             saveset(mRegisteredUser);
 
@@ -196,15 +196,15 @@ namespace Gigue
             int id = item.ItemId;
             if (id == Resource.Id.tool_profile)
             {
-                
+                return true;
             }
             else if (id == Resource.Id.tool_search)
             {
-                
+                return true;
             }
             else if (id == Resource.Id.tool_infoPage)
             {
-               
+                StartActivity(typeof(InformationPage));
             }
             return base.OnOptionsItemSelected(item);
         }
