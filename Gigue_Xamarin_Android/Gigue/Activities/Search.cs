@@ -93,19 +93,16 @@ namespace Gigue.Activities
             int id = item.ItemId;
             if (id == Resource.Id.tool_profile)
             {
-                Toast.MakeText(this, "Profile clicked", ToastLength.Short).Show();
                 StartActivity(typeof(MusicianProfile));
                 return true;
             }
             else if (id == Resource.Id.tool_Login)
             {
-                Toast.MakeText(this, "Login clicked", ToastLength.Short).Show();
                 StartActivity(typeof(Login));
                 return true;
             }
             else if (id == Resource.Id.tool_infoPage)
             {
-                Toast.MakeText(this, "InfoPage clicked", ToastLength.Short).Show();
                 StartActivity(typeof(InformationPage));
                 return true;
             }
