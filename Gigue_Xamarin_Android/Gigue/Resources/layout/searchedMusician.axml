@@ -12,6 +12,7 @@
         android:id="@+id/toolbar"
         android:theme="@style/ToolBarColor"
         android:minHeight="?attr/actionBarSize"
+        app:navigationIcon="@drawable/logo"
         android:background="#333333"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
