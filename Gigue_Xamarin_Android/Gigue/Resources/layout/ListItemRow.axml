@@ -2,21 +2,22 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#242424"
+    android:background="@android:drawable/bottom_bar"
     android:minHeight="50dp">
     <TextView
         android:id="@+id/txtFirstName"
         android:layout_width="177.5dp"
         android:layout_height="wrap_content"
         android:lineSpacingExtra="3dp"
+        android:background="@android:color/black"
         android:paddingLeft="10dp"
         android:paddingTop="5dp"
         android:textColor="#f2854b"
         android:textStyle="bold"
         android:typeface="sans"
         android:layout_alignParentLeft="true"
-        android:gravity="right"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:gravity="left" />
     <TextView
         android:id="@+id/txtLastName"
         android:layout_width="wrap_content"
@@ -25,6 +26,7 @@
         android:lineSpacingExtra="3dp"
         android:paddingLeft="10dp"
         android:paddingTop="5dp"
+        android:background="@android:color/black"
         android:textColor="#f2854b"
         android:textStyle="bold"
         android:typeface="sans"
@@ -38,11 +40,12 @@
         android:layout_below="@id/txtFirstName"
         android:paddingLeft="10dp"
         android:paddingTop="5dp"
+        android:background="@android:color/black"
         android:textColor="#f2854b"
         android:textStyle="bold"
         android:typeface="sans"
         android:layout_alignParentLeft="true"
-        android:gravity="center" />
+        android:gravity="left" />
     <TextView
         android:id="@+id/txtCity"
         android:layout_width="wrap_content"
@@ -50,10 +53,11 @@
         android:layout_below="@id/txtLastName"
         android:paddingLeft="10dp"
         android:paddingTop="5dp"
+        android:background="@android:color/black"
         android:textColor="#f2854b"
         android:textStyle="bold"
         android:typeface="sans"
         android:layout_toRightOf="@+id/txtPrimaryInst"
         android:layout_alignParentRight="true"
-        android:gravity="center" />
+        android:gravity="left" />
 </RelativeLayout>

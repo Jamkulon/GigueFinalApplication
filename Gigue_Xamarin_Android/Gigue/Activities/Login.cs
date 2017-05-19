@@ -48,6 +48,8 @@ namespace Gigue.Activities
         {
             base.OnCreate(bundle);
 
+            
+
             SetContentView(Resource.Layout.Login);
 
             //declare all objects on the page
