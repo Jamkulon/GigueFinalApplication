@@ -15,6 +15,7 @@ using Gigue.Adapters;
 using Android.Support.V7.App;
 using Gigue.Classes;
 using System.Threading;
+using Gigue.Activities;
 
 namespace Gigue
 {
@@ -102,17 +103,15 @@ namespace Gigue
             int id = item.ItemId;
             if (id == Resource.Id.tool_profile)
             {
-                Toast.MakeText(this, "Profile clicked", ToastLength.Short).Show();
                 return true;
             }
             else if (id == Resource.Id.tool_search)
             {
-                Toast.MakeText(this, "Search clicked", ToastLength.Short).Show();
                 return true;
             }
             else if (id == Resource.Id.tool_infoPage)
             {
-                Toast.MakeText(this, "InfoPage clicked", ToastLength.Short).Show();
+                StartActivity(typeof(InformationPage));
                 return true;
             }
             return base.OnOptionsItemSelected(item);
@@ -163,7 +162,7 @@ namespace Gigue
                 //    //Toast.MakeText(this, "File is downloaded", ToastLength.Long).Show();
             })).Start();
             //send post request
-            vmAppUser currentUser = await userdata.UpdateAppUser(itemToAdd);
+            vmAppUser currentUser = await userdata.UpdateAppUser(itemToAdd.AppUserId, itemToAdd);
 
             //convert vmAppUser currentUser to vmMusicianProfile
             mRegisteredUser.AppUserId = currentUser.AppUserId;

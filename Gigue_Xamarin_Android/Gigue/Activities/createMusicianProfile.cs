@@ -130,17 +130,15 @@ namespace Gigue.Activities
             int id = item.ItemId;
             if (id == Resource.Id.tool_profile)
             {
-                Toast.MakeText(this, "Profile clicked", ToastLength.Short).Show();
                 return true;
             }
             else if (id == Resource.Id.tool_search)
             {
-                Toast.MakeText(this, "Search clicked", ToastLength.Short).Show();
                 return true;
             }
             else if (id == Resource.Id.tool_infoPage)
             {
-                Toast.MakeText(this, "InfoPage clicked", ToastLength.Short).Show();
+                StartActivity(typeof(InformationPage));
                 return true;
             }
             return base.OnOptionsItemSelected(item);
@@ -185,7 +183,7 @@ namespace Gigue.Activities
             
             //send post request
             //TODO Update to vmMusicianProfile from vmAppUser
-            vmAppUser currentUser = await userdata.UpdateAppUser(itemToAdd);
+            vmAppUser currentUser = await userdata.UpdateAppUser(itemToAdd.AppUserId, itemToAdd);
 
             ProgressDialog progressBar = new ProgressDialog(this);
             progressBar.SetCancelable(true);

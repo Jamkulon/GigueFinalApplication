@@ -105,7 +105,7 @@ namespace Gigue.Adapters
         }
 
         // Update vmAppUser by Id
-        public async Task<vmAppUser> UpdateAppUser(vmAppUser itemToUpdate)
+        public async Task<vmAppUser> UpdateAppUser(int appUserId, vmAppUser itemToUpdate)
         {
             // Create http client
             HttpClient client = await GetClient();
@@ -114,7 +114,7 @@ namespace Gigue.Adapters
             //Convert it to a formated stringcontent byte array
             var content = new StringContent(data, Encoding.UTF8, "application/json");
             //Send the data
-            var response = await client.PutAsync(string.Concat(applicationURL, "appuser/"), content);
+            var response = await client.PutAsync(string.Concat(applicationURL + "appuser/", appUserId + "/"), content);
             //return the response as a vmAppUser object
             return JsonConvert.DeserializeObject<vmAppUser>(
                 await response.Content.ReadAsStringAsync());
