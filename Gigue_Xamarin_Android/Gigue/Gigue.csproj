@@ -432,7 +432,6 @@
     <AndroidResource Include="Resources\drawable-ldpi\guitarist.jpg" />
     <AndroidResource Include="Resources\drawable-mdpi\guitarist.jpg" />
     <AndroidResource Include="Resources\drawable-xhdpi\guitarist.jpg" />
-    <AndroidResource Include="Resources\drawable\ResetButton.png" />
     <AndroidResource Include="Resources\drawable-hdpi\ResetButton.png" />
     <AndroidResource Include="Resources\drawable-ldpi\ResetButton.png" />
     <AndroidResource Include="Resources\drawable-mdpi\ResetButton.png" />
@@ -453,7 +452,15 @@
     <AndroidResource Include="Resources\drawable-ldpi\icon_action_bar.png" />
     <AndroidResource Include="Resources\drawable-mdpi\icon_action_bar.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon_action_bar.png" />
-    <AndroidResource Include="Resources\drawable\icon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_toolbar.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\ic_toolbar.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_toolbar.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_toolbar.png" />
+    <AndroidResource Include="Resources\drawable\logo.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\logo.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\logo.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\logo.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\logo.png" />
     <Content Include="Resources\menu\toolbar.xml">
       <SubType>Designer</SubType>
     </Content>

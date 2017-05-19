@@ -30,11 +30,15 @@ namespace Gigue.Activities
         
 
             base.OnCreate(savedInstanceState);
+
+          
             SetContentView(Resource.Layout.Profile);
+          
 
             Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             toolbar.SetTitleTextColor(Android.Graphics.Color.White);
             SetSupportActionBar(toolbar);
+         
 
             mSearch = FindViewById<Button>(Resource.Id.btnSearch);
             mSearch.Click += mSearch_Click;
