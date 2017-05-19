@@ -15,23 +15,43 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <TextView
-        android:text="Thank You!"
+        android:text="Thank You"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#242424"
         android:textColor="#f2854b"
         android:gravity="center"
-        android:textSize="18sp"
-        android:id="@+id/txtThanksHeader" />
+        android:textSize="35sp"
+        android:id="@+id/txtThanksHeader"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:layout_marginTop="60dp" />
     <TextView
-        android:text=""
+        android:text="For Registering With Us!"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
+        android:textSize="25sp"
         android:id="@+id/txtThanksUser"
-        android:textColor="#fff" />
+        android:textColor="#f2854b"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:typeface="serif" />
+    <TextView
+        android:text="Start Looking For A Musician"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/textView1"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="#333333"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
     <Button
-        android:text="On to Search"
+        android:text="Search"
         android:id="@+id/btnThanksSearch"
         android:background="@drawable/Login_Style_Button"
         android:textStyle="bold"
@@ -39,9 +59,9 @@
         android:textSize="16sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="100dp"
-        android:layout_marginStart="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="120dp"
+        android:layout_marginStart="120dp"
         android:gravity="center"
         android:textColor="#ffffff" />
 </LinearLayout>

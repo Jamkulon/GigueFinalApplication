@@ -17,26 +17,30 @@
     <TextView
         android:text="About Gigue"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#39FF14"
+        android:textColor="#f2854b"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView1"
         android:gravity="center"
         android:textSize="30sp"
-        android:background="#333333"
         android:layout_gravity="center"
         android:padding="3dp"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:typeface="serif" />
 <!--Information Page Paragraph 1-->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/infoP1"
-        android:background="#242424"
-        android:textColor="#f2854b"
+        android:background="#333333"
+        android:textColor="#fff"
         android:text="Gigue is an app designed to allow musicians to find a quick sub for a local gig.You can easily find musicians by what type of instrument they play, the genre of music, their location and see if they are currently avialable to sub."
         android:gravity="center"
-        android:textSize="16sp" />
+        android:textSize="15sp"
+        android:typeface="serif"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp" />
 <!--For Musicians Header-->
     <TextView
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -44,23 +48,26 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView2"
         android:text="For Musicians"
-        android:textColor="#39FF14"
+        android:textColor="#f2854b"
         android:gravity="center"
         android:textStyle="bold"
-        android:background="#333333"
         android:layout_gravity="center"
         android:padding="3dp"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:typeface="serif" />
 <!--Information Page Paragraph 2-->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/infoP2"
-        android:background="#242424"
-        android:textColor="#f2854b"
+        android:background="#333333"
+        android:textColor="#fff"
         android:text="As a musician, you can select your status, either looking for a gig to sub on, or not currently available.  You can add yourself to our community and get found by bands that might need someone to fill in for them on a pinch!"
         android:gravity="center"
-        android:textSize="18sp" />
+        android:textSize="15sp"
+        android:typeface="serif"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp" />
 <!--Non-Musician Header-->
     <TextView
         android:text="For Non Musicians"
@@ -68,23 +75,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView3"
-        android:textColor="#39FF14"
+        android:textColor="#f2854b"
         android:gravity="center"
         android:textStyle="bold"
-        android:background="#333333"
         android:layout_gravity="center"
         android:padding="3dp"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:typeface="serif" />
 <!--Information Page Paragraph 3-->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/infoP3"
-        android:background="#242424"
-        android:textColor="#f2854b"
+        android:background="#333333"
+        android:textColor="#fff"
         android:text="Even if you are not a musician, you can still search the database of available musicians that are looking for work.  If you are having an event, or someone canceled or got sick for you event, you can find someone in your area that can help you out in a tight spot."
         android:gravity="center"
-        android:textSize="18sp" />
+        android:textSize="15sp"
+        android:typeface="serif"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp" />
 <!--Back to Login Page Button-->
     <Button
         android:id="@+id/btnBackToLogin"
@@ -99,7 +109,7 @@
         android:textColor="#fff"
         android:gravity="center"
         android:padding="3dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginRight="100dp"
-        android:layout_marginTop="20dp" />
+        android:layout_marginLeft="120dp"
+        android:layout_marginRight="120dp"
+        android:layout_marginTop="10dp" />
 </LinearLayout>
