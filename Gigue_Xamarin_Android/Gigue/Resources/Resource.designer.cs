@@ -2409,26 +2409,8 @@ namespace Gigue
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
-			// aapt resource value: 0x7f020149
-			public const int avd_hide_password_1 = 2130837833;
-			
-			// aapt resource value: 0x7f02014a
-			public const int avd_hide_password_2 = 2130837834;
-			
-			// aapt resource value: 0x7f02014b
-			public const int avd_hide_password_3 = 2130837835;
-			
 			// aapt resource value: 0x7f020054
 			public const int avd_show_password = 2130837588;
-			
-			// aapt resource value: 0x7f02014c
-			public const int avd_show_password_1 = 2130837836;
-			
-			// aapt resource value: 0x7f02014d
-			public const int avd_show_password_2 = 2130837837;
-			
-			// aapt resource value: 0x7f02014e
-			public const int avd_show_password_3 = 2130837838;
 			
 			// aapt resource value: 0x7f020055
 			public const int button_email_style = 2130837589;
@@ -3976,8 +3958,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0b000b
 			public const int transition_scene_layoutid_cache = 2131427339;
 			
-			// aapt resource value: 0x7f0b00bf
-			public const int txtCity = 2131427519;
+			// aapt resource value: 0x7f0b00bd
+			public const int txtCity = 2131427517;
 			
 			// aapt resource value: 0x7f0b0109
 			public const int txtEmail = 2131427593;
@@ -3991,8 +3973,8 @@ namespace Gigue
 			// aapt resource value: 0x7f0b00c3
 			public const int txtForgotPw = 2131427523;
 			
-			// aapt resource value: 0x7f0b00bd
-			public const int txtLastName = 2131427517;
+			// aapt resource value: 0x7f0b00bf
+			public const int txtLastName = 2131427519;
 			
 			// aapt resource value: 0x7f0b00c1
 			public const int txtPassword = 2131427521;
