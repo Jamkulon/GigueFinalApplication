@@ -109,64 +109,6 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/linearLayout2"
-                android:background="#333333"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp">
-                <TextView
-                    android:text="Phone:"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:id="@+id/textView4"
-                    android:textColor="#f2854b"
-                    android:textSize="18dp"
-                    android:textStyle="bold"
-                    android:typeface="serif"
-                    android:layout_marginLeft="10dp" />
-                <TextView
-                    android:text="480-888-8888"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:id="@+id/phoneView"
-                    android:layout_marginLeft="5dp"
-                    android:gravity="center"
-                    android:textColor="#ffffff"
-                    android:textSize="16sp"
-                    android:typeface="serif" />
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/linearLayout3"
-                android:background="#333333"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp">
-                <TextView
-                    android:text="Experience:"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:id="@+id/textView6"
-                    android:layout_marginLeft="10dp"
-                    android:textColor="#f2854b"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:typeface="serif" />
-                <TextView
-                    android:text="20 years"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:id="@+id/experienceView"
-                    android:layout_marginLeft="5dp"
-                    android:gravity="center"
-                    android:textColor="#ffffff"
-                    android:textSize="16sp"
-                    android:typeface="serif" />
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:id="@+id/linearLayout4"
                 android:background="#333333"
                 android:layout_marginLeft="10dp"
@@ -213,13 +155,15 @@
                 android:textOff="Not Available"
                 android:textColor="#f2854b"
                 android:textSize="15dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:typeface="serif" />
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="39.5dp"
                 android:id="@+id/linearLayout6"
-                android:gravity="center">
+                android:gravity="center"
+                android:layout_marginTop="30dp">
                 <Button
                     android:text="Search"
                     android:layout_width="100dp"
