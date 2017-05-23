@@ -27,7 +27,7 @@ namespace Gigue.Activities
             TextView mProfileInstrument;
             TextView mProfileAboutMe;
 
-        
+
 
             base.OnCreate(savedInstanceState);
 
@@ -52,7 +52,7 @@ namespace Gigue.Activities
             mProfileInstrument = FindViewById<TextView>(Resource.Id.txtPrimaryInst);
             mProfileAboutMe = FindViewById<TextView>(Resource.Id.txtProfileBio);
 
-            mProfileAboutMe.Text = mRegisteredUser.Biography;
+            //mProfileAboutMe.Text = mRegisteredUser.Biography;
 
             mProfileUserName.Text = mRegisteredUser.FirstName + " " + mRegisteredUser.LastName;
 

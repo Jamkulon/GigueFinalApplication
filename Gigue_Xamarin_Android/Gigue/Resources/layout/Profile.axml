@@ -97,7 +97,7 @@
                     android:typeface="serif"
                     android:layout_marginLeft="10dp" />
                 <TextView
-                    android:text="james.kulon@gmail.com"
+                    android:text="j@awesomemail.com"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:id="@+id/txtProfileEmail"
@@ -116,7 +116,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp">
                 <TextView
-                    android:text="About Me:"
+                    android:text="About Me: "
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:id="@+id/txtProfileAboutMe"
@@ -137,7 +137,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp">
                 <TextView
-                    android:text="Hi Im James Kulon iubwef iubf iub eiu eiuh weuh piohjwepuf eeiuh epiuh fiuweu fpipha ihfipueefoihjewfiuhh fiuhefyhbweuh iueihf epiuf "
+                    android:text= "I am a bassist that has a diverse amount of experience in quite a few generes of music.  Heavily influenced by Rush, Boston, Yes with a lot of funk and Jazz influence as well.  In addition to the Bass and backing Vocals, I also play Guitar and Keyboards"
                     android:id="@+id/txtProfileBio"
                     android:textColor="#ffffff"
                     android:textSize="16sp"
