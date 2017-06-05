@@ -14,7 +14,7 @@
         android:minHeight="?attr/actionBarSize"
         app:navigationIcon="@drawable/logo"
         android:background="#333333"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="130dp"
@@ -123,7 +123,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp">
                 <TextView
-                    android:text="Hi Im James Kulon iubwef iubf iub eiu eiuh weuh piohjwepuf eeiuh epiuh fiuweu fpipha ihfipueefoihjewfiuhh fiuhefyhbweuh iueihf epiuf "
+                    android:text="Alexandar Zivojinovich, OC (born 27 August 1953), better known by his stage name Alex Lifeson, is a Canadian musician, best known as the guitarist of the Canadian rock band Rush. In 1968, Lifeson co-founded the band that would become Rush, with drummer John Rutsey and bassist and singer Jeff Jones. Jones was replaced by Geddy Lee a month later, and Rutsey was replaced by Neil Peart in 1974; the band's line-up has remained the same ever since. "
                     android:id="@+id/aboutView"
                     android:textColor="#ffffff"
                     android:textSize="16sp"
